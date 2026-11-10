@@ -1,0 +1,77 @@
+
+name: Agente 02
+
+# 30 posts por dia: de meia em meia hora, das 7h as 21h30 (horario de Brasilia = UTC-3)
+on:
+  schedule:
+    - cron: '0,30 10-23 * * *'
+    - cron: '0,30 0 * * *'
+  workflow_dispatch:
+    inputs:
+      faixa:
+        description: 'Faixa (1 a 4). Deixe vazio pra seguir o rodizio'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agente02
+  cancel-in-progress: false
+
+jobs:
+  montar:
+    runs-on: ubuntu-latest
+    outputs:
+      codigo: ${{ steps.montar.outputs.codigo }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Arrumar pastas
+        run: |
+          mkdir -p fonts dados posts
+          for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
+          [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
+      - run: npm install --omit=dev --no-audit --no-fund
+      - name: Montar o post
+        id: montar
+        run: |
+          FAIXA="${{ github.event.inputs.faixa }}"
+          if [ -n "$FAIXA" ]; then node agente02.js --teste --faixa "$FAIXA"; else node agente02.js --teste; fi
+      - name: Guardar as imagens no repositorio
+        if: steps.montar.outputs.codigo != ''
+        run: |
+          git config user.name "Agente 02"
+          git config user.email "agente02@users.noreply.github.com"
+          git add posts dados
+          git commit -m "post montado ${{ steps.montar.outputs.codigo }}" || exit 0
+          git pull --rebase origin ${{ github.ref_name }}
+          git push
+
+  publicar:
+    needs: montar
+    if: needs.montar.outputs.codigo != ''
+    runs-on: ubuntu-latest
+    environment: instagram
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Arrumar pastas
+        run: |
+          mkdir -p fonts dados posts
+          for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
+          [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
+      - run: npm install --omit=dev --no-audit --no-fund
+      - name: Postar no Instagram
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: node agente02.js --publicar ${{ needs.montar.outputs.codigo }}
+      - name: Guardar na lista de postados
+        run: |
