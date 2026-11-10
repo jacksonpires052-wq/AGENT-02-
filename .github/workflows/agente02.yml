@@ -3,9 +3,9 @@ name: Agente 02
 
 # 30 posts por dia: de meia em meia hora, das 7h as 21h30 (horario de Brasilia = UTC-3)
 on:
-  schedule:
-    - cron: '0,30 10-23 * * *'
-    - cron: '0,30 0 * * *'
+    schedule:
+    - cron: '0,30 7-21 * * *'
+      timezone: 'America/Sao_Paulo'
   workflow_dispatch:
     inputs:
       faixa:
