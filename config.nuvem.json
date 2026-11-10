@@ -1,0 +1,44 @@
+{
+  "instagram": {
+    "tipo": "unificado",
+    "token": "(vem do segredo IG_TOKEN)",
+    "usuario": "corretor.jacksonpires",
+    "id": "17841477285975541",
+    "versao": "v26.0"
+  },
+  "github": {
+    "usuario": "jacksonpires052-wq",
+    "repositorio": "AGENT-02-",
+    "token": ""
+  },
+  "pedirAprovacao": true,
+  "corretor": "Jackson Pires",
+  "creci": "323400",
+  "cidade": "sorocaba",
+  "horaInicio": 7,
+  "horaFim": 21,
+  "ordem": "relevancia",
+  "paginasMax": 15,
+  "faixas": [
+    {
+      "quartos": 1,
+      "min": 201000,
+      "max": 300000
+    },
+    {
+      "quartos": 2,
+      "min": 301000,
+      "max": 400000
+    },
+    {
+      "quartos": 3,
+      "min": 401000,
+      "max": 500000
+    },
+    {
+      "quartos": 4,
+      "min": 501000,
+      "max": 600000
+    }
+  ]
+}

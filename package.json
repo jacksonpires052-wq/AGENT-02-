@@ -1,0 +1,10 @@
+{
+  "name": "agente02",
+  "version": "1.0.0",
+  "description": "Agente 02 - posta imoveis da AE Patrimonio no Instagram",
+  "main": "agente02.js",
+  "private": true,
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65"
+  }
+}
