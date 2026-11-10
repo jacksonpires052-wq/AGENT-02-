@@ -1,9 +1,8 @@
-
 name: Agente 02
 
-# 30 posts por dia: de meia em meia hora, das 7h as 21h30 (horario de Brasilia = UTC-3)
+# 30 posts por dia: de meia em meia hora, das 7h as 21h30 (horario de Brasilia)
 on:
-    schedule:
+  schedule:
     - cron: '0,30 7-21 * * *'
       timezone: 'America/Sao_Paulo'
   workflow_dispatch:
@@ -75,3 +74,4 @@ jobs:
         run: node agente02.js --publicar ${{ needs.montar.outputs.codigo }}
       - name: Guardar na lista de postados
         run: |
+          git config user.name "Agente 02"
