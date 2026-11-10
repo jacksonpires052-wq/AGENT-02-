@@ -6,7 +6,7 @@
 //   node agente02.js --checar   -> confere se os acessos do Instagram e do GitHub funcionam
 const fs = require('fs');
 const path = require('path');
-const { capa, foto } = require('./capa');
+const { capa, capaSeta, foto } = require('./capa');
 
 const DIR = __dirname;
 const CONFIG = path.join(DIR, 'config.json');
@@ -347,7 +347,7 @@ async function main() {
   const sel = escolherFotos(im.fotos);
   const bufs = [];
   for (const u of sel) bufs.push(await pegar(u, 'buffer'));
-  const imagens = [await capa({
+  const imagens = [(cfg.estiloCapa || 'seta') === 'seta' ? await capaSeta({ foto: bufs[0] }) : await capa({
     foto: bufs[0], categoria: `${im.tipo} · ${plural(im.quartos, 'quarto', 'quartos')}`,
     nome: im.condo || im.bairro, bairro: im.condo ? im.bairro : `${im.cidade} · SP`, cidade: im.condo ? `${im.cidade} · SP` : '',
     stats: [

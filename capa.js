@@ -87,10 +87,64 @@ async function capa(d) {
   return c.encode('jpeg', 93);
 }
 
+
+// ESTILO CARTAO (padrao desde 10/11): foto em tela cheia + cartao branco no meio, serifada preta
+function quebrar(x, t, max) {
+  const out = []; let linha = '';
+  for (const w of t.split(' ')) { const tl = linha ? linha + ' ' + w : w; if (x.measureText(tl).width > max && linha) { out.push(linha); linha = w; } else linha = tl; }
+  if (linha) out.push(linha); return out;
+}
+async function capaCartao(d) {
+  const c = createCanvas(W, H); const x = c.getContext('2d');
+  cover(x, await loadImage(d.foto), 0, 0, W, H);
+  const MAXW = 860, PAD = 34;
+  const blocos = [
+    { t: d.titulo, px: 58, cor: '#111', fonte: 'LoraAG', gap: 6 },
+    { t: d.specs, px: 38, cor: '#222', fonte: 'LoraAG', gap: 4 },
+    { t: d.preco, px: 54, cor: '#111', fonte: 'LoraAG', gap: 4 },
+    { t: `${d.corretor} · CRECI ${d.creci}`, px: 22, cor: '#666', fonte: 'InterAG', gap: 0, topo: 14 }
+  ].filter(b => b.t);
+  let altura = PAD, largura = 0;
+  for (const b of blocos) {
+    x.font = `${b.px}px ${b.fonte}`; b.linhas = String(b.t).split('\n').flatMap(p => quebrar(x, p, MAXW - 2 * PAD)); b.lh = Math.round(b.px * 1.18);
+    for (const l of b.linhas) largura = Math.max(largura, x.measureText(l).width);
+    altura += (b.topo || 0) + b.linhas.length * b.lh + b.gap * 2;
+  }
+  altura += PAD - 8;
+  const cw = Math.min(MAXW, largura + 2 * PAD), cx = (W - cw) / 2, cy = Math.round(H * 0.6 - altura / 2);
+  x.save(); x.shadowColor = 'rgba(0,0,0,0.25)'; x.shadowBlur = 24; x.fillStyle = '#fff'; x.fillRect(cx, cy, cw, altura); x.restore();
+  let y = cy + PAD; x.textAlign = 'center'; x.textBaseline = 'alphabetic';
+  for (const b of blocos) {
+    y += (b.topo || 0) + b.gap; x.font = `${b.px}px ${b.fonte}`; x.fillStyle = b.cor;
+    for (const l of b.linhas) { y += b.lh; x.fillText(l, W / 2, y - Math.round(b.px * 0.22)); }
+    y += b.gap;
+  }
+  return c.encode('jpeg', 93);
+}
+
 async function foto(buf) {
   const c = createCanvas(W, H); const x = c.getContext('2d');
   cover(x, await loadImage(buf), 0, 0, W, H);
   return c.encode('jpeg', 92);
 }
 
-module.exports = { capa, foto };
+// ESTILO SETA: foto em tela cheia + cartao branco so com uma seta pra baixo (tudo vai na legenda)
+async function capaSeta(d) {
+  const c = createCanvas(W, H); const x = c.getContext('2d');
+  cover(x, await loadImage(d.foto), 0, 0, W, H);
+  const temTexto = !!d.titulo;
+  let linhas = [];
+  if (temTexto) { x.font = '56px LoraAG'; linhas = String(d.titulo).split('\n').flatMap(p => quebrar(x, p, 760)); }
+  const larg = temTexto ? Math.min(860, Math.max(...linhas.map(l => x.measureText(l).width)) + 80) : 170;
+  const alt = (temTexto ? linhas.length * 66 + 40 : 0) + 150;
+  const cx = (W - larg) / 2, cy = Math.round(H * (d.altura || 0.84) - alt / 2);
+  x.save(); x.shadowColor = 'rgba(0,0,0,0.25)'; x.shadowBlur = 24; x.fillStyle = '#fff'; x.fillRect(cx, cy, larg, alt); x.restore();
+  let y = cy + 30;
+  if (temTexto) { x.font = '56px LoraAG'; x.fillStyle = '#111'; x.textAlign = 'center'; for (const l of linhas) { y += 66; x.fillText(l, W / 2, y - 12); } y += 10; }
+  const ax = W / 2, top = y + 18, bot = y + 112;
+  x.strokeStyle = '#111'; x.lineWidth = 7; x.lineCap = 'round'; x.lineJoin = 'round';
+  x.beginPath(); x.moveTo(ax, top); x.lineTo(ax, bot); x.moveTo(ax - 32, bot - 32); x.lineTo(ax, bot); x.lineTo(ax + 32, bot - 32); x.stroke();
+  return c.encode('jpeg', 93);
+}
+
+module.exports = { capa, capaCartao, capaSeta, foto };
