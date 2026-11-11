@@ -61,6 +61,16 @@ def story(out, topo):
     bg.save(os.path.join(out, "story.jpg"), quality=93)
 
 
+TRILHA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trilha-noticia.mp3")
+
+
+def audio_entrada(total):
+    """Trilha original de noticia (sem direito autoral). Sem o arquivo, sai mudo."""
+    if os.path.exists(TRILHA):
+        return ["-stream_loop", "-1", "-t", f"{total:.2f}", "-i", TRILHA]
+    return ["-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo"]
+
+
 def reels(out, topo, seg=2.32, fade=0.4):
     quadros = []
     for i in range(1, 6):
@@ -79,9 +89,9 @@ def reels(out, topo, seg=2.32, fade=0.4):
         filtros.append(f"[{ant}][v{i}]xfade=transition=slideleft:duration={fade}:offset={off:.2f}[x{i}]")
         ant, off = f"x{i}", off + seg - fade
     total = seg * len(quadros) - fade * (len(quadros) - 1)
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", *entradas, "-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo",
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", *entradas, *audio_entrada(total),
            "-filter_complex", ";".join(filtros), "-map", f"[{ant}]", "-map", f"{len(quadros)}:a",
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest",
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-af", f"afade=t=out:st={total-0.8:.2f}:d=0.8", "-c:a", "aac", "-b:a", "160k", "-shortest",
            "-movflags", "+faststart", os.path.join(out, "reels.mp4")]
     subprocess.run(cmd, check=True)
     for p in quadros: os.remove(p)
