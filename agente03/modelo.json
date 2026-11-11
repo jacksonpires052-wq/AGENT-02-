@@ -15,7 +15,7 @@
    "data": "11 de novembro de 2026",
    "numero": "7,18%",
    "linhas": [
-    "O juro caiu nos EUA",
+    "Os juros caíram nos EUA",
     "e mesmo assim",
     "ninguém quis comprar"
    ],
@@ -27,7 +27,7 @@
    "tipo": "miolo",
    "cor": "papel",
    "titulo": [
-    "O juro caiu",
+    "Os juros caíram",
     "por 3 semanas"
    ],
    "texto": "<b>Nos EUA o financiamento de 30 anos foi para 7,18%.</b> Poucas semanas antes estava perto de 7,5%.",
@@ -36,7 +36,7 @@
     "numero": "7,18%",
     "objeto": "📉",
     "fundo": "radial-gradient(circle at 50% 40%, #f2d6b3, #a8774c)",
-    "legenda": "Juro <b>caindo há 3 semanas</b> seguidas",
+    "legenda": "Juros <b>caindo há 3 semanas</b> seguidas",
     "stickers": [
      {
       "emoji": "🚨",
@@ -52,7 +52,7 @@
     "Mas ninguém",
     "comprou"
    ],
-   "texto": "As vendas em andamento estão no <b>nível mais baixo desde 2021.</b> E o juro ainda está acima dos 6,22% de um ano atrás.",
+   "texto": "As vendas em andamento estão no <b>nível mais baixo desde 2021.</b> E os juros ainda estão acima dos 6,22% de um ano atrás.",
    "fonte": "Fonte: Redfin e Freddie Mac, novembro de 2026",
    "card": {
     "numero": "desde 2021",
@@ -74,7 +74,7 @@
     "O que isso",
     "ensina para você"
    ],
-   "texto": "Quem espera o juro cair costuma comprar <b>junto com todo mundo.</b> Aí a procura sobe e o preço sobe junto.",
+   "texto": "Quem espera os juros caírem costuma comprar <b>junto com todo mundo.</b> Aí a procura sobe e o preço sobe junto.",
    "card": {
     "numero": "Esperar?",
     "objeto": "⏳",
