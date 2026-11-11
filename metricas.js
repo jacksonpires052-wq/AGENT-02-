@@ -45,12 +45,13 @@ async function api(rota, params = {}) {
   return j;
 }
 // Pede várias métricas de uma vez; se a API recusar, tenta uma por uma e pula as que não existem.
+let ERRO_INSIGHTS = null;
 async function insights(rota, metricas, extra = {}) {
   const ler1 = j => Object.fromEntries((j.data || []).map(m => [m.name, m.total_value ? m.total_value.value : (m.values && m.values.length ? m.values[m.values.length - 1].value : null)]));
   try { return ler1(await api(rota, { metric: metricas.join(','), ...extra })); }
   catch {
     const out = {};
-    for (const m of metricas) { try { Object.assign(out, ler1(await api(rota, { metric: m, ...extra }))); } catch {} }
+    for (const m of metricas) { try { Object.assign(out, ler1(await api(rota, { metric: m, ...extra }))); } catch (e) { ERRO_INSIGHTS = ERRO_INSIGHTS || e.message; } }
     return out;
   }
 }
@@ -149,15 +150,18 @@ function analisar({ conta, banco, dias }) {
 
   // sugestões (o agente só sugere, quem decide é o Jackson)
   const sug = [];
+  const semDados = ERRO_INSIGHTS && !reels.some(m => n0(m.reach) > 0);
+  if (semDados) sug.push(`SEM DADOS: a API não liberou os números (${ERRO_INSIGHTS}). Falta a permissão de insights (instagram_manage_insights) no token. Nenhuma sugestão até isso ser resolvido.`);
   const ultimos3 = [0, 1, 2].map(i => hist[somaDias(ONTEM, -i)]).filter(Boolean);
   const caindo = ultimos3.length === 3 && ultimos3.every(h => h.referencia && h.alcanceMedio < h.referencia * 0.7);
-  if (caindo) sug.push('VERMELHO: há 3 dias o alcance por Reels está mais de 30% abaixo da média. O volume pode estar cansando o público. Sugestão: baixar de 25 pra 18 Reels por dia por uma semana e comparar.');
+  if (semDados) {}
+  else if (caindo) sug.push('VERMELHO: há 3 dias o alcance por Reels está mais de 30% abaixo da média. O volume pode estar cansando o público. Sugestão: baixar de 25 pra 18 Reels por dia por uma semana e comparar.');
   else if (ontem.length && alcAntes && alcOntem >= alcAntes * 0.9) sug.push('VERDE: o alcance por Reels se segurou com o volume atual. Pode manter.');
   else if (ontem.length && alcAntes) sug.push(`AMARELO: alcance por Reels ${pct(alcOntem, alcAntes)}% em relação à semana. Ainda não é tendência, segue medindo.`);
   const mediaFaixas = media(faixas.map(f => f.alcance));
-  for (const f of faixas) if (f.qtd >= 5 && mediaFaixas && f.alcance < mediaFaixas * 0.6) sug.push(`A faixa ${f.k} está com alcance bem abaixo das outras. Sugestão: tirar 1 ou 2 Reels dela e passar pra faixa que mais rende.`);
+  if (!semDados) for (const f of faixas) if (f.qtd >= 5 && mediaFaixas && f.alcance < mediaFaixas * 0.6) sug.push(`A faixa ${f.k} está com alcance bem abaixo das outras. Sugestão: tirar 1 ou 2 Reels dela e passar pra faixa que mais rende.`);
   const fracas = horas.filter(h => h.qtd >= 3).slice(-2);
-  if (horas.length >= 6 && fracas.length) sug.push(`Horários mais fracos da semana: ${fracas.map(h => h.k + 'h').join(' e ')}. Sugestão: mover esses Reels pra ${horas.slice(0, 2).map(h => h.k + 'h').join(' ou ')}.`);
+  if (!semDados && horas.length >= 6 && fracas.length) sug.push(`Horários mais fracos da semana: ${fracas.map(h => h.k + 'h').join(' e ')}. Sugestão: mover esses Reels pra ${horas.slice(0, 2).map(h => h.k + 'h').join(' ou ')}.`);
   const fu = d.follows_and_unfollows;
   if (fu && typeof fu === 'object' && fu.unfollows > fu.follows) sug.push('Mais gente deixou de seguir do que começou a seguir ontem. Ficar de olho: é o primeiro sinal de excesso.');
   if (!ontem.length) sug.push('Nenhum Reels medido ontem. Conferir se o Agente 02 rodou.');
@@ -192,4 +196,5 @@ function analisar({ conta, banco, dias }) {
   if (!TOKEN) throw new Error('Falta o IG_TOKEN.');
   if (!CONTA) throw new Error('Falta o instagram.id no config.');
   analisar(await coletar());
+  if (ERRO_INSIGHTS) console.error('Aviso da API de insights:', ERRO_INSIGHTS);
 })().catch(e => { console.error('Erro no Agente 06:', e.message); process.exit(1); });
