@@ -1,0 +1,30 @@
+[
+ {
+  "id": "20261111-mcmv-51",
+  "coletada_em": "2026-11-11 12:25",
+  "categoria": "Brasil",
+  "titulo": "MCMV ficou com 51% das vendas de imóveis novos",
+  "fato": "O Minha Casa, Minha Vida ficou com 51% das vendas de imóveis novos no 2º trimestre (58.392 unidades).",
+  "numero": "51%",
+  "detalhe": "Há 355 mil imóveis à venda, que levariam cerca de 9,5 meses para acabar.",
+  "pra_voce": "Com muita oferta, dá para negociar; a Faixa 4 financia até R$ 600 mil.",
+  "fonte": "CBIC",
+  "link": "https://paraibabusiness.com.br/vendas-de-imoveis-sobem-54-e-oferta-levaria-95-meses-para-acabar-aponta-cbic/",
+  "data_noticia": "2026-11-06",
+  "usada": "reels/2026-11-11-1225-1-mcmv-metade-das-vendas"
+ },
+ {
+  "id": "20261111-credito-poupanca",
+  "coletada_em": "2026-11-11 12:25",
+  "categoria": "Crédito e juros",
+  "titulo": "Crédito da poupança para imóveis subiu 37,5%",
+  "fato": "O crédito imobiliário com recursos da poupança somou R$ 132,5 bilhões de janeiro a agosto, alta de 37,5%.",
+  "numero": "+37,5%",
+  "detalhe": "A Selic segue em 13,75% ao ano.",
+  "pra_voce": "Compare as propostas dos bancos antes de fechar.",
+  "fonte": "Abecip",
+  "link": "https://portas.com.br/noticias/mercado-imobiliario-aquecido-mas-sob-pressao-o-que-o-presidente-eleito-vai-receber/",
+  "data_noticia": "2026-10-22",
+  "usada": "reels/2026-11-11-1225-2-credito-poupanca-sobe"
+ }
+]
