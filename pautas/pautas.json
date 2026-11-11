@@ -39,7 +39,7 @@
   "fonte": "Valor Econômico (via brapi.dev) e TradeMap",
   "link": "https://brapi.dev/news/lucro-da-direcional-cai-12-6-e-fica-abaixo-do-consenso-no-fc9038ab",
   "data_noticia": "2026-11-09",
-  "usada": false
+  "usada": "reels/2026-11-11-1755-1-direcional-lucro-cai"
  },
  {
   "id": "20261111-mcmv-lancamentos-sp",
@@ -109,7 +109,7 @@
   "fonte": "Funds Explorer",
   "link": "https://www.fundsexplorer.com.br/noticias/ifix-fecha-em-queda-terca-feira-fiis",
   "data_noticia": "2026-11-10",
-  "usada": false
+  "usada": "reels/2026-11-11-1755-3-ifix-cai-dois-pregoes"
  },
  {
   "id": "20261111-eua-pedidos-hipoteca",
@@ -123,7 +123,7 @@
   "fonte": "Mortgage Bankers Association (MBA)",
   "link": "https://gokhshtein.com/news/2026-11-11-us-mortgage-demand-jumps-as-30-year-rate-falls-to-721-us",
   "data_noticia": "2026-11-11",
-  "usada": false
+  "usada": "reels/2026-11-11-1755-2-eua-pedidos-hipoteca"
  },
  {
   "id": "20261110-eua-inflacao-moradia",
