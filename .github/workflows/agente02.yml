@@ -1,7 +1,6 @@
 name: Agente 02
 
-# 25 Reels por dia, das 6h07 as 21h07 (horario de Brasilia), seguindo a curva de maior fluxo:
-# manha 6h-9h (5), meio da manha (3), almoco 11h-14h (6), tarde (4), noite 18h-21h (7).
+# 10 Reels por dia, das 6h07 as 21h07 (horario de Brasilia), nos picos de fluxo.
 # Quem dispara nos horarios e o relogio.yml (o agendador do GitHub nao estava disparando).
 # Os horarios ficam na lista HORARIOS do relogio.yml.
 # Minutos quebrados de proposito: no minuto 0 e 30 o GitHub atrasa e as vezes pula a execucao.

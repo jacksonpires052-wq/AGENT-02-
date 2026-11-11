@@ -31,7 +31,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import os, time, json, urllib.request, datetime as dt
-          HORARIOS = "06:07 06:47 07:17 07:47 08:27 09:13 09:53 10:43 11:23 11:53 12:23 12:53 13:23 13:53 14:43 15:53 17:17 17:53 18:13 18:38 19:03 19:28 19:53 20:18 21:07".split()
+          HORARIOS = "06:07 07:47 09:13 11:23 12:23 13:53 17:17 18:38 19:53 21:07".split()
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
           TODOS = sorted([(h, "agente02.yml") for h in HORARIOS] + list(EXTRAS.items()))
           BRT = dt.timezone(dt.timedelta(hours=-3))
