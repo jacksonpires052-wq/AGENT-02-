@@ -156,37 +156,56 @@ const plural = (n, s, p) => `${n} ${n === 1 ? s : p}`;
 const LAZER = [['piscina', 'piscina'], ['salão de festas|salao de festas', 'salão de festas'], ['playground', 'playground'], ['churrasqueira', 'churrasqueira'],
   ['academia|fitness', 'academia'], ['\\bquadras?\\b(?! ?metros)', 'quadra'], ['\\bpet\\b|pet place', 'espaço pet'], ['gourmet', 'espaço gourmet'], ['brinquedoteca', 'brinquedoteca'], ['portaria 24', 'portaria 24h']];
 
+// Cidades da região com a grafia oficial (o site às vezes vem sem acento)
+const CIDADES = { 'aracoiaba da serra': 'Araçoiaba da Serra', 'votorantim': 'Votorantim', 'salto de pirapora': 'Salto de Pirapora', 'ipero': 'Iperó',
+  'tatui': 'Tatuí', 'itu': 'Itu', 'porto feliz': 'Porto Feliz', 'boituva': 'Boituva', 'piedade': 'Piedade', 'pilar do sul': 'Pilar do Sul',
+  'capela do alto': 'Capela do Alto', 'aluminio': 'Alumínio', 'mairinque': 'Mairinque', 'sao roque': 'São Roque', 'sarapui': 'Sarapuí', 'sorocaba': 'Sorocaba' };
+const semAcento = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+const cidadeCerta = c => CIDADES[semAcento(c).toLowerCase().trim()] || c;
+const hashtag = s => '#' + semAcento(s).replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+const lista = l => l.length > 1 ? l.slice(0, -1).join(', ') + ' e ' + l[l.length - 1] : (l[0] || '');
+
+// Legenda escrita na norma culta: "em uma" (não "numa"), "para" (não "pra"),
+// sem pronome no começo da frase, concordância de gênero pelo tipo do imóvel.
 function legenda(im) {
   const d = im.descricao.toLowerCase();
   const lazer = LAZER.filter(([re]) => new RegExp(re).test(d)).map(([, n]) => n).slice(0, 4);
-  const tipoMin = im.tipo.toLowerCase();
-  const apelido = /apartamento/.test(tipoMin) ? 'Apê' : im.tipo;
-  const fem = /^(casa|cobertura|chácara|chacara|kitnet|sala|loja|área|area)/.test(tipoMin);
-  const num = fem ? 'numa' : 'num', esse = fem ? 'essa' : 'esse';
+  const tipo = im.tipo.trim();
+  const tipoMin = tipo.toLowerCase();
+  const fem = /^(casa|cobertura|chácara|chacara|kitnet|kitinete|sala|loja|área|area|edícula|edicula)/.test(tipoMin);
+  const semQuartos = /^(terreno|lote|sala|loja|galpão|galpao|área|area|ponto)/.test(tipoMin) || !im.quartos;
+  const um = fem ? 'uma' : 'um', este = fem ? 'esta' : 'este';
+  const cidade = cidadeCerta(im.cidade);
+  const desc = semQuartos ? (im.area ? `de ${im.area} m²` : '') : `de ${plural(im.quartos, 'quarto', 'quartos')}`;
+  const tipoDesc = [tipoMin, desc].filter(Boolean).join(' ');
+  const Tipo = tipoMin.replace(/^./, c => c.toUpperCase());
   const ganchos = [
-    `${apelido} de ${plural(im.quartos, 'quarto', 'quartos')} em ${im.cidade} por ${precoCurto(im.preco)} 🏡`,
-    `${precoCurto(im.preco)} ${num} ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} em ${im.cidade} 🔑`,
-    `Olha ${esse} ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} por ${precoCurto(im.preco)} 👀`
+    `${[Tipo, desc].filter(Boolean).join(' ')} em ${cidade} por ${precoCurto(im.preco)} 🏡`,
+    `Por ${precoCurto(im.preco)}, ${um} ${tipoDesc} em ${cidade} 🔑`,
+    `Veja ${este} ${tipoDesc} em ${cidade} por ${precoCurto(im.preco)} 👀`
   ];
   const g = ganchos[(postados.length) % ganchos.length];
-  const onde = im.condo && im.condo.toLowerCase() !== im.bairro.toLowerCase() ? `Fica no ${im.condo}, no bairro ${im.bairro}` : `Fica no bairro ${im.bairro}`;
-  const extra = /cadeira de rodas|cadeirante|acessibilidade/.test(d) ? ', e foi feito pensando em quem usa cadeira de rodas.' : '.';
+  const condoOk = im.condo && im.condo.toLowerCase() !== im.bairro.toLowerCase();
+  const condoTxt = condoOk ? (/^(condom|residencial|resid\.)/i.test(im.condo) ? im.condo : `condomínio ${im.condo}`) : '';
+  const onde = condoTxt ? `Fica no ${condoTxt}, no bairro ${im.bairro}.` : `Fica no bairro ${im.bairro}.`;
+  const extra = /cadeira de rodas|cadeirante|acessibilidade/.test(d) ? ` O imóvel foi pensado para quem usa cadeira de rodas.` : '';
   const itens = [];
-  if (im.area) itens.push(`✅ ${im.area} m² ${/priv/.test(im.areaTipo) ? 'privativos' : /terreno/.test(im.areaTipo) ? 'de terreno' : 'no total'}`);
-  const comodos = [plural(im.quartos, 'quarto', 'quartos')];
+  if (im.area) itens.push(`✅ ${im.area} m² ${/priv/.test(im.areaTipo) ? 'privativos' : /terreno/.test(im.areaTipo) ? 'de terreno' : /constru/.test(im.areaTipo) ? 'construídos' : 'no total'}`);
+  const comodos = [];
+  if (!semQuartos) comodos.push(plural(im.quartos, 'quarto', 'quartos'));
   if (im.suites) comodos.push(plural(im.suites, 'suíte', 'suítes'));
   if (im.banheiros) comodos.push(plural(im.banheiros, 'banheiro', 'banheiros'));
   if (im.vagas) comodos.push(plural(im.vagas, 'vaga', 'vagas'));
-  itens.push('✅ ' + comodos.join(', ').replace(/, ([^,]+)$/, ' e $1'));
-  if (lazer.length) itens.push('✅ ' + (lazer.join(', ').replace(/, ([^,]+)$/, ' e $1')).replace(/^./, c => c.toUpperCase()));
+  if (comodos.length) itens.push('✅ ' + lista(comodos));
+  if (lazer.length) itens.push('✅ ' + lista(lazer).replace(/^./, c => c.toUpperCase()));
   if (im.condominio > 0) itens.push(`✅ Condomínio de ${real(im.condominio)}`);
-  const tagTipo = '#' + (/apartamento/.test(tipoMin) ? 'apartamento' : /casa/.test(tipoMin) ? 'casa' : tipoMin.replace(/\W/g, '')) + 'sorocaba';
-  const tagBairro = '#' + im.bairro.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-  const tags = ['#imoveissorocaba', tagTipo, '#sorocaba', tagBairro, '#corretordeimoveis'].filter((t, i, a) => t.length > 2 && a.indexOf(t) === i).slice(0, 5);
+  const base = /apartamento/.test(tipoMin) ? 'apartamento' : /casa/.test(tipoMin) ? 'casa' : tipoMin.split(' ')[0];
+  const tags = ['#imoveissorocaba', hashtag(base + 'sorocaba'), '#sorocaba', hashtag(im.bairro), '#corretordeimoveis']
+    .filter((t, i, a) => t.length > 2 && a.indexOf(t) === i).slice(0, 5);
   return [
     g, '', onde + extra, '', ...itens, '',
     `💰 ${real(im.preco)}`, `📌 Código ${im.codigo}`, '',
-    'Quer visitar ou simular o financiamento? Me chama no direct que eu te ajudo.', '',
+    'Quer visitar ou simular o financiamento? Mande uma mensagem no direct, e eu ajudo você.', '',
     `${cfg.corretor} | Corretor | CRECI ${cfg.creci}`, '', tags.join(' ')
   ].join('\n');
 }

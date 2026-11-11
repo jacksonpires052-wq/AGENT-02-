@@ -45,7 +45,7 @@
     "O juro caiu",
     "por 3 semanas"
    ],
-   "texto": "<b>Nos EUA o financiamento de 30 anos foi pra 7,18%.</b> Poucas semanas antes estava perto de 7,5%.",
+   "texto": "<b>Nos EUA o financiamento de 30 anos foi para 7,18%.</b> Poucas semanas antes estava perto de 7,5%.",
    "fonte": "Fonte: Freddie Mac, 5 de novembro de 2026",
    "card": {
     "numero": "7,18%",
@@ -87,7 +87,7 @@
    "cor": "papel",
    "titulo": [
     "O que isso",
-    "ensina pra você"
+    "ensina para você"
    ],
    "texto": "Quem espera o juro cair costuma comprar <b>junto com todo mundo.</b> Aí a procura sobe e o preço sobe junto.",
    "card": {
@@ -106,7 +106,7 @@
   {
    "tipo": "final",
    "objeto": "🏡",
-   "caixa": "<b>Eu trago notícias todos os dias</b> sobre o mercado imobiliário e explico o que muda pra quem quer comprar aqui.",
+   "caixa": "<b>Eu trago notícias todos os dias</b> sobre o mercado imobiliário e explico o que muda para quem quer comprar aqui.",
    "cta": [
     "Segue e comenta:",
     "você esperaria",
