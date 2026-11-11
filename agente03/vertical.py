@@ -56,7 +56,7 @@ def story(out, topo):
     bg = fundo()
     cola(bg, Image.open(os.path.join(out, "slide01.jpg")), 0.86, 390)
     texto_centro(bg, topo, 150, 66, cor=AZUL, faixa=(255, 255, 255))
-    texto_centro(bg, "Toca aqui e vê o post completo", 1640, 40)
+    texto_centro(bg, "Assista ao Reels completo no perfil", 1640, 40)
     texto_centro(bg, "@CORRETOR.JACKSONPIRES  |  CRECI 323400", 1790, 26)
     bg.save(os.path.join(out, "story.jpg"), quality=93)
 

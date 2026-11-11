@@ -67,6 +67,21 @@ body {{ background:#222; }}
 .capa-txt span {{ background:{AZUL}; color:#fff; font:700 98px/1.0 'Inter Display'; letter-spacing:-5.5px; padding:6px 22px 14px; margin-top:-2px; white-space:nowrap; }}
 .brilho {{ position:absolute; z-index:7; font-size:70px; }}
 
+/* ---- capa de noticia (plantao de TV) ---- */
+.cn {{ background:#0b1631; font-family:'Inter'; }}
+.cn-foto {{ position:absolute; right:-60px; top:0; width:760px; height:1350px; background-size:cover; background-position:center 18%; }}
+.cn-veu {{ position:absolute; inset:0; background:linear-gradient(90deg,#0b1631 30%,rgba(11,22,49,.85) 52%,rgba(11,22,49,0) 78%),linear-gradient(0deg,#0b1631 22%,rgba(11,22,49,0) 58%); }}
+.cn-selo {{ position:absolute; left:70px; top:80px; display:flex; z-index:3; }}
+.cn-selo b {{ background:#e11d2e; color:#fff; font:800 30px 'Inter Display'; letter-spacing:1px; padding:12px 22px; }}
+.cn-selo span {{ background:#fff; color:#0b1631; font:700 30px 'Inter'; letter-spacing:.5px; padding:12px 22px; }}
+.cn-data {{ position:absolute; left:70px; top:150px; color:#9fb0d6; font:600 24px 'Inter'; letter-spacing:2px; z-index:3; }}
+.cn-bloco {{ position:absolute; left:70px; right:70px; bottom:150px; z-index:3; }}
+.cn-num {{ color:#ffd23f; font-family:'Inter Display'; font-weight:900; line-height:1; letter-spacing:-.05em; margin-left:-6px; margin-bottom:18px; white-space:nowrap; }}
+.cn-tit {{ color:#fff; font-family:'Inter Display'; font-weight:800; line-height:1.03; letter-spacing:-.045em; }}
+.cn-sub {{ margin-top:30px; max-width:860px; color:#c9d3ea; font:500 32px/1.3 'Inter'; letter-spacing:-.8px; }}
+.cn-rodape {{ position:absolute; left:0; right:0; bottom:0; height:96px; background:#e11d2e; display:flex; align-items:center; padding:0 70px; color:#fff; font:700 26px 'Inter'; letter-spacing:.4px; z-index:3; white-space:nowrap; }}
+.cn-rodape span {{ margin-left:auto; padding-left:24px; font-weight:500; opacity:.9; overflow:hidden; text-overflow:ellipsis; }}
+
 /* ---- final ---- */
 .final .box {{ position:absolute; left:130px; right:130px; top:560px; z-index:6; background:{AZUL}; padding:16px 18px; font:400 33px/1.25 'Inter'; letter-spacing:-1.2px; text-align:center; color:#fff; border:2px solid rgba(255,255,255,.25); }}
 .final .box b {{ font-weight:700; }}
@@ -114,6 +129,25 @@ def slide_capa(s, m):
     return f"<div class='slide sombra'><div class='grade'>{tiles}</div>{marcas(m)}<div class='capa-txt'>{linhas}</div>{brilhos}</div>"
 
 
+def slide_capa_noticia(s, m):
+    """Capa estilo PLANTAO DE TV (escolhida pelo Jackson em 11/11/2026)."""
+    foto = datauri(s.get("foto", "agente03/jackson.jpg"))
+    linhas = s["linhas"]
+    maior = max(len(l) for l in linhas)
+    tam = min(78, int(1880 / max(maior, 1)))
+    tit = "<br>".join((f"<span style='color:#ffd23f'>{l}</span>" if i == len(linhas) - 1 else l) for i, l in enumerate(linhas))
+    num = s.get("numero", "")
+    tnum = min(230, int(1500 / max(len(num), 1)))
+    sub = f"<div class='cn-sub'>{s['sub']}</div>" if s.get("sub") else ""
+    return f"""<div class='slide cn'>
+<div class='cn-foto' style="background-image:url('{foto}')"></div><div class='cn-veu'></div>
+<div class='cn-selo'><b>&#9679; NOTÍCIA</b><span>{s.get('categoria', 'MERCADO IMOBILIÁRIO').upper()}</span></div>
+<div class='cn-data'>{s.get('data', '').upper()}</div>
+<div class='cn-bloco'><div class='cn-num' style='font-size:{tnum}px'>{num}</div>
+<div class='cn-tit' style='font-size:{tam}px'>{tit}</div>{sub}</div>
+<div class='cn-rodape'>JACKSON PIRES · CRECI 323400<span style='font-size:{26 if len(s.get("fonte", "")) < 26 else 22}px'>{s.get('fonte', '')}</span></div></div>"""
+
+
 def slide_miolo(s, m):
     tit = "<br>".join(f"<span>{l}</span>" for l in s["titulo"])
     fonte = f"<div class='fonte'>{s['fonte']}</div>" if s.get("fonte") else ""
@@ -140,7 +174,7 @@ def main(cfg_path, out):
     m = cfg["marca"]
     partes = []
     for s in cfg["slides"]:
-        partes.append({"capa": slide_capa, "miolo": slide_miolo, "final": slide_final}[s["tipo"]](s, m))
+        partes.append({"capa": slide_capa, "capa_noticia": slide_capa_noticia, "miolo": slide_miolo, "final": slide_final}[s["tipo"]](s, m))
     doc = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>{''.join(partes)}</body></html>"
     os.makedirs(out, exist_ok=True)
     open(os.path.join(out, "carrossel.html"), "w", encoding="utf-8").write(doc)

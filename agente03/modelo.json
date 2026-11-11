@@ -10,33 +10,18 @@
  },
  "slides": [
   {
-   "tipo": "capa",
-   "tiles": [
-    {
-     "foto": "agente03/jackson.jpg"
-    },
-    {
-     "objeto": "🏠",
-     "fundo": "radial-gradient(circle at 60% 40%, #9fb6c9, #3b5368)"
-    },
-    {
-     "objeto": "💵",
-     "fundo": "radial-gradient(circle at 45% 45%, #cfe3c4, #5f8a55)"
-    },
-    {
-     "objeto": "🤔",
-     "fundo": "radial-gradient(circle at 55% 40%, #f4c7d3, #b5687e)"
-    }
-   ],
+   "tipo": "capa_noticia",
+   "categoria": "Mercado imobiliário",
+   "data": "11 de novembro de 2026",
+   "numero": "7,18%",
    "linhas": [
-    "O juro caiu",
-    "e ninguém quis",
-    "comprar casa"
+    "O juro caiu nos EUA",
+    "e mesmo assim",
+    "ninguém quis comprar"
    ],
-   "brilhos": [
-    "left:140px; top:610px;",
-    "left:900px; top:760px; font-size:52px;"
-   ]
+   "sub": "O financiamento de 30 anos caiu 3 semanas seguidas, mas as vendas estão no menor nível desde 2021.",
+   "fonte": "Fonte: Freddie Mac e Redfin",
+   "foto": "agente03/jackson.jpg"
   },
   {
    "tipo": "miolo",
