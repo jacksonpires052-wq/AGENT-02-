@@ -1,0 +1,124 @@
+name: Agente 02
+
+# 25 Reels por dia, sem post, horario de Brasilia, concentrados nos picos:
+# manha 7h-9h, almoco 11h30-14h e noite 18h30-22h.
+on:
+  schedule:
+    - cron: '0 7,8,9,19,20,21 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '30 7,8,10,12,18,19,20,21 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '45 9,13 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '10 11,16 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '40 11,17 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '5 12 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '55 12 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '20 13 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '50 14 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '15 22 * * *'
+      timezone: 'America/Sao_Paulo'
+  workflow_dispatch:
+    inputs:
+      faixa:
+        description: 'Faixa (1 a 4). Deixe vazio pra seguir o rodizio'
+        required: false
+        default: ''
+      formato:
+        description: 'reel ou post. Deixe vazio pra seguir o rodizio'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agente02
+  cancel-in-progress: false
+
+jobs:
+  montar:
+    runs-on: ubuntu-latest
+    outputs:
+      codigo: ${{ steps.montar.outputs.codigo }}
+      formato: ${{ steps.montar.outputs.formato }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Arrumar pastas
+        run: |
+          mkdir -p fonts dados posts
+          for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
+          [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
+      - name: Instalar ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: npm install --omit=dev --no-audit --no-fund
+      - name: Montar o post
+        id: montar
+        run: |
+          ARGS="--teste"
+          [ -n "${{ github.event.inputs.faixa }}" ] && ARGS="$ARGS --faixa ${{ github.event.inputs.faixa }}"
+          [ -n "${{ github.event.inputs.formato }}" ] && ARGS="$ARGS --formato ${{ github.event.inputs.formato }}"
+          [ -z "${{ github.event.inputs.formato }}" ] && ARGS="$ARGS --formato reel"
+          node agente02.js $ARGS
+      - name: Guardar o video do Reels
+        if: steps.montar.outputs.formato == 'reel'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel
+          path: saida/
+          retention-days: 2
+      - name: Guardar as imagens no repositorio
+        if: steps.montar.outputs.codigo != ''
+        run: |
+          git config user.name "Agente 02"
+          git config user.email "agente02@users.noreply.github.com"
+          git add posts dados
+          git commit -m "post montado ${{ steps.montar.outputs.codigo }}" || exit 0
+          git pull --rebase origin ${{ github.ref_name }}
+          git push
+
+  publicar:
+    needs: montar
+    if: needs.montar.outputs.codigo != ''
+    runs-on: ubuntu-latest
+    environment: instagram
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Arrumar pastas
+        run: |
+          mkdir -p fonts dados posts
+          for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
+          [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
+      - run: npm install --omit=dev --no-audit --no-fund
+      - name: Pegar o video do Reels
+        if: needs.montar.outputs.formato == 'reel'
+        uses: actions/download-artifact@v4
+        with:
+          name: reel
+          path: saida/
+      - name: Postar no Instagram
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: node agente02.js --publicar ${{ needs.montar.outputs.codigo }}
+      - name: Guardar na lista de postados
+        run: |
+          git config user.name "Agente 02"
+          git config user.email "agente02@users.noreply.github.com"
+          git add dados/postados.json
+          git commit -m "postado ${{ needs.montar.outputs.codigo }}" || exit 0
+          git pull --rebase origin ${{ github.ref_name }}
+          git push

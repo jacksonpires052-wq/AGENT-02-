@@ -147,4 +147,26 @@ async function capaSeta(d) {
   return c.encode('jpeg', 93);
 }
 
-module.exports = { capa, capaCartao, capaSeta, foto };
+
+// QUADRO DE REELS 1080x1920: fundo desfocado da propria foto + foto inteira no meio (+ seta opcional)
+async function quadroVertical(buf, d = {}) {
+  const VW = 1080, VH = 1920;
+  const c = createCanvas(VW, VH); const x = c.getContext('2d');
+  const img = await loadImage(buf);
+  x.save(); x.filter = 'blur(40px)'; cover(x, img, -60, -60, VW + 120, VH + 120); x.restore();
+  x.fillStyle = 'rgba(0,0,0,0.25)'; x.fillRect(0, 0, VW, VH);
+  const s = Math.min(VW / img.width, (VH * 0.62) / img.height);
+  const w = img.width * s, h = img.height * s;
+  x.save(); x.shadowColor = 'rgba(0,0,0,0.45)'; x.shadowBlur = 40;
+  x.drawImage(img, (VW - w) / 2, (VH - h) / 2, w, h); x.restore();
+  if (d.seta) {
+    const bw = 170, bh = 150, bx = (VW - bw) / 2, by = Math.round(VH * 0.80 - bh / 2);
+    x.save(); x.shadowColor = 'rgba(0,0,0,0.25)'; x.shadowBlur = 24; x.fillStyle = '#fff'; x.fillRect(bx, by, bw, bh); x.restore();
+    const ax = VW / 2, top = by + 30, bot = by + 122;
+    x.strokeStyle = '#111'; x.lineWidth = 7; x.lineCap = 'round'; x.lineJoin = 'round';
+    x.beginPath(); x.moveTo(ax, top); x.lineTo(ax, bot); x.moveTo(ax - 32, bot - 32); x.lineTo(ax, bot); x.lineTo(ax + 32, bot - 32); x.stroke();
+  }
+  return c.encode('jpeg', 90);
+}
+
+module.exports = { capa, capaCartao, capaSeta, foto, quadroVertical };

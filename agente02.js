@@ -6,7 +6,8 @@
 //   node agente02.js --checar   -> confere se os acessos do Instagram e do GitHub funcionam
 const fs = require('fs');
 const path = require('path');
-const { capa, capaSeta, foto } = require('./capa');
+const { capa, capaSeta, foto, quadroVertical } = require('./capa');
+const { montarReel } = require('./reel');
 const { fachadaPrimeiro } = require('./fachada');
 
 const DIR = __dirname;
@@ -15,6 +16,7 @@ const ESTADO = path.join(DIR, 'dados', 'estado.json');
 const POSTADOS = path.join(DIR, 'dados', 'postados.json');
 const LOG = path.join(DIR, 'dados', 'agente02.log');
 const POSTS = path.join(DIR, 'posts');
+const VIDEOS = path.join(DIR, 'saida');
 const AE = 'https://aepatrimonio.com.br';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0 Safari/537.36';
 
@@ -22,6 +24,7 @@ const args = process.argv.slice(2);
 const TESTE_MANUAL = args.includes('--teste');
 let TESTE = TESTE_MANUAL;
 const CHECAR = args.includes('--checar');
+const formatoArg = args.includes('--formato') ? args[args.indexOf('--formato') + 1] : null;
 const faixaArg = args.includes('--faixa') ? parseInt(args[args.indexOf('--faixa') + 1], 10) : null;
 
 fs.mkdirSync(path.join(DIR, 'dados'), { recursive: true });
@@ -264,12 +267,27 @@ async function publicar(urls, texto) {
   try { link = (await ig('GET', `/${pub.id}`, { fields: 'permalink' })).permalink; } catch {}
   return { id: pub.id, link, usuario: eu.username };
 }
-async function aguardar(container) {
-  for (let t = 0; t < 30; t++) {
+async function publicarReel(video, texto) {
+  const eu = await contaInstagram();
+  const c = await ig('POST', `/${eu.id}/media`, { media_type: 'REELS', upload_type: 'resumable', caption: texto, share_to_feed: 'true' });
+  const r = await fetch(`https://rupload.facebook.com/ig-api-upload/${cfg.instagram.versao || 'v26.0'}/${c.id}`, {
+    method: 'POST', headers: { Authorization: `OAuth ${token()}`, offset: '0', file_size: String(video.length) }, body: video
+  });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || j.success === false) throw new Error('Falha ao enviar o vídeo: ' + JSON.stringify(j).slice(0, 300));
+  log('Vídeo enviado, esperando o Instagram processar...');
+  await aguardar(c.id, 60);
+  const pub = await ig('POST', `/${eu.id}/media_publish`, { creation_id: c.id });
+  let link = '';
+  try { link = (await ig('GET', `/${pub.id}`, { fields: 'permalink' })).permalink; } catch {}
+  return { id: pub.id, link, usuario: eu.username };
+}
+async function aguardar(container, vezes = 30) {
+  for (let t = 0; t < vezes; t++) {
     const s = await ig('GET', `/${container}`, { fields: 'status_code' });
     if (s.status_code === 'FINISHED') return;
     if (s.status_code === 'ERROR' || s.status_code === 'EXPIRED') throw new Error('Instagram recusou a mídia (' + s.status_code + ')');
-    await esperar(3000);
+    await esperar(vezes > 30 ? 6000 : 3000);
   }
   throw new Error('Instagram demorou demais pra processar');
 }
@@ -298,6 +316,17 @@ async function publicarPronto() {
   const nomes = fs.readdirSync(pasta).filter(f => /\.jpg$/i.test(f)).sort();
   const texto = fs.readFileSync(path.join(pasta, `${codigo}-legenda.txt`), 'utf8');
   const dados = lerJson(path.join(pasta, `${codigo}-dados.json`), {});
+  if (dados.formato === 'reel') {
+    const arq = path.join(VIDEOS, `${codigo}.mp4`);
+    if (!fs.existsSync(arq)) throw new Error('Vídeo do Reels não encontrado: ' + arq);
+    log(`Publicando o Reels do imóvel ${codigo}`);
+    const res = await publicarReel(fs.readFileSync(arq), texto);
+    postados.push({ codigo, formato: 'reel', data: new Date().toISOString(), preco: dados.preco, titulo: dados.titulo, post: res.id, link: res.link });
+    salvarJson(POSTADOS, postados);
+    log(`REELS POSTADO em @${res.usuario || cfg.instagram.usuario}: ${res.link || res.id}`);
+    resumo(`## ✅ Reels postado\n${res.link || res.id}`);
+    return;
+  }
   log(`Publicando o post aprovado do imóvel ${codigo} (${nomes.length} imagens)`);
   await renovarToken();
   const urls = [];
@@ -323,7 +352,9 @@ async function main() {
   const n = faixaArg || (NUVEM ? (montados.length % cfg.faixas.length) + 1
     : ((hora - cfg.horaInicio) % cfg.faixas.length + cfg.faixas.length) % cfg.faixas.length + 1);
   const faixa = cfg.faixas[n - 1];
-  log(`Rodando faixa ${n}: ${faixa.quartos} quarto(s), ${real(faixa.min)} a ${real(faixa.max)}${TESTE ? ' (TESTE, sem postar)' : ''}`);
+  const ciclo = cfg.ciclo || { reels: 4, posts: 3 };
+  const formato = formatoArg || ((montados.length % (ciclo.reels + ciclo.posts)) < ciclo.reels ? 'reel' : 'post');
+  log(`[${formato.toUpperCase()}] Rodando faixa ${n}: ${faixa.quartos} quarto(s), ${real(faixa.min)} a ${real(faixa.max)}${TESTE ? ' (TESTE, sem postar)' : ''}`);
 
   const ja = new Set([...postados.map(p => p.codigo), ...(NUVEM ? montados : [])]);
   let escolhido = null;
@@ -355,6 +386,28 @@ async function main() {
   const sel = escolherFotos(ordem);
   const bufs = [];
   for (const u of sel) bufs.push(await baixar(u));
+  if (formato === 'reel') {
+    fs.mkdirSync(VIDEOS, { recursive: true });
+    const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'reel-'));
+    const quadros = [];
+    for (const [i, b] of bufs.entries()) { const q = path.join(tmp, `q${i}.jpg`); fs.writeFileSync(q, await quadroVertical(b, { seta: i === 0 })); quadros.push(q); }
+    const arq = path.join(VIDEOS, `${im.codigo}.mp4`);
+    montarReel(quadros, arq, path.join(DIR, 'trilha.mp3'), cfg.duracaoReel || 10);
+    fs.copyFileSync(quadros[0], path.join(pasta, `${im.codigo}-reel-capa.jpg`));
+    const texto = legenda(im);
+    fs.writeFileSync(path.join(pasta, `${im.codigo}-legenda.txt`), texto);
+    salvarJson(path.join(pasta, `${im.codigo}-dados.json`), { ...im, descricao: undefined, formato: 'reel', fotosUsadas: sel });
+    log('Reels montado em', arq);
+    saida('codigo', im.codigo); saida('formato', 'reel');
+    resumo([`## 🎬 Reels: ${im.titulo}`, `**${real(im.preco)}** · código ${im.codigo} · [ver no site da AE](${im.url})`, '',
+      '### Legenda', '```', texto, '```'].join('\n'));
+    if (TESTE) { log(`Reels do imóvel ${im.codigo} MONTADO. Nada foi postado.`); return; }
+    const res = await publicarReel(fs.readFileSync(arq), texto);
+    postados.push({ codigo: im.codigo, formato: 'reel', data: new Date().toISOString(), faixa: n, preco: im.preco, titulo: im.titulo, post: res.id, link: res.link });
+    salvarJson(POSTADOS, postados);
+    log(`REELS POSTADO em @${res.usuario}: ${res.link || res.id}`);
+    return;
+  }
   const imagens = [(cfg.estiloCapa || 'seta') === 'seta' ? await capaSeta({ foto: bufs[0] }) : await capa({
     foto: bufs[0], categoria: `${im.tipo} · ${plural(im.quartos, 'quarto', 'quartos')}`,
     nome: im.condo || im.bairro, bairro: im.condo ? im.bairro : `${im.cidade} · SP`, cidade: im.condo ? `${im.cidade} · SP` : '',
@@ -371,10 +424,10 @@ async function main() {
   imagens.forEach((b, i) => fs.writeFileSync(path.join(pasta, nomes[i]), b));
   const texto = legenda(im);
   fs.writeFileSync(path.join(pasta, `${im.codigo}-legenda.txt`), texto);
-  salvarJson(path.join(pasta, `${im.codigo}-dados.json`), { ...im, descricao: undefined, fotosUsadas: sel });
+  salvarJson(path.join(pasta, `${im.codigo}-dados.json`), { ...im, descricao: undefined, formato: 'post', fotosUsadas: sel });
   log('Imagens e legenda salvas em', pasta);
 
-  saida('codigo', im.codigo);
+  saida('codigo', im.codigo); saida('formato', 'post');
   resumo([`## 🏠 ${im.titulo}`, `**${real(im.preco)}** · código ${im.codigo} · [ver no site da AE](${im.url})`, '',
     nomes.map(nm => `<img src="${linkPublico(im.codigo, nm)}" width="220">`).join(' '), '',
     '### Legenda', '```', texto, '```', '', 'Pra postar, aprove o job **publicar**. Pra descartar, rejeite.'].join('\n'));
