@@ -1,0 +1,63 @@
+name: Relogio do Agente 02
+
+# O agendador do GitHub nao disparou nenhum horario do Agente 02 em 11/11.
+# Este relogio nao depende dele: espera ate o proximo horario, dispara o
+# Agente 02 e se dispara de novo pra esperar o seguinte (corrente sem fim).
+# O cron de hora em hora so serve de reserva: se a corrente cair, ele religa.
+# Tambem dispara o Agente 06 (metricas) as 00h20.
+# Pra mudar os horarios, mude a lista HORARIOS abaixo (horario de Brasilia).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '33 * * * *'
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: relogio
+  cancel-in-progress: true
+
+jobs:
+  esperar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Esperar o proximo horario e disparar
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os, time, json, urllib.request, datetime as dt
+          HORARIOS = "06:07 06:47 07:17 07:47 08:27 09:13 09:53 10:43 11:23 11:53 12:23 12:53 13:23 13:53 14:43 15:53 17:17 17:53 18:13 18:38 19:03 19:28 19:53 20:18 21:07".split()
+          EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
+          TODOS = sorted([(h, "agente02.yml") for h in HORARIOS] + list(EXTRAS.items()))
+          BRT = dt.timezone(dt.timedelta(hours=-3))
+          def disparar(wf):
+              req = urllib.request.Request(f"https://api.github.com/repos/{os.environ['REPO']}/actions/workflows/{wf}/dispatches",
+                  data=json.dumps({"ref": "main"}).encode(), method="POST",
+                  headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
+              urllib.request.urlopen(req).read()
+              print("Disparado:", wf, dt.datetime.now(BRT).strftime("%d/%m %H:%M:%S"), flush=True)
+          agora = dt.datetime.now(BRT)
+          prox = None
+          for d in range(0, 2):
+              for h, wf in TODOS:
+                  hh, mm = map(int, h.split(":"))
+                  t = (agora + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
+                  if t > agora + dt.timedelta(seconds=20):
+                      prox, alvo = t, wf; break
+              if prox: break
+          espera = (prox - agora).total_seconds()
+          print("Proximo horario:", prox.strftime("%d/%m %H:%M"), alvo, "| espera de", round(espera / 60), "min", flush=True)
+          if espera > 5 * 3600:
+              time.sleep(5 * 3600)
+              disparar("relogio.yml")
+          else:
+              time.sleep(espera)
+              disparar(alvo)
+              time.sleep(5)
+              disparar("relogio.yml")
+          PY
