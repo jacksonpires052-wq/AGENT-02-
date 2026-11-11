@@ -5,6 +5,8 @@ name: Relogio do Agente 02
 # Agente 02 e se dispara de novo pra esperar o seguinte (corrente sem fim).
 # O cron de hora em hora so serve de reserva: se a corrente cair, ele religa.
 # Tambem dispara o Agente 06 (metricas) as 00h20.
+# FISCAL: 5 min antes de cada post confere se esta pronto; se travou, cancela e dispara de novo;
+# se a fila de noticias estiver vazia, poe um imovel no lugar. Todo problema vira uma issue (aviso por email/app do GitHub).
 # Imoveis: dispara 20 min antes e o Agente 02 espera a hora certa pra publicar (tudo pronto antes).
 # Um post a cada 20 min nos picos: 10 imoveis (HORARIOS) e 15 noticias (NOTICIAS).
 # Pra mudar os horarios, mude as listas abaixo (horario de Brasilia).
@@ -16,6 +18,7 @@ on:
 permissions:
   actions: write
   contents: read
+  issues: write
 
 concurrency:
   group: relogio
@@ -32,44 +35,112 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           python3 - <<'PY'
-          import os, time, json, urllib.request, datetime as dt
+          import os, time, json, urllib.request, urllib.error, datetime as dt
+          REPO = os.environ["REPO"]; TOKEN = os.environ["GH_TOKEN"]
           HORARIOS = "06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07".split()  # imoveis (Agente 02)
           NOTICIAS = "06:27 06:47 07:27 07:47 08:27 11:27 11:47 12:27 12:47 13:27 18:47 19:07 19:47 20:07 20:47".split()  # noticias (Agente 03)
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
-          ANTES = 20  # imoveis: o relogio dispara 20 min antes; o Agente 02 monta tudo e espera a hora marcada pra publicar
+          ANTES = 20   # imoveis: dispara 20 min antes; o Agente 02 monta e espera a hora pra publicar
+          FISCAL = 5   # 5 min antes de cada post o fiscal confere se esta tudo pronto e corrige
+          BRT = dt.timezone(dt.timedelta(hours=-3))
+          def agora(): return dt.datetime.now(BRT)
+          def log(*a): print(agora().strftime("%H:%M:%S"), *a, flush=True)
           def menos(h, m):
               hh, mm = map(int, h.split(":")); t = (hh * 60 + mm - m) % 1440
               return f"{t // 60:02d}:{t % 60:02d}"
-          TODOS = sorted([(menos(h, ANTES), "agente02.yml", {"hora": h}) for h in HORARIOS] + [(h, "reels-teste.yml", {}) for h in NOTICIAS] + [(h, wf, {}) for h, wf in EXTRAS.items()])
-          BRT = dt.timezone(dt.timedelta(hours=-3))
+
+          def api(metodo, rota, corpo=None):
+              req = urllib.request.Request(f"https://api.github.com/repos/{REPO}{rota}", method=metodo,
+                  data=json.dumps(corpo).encode() if corpo is not None else None,
+                  headers={"Authorization": "Bearer " + TOKEN, "Accept": "application/vnd.github+json"})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  t = r.read(); return json.loads(t) if t else {}
+
           def disparar(wf, entradas=None):
               corpo = {"ref": "main"}
               if entradas: corpo["inputs"] = entradas
-              req = urllib.request.Request(f"https://api.github.com/repos/{os.environ['REPO']}/actions/workflows/{wf}/dispatches",
-                  data=json.dumps(corpo).encode(), method="POST",
-                  headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
-              urllib.request.urlopen(req).read()
-              print("Disparado:", wf, entradas or "", dt.datetime.now(BRT).strftime("%d/%m %H:%M:%S"), flush=True)
-          agora = dt.datetime.now(BRT)
-          prox = None
+              api("POST", f"/actions/workflows/{wf}/dispatches", corpo); log("Disparado:", wf, entradas or "")
+
+          def alerta(titulo, texto):
+              log("ALERTA:", titulo, "|", texto)
+              try: api("POST", "/issues", {"title": f"Fiscal {agora().strftime('%d/%m %H:%M')}: {titulo}", "body": texto})
+              except Exception as e: log("nao abriu issue:", e)
+
+          def fila_pendente():
+              arvore = api("GET", "/git/trees/main?recursive=1")["tree"]
+              caminhos = {x["path"] for x in arvore}
+              pastas = sorted({p.split("/")[1] for p in caminhos if p.startswith("reels/") and p.endswith("/fila")})
+              pend = []
+              for d in pastas:
+                  if f"reels/{d}/reels.mp4" not in caminhos: continue
+                  if f"reels/{d}/publicado.json" in caminhos:
+                      try:
+                          raw = urllib.request.urlopen(f"https://raw.githubusercontent.com/{REPO}/main/reels/{d}/publicado.json", timeout=20).read()
+                          if "reels" in json.loads(raw): continue
+                      except Exception: pass
+                  pend.append(d)
+              return pend
+
+          def checar(hora, tipo):
+              log(f"FISCAL {hora} ({'imovel' if tipo == 'I' else 'noticia'})")
+              if tipo == "N":
+                  pend = fila_pendente()
+                  log("Noticias na fila:", len(pend), pend[:3])
+                  if not pend:
+                      disparar("agente02.yml", {"hora": hora})
+                      alerta(f"fila de noticias vazia para as {hora}",
+                             f"Nao tinha noticia pronta pra sair as {hora}. Pra nao deixar o horario vazio, o fiscal colocou um imovel (Agente 02) no lugar. Causa provavel: a rodada do Agente de Noticias nao subiu as 3 noticias.")
+                  return
+              limite = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=30)).strftime("%Y-%m-%dT%H:%M:%SZ")
+              runs = [r for r in api("GET", "/actions/workflows/agente02.yml/runs?per_page=5")["workflow_runs"] if r["created_at"] >= limite]
+              if not runs:
+                  disparar("agente02.yml"); alerta(f"imovel das {hora} nao tinha comecado", "Nenhuma execucao do Agente 02 nos ultimos 30 min. O fiscal disparou agora (publica assim que montar)."); return
+              r = runs[0]
+              if r["status"] in ("queued", "pending", "waiting"):
+                  alerta(f"GitHub lento no imovel das {hora}", f"A execucao {r['html_url']} ainda esta na fila do GitHub, 5 min antes. Ela sai assim que o GitHub liberar."); return
+              if r["status"] == "completed" and r["conclusion"] != "success":
+                  disparar("agente02.yml"); alerta(f"imovel das {hora} falhou", f"{r['html_url']} terminou como {r['conclusion']}. O fiscal disparou de novo."); return
+              jobs = api("GET", f"/actions/runs/{r['id']}/jobs")["jobs"]
+              montar = next((j for j in jobs if j["name"] == "montar"), None)
+              if montar and montar["status"] == "completed" and montar["conclusion"] == "success":
+                  log("Imovel montado e esperando a hora. OK"); return
+              if montar and montar["status"] == "in_progress":
+                  passo = next((s for s in montar["steps"] if s["status"] == "in_progress"), None)
+                  if passo and passo.get("started_at"):
+                      ini = dt.datetime.fromisoformat(passo["started_at"].replace("Z", "+00:00"))
+                      minutos = (dt.datetime.now(dt.timezone.utc) - ini).total_seconds() / 60
+                      log(f"Montando: passo '{passo['name']}' ha {minutos:.0f} min")
+                      if minutos > 6:
+                          api("POST", f"/actions/runs/{r['id']}/cancel"); time.sleep(10); disparar("agente02.yml")
+                          alerta(f"imovel das {hora} travou", f"O passo '{passo['name']}' estava parado ha {minutos:.0f} min em {r['html_url']}. O fiscal cancelou e disparou de novo.")
+
+          # ---------------------------------------------------------------- agenda
+          TODOS = [(menos(h, ANTES), "disparo", ("agente02.yml", {"hora": h})) for h in HORARIOS]
+          TODOS += [(h, "disparo", ("reels-teste.yml", {})) for h in NOTICIAS]
+          TODOS += [(h, "disparo", (wf, {})) for h, wf in EXTRAS.items()]
+          TODOS += [(menos(h, FISCAL), "checar", (h, "I")) for h in HORARIOS] + [(menos(h, FISCAL), "checar", (h, "N")) for h in NOTICIAS]
+          TODOS.sort()
+
+          a = agora(); prox = None
           for d in range(0, 2):
-              for h, wf, ent in TODOS:
+              for h, *_ in TODOS:
                   hh, mm = map(int, h.split(":"))
-                  t = (agora + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
-                  if t > agora + dt.timedelta(seconds=20):
-                      prox = t; break
+                  t = (a + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
+                  if t > a + dt.timedelta(seconds=20): prox = t; break
               if prox: break
-          espera = (prox - agora).total_seconds()
-          print("Proximo horario:", prox.strftime("%d/%m %H:%M"), [x[1] for x in TODOS if x[0] == prox.strftime("%H:%M")], "| espera de", round(espera / 60), "min", flush=True)
+          espera = (prox - a).total_seconds(); hora = prox.strftime("%H:%M")
+          log("Proximo:", prox.strftime("%d/%m %H:%M"), [x[1:] for x in TODOS if x[0] == hora], "| espera", round(espera / 60), "min")
           if espera > 5 * 3600:
               time.sleep(5 * 3600)
-              disparar("relogio.yml")
           else:
               time.sleep(espera)
-              hora = prox.strftime("%H:%M")
-              for h, wf, ent in TODOS:
-                  if h == hora:
-                      disparar(wf, ent); time.sleep(3)
-              time.sleep(2)
-              disparar("relogio.yml")
+              for h, acao, arg in TODOS:
+                  if h != hora: continue
+                  try:
+                      if acao == "disparo": disparar(*arg)
+                      else: checar(*arg)
+                  except Exception as e:
+                      log("ERRO em", acao, arg, e)
+                  time.sleep(3)
+          disparar("relogio.yml")
           PY
