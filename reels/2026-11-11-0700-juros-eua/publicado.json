@@ -1,6 +1,23 @@
 {
-  "id": "17999355540045857",
-  "link": "https://www.instagram.com/reel/DfmPR9Ij4NO/",
-  "data": "2026-11-11T10:13:13.109Z",
-  "estrategia": "SS_PERFORMANCE"
+  "teste": {
+    "id": "17999355540045857",
+    "link": "https://www.instagram.com/reel/DfmPR9Ij4NO/",
+    "data": "2026-11-11T10:13:13.109Z",
+    "estrategia": "SS_PERFORMANCE"
+  },
+  "carrossel": {
+    "id": "18387209107300816",
+    "link": "https://www.instagram.com/p/DfmROQfGE9_/",
+    "data": "2026-11-11T10:29:42.614Z"
+  },
+  "story": {
+    "id": "17966266392231703",
+    "link": "https://www.instagram.com/stories/corretor.jacksonpires/4027982758253444092",
+    "data": "2026-11-11T10:29:59.303Z"
+  },
+  "reels": {
+    "id": "18388915999231805",
+    "link": "https://www.instagram.com/reel/DfmRSotgot2/",
+    "data": "2026-11-11T10:30:51.610Z"
+  }
 }
