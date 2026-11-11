@@ -1,6 +1,7 @@
 // Agente 03: publica sozinho cada kit novo em reels/<id>/
 // Arquivos da pasta: reels.mp4, capa.jpg, legenda.txt, slide01..05.jpg, story.jpg
-// Publica 4 coisas: Reels teste, Reels normal, carrossel no feed e story.
+// Sempre publica o Reels normal. Os outros saem so se a pasta pedir:
+//   arquivo vazio 'teste' -> Reels teste | story.jpg -> story | slide01..05.jpg -> carrossel
 // Guarda o que ja saiu em reels/<id>/publicado.json (nunca repete, e tenta de novo so o que falhou).
 const fs = require('fs');
 const path = require('path');
@@ -75,7 +76,7 @@ async function main() {
     };
 
     const tarefas = [
-      ['teste', 'Reels teste', true, async () => {
+      ['teste', 'Reels teste', tem('teste'), async () => {
         const p = { media_type: 'REELS', video_url: raw('reels.mp4'), caption: legenda, trial_params: JSON.stringify({ graduation_strategy: ESTRATEGIA }) };
         if (tem('capa.jpg')) p.cover_url = raw('capa.jpg');
         return publicarContainer((await ig('POST', `/${CONTA}/media`, p)).id);
@@ -88,7 +89,7 @@ async function main() {
       }],
       ['story', 'Story', tem('story.jpg'), async () =>
         publicarContainer((await ig('POST', `/${CONTA}/media`, { media_type: 'STORIES', image_url: raw('story.jpg') })).id)],
-      ['reels', 'Reels normal', tem('normal') || tem('slide01.jpg'), async () => {
+      ['reels', 'Reels normal', true, async () => {
         const p = { media_type: 'REELS', video_url: raw('reels.mp4'), caption: legenda, share_to_feed: 'true' };
         if (tem('capa.jpg')) p.cover_url = raw('capa.jpg');
         return publicarContainer((await ig('POST', `/${CONTA}/media`, p)).id);
