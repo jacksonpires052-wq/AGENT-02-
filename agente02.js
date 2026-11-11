@@ -376,6 +376,12 @@ async function main() {
   log(`[${formato.toUpperCase()}] Rodando faixa ${n}: ${faixa.quartos} quarto(s), ${real(faixa.min)} a ${real(faixa.max)}${TESTE ? ' (TESTE, sem postar)' : ''}`);
 
   const ja = new Set([...postados.map(p => p.codigo), ...(NUVEM ? montados : [])]);
+  // Trava contra o mesmo imovel cadastrado com outro codigo (11/11: Piazza di Roma saiu 2x):
+  // mesmo bairro, mesmos quartos, area e preco com ate 5% de diferenca = parecido demais.
+  const jaDados = [...ja].map(c => lerJson(path.join(POSTS, c, `${c}-dados.json`), null)).filter(Boolean);
+  const perto = (a, b) => a && b && Math.abs(a - b) / Math.max(a, b) <= 0.05;
+  const parecido = im => jaDados.find(d => d.bairro && d.bairro.toLowerCase() === (im.bairro || '').toLowerCase()
+    && d.quartos === im.quartos && perto(d.area, im.area) && perto(d.preco, im.preco));
   let escolhido = null;
   for (let pagina = 1; pagina <= (cfg.paginasMax || 15) && !escolhido; pagina++) {
     const { lista, total } = await buscar(faixa, pagina);
@@ -388,6 +394,8 @@ async function main() {
         const motivo = !(im.preco >= faixa.min && im.preco <= faixa.max) ? 'preço fora da faixa'
           : im.quartos !== faixa.quartos ? 'quartos diferentes' : im.fotos.length < 4 ? 'poucas fotos' : !im.bairro ? 'sem bairro' : '';
         if (motivo) { ja.add(item.codigo); continue; }
+        const igual = parecido(im);
+        if (igual) { log(`Pulei ${im.codigo}: parecido demais com o ${igual.codigo} ja postado`); ja.add(item.codigo); continue; }
         escolhido = im; break;
       } catch (e) { log('Pulei', item.codigo, e.message); }
     }
