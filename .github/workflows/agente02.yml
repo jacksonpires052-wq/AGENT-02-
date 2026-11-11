@@ -45,13 +45,15 @@ jobs:
           for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
           [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
       - name: Instalar ffmpeg
-        # Em 11/11 o apt travou 1 hora aqui. Agora: usa o que ja existe, tenta o apt por no maximo 4 min e, se falhar, baixa o ffmpeg pronto.
+        # Em 11/11 o apt travou 1 hora aqui duas vezes. Agora baixa o ffmpeg pronto (rapido) e so usa o apt como reserva, com limite de tempo.
         timeout-minutes: 8
         run: |
           if command -v ffmpeg >/dev/null; then ffmpeg -version | head -1; exit 0; fi
-          if timeout 240 sudo apt-get install -y -qq ffmpeg; then exit 0; fi
-          curl -sSL --max-time 180 https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz | tar -xJ -C /tmp
-          sudo cp /tmp/ffmpeg-*-amd64-static/ffmpeg /tmp/ffmpeg-*-amd64-static/ffprobe /usr/local/bin/
+          if curl -sSL --max-time 120 https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz -o /tmp/ff.tar.xz && tar -xJf /tmp/ff.tar.xz -C /tmp; then
+            sudo cp /tmp/ffmpeg-*-amd64-static/ffmpeg /tmp/ffmpeg-*-amd64-static/ffprobe /usr/local/bin/
+          else
+            timeout 240 sudo apt-get install -y -qq ffmpeg
+          fi
           ffmpeg -version | head -1
       - run: npm install --omit=dev --no-audit --no-fund
       - name: Montar o post
