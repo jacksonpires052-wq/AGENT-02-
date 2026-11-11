@@ -1,10 +1,7 @@
 name: Agente 03 - Reels teste e posts
 
-# Roda sozinho quando o Agente 03 sobe um Reels novo em reels/<id>/
+# Disparado pelo relogio.yml: cada disparo publica 1 noticia da fila (reels/<id>/ com 'fila').
 on:
-  push:
-    branches: [main]
-    paths: ['reels/**']
   workflow_dispatch:
     inputs:
       estrategia:

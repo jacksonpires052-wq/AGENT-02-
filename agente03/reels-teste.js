@@ -1,4 +1,4 @@
-// Agente 03: publica sozinho cada kit novo em reels/<id>/
+// Agente 03: publica UMA noticia da fila (reels/<id>/ com o arquivo 'fila') a cada disparo do relogio
 // Arquivos da pasta: reels.mp4, capa.jpg, legenda.txt, slide01..05.jpg, story.jpg
 // Sempre publica o Reels normal. Os outros saem so se a pasta pedir:
 //   arquivo vazio 'teste' -> Reels teste | story.jpg -> story | slide01..05.jpg -> carrossel
@@ -49,9 +49,13 @@ async function main() {
   if (!TOKEN) throw new Error('Falta o segredo IG_TOKEN');
   if (!fs.existsSync(PASTA)) return console.log('Sem pasta reels/');
   let falhas = 0;
-  for (const d of fs.readdirSync(PASTA).sort()) {
+  // Fila: cada disparo do relogio publica UMA noticia (a mais antiga da fila que ainda nao saiu).
+  const lerPub = d => { try { return JSON.parse(fs.readFileSync(path.join(PASTA, d, 'publicado.json'), 'utf8')); } catch { return {}; } };
+  const naFila = fs.readdirSync(PASTA).sort().filter(d => fs.existsSync(path.join(PASTA, d, 'fila')) && fs.existsSync(path.join(PASTA, d, 'reels.mp4')) && !lerPub(d).reels);
+  if (!naFila.length) return resumo('Fila vazia: nenhuma noticia esperando.');
+  resumo(`Fila: ${naFila.length} noticia(s). Publicando agora: ${naFila[0]}`);
+  for (const d of naFila.slice(0, 1)) {
     const dir = path.join(PASTA, d);
-    if (!fs.existsSync(path.join(dir, 'reels.mp4'))) continue;
     const arqPub = path.join(dir, 'publicado.json');
     let pub = fs.existsSync(arqPub) ? JSON.parse(fs.readFileSync(arqPub, 'utf8')) : {};
     if (pub.id && !pub.teste) pub = { teste: pub }; // formato antigo
