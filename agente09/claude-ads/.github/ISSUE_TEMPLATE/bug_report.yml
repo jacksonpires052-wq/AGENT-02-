@@ -1,0 +1,102 @@
+name: Bug Report
+description: Something isn't working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in as much detail as you can.
+
+  - type: input
+    id: version
+    attributes:
+      label: Claude Ads Version
+      description: Run `python -m claude_ads_core --version`, or paste the plugin version from your host
+      placeholder: "e.g. the output of the version command"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: Install Method
+      options:
+        - Claude Code plugin (marketplace)
+        - install.sh with --source=local
+        - install.sh with --source=git
+        - install.ps1
+        - Release archive
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: host
+    attributes:
+      label: Host
+      description: The CLI or IDE that runs Claude Ads. Hosts other than Claude Code are experimental.
+      options:
+        - Claude Code
+        - OpenAI Codex CLI
+        - Gemini CLI
+        - Cursor
+        - Windsurf
+        - Goose
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Linux
+        - macOS
+        - Windows
+    validations:
+      required: true
+
+  - type: input
+    id: python_version
+    attributes:
+      label: Python Version
+      description: Run `python3 --version` and paste the output
+      placeholder: "e.g. 3.12.4"
+    validations:
+      required: false
+
+  - type: input
+    id: command
+    attributes:
+      label: Command That Failed
+      description: The exact command you ran
+      placeholder: "e.g. /ads google"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Full Error Output
+      description: Copy and paste the complete error from your terminal. Remove credentials, tokens, and client data first.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Ad Platform and Account Context
+      description: Which ad platform? Any relevant account setup details that help reproduce the issue?
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: false
