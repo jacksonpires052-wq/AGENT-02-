@@ -57,7 +57,22 @@ async function main() {
     const raw = n => `https://raw.githubusercontent.com/${REPO}/${RAMO}/reels/${encodeURIComponent(d)}/${n}`;
     const tem = n => fs.existsSync(path.join(dir, n));
     const legenda = tem('legenda.txt') ? fs.readFileSync(path.join(dir, 'legenda.txt'), 'utf8') : '';
-    const salvar = () => fs.writeFileSync(arqPub, JSON.stringify(pub, null, 2));
+    const salvar = () => {
+      fs.writeFileSync(arqPub, JSON.stringify(pub, null, 2));
+      if (process.env.GITHUB_ACTIONS) {
+        const { execSync } = require('child_process');
+        const sh = c => execSync(c, { stdio: 'inherit' });
+        try {
+          sh('git config user.name "Agente 03" && git config user.email "agente03@users.noreply.github.com"');
+          sh(`git add "${arqPub}" && git commit -q -m "registro ${d}"`);
+          for (let i = 1; i <= 8; i++) {
+            try { sh('git pull -q --rebase origin main && git push -q'); return; }
+            catch { execSync(`sleep ${i * 5}`); }
+          }
+          throw new Error('nao consegui gravar o registro no GitHub');
+        } catch (e) { throw new Error('PARANDO pra nao duplicar: ' + e.message); }
+      }
+    };
 
     const tarefas = [
       ['teste', 'Reels teste', true, async () => {
@@ -89,6 +104,7 @@ async function main() {
         resumo(`- ✅ ${d} | ${nome}: ${pub[chave].link || pub[chave].id}`);
         console.log(`POSTADO ${nome}: ${pub[chave].link || pub[chave].id}`);
       } catch (e) {
+        if (String(e.message).startsWith('PARANDO')) { resumo(`- 🛑 ${e.message}`); process.exit(1); }
         falhas++;
         resumo(`- ❌ ${d} | ${nome}: ${e.message}`);
       }
