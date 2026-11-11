@@ -2,27 +2,30 @@ name: Agente 02
 
 # 25 Reels por dia, sem post, horario de Brasilia, concentrados nos picos:
 # manha 7h-9h, almoco 11h30-14h e noite 18h30-22h.
+# Minutos quebrados (7, 37...) de proposito: no minuto 0 e 30 o GitHub atrasa e as vezes pula a execucao.
 on:
   schedule:
-    - cron: '0 7,8,9,19,20,21 * * *'
+    - cron: '7 7,8,9,19,20,21 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '30 7,8,10,12,18,19,20,21 * * *'
+    - cron: '37 7,8,18,19,20,21 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '45 9,13 * * *'
+    - cron: '47 9,13 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 11,16 * * *'
+    - cron: '33 10,12 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '40 11,17 * * *'
+    - cron: '13 11,16 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '5 12 * * *'
+    - cron: '43 11,17 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '55 12 * * *'
+    - cron: '8 12 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '20 13 * * *'
+    - cron: '58 12 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '50 14 * * *'
+    - cron: '23 13 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '15 22 * * *'
+    - cron: '53 14 * * *'
+      timezone: 'America/Sao_Paulo'
+    - cron: '17 22 * * *'
       timezone: 'America/Sao_Paulo'
   workflow_dispatch:
     inputs:
