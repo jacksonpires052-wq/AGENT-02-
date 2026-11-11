@@ -37,7 +37,7 @@ jobs:
           python3 - <<'PY'
           import os, time, json, urllib.request, urllib.error, datetime as dt
           REPO = os.environ["REPO"]; TOKEN = os.environ["GH_TOKEN"]
-          HORARIOS = "06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07".split()  # imoveis (Agente 02)
+          HORARIOS = []  # imoveis da AE SUSPENSOS em 11/11/2026 a pedido do Jackson (antes: 06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07)
           NOTICIAS = "06:27 06:47 07:27 07:47 08:27 11:27 11:47 12:27 12:47 13:27 18:47 19:07 19:47 20:07 20:47".split()  # noticias (Agente 03)
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
           ANTES = 20   # imoveis: dispara 20 min antes; o Agente 02 monta e espera a hora pra publicar
@@ -87,9 +87,8 @@ jobs:
                   pend = fila_pendente()
                   log("Noticias na fila:", len(pend), pend[:3])
                   if not pend:
-                      disparar("agente02.yml", {"hora": hora})
                       alerta(f"fila de noticias vazia para as {hora}",
-                             f"Nao tinha noticia pronta pra sair as {hora}. Pra nao deixar o horario vazio, o fiscal colocou um imovel (Agente 02) no lugar. Causa provavel: a rodada do Agente de Noticias nao subiu as 3 noticias.")
+                             f"Nao tinha noticia pronta pra sair as {hora}. Imoveis da AE estao suspensos, entao o horario ficou vazio. Causa provavel: a rodada do Agente de Noticias nao subiu as noticias.")
                   return
               limite = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=30)).strftime("%Y-%m-%dT%H:%M:%SZ")
               runs = [r for r in api("GET", "/actions/workflows/agente02.yml/runs?per_page=5")["workflow_runs"] if r["created_at"] >= limite]
