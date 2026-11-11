@@ -27,7 +27,7 @@ async function fachadaPrimeiro(urls, baixar, max = 20) {
   if (!notas.length) return urls;
   notas.sort((a, b) => b.nota - a.nota);
   const melhor = notas[0];
-  if (melhor.nota < 0.08) return urls; // nenhuma parece de fora: mantem a ordem do site
+  if (melhor.nota < 0.05) return urls; // nenhuma parece de fora: mantem a ordem do site
   return [melhor.u, ...urls.filter(u => u !== melhor.u)];
 }
 
