@@ -1,0 +1,46 @@
+name: Agente 03 - Reels teste
+
+# Roda sozinho quando o Agente 03 sobe um Reels novo em reels/<id>/
+on:
+  push:
+    branches: [main]
+    paths: ['reels/**/reels.mp4']
+  workflow_dispatch:
+    inputs:
+      estrategia:
+        description: 'SS_PERFORMANCE (vai pros seguidores se for bem) ou MANUAL (voce decide no app)'
+        required: false
+        default: 'SS_PERFORMANCE'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reels-teste
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment: instagram
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Esperar o GitHub liberar o video no link publico
+        run: sleep 20
+      - name: Postar Reels teste
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          ESTRATEGIA: ${{ github.event.inputs.estrategia || 'SS_PERFORMANCE' }}
+        run: node agente03/reels-teste.js
+      - name: Guardar o que foi postado
+        if: always()
+        run: |
+          git config user.name "Agente 03"
+          git config user.email "agente03@users.noreply.github.com"
+          git add reels
+          git commit -m "reels teste postados" || exit 0
+          git pull --rebase origin main
+          git push

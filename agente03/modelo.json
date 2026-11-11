@@ -1,0 +1,118 @@
+{
+ "marca": {
+  "tl": "JACKSON PIRES",
+  "tr": "@CORRETOR.JACKSONPIRES",
+  "bl": "@CORRETOR.JACKSONPIRES",
+  "br": "CORRETOR CRECI 323400",
+  "iniciais": "JP",
+  "nome_card": "Jackson Pires | Corretor",
+  "arroba": "@corretor.jacksonpires"
+ },
+ "slides": [
+  {
+   "tipo": "capa",
+   "tiles": [
+    {
+     "foto": "agente03/jackson.jpg"
+    },
+    {
+     "objeto": "🏠",
+     "fundo": "radial-gradient(circle at 60% 40%, #9fb6c9, #3b5368)"
+    },
+    {
+     "objeto": "💵",
+     "fundo": "radial-gradient(circle at 45% 45%, #cfe3c4, #5f8a55)"
+    },
+    {
+     "objeto": "🤔",
+     "fundo": "radial-gradient(circle at 55% 40%, #f4c7d3, #b5687e)"
+    }
+   ],
+   "linhas": [
+    "O juro caiu",
+    "e ninguém quis",
+    "comprar casa"
+   ],
+   "brilhos": [
+    "left:140px; top:610px;",
+    "left:900px; top:760px; font-size:52px;"
+   ]
+  },
+  {
+   "tipo": "miolo",
+   "cor": "papel",
+   "titulo": [
+    "O juro caiu",
+    "por 3 semanas"
+   ],
+   "texto": "<b>Nos EUA o financiamento de 30 anos foi pra 7,18%.</b> Poucas semanas antes estava perto de 7,5%.",
+   "fonte": "Fonte: Freddie Mac, 5 de novembro de 2026",
+   "card": {
+    "numero": "7,18%",
+    "objeto": "📉",
+    "fundo": "radial-gradient(circle at 50% 40%, #f2d6b3, #a8774c)",
+    "legenda": "Juro <b>caindo há 3 semanas</b> seguidas",
+    "stickers": [
+     {
+      "emoji": "🚨",
+      "pos": "right:14px; bottom:120px;"
+     }
+    ]
+   }
+  },
+  {
+   "tipo": "miolo",
+   "cor": "azul",
+   "titulo": [
+    "Mas ninguém",
+    "comprou"
+   ],
+   "texto": "As vendas em andamento estão no <b>nível mais baixo desde 2021.</b> E o juro ainda está acima dos 6,22% de um ano atrás.",
+   "fonte": "Fonte: Redfin e Freddie Mac, novembro de 2026",
+   "card": {
+    "numero": "desde 2021",
+    "objeto": "🏠",
+    "fundo": "radial-gradient(circle at 50% 45%, #9fb6c9, #3b5368)",
+    "legenda": "O comprador <b>decidiu esperar</b>",
+    "stickers": [
+     {
+      "emoji": "🚨",
+      "pos": "left:14px; bottom:118px;"
+     }
+    ]
+   }
+  },
+  {
+   "tipo": "miolo",
+   "cor": "papel",
+   "titulo": [
+    "O que isso",
+    "ensina pra você"
+   ],
+   "texto": "Quem espera o juro cair costuma comprar <b>junto com todo mundo.</b> Aí a procura sobe e o preço sobe junto.",
+   "card": {
+    "numero": "Esperar?",
+    "objeto": "⏳",
+    "fundo": "radial-gradient(circle at 50% 40%, #f4c7d3, #a65a72)",
+    "legenda": "Você <b>esperaria ou compraria agora?</b>",
+    "stickers": [
+     {
+      "emoji": "🔑",
+      "pos": "right:14px; bottom:118px;"
+     }
+    ]
+   }
+  },
+  {
+   "tipo": "final",
+   "objeto": "🏡",
+   "caixa": "Todo dia eu trago <b>3 notícias do mercado imobiliário</b> e explico o que muda pra quem quer comprar aqui.",
+   "cta": [
+    "Segue e comenta:",
+    "você esperaria",
+    "ou compraria? 👇"
+   ],
+   "foto": "agente03/jackson.jpg"
+  }
+ ]
+}
