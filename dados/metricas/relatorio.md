@@ -23,6 +23,6 @@
 - 11h: alcance médio 0 (5 Reels)
 
 ## Sugestões de ajuste
-- Horários mais fracos da semana: 16h e 21h. Sugestão: mover esses Reels pra 7h ou 8h.
+- SEM DADOS: a API não liberou os números ((#10) Application does not have permission for this action). Falta a permissão de insights (instagram_manage_insights) no token. Nenhuma sugestão até isso ser resolvido.
 
 _O Agente 06 só sugere. Ajuste só entra com o ok do Jackson._
