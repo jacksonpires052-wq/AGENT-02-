@@ -7,6 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { capa, capaSeta, foto } = require('./capa');
+const { fachadaPrimeiro } = require('./fachada');
 
 const DIR = __dirname;
 const CONFIG = path.join(DIR, 'config.json');
@@ -157,10 +158,12 @@ function legenda(im) {
   const lazer = LAZER.filter(([re]) => new RegExp(re).test(d)).map(([, n]) => n).slice(0, 4);
   const tipoMin = im.tipo.toLowerCase();
   const apelido = /apartamento/.test(tipoMin) ? 'Apê' : im.tipo;
+  const fem = /^(casa|cobertura|chácara|chacara|kitnet|sala|loja|área|area)/.test(tipoMin);
+  const num = fem ? 'numa' : 'num', esse = fem ? 'essa' : 'esse';
   const ganchos = [
     `${apelido} de ${plural(im.quartos, 'quarto', 'quartos')} em ${im.cidade} por ${precoCurto(im.preco)} 🏡`,
-    `${precoCurto(im.preco)} num ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} em ${im.cidade} 🔑`,
-    `Olha esse ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} por ${precoCurto(im.preco)} 👀`
+    `${precoCurto(im.preco)} ${num} ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} em ${im.cidade} 🔑`,
+    `Olha ${esse} ${tipoMin} de ${plural(im.quartos, 'quarto', 'quartos')} por ${precoCurto(im.preco)} 👀`
   ];
   const g = ganchos[(postados.length) % ganchos.length];
   const onde = im.condo && im.condo.toLowerCase() !== im.bairro.toLowerCase() ? `Fica no ${im.condo}, no bairro ${im.bairro}` : `Fica no bairro ${im.bairro}`;
@@ -344,9 +347,14 @@ async function main() {
   log(`Escolhido ${im.codigo}: ${im.titulo} | ${real(im.preco)} | ${im.fotos.length} fotos`);
 
   const pasta = path.join(POSTS, im.codigo); fs.mkdirSync(pasta, { recursive: true });
-  const sel = escolherFotos(im.fotos);
+  // a foto da entrada/fachada sempre vai primeiro (capa)
+  const cache = new Map();
+  const baixar = async u => { if (!cache.has(u)) cache.set(u, await pegar(u, 'buffer')); return cache.get(u); };
+  const ordem = await fachadaPrimeiro(im.fotos, baixar);
+  if (ordem[0] !== im.fotos[0]) log('Fachada encontrada na foto', im.fotos.indexOf(ordem[0]) + 1, 'e colocada como capa');
+  const sel = escolherFotos(ordem);
   const bufs = [];
-  for (const u of sel) bufs.push(await pegar(u, 'buffer'));
+  for (const u of sel) bufs.push(await baixar(u));
   const imagens = [(cfg.estiloCapa || 'seta') === 'seta' ? await capaSeta({ foto: bufs[0] }) : await capa({
     foto: bufs[0], categoria: `${im.tipo} · ${plural(im.quartos, 'quarto', 'quartos')}`,
     nome: im.condo || im.bairro, bairro: im.condo ? im.bairro : `${im.cidade} · SP`, cidade: im.condo ? `${im.cidade} · SP` : '',
