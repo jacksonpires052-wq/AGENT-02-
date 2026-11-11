@@ -1,11 +1,10 @@
 name: Agente 06 - Metricas
 
-# Todo dia 00h20 (Brasilia): fecha os numeros do dia anterior,
+# Todo dia 00h20 (Brasilia) = 03h20 UTC: fecha os numeros do dia anterior,
 # guarda em dados/metricas e escreve o relatorio com sugestoes.
 on:
   schedule:
-    - cron: '20 0 * * *'
-      timezone: 'America/Sao_Paulo'
+    - cron: '20 3 * * *'
   workflow_dispatch:
 
 permissions:
