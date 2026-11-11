@@ -5,6 +5,7 @@ name: Relogio do Agente 02
 # Agente 02 e se dispara de novo pra esperar o seguinte (corrente sem fim).
 # O cron de hora em hora so serve de reserva: se a corrente cair, ele religa.
 # Tambem dispara o Agente 06 (metricas) as 00h20.
+# Imoveis: dispara 20 min antes e o Agente 02 espera a hora certa pra publicar (tudo pronto antes).
 # Um post a cada 20 min nos picos: 10 imoveis (HORARIOS) e 15 noticias (NOTICIAS).
 # Pra mudar os horarios, mude as listas abaixo (horario de Brasilia).
 on:
@@ -35,31 +36,40 @@ jobs:
           HORARIOS = "06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07".split()  # imoveis (Agente 02)
           NOTICIAS = "06:27 06:47 07:27 07:47 08:27 11:27 11:47 12:27 12:47 13:27 18:47 19:07 19:47 20:07 20:47".split()  # noticias (Agente 03)
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
-          TODOS = sorted([(h, "agente02.yml") for h in HORARIOS] + [(h, "reels-teste.yml") for h in NOTICIAS] + list(EXTRAS.items()))
+          ANTES = 20  # imoveis: o relogio dispara 20 min antes; o Agente 02 monta tudo e espera a hora marcada pra publicar
+          def menos(h, m):
+              hh, mm = map(int, h.split(":")); t = (hh * 60 + mm - m) % 1440
+              return f"{t // 60:02d}:{t % 60:02d}"
+          TODOS = sorted([(menos(h, ANTES), "agente02.yml", {"hora": h}) for h in HORARIOS] + [(h, "reels-teste.yml", {}) for h in NOTICIAS] + [(h, wf, {}) for h, wf in EXTRAS.items()])
           BRT = dt.timezone(dt.timedelta(hours=-3))
-          def disparar(wf):
+          def disparar(wf, entradas=None):
+              corpo = {"ref": "main"}
+              if entradas: corpo["inputs"] = entradas
               req = urllib.request.Request(f"https://api.github.com/repos/{os.environ['REPO']}/actions/workflows/{wf}/dispatches",
-                  data=json.dumps({"ref": "main"}).encode(), method="POST",
+                  data=json.dumps(corpo).encode(), method="POST",
                   headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
               urllib.request.urlopen(req).read()
-              print("Disparado:", wf, dt.datetime.now(BRT).strftime("%d/%m %H:%M:%S"), flush=True)
+              print("Disparado:", wf, entradas or "", dt.datetime.now(BRT).strftime("%d/%m %H:%M:%S"), flush=True)
           agora = dt.datetime.now(BRT)
           prox = None
           for d in range(0, 2):
-              for h, wf in TODOS:
+              for h, wf, ent in TODOS:
                   hh, mm = map(int, h.split(":"))
                   t = (agora + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
                   if t > agora + dt.timedelta(seconds=20):
-                      prox, alvo = t, wf; break
+                      prox = t; break
               if prox: break
           espera = (prox - agora).total_seconds()
-          print("Proximo horario:", prox.strftime("%d/%m %H:%M"), alvo, "| espera de", round(espera / 60), "min", flush=True)
+          print("Proximo horario:", prox.strftime("%d/%m %H:%M"), [x[1] for x in TODOS if x[0] == prox.strftime("%H:%M")], "| espera de", round(espera / 60), "min", flush=True)
           if espera > 5 * 3600:
               time.sleep(5 * 3600)
               disparar("relogio.yml")
           else:
               time.sleep(espera)
-              disparar(alvo)
-              time.sleep(5)
+              hora = prox.strftime("%H:%M")
+              for h, wf, ent in TODOS:
+                  if h == hora:
+                      disparar(wf, ent); time.sleep(3)
+              time.sleep(2)
               disparar("relogio.yml")
           PY

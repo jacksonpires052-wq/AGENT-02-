@@ -15,6 +15,10 @@ on:
         description: 'reel ou post. Deixe vazio pra seguir o rodizio'
         required: false
         default: ''
+      hora:
+        description: 'Hora de Brasilia pra publicar (HH:MM). Monta antes e espera essa hora. Vazio = publica assim que montar'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -26,6 +30,7 @@ concurrency:
 jobs:
   montar:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     outputs:
       codigo: ${{ steps.montar.outputs.codigo }}
       formato: ${{ steps.montar.outputs.formato }}
@@ -40,7 +45,14 @@ jobs:
           for f in *.otf *.ttf LICENCA-*.txt; do [ -f "$f" ] && cp -n "$f" fonts/; done
           [ -f postados.json ] && [ ! -f dados/postados.json ] && cp postados.json dados/postados.json || true
       - name: Instalar ffmpeg
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+        # Em 11/11 o apt travou 1 hora aqui. Agora: usa o que ja existe, tenta o apt por no maximo 4 min e, se falhar, baixa o ffmpeg pronto.
+        timeout-minutes: 8
+        run: |
+          if command -v ffmpeg >/dev/null; then ffmpeg -version | head -1; exit 0; fi
+          if timeout 240 sudo apt-get install -y -qq ffmpeg; then exit 0; fi
+          curl -sSL --max-time 180 https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz | tar -xJ -C /tmp
+          sudo cp /tmp/ffmpeg-*-amd64-static/ffmpeg /tmp/ffmpeg-*-amd64-static/ffprobe /usr/local/bin/
+          ffmpeg -version | head -1
       - run: npm install --omit=dev --no-audit --no-fund
       - name: Montar o post
         id: montar
@@ -71,6 +83,7 @@ jobs:
     needs: montar
     if: needs.montar.outputs.codigo != ''
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     environment: instagram
     steps:
       - uses: actions/checkout@v4
@@ -91,6 +104,13 @@ jobs:
         with:
           name: reel
           path: saida/
+      - name: Esperar a hora marcada
+        if: github.event.inputs.hora != ''
+        run: |
+          alvo=$(TZ=America/Sao_Paulo date -d "today ${{ github.event.inputs.hora }}" +%s)
+          falta=$(( alvo - $(date +%s) ))
+          echo "Pronto. Publica as ${{ github.event.inputs.hora }} (faltam $falta s)"
+          [ $falta -gt 0 ] && [ $falta -lt 2400 ] && sleep $falta || true
       - name: Postar no Instagram
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
