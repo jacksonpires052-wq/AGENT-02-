@@ -67,7 +67,7 @@
     "fonte": "Portas (levantamento da Loft)",
     "link": "https://portas.com.br/noticias/condominio-sobe-66-em-salvador-e-avanca-58-em-nazare/",
     "data_noticia": "2026-11-11",
-    "usada": false
+    "usada": "reels/2026-11-12-0511-1-condominio-salvador-sobe"
   },
   {
     "id": "20261109-focus-selic-1375",
@@ -137,7 +137,7 @@
     "fonte": "U.S. Bureau of Labor Statistics (BLS)",
     "link": "https://www.bls.gov/news.release/cpi.nr0.htm",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "reels/2026-11-12-0511-2-eua-inflacao-moradia"
   },
   {
     "id": "20261110-eurostat-preco-renda",
@@ -319,7 +319,7 @@
     "fonte": "Banco Central (ata do Copom), via Remessa Online e Safra",
     "link": "https://www.remessaonline.com.br/blog/ata-do-copom-novembro-2026/",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "reels/2026-11-12-0511-3-ata-copom-selic-parada"
   },
   {
     "id": "20261109-trxf11-despenca",
