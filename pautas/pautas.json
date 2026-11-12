@@ -278,5 +278,61 @@
     "link": "https://www.brasil247.com/economia/inadimplencia-no-cartao-de-credito-chega-a-10-e-supera-media-das-familias",
     "data_noticia": "2026-11-10",
     "usada": false
+  },
+  {
+    "id": "20261110-cury-lucro-3t26",
+    "coletada_em": "2026-11-12 04:50",
+    "categoria": "Brasil",
+    "titulo": "Cury lucra R$ 313,9 milhões no 3º trimestre",
+    "fato": "A construtora Cury, forte no Minha Casa, Minha Vida, teve lucro de R$ 313,9 milhões no terceiro trimestre de 2026, alta de 23% em um ano, e anunciou mais R$ 200 milhões em dividendos.",
+    "numero": "R$ 313,9 mi (+23%)",
+    "detalhe": "Os distratos (compras desfeitas) subiram 59,3%, para R$ 358,2 milhões, e já são 15% das vendas brutas. Os repasses aos bancos caíram 13%, com a Caixa mais lenta no crédito do MCMV.",
+    "pra_voce": "O imóvel econômico segue vendendo bem, mas a alta dos distratos mostra que muita gente compra sem ter o crédito aprovado. Antes de assinar na planta, simule e aprove o financiamento.",
+    "fonte": "Exame e Diário do Grande ABC (balanço da Cury)",
+    "link": "https://exame.com/mercado-imobiliario/cury-tem-lucro-recorde-de-r-370-milhoes-e-anuncia-mais-r-200-milhoes-em-dividendos/",
+    "data_noticia": "2026-11-10",
+    "usada": false
+  },
+  {
+    "id": "20261111-mrv-lucro-3t26",
+    "coletada_em": "2026-11-12 04:50",
+    "categoria": "Brasil",
+    "titulo": "MRV lucra R$ 152,7 milhões e sobe 75,5%",
+    "fato": "A MRV&CO teve lucro de R$ 152,7 milhões no terceiro trimestre de 2026, alta de 75,5% em um ano, com receita recorde de R$ 3,4 bilhões na incorporadora e margem bruta de 32,1%, a maior em sete anos.",
+    "numero": "+75,5%",
+    "detalhe": "A despesa financeira líquida subiu 74%, para R$ 372,6 milhões, e a operação nos EUA (Resia) ainda deu prejuízo de R$ 112 milhões.",
+    "pra_voce": "As grandes do segmento econômico estão vendendo e produzindo em ritmo recorde. Para quem quer comprar pelo MCMV, há oferta, mas vale comparar prazo de entrega e condições entre as construtoras.",
+    "fonte": "A Crítica (balanço da MRV&CO)",
+    "link": "https://acritica.net/noticias/mrv-registra-lucro-de-r-1527-milhoes-no-3o-trimestre-alta-de-755-em-um-ano/",
+    "data_noticia": "2026-11-11",
+    "usada": false
+  },
+  {
+    "id": "20261110-ata-copom-juro-alto",
+    "coletada_em": "2026-11-12 04:50",
+    "categoria": "Crédito e juros",
+    "titulo": "Ata do Copom indica Selic alta por mais tempo",
+    "fato": "A ata do Copom, publicada em 10/11, explicou a pausa da Selic em 13,75% depois de cinco cortes seguidos. A projeção de inflação do BC para o horizonte da política subiu de 3,2% para 3,5%.",
+    "numero": "Selic 13,75%",
+    "detalhe": "O dólar fechou perto de R$ 5,51, cerca de 5,8% acima do câmbio usado pelo BC nas contas, e o balanço de riscos ficou inclinado para mais inflação. Corte não parece próximo.",
+    "pra_voce": "Com a Selic parada, os juros do financiamento não devem cair tão cedo. Quem espera taxa menor para comprar pode esperar bastante; vale fazer as contas com a taxa de hoje.",
+    "fonte": "Banco Central (ata do Copom), via Remessa Online e Safra",
+    "link": "https://www.remessaonline.com.br/blog/ata-do-copom-novembro-2026/",
+    "data_noticia": "2026-11-10",
+    "usada": false
+  },
+  {
+    "id": "20261109-trxf11-despenca",
+    "coletada_em": "2026-11-12 04:50",
+    "categoria": "Investimento/FII",
+    "titulo": "TRXF11 despenca 7% e puxa queda dos FIIs",
+    "fato": "O fundo imobiliário TRXF11 caiu 7,07% em 9/11, para R$ 59,01, depois que o relatório mostrou resultado de R$ 0,63 por cota contra R$ 0,93 distribuídos. O IFIX caiu 1%, para 3.592 pontos.",
+    "numero": "-7,07%",
+    "detalhe": "A reserva do fundo caiu de R$ 31,7 milhões para R$ 3,5 milhões. A gestora diz que o buraco vem de aluguéis proporcionais de imóveis novos e mantém a previsão de R$ 0,90 a R$ 0,93 por cota até dezembro.",
+    "pra_voce": "Dividendo alto de FII nem sempre se sustenta: olhe se o fundo paga com o que gera ou com reserva. Imóvel físico alugado não oscila assim na tela, mas também tem custos e vacância.",
+    "fonte": "EuQueroInvestir (relatório gerencial da TRX)",
+    "link": "https://euqueroinvestir.com/fundos-imobiliarios/ifix-hoje-9-novembro-trxf11-queda",
+    "data_noticia": "2026-11-09",
+    "usada": false
   }
 ]
