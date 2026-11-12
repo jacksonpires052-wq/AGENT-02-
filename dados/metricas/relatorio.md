@@ -1,26 +1,37 @@
-# Relatório do Agente 06 · 10/11/2026
+# Relatório do Agente 06 · 11/11/2026
 
 ## Conta
-- Seguidores agora: 247
+- Seguidores agora: 253 (+6 no dia)
 - Alcance do perfil: 0 · views: 0 · contas que interagiram: 0
 - Cliques no link da bio: 0
 
 ## Reels de ontem
-- Publicados: 3
+- Publicados: 25
 - Alcance médio por Reels: 0 (semana anterior: 0, +0%)
 - Envios a cada mil alcançados: 0.0 · salvos a cada mil: 0.0
 
 **Os 3 melhores**
-- 7h · O golpe número 1 dessa lista já levou R$ 10 milhões aqui em Sorocaba. · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfjtH2OqOjo/
-- 7h · 258 golpes por hora. Esse foi o ritmo do Brasil em 2025, e o mercado imobiliário · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfjsXb9qxq6/
-- 7h · Vai comprar apartamento na planta e ninguém te explicou o INCC? 🏗️ · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfjqIKuqTD9/
+- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmQuQogYvI/
+- 7h · Casa 2 Quartos sendo 1 Suíte Jardim Terras De Arieta 170m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmPa5GCe9X/
+- 7h · Casa 3 Quartos sendo 1 Suíte Jardim Piazza Di Roma 133m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRF9hk9tK/
+
+**Os 3 mais fracos**
+- 8h · Chácara 4 Quartos Jundiaquara 1.000m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmVNrFjb13/
+- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRdVhjmHE/
+- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRYYbDHP1/
+
+## Por faixa (7 dias)
+- Faixa 1 (1 quartos): 2 Reels · alcance médio 0 · envios/mil 0.0
+- Faixa 2 (2 quartos): 3 Reels · alcance médio 0 · envios/mil 0.0
+- Faixa 3 (3 quartos): 3 Reels · alcance médio 0 · envios/mil 0.0
+- Faixa 4 (4 quartos): 2 Reels · alcance médio 0 · envios/mil 0.0
 
 ## Melhores horários (7 dias)
-- 7h: alcance médio 0 (4 Reels)
-- 8h: alcance médio 0 (1 Reels)
-- 9h: alcance médio 0 (4 Reels)
+- 7h: alcance médio 0 (9 Reels)
+- 8h: alcance médio 0 (2 Reels)
+- 9h: alcance médio 0 (5 Reels)
 - 10h: alcance médio 0 (2 Reels)
-- 11h: alcance médio 0 (5 Reels)
+- 11h: alcance médio 0 (4 Reels)
 
 ## Sugestões de ajuste
 - SEM DADOS: a API não liberou os números ((#10) Application does not have permission for this action). Falta a permissão de insights (instagram_manage_insights) no token. Nenhuma sugestão até isso ser resolvido.
