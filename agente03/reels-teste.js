@@ -51,7 +51,8 @@ async function main() {
   let falhas = 0;
   // Fila: cada disparo do relogio publica UMA noticia (a mais antiga da fila que ainda nao saiu).
   const lerPub = d => { try { return JSON.parse(fs.readFileSync(path.join(PASTA, d, 'publicado.json'), 'utf8')); } catch { return {}; } };
-  const naFila = fs.readdirSync(PASTA).sort().filter(d => fs.existsSync(path.join(PASTA, d, 'fila')) && fs.existsSync(path.join(PASTA, d, 'reels.mp4')) && !lerPub(d).reels);
+  // 11/11: com 3 posts por dia, sai a MAIS NOVA da fila (noticia velha nao engaja).
+  const naFila = fs.readdirSync(PASTA).sort().reverse().filter(d => fs.existsSync(path.join(PASTA, d, 'fila')) && fs.existsSync(path.join(PASTA, d, 'reels.mp4')) && !lerPub(d).reels);
   if (!naFila.length) return resumo('Fila vazia: nenhuma noticia esperando.');
   resumo(`Fila: ${naFila.length} noticia(s). Publicando agora: ${naFila[0]}`);
   for (const d of naFila.slice(0, 1)) {
@@ -79,6 +80,8 @@ async function main() {
       }
     };
 
+    // 11/11 (melhoria de alcance): nada de conteudo repetido no feed. Sai so o Reels normal + story.
+    const DESLIGADOS = ['teste', 'carrossel'];
     const tarefas = [
       ['teste', 'Reels teste', tem('teste'), async () => {
         const p = { media_type: 'REELS', video_url: raw('reels.mp4'), caption: legenda, trial_params: JSON.stringify({ graduation_strategy: ESTRATEGIA }) };
@@ -101,7 +104,7 @@ async function main() {
     ];
 
     for (const [chave, nome, ativo, fazer] of tarefas) {
-      if (!ativo || pub[chave]) continue;
+      if (!ativo || pub[chave] || DESLIGADOS.includes(chave)) continue;
       try {
         console.log(`${d}: postando ${nome}...`);
         pub[chave] = await fazer();
