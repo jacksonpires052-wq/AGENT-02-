@@ -38,7 +38,7 @@ jobs:
           import os, time, json, urllib.request, urllib.error, datetime as dt
           REPO = os.environ["REPO"]; TOKEN = os.environ["GH_TOKEN"]
           HORARIOS = []  # imoveis da AE SUSPENSOS em 11/11/2026 a pedido do Jackson (antes: 06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07)
-          NOTICIAS = "07:07 19:07".split()  # noticias (Agente 03): 2 por dia no estilo editorial desde 11/11/2026
+          NOTICIAS = "12:07 20:07".split()  # noticias (Agente 03): 2 por dia no estilo editorial desde 11/11/2026
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
           ANTES = 20   # imoveis: dispara 20 min antes; o Agente 02 monta e espera a hora pra publicar
           FISCAL = 5   # 5 min antes de cada post o fiscal confere se esta tudo pronto e corrige
