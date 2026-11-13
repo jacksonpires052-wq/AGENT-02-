@@ -38,7 +38,9 @@ jobs:
           import os, time, json, urllib.request, urllib.error, datetime as dt
           REPO = os.environ["REPO"]; TOKEN = os.environ["GH_TOKEN"]
           HORARIOS = []  # imoveis da AE SUSPENSOS em 11/11/2026 a pedido do Jackson (antes: 06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07)
-          NOTICIAS = "12:07 20:07".split()  # noticias (Agente 03): 2 por dia no estilo editorial desde 11/11/2026
+          NOTICIAS = []  # Reels de noticia DESLIGADOS em 13/11/2026: as noticias agora saem so como story (STORIES)
+          STORIES = "07:07 08:37 10:07 11:37 12:37 14:07 16:07 18:07 19:37 21:07".split()  # 10 stories de noticia por dia (desde 13/11/2026)
+          FISCAL_STORY = 10  # 10 min antes de cada story o fiscal confere se tem story pronto na fila
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
           ANTES = 20   # imoveis: dispara 20 min antes; o Agente 02 monta e espera a hora pra publicar
           FISCAL = 5   # 5 min antes de cada post o fiscal confere se esta tudo pronto e corrige
@@ -81,8 +83,20 @@ jobs:
                   pend.append(d)
               return pend
 
+          def stories_pendentes():
+              arvore = api("GET", "/git/trees/main?recursive=1")["tree"]
+              caminhos = {x["path"] for x in arvore}
+              pastas = sorted({p.split("/")[1] for p in caminhos if p.startswith("stories/") and p.endswith("/fila")})
+              return [d for d in pastas if f"stories/{d}/story.jpg" in caminhos and f"stories/{d}/publicado.json" not in caminhos]
+
           def checar(hora, tipo):
-              log(f"FISCAL {hora} ({'imovel' if tipo == 'I' else 'noticia'})")
+              log(f"FISCAL {hora} ({ {'I': 'imovel', 'N': 'noticia', 'S': 'story'}[tipo] })")
+              if tipo == "S":
+                  pend = stories_pendentes()
+                  log("Stories na fila:", len(pend), pend[:3])
+                  if not pend:
+                      alerta(f"fila de stories vazia para as {hora}", f"Nao tinha story de noticia pronto para sair as {hora}. A rodada do Agente de Noticias nao subiu os stories do dia.")
+                  return
               if tipo == "N":
                   pend = fila_pendente()
                   log("Noticias na fila:", len(pend), pend[:3])
@@ -116,6 +130,8 @@ jobs:
           # ---------------------------------------------------------------- agenda
           TODOS = [(menos(h, ANTES), "disparo", ("agente02.yml", {"hora": h})) for h in HORARIOS]
           TODOS += [(h, "disparo", ("reels-teste.yml", {})) for h in NOTICIAS]
+          TODOS += [(h, "disparo", ("stories.yml", {})) for h in STORIES]
+          TODOS += [(menos(h, FISCAL_STORY), "checar", (h, "S")) for h in STORIES]
           TODOS += [(h, "disparo", (wf, {})) for h, wf in EXTRAS.items()]
           TODOS += [(menos(h, FISCAL), "checar", (h, "I")) for h in HORARIOS] + [(menos(h, FISCAL), "checar", (h, "N")) for h in NOTICIAS]
           TODOS.sort()

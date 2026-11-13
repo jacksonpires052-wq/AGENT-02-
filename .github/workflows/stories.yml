@@ -1,0 +1,27 @@
+name: Agente 03 - Stories de noticia
+
+# Disparado pelo relogio.yml nos horarios de STORIES: cada disparo publica 1 story da fila (stories/<id>/ com 'fila').
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stories
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: instagram
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Postar o story
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: node agente03/stories.js
