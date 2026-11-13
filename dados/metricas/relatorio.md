@@ -1,24 +1,24 @@
-# Relatório do Agente 06 · 11/11/2026
+# Relatório do Agente 06 · 12/11/2026
 
 ## Conta
-- Seguidores agora: 253 (+6 no dia)
+- Seguidores agora: 252 (-1 no dia)
 - Alcance do perfil: 0 · views: 0 · contas que interagiram: 0
 - Cliques no link da bio: 0
 
 ## Reels de ontem
-- Publicados: 25
+- Publicados: 5
 - Alcance médio por Reels: 0 (semana anterior: 0, +0%)
 - Envios a cada mil alcançados: 0.0 · salvos a cada mil: 0.0
 
 **Os 3 melhores**
-- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmQuQogYvI/
-- 7h · Casa 2 Quartos sendo 1 Suíte Jardim Terras De Arieta 170m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmPa5GCe9X/
-- 7h · Casa 3 Quartos sendo 1 Suíte Jardim Piazza Di Roma 133m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRF9hk9tK/
+- 20h · Como fazer simulação na caixa? · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfqNsxoKtAC/
+- 20h · A inflação dos EUA subiu 0,4% em outubro, e a moradia pesou na conta 🇺🇸 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfqM4BcACOd/
+- 18h · Sua entrada no Minha Casa Minha Vida pode cair quase pela metade. Eu te mostro n · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/Dfp-f4TKYdj/
 
 **Os 3 mais fracos**
-- 8h · Chácara 4 Quartos Jundiaquara 1.000m² · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmVNrFjb13/
-- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRdVhjmHE/
-- 7h · O juro caiu nos EUA e mesmo assim ninguém quis comprar casa 📉🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfmRYYbDHP1/
+- 18h · Sua entrada no Minha Casa Minha Vida pode cair quase pela metade. Eu te mostro n · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/Dfp-f4TKYdj/
+- 12h · Quer comprar pelo Minha Casa Minha Vida em 2026? Faz nessa ordem, porque quem pu · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfpYHK9K4hA/
+- 12h · A ata do Copom indica Selic parada em 13,75% por mais tempo 🏦 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DfpV2B_Dg3b/
 
 ## Por faixa (7 dias)
 - Faixa 1 (1 quartos): 2 Reels · alcance médio 0 · envios/mil 0.0
@@ -27,9 +27,9 @@
 - Faixa 4 (4 quartos): 2 Reels · alcance médio 0 · envios/mil 0.0
 
 ## Melhores horários (7 dias)
-- 7h: alcance médio 0 (9 Reels)
+- 7h: alcance médio 0 (8 Reels)
 - 8h: alcance médio 0 (2 Reels)
-- 9h: alcance médio 0 (5 Reels)
+- 9h: alcance médio 0 (4 Reels)
 - 10h: alcance médio 0 (2 Reels)
 - 11h: alcance médio 0 (4 Reels)
 
