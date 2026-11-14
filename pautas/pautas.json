@@ -263,7 +263,7 @@
     "fonte": "IBEVAR-FIA, com dados do Banco Central, via Times Brasil",
     "link": "https://timesbrasil.com.br/brasil/economia-brasileira/inadimplencia-familias-credito-livre-janeiro-2027-projecao-ibevar-fia/",
     "data_noticia": "2026-11-08",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261110-inadimplencia-cartao-10",
@@ -403,6 +403,48 @@
     "fonte": "O Tempo (edital Sicoob e Frazão Leilões)",
     "link": "https://www.otempo.com.br/economia/2026/11/12/leilao-em-mg-reune-12-imoveis-a-partir-de-r-105-mil-e-pagamento-em-ate-60-meses",
     "data_noticia": "2026-11-12",
+    "usada": false
+  },
+  {
+    "id": "20261113-raio-x-fipezap-compra-9",
+    "coletada_em": "2026-11-14 04:55",
+    "categoria": "Brasil",
+    "titulo": "Só 9% compraram imóvel no 3º tri, nível de crise",
+    "fato": "Segundo o Raio-X FipeZap (Fipe e Grupo OLX), 9% dos entrevistados compraram imóvel no 3º trimestre de 2026, contra 10% no trimestre anterior e média histórica de 11% desde 2014. É o mesmo nível da recessão de 2015 e 2016.",
+    "numero": "9%",
+    "detalhe": "Quem comprou está levando desconto: 67% dos negócios até setembro saíram abaixo do preço pedido, e o desconto médio nesses casos subiu de 11% para 13%. E pela primeira vez a compra para investir (52%) passou a compra para morar (48%). A pesquisa ouviu 758 pessoas.",
+    "pra_voce": "Com menos gente comprando, quem tem crédito aprovado ganha força para negociar. É hora de pedir desconto com proposta firme na mão.",
+    "fonte": "Raio-X FipeZap (Fipe e Grupo OLX), via Brasil em Folhas",
+    "link": "https://brasilemfolhas.com.br/2026/11/compra-de-imoveis-cai-para-niveis-de-crises-anteriores/",
+    "data_noticia": "2026-11-13",
+    "usada": false
+  },
+  {
+    "id": "20261112-nar-vendas-eua-menor-2010",
+    "coletada_em": "2026-11-14 04:55",
+    "categoria": "Mundo",
+    "titulo": "EUA: venda de casa usada cai ao menor nível desde 2010",
+    "fato": "As vendas de casas usadas nos Estados Unidos caíram 5,5% em outubro, para um ritmo anual de 3,75 milhões, o menor desde agosto de 2010, segundo a NAR (associação dos corretores americanos). Em um ano, a queda é de 8,8%.",
+    "numero": "3,75 milhões",
+    "detalhe": "Mesmo vendendo menos, o preço não caiu: a mediana subiu 0,4% em um ano, para US$ 416.700, o 40º mês seguido de alta. O estoque cresceu 4,6%, e os compradores de primeira viagem caíram para 29% das vendas.",
+    "pra_voce": "Juros altos travam a venda até no maior mercado do mundo, mas não derrubam o preço. Esperar o preço cair pode não acontecer; o que muda o jogo é a taxa do financiamento.",
+    "fonte": "NAR, via HousingWire",
+    "link": "https://www.housingwire.com/articles/existing-home-sales-october-375m/",
+    "data_noticia": "2026-11-12",
+    "usada": false
+  },
+  {
+    "id": "20261113-ifix-sobe-136-semana-queda",
+    "coletada_em": "2026-11-14 04:55",
+    "categoria": "Investimento/FII",
+    "titulo": "IFIX sobe 1,36% na sexta, mas fecha a semana no vermelho",
+    "fato": "O IFIX, índice dos fundos imobiliários, subiu 1,36% na sexta-feira (13/11) e fechou em 3.615,23 pontos. O KNRI11 subiu 3,79% e o GZIT11 disparou 7,94%.",
+    "numero": "1,36%",
+    "detalhe": "Mesmo com a alta do dia, a semana terminou com queda de 0,36%, contra 3.628,20 pontos do dia 6. O ARRI11 caiu 6,27% na sexta.",
+    "pra_voce": "Fundo imobiliário oscila todo dia, como ação. Para quem quer renda com imóvel sem comprar um inteiro, vale olhar o longo prazo e não o sobe e desce da semana.",
+    "fonte": "FIIs.com.br",
+    "link": "https://fiis.com.br/noticias/ifix-sobe-136-fecha-semana-vermelho/",
+    "data_noticia": "2026-11-13",
     "usada": false
   }
 ]
