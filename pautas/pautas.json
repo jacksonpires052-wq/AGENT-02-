@@ -165,7 +165,7 @@
     "fonte": "Savills, via Mortgage Solutions",
     "link": "https://www.mortgagesolutions.co.uk/mortgage-news/2026/11/09/prime-regional-housing-market-set-to-outpace-london/",
     "data_noticia": "2026-11-09",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261111-australia-casas-caem",
@@ -207,7 +207,7 @@
     "fonte": "Metro Quadrado, reproduzido pelo Portas",
     "link": "https://portas.com.br/noticias/incerteza-pos-eleicao-leva-incorporadoras-a-segurar-lancamentos-em-2027/",
     "data_noticia": "2026-11-09",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261109-condominio-sp-sobe-30",
@@ -221,7 +221,7 @@
     "fonte": "Lello (Mapa de Condomínios), via Portas",
     "link": "https://portas.com.br/noticias/condominio-sobe-30-em-sao-paulo-em-cinco-anos/",
     "data_noticia": "2026-11-09",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261109-mcmv-compra-assistida-desastres",
@@ -235,7 +235,7 @@
     "fonte": "Ministério das Cidades (Portaria MCID 1.520/2026), via Portas",
     "link": "https://portas.com.br/noticias/mcmv-governo-define-regras-para-compra-de-imoveis-apos-desastres-e-obras-federais/",
     "data_noticia": "2026-11-09",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261110-fgts-extrato-direto-bancos",
@@ -333,7 +333,7 @@
     "fonte": "EuQueroInvestir (relatório gerencial da TRX)",
     "link": "https://euqueroinvestir.com/fundos-imobiliarios/ifix-hoje-9-novembro-trxf11-queda",
     "data_noticia": "2026-11-09",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-ipca-outubro-014",
@@ -444,6 +444,62 @@
     "pra_voce": "Fundo imobiliário oscila todo dia, como ação. Para quem quer renda com imóvel sem comprar um inteiro, vale olhar o longo prazo e não o sobe e desce da semana.",
     "fonte": "FIIs.com.br",
     "link": "https://fiis.com.br/noticias/ifix-sobe-136-fecha-semana-vermelho/",
+    "data_noticia": "2026-11-13",
+    "usada": false
+  },
+  {
+    "id": "20261113-caixa-estuda-subir-juros",
+    "coletada_em": "2026-11-15 04:44",
+    "categoria": "Crédito e juros",
+    "titulo": "Caixa estuda subir os juros da casa própria",
+    "fato": "A Caixa é o único dos quatro maiores bancos do crédito imobiliário que ainda não subiu os juros, e estuda subir. Bradesco, Itaú e Santander já cobram no mínimo 15%, 12,95% e 12,49% ao ano mais TR.",
+    "numero": "68,2%",
+    "detalhe": "A Caixa tem 68,2% de todo o crédito imobiliário do país e diz que a decisão depende de quanto dinheiro conseguir captar. A alternativa seria emprestar menos, e não subir a taxa.",
+    "pra_voce": "Quem está pra financiar pelo SBPE (fora do MCMV) pode ver a taxa subir em breve. Se já tem simulação aprovada com taxa boa, vale não deixar pra depois.",
+    "fonte": "Exame, via SBT News (dados da Caixa e da Abecip)",
+    "link": "https://sbtnews.sbt.com.br/noticia/economia/caixa-estuda-aumentar-juros-da-casa-propria-entenda",
+    "data_noticia": "2026-11-13",
+    "usada": false
+  },
+  {
+    "id": "20261112-cyrela-lucro-3t26",
+    "coletada_em": "2026-11-15 04:44",
+    "categoria": "Brasil",
+    "titulo": "Lucro da Cyrela cai 21% no 3º trimestre",
+    "fato": "A Cyrela lucrou R$ 481 milhões no 3º trimestre de 2026, queda de 21% em um ano, mesmo com a receita subindo 12%, para R$ 2,38 bilhões.",
+    "numero": "-21%",
+    "detalhe": "Os lançamentos caíram 16%, para R$ 2,86 bilhões, e as vendas caíram 14%. Já o estoque de imóveis prontos pra vender subiu 7%, para R$ 13,75 bilhões.",
+    "pra_voce": "Construtora com estoque pronto parado tende a negociar mais. Quem procura imóvel de médio e alto padrão pronto pra morar tem mais espaço pra pedir desconto.",
+    "fonte": "BPMoney (resultado do 3T26 da Cyrela)",
+    "link": "https://bpmoney.com.br/negocios/empresas-na-bolsa/cyrela-cyre3-lucro-481-milhoes-terceiro-trimestre-2026/",
+    "data_noticia": "2026-11-12",
+    "usada": false
+  },
+  {
+    "id": "20261112-freddie-mac-711",
+    "coletada_em": "2026-11-15 04:44",
+    "categoria": "Mundo",
+    "titulo": "EUA: juros da casa caem pela 4ª semana, a 7,11%",
+    "fato": "A taxa média do financiamento de 30 anos nos EUA caiu para 7,11% ao ano, ante 7,18% na semana anterior. É a quarta queda semanal seguida, segundo a Freddie Mac.",
+    "numero": "7,11%",
+    "detalhe": "A queda é pequena: cerca de US$ 19 por mês num empréstimo de US$ 400 mil. E a taxa diária da Mortgage News Daily saltou para 7,50% em três dias até 13/11, depois da inflação acima do esperado.",
+    "pra_voce": "Juros que caem um pouco e voltam a subir mostram que a inflação manda. No Brasil é igual: a taxa do financiamento só cede de verdade quando a inflação cede.",
+    "fonte": "Freddie Mac (PMMS), via WRE News",
+    "link": "https://wrenews.com/freddie-mac-mortgage-rates-november-12-2026-7-11-percent/",
+    "data_noticia": "2026-11-12",
+    "usada": false
+  },
+  {
+    "id": "20261113-pmll11-vende-tacaruna",
+    "coletada_em": "2026-11-15 04:44",
+    "categoria": "Investimento/FII",
+    "titulo": "Fundo vende fatia de shopping por R$ 45 milhões",
+    "fato": "O fundo PMLL11, da Patria, vai vender sua fatia de 6,7% no Shopping Tacaruna, em Recife, por R$ 45 milhões à vista, 5,8% acima da última avaliação.",
+    "numero": "R$ 45 milhões",
+    "detalhe": "A venda ainda depende de condições e da assinatura dos documentos finais. No mesmo dia o IFIX caiu 0,88%, e já acumula queda de 5,53% em 2026.",
+    "pra_voce": "Vender acima da avaliação mostra que o imóvel vale o que o fundo diz. Pra quem investe em FII, é um sinal de que dá pra achar cota barata em ano de queda, mas é preciso olhar cada fundo.",
+    "fonte": "Money Times (fato relevante do PMLL11)",
+    "link": "https://www.moneytimes.com.br/fundo-imobiliario-vende-participacao-em-shopping-por-r-45-milhoes-ifix-recua-igdl/",
     "data_noticia": "2026-11-13",
     "usada": false
   }
