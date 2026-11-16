@@ -151,7 +151,7 @@
     "fonte": "Eurostat, via RTÉ",
     "link": "https://www.rte.ie/news/business/2026/1110/1598701-eurostat-housing-statistics/",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261109-savills-luxo-reino-unido",
@@ -193,7 +193,7 @@
     "fonte": "The Canadian Press, via BNN Bloomberg",
     "link": "https://www.bnnbloomberg.ca/business/politics/2026/11/11/budget-2026-shifts-liberal-governments-language-on-home-construction-targets/",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261109-incorporadoras-seguram-lancamentos-2027",
@@ -249,7 +249,7 @@
     "fonte": "Caixa Econômica Federal, via Agência Brasil",
     "link": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/trabalhador-podera-autorizar-bancos-consultar-extrato-do-fgts",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261108-inadimplencia-credito-livre-recorde",
@@ -277,7 +277,7 @@
     "fonte": "Abecs, via Brasil 247 (com base na Folha de S.Paulo)",
     "link": "https://www.brasil247.com/economia/inadimplencia-no-cartao-de-credito-chega-a-10-e-supera-media-das-familias",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261110-cury-lucro-3t26",
@@ -291,7 +291,7 @@
     "fonte": "Exame e Diário do Grande ABC (balanço da Cury)",
     "link": "https://exame.com/mercado-imobiliario/cury-tem-lucro-recorde-de-r-370-milhoes-e-anuncia-mais-r-200-milhoes-em-dividendos/",
     "data_noticia": "2026-11-10",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261111-mrv-lucro-3t26",
@@ -501,6 +501,48 @@
     "fonte": "Money Times (fato relevante do PMLL11)",
     "link": "https://www.moneytimes.com.br/fundo-imobiliario-vende-participacao-em-shopping-por-r-45-milhoes-ifix-recua-igdl/",
     "data_noticia": "2026-11-13",
+    "usada": false
+  },
+  {
+    "id": "20261116-rightmove-cai-18",
+    "coletada_em": "2026-11-16 04:50",
+    "categoria": "Mundo",
+    "titulo": "Reino Unido: preço pedido pela casa cai 1,8% em novembro",
+    "fato": "Segundo a Rightmove, o preço médio pedido pelos vendedores no Reino Unido caiu 1,8% em novembro, ou £ 6.745, para £ 364.270. A queda típica da época é de 1,1%.",
+    "numero": "1,8%",
+    "detalhe": "A oferta de casas à venda está no maior nível em 12 anos, a procura dos compradores caiu 8% em um ano e o Banco da Inglaterra subiu os juros em novembro pela primeira vez em mais de três anos. O financiamento de dois anos está em 5,51%.",
+    "pra_voce": "Quando os juros sobem e sobra imóvel à venda, o vendedor precisa baixar o preço. É o mesmo cenário que começa a aparecer aqui: com juros altos, quem compra à vista ou com crédito aprovado tem mais poder de negociar.",
+    "fonte": "Rightmove, via Reuters e Property Industry Eye",
+    "link": "https://propertyindustryeye.com/property-industry-responds-as-sellers-slash-asking-prices/",
+    "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261116-china-imovel-24",
+    "coletada_em": "2026-11-16 04:50",
+    "categoria": "Mundo",
+    "titulo": "China: imóvel novo cai 2,4% em um ano, menor queda em 11 meses",
+    "fato": "O preço do imóvel novo na China caiu 0,1% em outubro e 2,4% em 12 meses, segundo cálculo da Reuters com dados do Escritório Nacional de Estatísticas. Em setembro a queda anual era de 2,8%.",
+    "numero": "2,4%",
+    "detalhe": "A queda perdeu força e é a menor desde novembro de 2025, mas o preço segue caindo há anos e a crise imobiliária continua derrubando a confiança e o consumo das famílias chinesas.",
+    "pra_voce": "Imóvel não sobe sempre: a China mostra que excesso de oferta e crédito travado derrubam preços por anos. Antes de comprar, olhe a oferta da região e a sua capacidade de pagar, não só a promessa de valorização.",
+    "fonte": "Reuters (dados do NBS da China)",
+    "link": "https://1027wbow.com/2026/11/15/drop-in-chinas-new-home-prices-narrows-to-11-month-low/",
+    "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261115-trf2-mcmv-invasao-rio",
+    "coletada_em": "2026-11-16 04:50",
+    "categoria": "Brasil",
+    "titulo": "Justiça manda proteger famílias do MCMV contra invasão",
+    "fato": "O TRF-2 manteve, por unanimidade, a decisão que obriga União, Prefeitura do Rio e Banco do Brasil a garantir moradia às famílias do Minha Casa, Minha Vida impedidas de ocupar seus apartamentos no Condomínio Vila Carioca, em Jacarepaguá, invadido desde 2018. A primeira instância deu prazo de seis meses.",
+    "numero": "6 meses",
+    "detalhe": "União e Banco do Brasil tentaram se livrar da obrigação, dizendo que o papel deles era só fiscalizar e que dependiam da prefeitura. O tribunal rejeitou os dois argumentos, mas as famílias esperam a chave há oito anos.",
+    "pra_voce": "Quem compra pelo MCMV tem direito de receber o imóvel, e a Justiça pode obrigar governo e banco a agir. Antes de assinar, confira a obra, a construtora e o histórico do empreendimento.",
+    "fonte": "Conjur (TRF-2, Apelação Cível 5059186-54.2024.4.02.5101)",
+    "link": "https://conjur.com.br/2026-nov-15/uniao-rio-e-bb-devem-garantir-moradia-apos-invasoes-no-minha-casa-minha-vida/",
+    "data_noticia": "2026-11-15",
     "usada": false
   }
 ]
