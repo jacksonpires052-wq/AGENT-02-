@@ -136,19 +136,25 @@ jobs:
           TODOS += [(menos(h, FISCAL), "checar", (h, "I")) for h in HORARIOS] + [(menos(h, FISCAL), "checar", (h, "N")) for h in NOTICIAS]
           TODOS.sort()
 
-          a = agora(); prox = None
-          for d in range(0, 2):
-              for h, *_ in TODOS:
-                  hh, mm = map(int, h.split(":"))
-                  t = (a + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
-                  if t > a + dt.timedelta(seconds=20): prox = t; break
-              if prox: break
-          espera = (prox - a).total_seconds(); hora = prox.strftime("%H:%M")
-          log("Proximo:", prox.strftime("%d/%m %H:%M"), [x[1:] for x in TODOS if x[0] == hora], "| espera", round(espera / 60), "min")
-          if espera > 5 * 3600:
-              time.sleep(5 * 3600)
-          else:
-              time.sleep(espera)
+          def proximo(a):
+              for d in range(0, 2):
+                  for h, *_ in TODOS:
+                      hh, mm = map(int, h.split(":"))
+                      t = (a + dt.timedelta(days=d)).replace(hour=hh, minute=mm, second=0, microsecond=0)
+                      if t > a + dt.timedelta(seconds=20): return t
+
+          # Melhoria continua 16/11/2026: se o proximo evento esta a ate JUNTO min (ex.: fiscal 10 min antes e o story),
+          # este mesmo run espera e dispara, sem depender de um run novo sair da fila do GitHub.
+          # (Em 16/11 o run das 13h57 ficou 68 min parado na fila e o story das 14h07 saiu 6 min atrasado.)
+          JUNTO = 30
+          inicio = agora()
+          while True:
+              a = agora(); prox = proximo(a)
+              espera = (prox - a).total_seconds(); hora = prox.strftime("%H:%M")
+              log("Proximo:", prox.strftime("%d/%m %H:%M"), [x[1:] for x in TODOS if x[0] == hora], "| espera", round(espera / 60), "min")
+              if espera > 5 * 3600:
+                  time.sleep(5 * 3600); break
+              time.sleep(max(0, espera))
               for h, acao, arg in TODOS:
                   if h != hora: continue
                   try:
@@ -157,5 +163,8 @@ jobs:
                   except Exception as e:
                       log("ERRO em", acao, arg, e)
                   time.sleep(3)
+              falta = (proximo(agora()) - agora()).total_seconds()
+              if falta > JUNTO * 60 or (agora() - inicio).total_seconds() + falta > 300 * 60: break
+              log(f"Proximo evento em {falta / 60:.0f} min: fico neste mesmo run")
           disparar("relogio.yml")
           PY
