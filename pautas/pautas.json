@@ -179,7 +179,7 @@
     "fonte": "Cotality, via ABC News (Austrália)",
     "link": "https://www.abc.net.au/news/2026-11-11/how-house-unit-values-compare-across-capitals-2026/107337340",
     "data_noticia": "2026-11-11",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261110-canada-moradia-social",
@@ -305,7 +305,7 @@
     "fonte": "A Crítica (balanço da MRV&CO)",
     "link": "https://acritica.net/noticias/mrv-registra-lucro-de-r-1527-milhoes-no-3o-trimestre-alta-de-755-em-um-ano/",
     "data_noticia": "2026-11-11",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261110-ata-copom-juro-alto",
@@ -375,7 +375,7 @@
     "fonte": "Exame (dados do leilão da Caixa)",
     "link": "https://exame.com/invest/minhas-financas/leilao-da-caixa-tem-569-imoveis-a-partir-de-r-398-mil/",
     "data_noticia": "2026-11-11",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-dubai-vendas-outubro",
@@ -556,6 +556,48 @@
     "pra_voce": "O mercado empurrou o corte de juros mais para frente. Financiamento bancário deve seguir caro em 2027; quem espera juro baixo pode esperar sentado. MCMV e FGTS continuam sendo o caminho mais barato.",
     "fonte": "Banco Central (Boletim Focus), via Reuters/CNN Brasil e Exame/SBT News",
     "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/focus-analistas-elevam-expectativas-para-ipca-e-selic-em-2027/",
+    "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261112-redfin-pendentes-recorde",
+    "coletada_em": "2026-11-17 07:55",
+    "categoria": "Mundo",
+    "titulo": "EUA: casas em negociação caem ao menor nível da série",
+    "fato": "Nas quatro semanas até 8 de novembro, as vendas pendentes de casas nos EUA caíram 15,5% em um ano, para 275.980, o menor nível já registrado pela Redfin. O preço mediano caiu 0,9%, a US$ 388.613, quarta queda semanal seguida.",
+    "numero": "-15,5%",
+    "detalhe": "A parcela mensal mediana até caiu, de US$ 2.820 para US$ 2.755, com juros de 7,18%. Mas os juros voltaram a subir depois de um dado de inflação mais alto, e já há cerca de 600 mil vendedores a mais do que compradores.",
+    "pra_voce": "Quando o juro fica alto por muito tempo, o comprador some e o vendedor precisa negociar. O mesmo vale aqui: com Selic alta, quem tem crédito aprovado ou dinheiro na mão ganha poder de barganha.",
+    "fonte": "Redfin (comunicado via PR Newswire)",
+    "link": "https://finviz.com/news/421619/redfin-reports-monthly-mortgage-payments-fall-to-lowest-level-in-6-weeks-as-home-prices-keep-dipping",
+    "data_noticia": "2026-11-12",
+    "usada": false
+  },
+  {
+    "id": "20261116-abc-locacoes-sobem-40",
+    "coletada_em": "2026-11-17 07:55",
+    "categoria": "Brasil",
+    "titulo": "Aluguel de usados salta 40% no Grande ABC em setembro",
+    "fato": "As locações de imóveis residenciais usados no Grande ABC cresceram 40,16% em setembro de 2026 em relação a agosto, segundo o Creci-SP. Em 12 meses, a alta das locações chega a 93%.",
+    "numero": "40,16%",
+    "detalhe": "No mesmo mês as vendas de usados caíram 5,74%. E o setor oscilou muito no ano: as locações tinham caído 21,84% em julho e 12,85% em agosto.",
+    "pra_voce": "Com juro alto, muita gente adia a compra e vai para o aluguel, o que aquece a procura por imóvel para alugar na Grande SP. Para quem investe, a demanda por locação está forte; para quem aluga, vale comparar o aluguel com a parcela de um financiamento.",
+    "fonte": "Creci-SP, via Diário do Grande ABC",
+    "link": "https://www.dgabc.com.br/Noticia/4369090/locacoes-de-imoveis-disparam-no-grande-abc-apos-dois-meses-de-queda",
+    "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261116-ifix-despenca-185",
+    "coletada_em": "2026-11-17 07:55",
+    "categoria": "Investimento/FII",
+    "titulo": "IFIX despenca 1,85% e fecha aos 3.548 pontos",
+    "fato": "O índice dos fundos imobiliários (IFIX) caiu 1,85% na segunda-feira, 16 de novembro, e fechou em 3.548,25 pontos, perda de 66,98 pontos no dia. O MXRF11, o mais negociado, caiu 1,83%, a R$ 8,59.",
+    "numero": "-1,85%",
+    "detalhe": "É o movimento de um único pregão, não uma tendência. O índice está perto da mínima de 52 semanas (3.516 pontos) e bem longe da máxima (3.997 pontos), mas houve fundo em alta no dia, como o TOPP11, que subiu 2,65%.",
+    "pra_voce": "Com a Selic alta, a renda fixa compete com os fundos imobiliários e as cotas caem. Para quem investe, cota mais barata significa rendimento maior sobre o valor pago, mas exige olhar a qualidade do fundo, não só o preço.",
+    "fonte": "FIIs.com.br (cotações B3)",
+    "link": "https://fiis.com.br/noticias/ifix-hoje-fechamento-queda-fundos-imobiliarios/",
     "data_noticia": "2026-11-16",
     "usada": false
   }
