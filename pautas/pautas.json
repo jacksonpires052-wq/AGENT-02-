@@ -698,5 +698,61 @@
     "link": "https://www.newswire.ca/news-releases/housing-starts-and-construction-data-for-october-2026-802205209.html",
     "data_noticia": "2026-11-17",
     "usada": false
+  },
+  {
+    "id": "20261118-tvri11-renova-bb",
+    "coletada_em": "2026-11-18 09:44",
+    "categoria": "Investimento/FII",
+    "titulo": "Fundo renova 23 aluguéis com o BB até 2036",
+    "fato": "O fundo imobiliário TVRI11 renovou antes do prazo 23 contratos de aluguel com o Banco do Brasil, que venceriam em novembro de 2027 e agora vão até outubro de 2036. O prazo médio dos contratos sobe de 2,98 para 8,18 anos.",
+    "numero": "9,9%",
+    "detalhe": "Para garantir os 10 anos, o fundo aceitou baixar em média 9,9% o aluguel desses imóveis, e a receita mensal deve cair 5,4%. E o fundo segue dependente de um só inquilino: o BB responde por 82,6% da receita.",
+    "pra_voce": "Mostra a troca clássica de quem investe em imóvel para alugar: contrato longo dá segurança, mas costuma custar um desconto no aluguel. Vale para FII e para o investidor pessoa física que aluga para empresa.",
+    "fonte": "Seu Dinheiro, com fato relevante do TVRI11",
+    "link": "https://www.seudinheiro.com/2026/bolsa-dolar/crise-banco-do-brasil-bbas3-renova-contratos-fundo-imobiliario-por-mais-10-anos-mas-com-desconto-igdl/",
+    "data_noticia": "2026-11-18",
+    "usada": false
+  },
+  {
+    "id": "20261118-ia-busca-imovel-40",
+    "coletada_em": "2026-11-18 09:44",
+    "categoria": "Brasil",
+    "titulo": "40% de quem procura imóvel já usa IA",
+    "fato": "Cerca de 40% dos brasileiros que procuram imóvel já usam inteligência artificial na busca, segundo o DataZAP. Pesquisa do Google com a Ipsos mostra que 57% usaram IA em alguma etapa da compra.",
+    "numero": "40%",
+    "detalhe": "A IA ajuda a filtrar, mas a dúvida que mais aparece nas conversas com incorporadoras ainda é dinheiro: no Minha Casa, Minha Vida, 19,5% das perguntas são sobre financiamento, e no médio e alto padrão o preço aparece em 54,4% das conversas.",
+    "pra_voce": "Pesquisar com IA ajuda a comparar bairros e preços mais rápido, mas a conta do financiamento e a visita ao imóvel continuam decidindo a compra. Use a IA para chegar mais preparado, não para pular a análise.",
+    "fonte": "Estado de Minas, com dados do DataZAP e Google/Ipsos",
+    "link": "https://www.em.com.br/mundo-corporativo/2026/11/7540411-40-dos-brasileiros-ja-usam-ia-para-buscar-imovel.html",
+    "data_noticia": "2026-11-18",
+    "usada": false
+  },
+  {
+    "id": "20261117-eua-preco-cai-04",
+    "coletada_em": "2026-11-18 09:44",
+    "categoria": "Mundo",
+    "titulo": "EUA: preço da casa cai pela 1ª vez desde 2023",
+    "fato": "O preço mediano das casas nos EUA ficou em US$ 383.598 em outubro, queda de 0,4% em um ano, a primeira desde junho de 2023, segundo a Homes.com. As vendas caíram 11,7% e o estoque subiu 4,8%.",
+    "numero": "-0,4%",
+    "detalhe": "Outro índice, o da Zillow analisado pela ResiClub, ainda mostra alta de 0,7% em 12 meses, mas cada vez menor, e 25% dos 300 maiores mercados já têm queda. O economista da Homes.com diz que uma queda pontual não é tendência e prevê leve alta em 2027.",
+    "pra_voce": "Com juros acima de 7% ao ano, comprador e vendedor travam e o preço para de subir. É o efeito do juro alto no imóvel, o mesmo freio que a Selic alta coloca no Brasil.",
+    "fonte": "Homes.com (CoStar) e ResiClub/Zillow",
+    "link": "https://www.homes.com/news/exclusive-us-home-prices-ease-slightly-as-housing-market-remains-in-a-stalemate/307421984/",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261118-fiis-volume-outubro-122",
+    "coletada_em": "2026-11-18 09:44",
+    "categoria": "Investimento/FII",
+    "titulo": "FIIs giram R$ 12,2 bi em outubro na Bolsa",
+    "fato": "Os fundos imobiliários movimentaram R$ 12,2 bilhões na B3 em outubro, com cerca de 15 milhões de negócios. A média diária subiu para R$ 579 milhões, contra R$ 450 milhões em setembro. No ano, o volume soma R$ 103,6 bilhões.",
+    "numero": "R$ 12,2 bi",
+    "detalhe": "Mais negócio não quer dizer alta: o IFIX segue fraco e fechou o dia 17 em 3.544,62 pontos, praticamente estável (+0,05%), depois de forte queda na véspera.",
+    "pra_voce": "Tem muita gente comprando e vendendo FII, e com cotas mais baratas o rendimento proporcional sobe. Para quem quer renda com imóvel sem comprar um, é hora de olhar com calma a qualidade de cada fundo.",
+    "fonte": "FIIs.com.br, com dados da B3",
+    "link": "https://fiis.com.br/noticias/bom-dia-fiis-181126/",
+    "data_noticia": "2026-11-18",
+    "usada": false
   }
 ]
