@@ -347,7 +347,7 @@
     "fonte": "IBGE (via InfoMoney e BM&C News)",
     "link": "https://bmcnews.com.br/economia/ipca-de-outubro-sobe-0-14-abaixo-do-consenso-e-vai-a-4-63-em-12-meses/",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-rics-reino-unido-36",
@@ -361,7 +361,7 @@
     "fonte": "RICS (via FX.co e Trading Economics)",
     "link": "https://www.fx.co/en/forex-news/3290029",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261111-leilao-caixa-569",
@@ -389,7 +389,7 @@
     "fonte": "Dubai Land Department (via Sherwoods Property)",
     "link": "https://sherwoodsproperty.com/dubai-property-update-november-2026/",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-leilao-sicoob-60-meses",
@@ -403,7 +403,7 @@
     "fonte": "O Tempo (edital Sicoob e Frazão Leilões)",
     "link": "https://www.otempo.com.br/economia/2026/11/12/leilao-em-mg-reune-12-imoveis-a-partir-de-r-105-mil-e-pagamento-em-ate-60-meses",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261113-raio-x-fipezap-compra-9",
@@ -431,7 +431,7 @@
     "fonte": "NAR, via HousingWire",
     "link": "https://www.housingwire.com/articles/existing-home-sales-october-375m/",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261113-ifix-sobe-136-semana-queda",
@@ -473,7 +473,7 @@
     "fonte": "BPMoney (resultado do 3T26 da Cyrela)",
     "link": "https://bpmoney.com.br/negocios/empresas-na-bolsa/cyrela-cyre3-lucro-481-milhoes-terceiro-trimestre-2026/",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-freddie-mac-711",
@@ -487,7 +487,7 @@
     "fonte": "Freddie Mac (PMMS), via WRE News",
     "link": "https://wrenews.com/freddie-mac-mortgage-rates-november-12-2026-7-11-percent/",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261113-pmll11-vende-tacaruna",
@@ -571,7 +571,7 @@
     "fonte": "Redfin (comunicado via PR Newswire)",
     "link": "https://finviz.com/news/421619/redfin-reports-monthly-mortgage-payments-fall-to-lowest-level-in-6-weeks-as-home-prices-keep-dipping",
     "data_noticia": "2026-11-12",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-abc-locacoes-sobem-40",
@@ -599,6 +599,104 @@
     "fonte": "FIIs.com.br (cotações B3)",
     "link": "https://fiis.com.br/noticias/ifix-hoje-fechamento-queda-fundos-imobiliarios/",
     "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261117-fipezap-aluguel-9",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Brasil",
+    "titulo": "Aluguel sobe 9% em 12 meses, quase o dobro da inflação",
+    "fato": "O aluguel residencial subiu 9,01% em 12 meses até outubro, segundo o Índice FipeZAP, contra 4,63% do IPCA no mesmo período. No ano, a alta é de 7,63%, acima do IPCA (4,10%) e do IGP-M (4,97%).",
+    "numero": "9,01%",
+    "detalhe": "O ritmo está perdendo força: outubro subiu 0,49%, o sexto mês seguido de desaceleração (em abril foi 1,04%). E o índice mede o preço anunciado em novos contratos, não o reajuste de quem já está alugando.",
+    "pra_voce": "Quem paga aluguel está vendo a conta subir bem mais rápido que o salário. Para quem tem imóvel para alugar, a renda continua crescendo acima da inflação, com rentabilidade média de 6,13% ao ano.",
+    "fonte": "FipeZAP (via TV Sim Brasil e Condomínio Interativo)",
+    "link": "https://tvsimbrasil.com.br/brasil/economia/noticia/2026/11/17/por-que-aluguel-sobe-quase-dobro-inflacao-desacelerando",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261116-incc-10-acelera",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Brasil",
+    "titulo": "Custo da construção acelera para 0,33% em novembro",
+    "fato": "O INCC-10, que mede o custo da construção, subiu 0,33% em novembro, depois de 0,28% em outubro, segundo a FGV. Materiais e equipamentos passaram de 0,28% para 0,48%.",
+    "numero": "0,33%",
+    "detalhe": "O índice geral (IGP-10) fez o contrário e desacelerou de 1,76% para 0,76%, com alívio do petróleo e da soja. Ou seja, a inflação geral esfriou, mas a obra ficou mais cara.",
+    "pra_voce": "Quem compra imóvel na planta tem as parcelas corrigidas pelo INCC até a entrega das chaves. Custo de obra subindo significa parcela maior durante a construção e pressão no preço dos próximos lançamentos.",
+    "fonte": "FGV Ibre (via IstoÉ Dinheiro e Times Brasil)",
+    "link": "https://timesbrasil.com.br/brasil/gp-10-novembro-2026-petroleo-soja/",
+    "data_noticia": "2026-11-16",
+    "usada": false
+  },
+  {
+    "id": "20261117-fgts-outubro-124-bi",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Crédito e juros",
+    "titulo": "FGTS libera R$ 12,4 bi para habitação em outubro",
+    "fato": "Os desembolsos do FGTS para habitação somaram R$ 12,4 bilhões em outubro, alta de 95% sobre setembro, segundo análise do Safra. Só para pessoas físicas foram R$ 9,1 bilhões, alta de 136% no mês.",
+    "numero": "R$ 12,4 bi",
+    "detalhe": "Parte do salto é recuperação depois da greve da Caixa em setembro. No acumulado do ano, de janeiro a outubro, o FGTS liberou R$ 98,5 bilhões, 7% a menos que em 2025.",
+    "pra_voce": "O dinheiro do FGTS, que banca o Minha Casa, Minha Vida com juros bem abaixo dos bancos privados, voltou a girar. Para quem tem renda de faixa do programa, é a porta mais barata para a casa própria enquanto os bancos sobem as taxas.",
+    "fonte": "Safra (O Especialista)",
+    "link": "https://oespecialista.safra.com.br/credito-imobiliario-fgts-juros-construcao/",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261117-nahb-confianca-25",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Mundo",
+    "titulo": "EUA: confiança de construtoras é a menor desde 2012",
+    "fato": "O índice de confiança das construtoras dos EUA (NAHB/Wells Fargo) caiu 4 pontos em novembro, para 25, o menor nível desde abril de 2012. 46% das construtoras cortaram preço, a maior fatia desde a Covid.",
+    "numero": "25 pontos",
+    "detalhe": "Mais construtoras estão cortando, mas o desconto médio ficou parado em 6% pelo oitavo mês seguido. E 68% oferecem algum incentivo para fechar a venda.",
+    "pra_voce": "Com juros perto de 7,5% nos EUA, o comprador sumiu e quem vende teve que negociar. É o mesmo efeito que o juro alto causa aqui: mercado travado é mercado com mais desconto para quem tem crédito aprovado.",
+    "fonte": "NAHB (confirmado em HousingWire)",
+    "link": "https://www.nahb.org/news-and-economics/press-releases/2026/11/builder-sentiment-continues-to-fall-on-affordability-concerns",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261117-eua-cancelamentos-lgi",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Mundo",
+    "titulo": "EUA: construtora vê 53,8% das vendas canceladas",
+    "fato": "A taxa de cancelamento de vendas da construtora americana LGI Homes chegou a 53,8%, contra 33,6% um ano antes e 26,2% dois anos antes, segundo a HousingWire.",
+    "numero": "53,8%",
+    "detalhe": "Não é que o comprador abandonou o mercado: ele está adiando a decisão por causa da volatilidade dos juros. Compradores de imóvel novo ainda conseguem taxa média de 5,01% com subsídio das construtoras, contra 6,15% de quem compra usado.",
+    "pra_voce": "Distrato alto é sinal de comprador que assinou sem ter certeza da parcela. Aqui no Brasil vale o mesmo cuidado: simular o financiamento antes de assinar evita perder até 25% do que já foi pago num distrato.",
+    "fonte": "HousingWire",
+    "link": "https://www.housingwire.com/articles/homebuilder-confidence-november-2026/",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261117-espanha-vendas-134",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Mundo",
+    "titulo": "Espanha: venda de imóveis cai 13,4% em setembro",
+    "fato": "A Espanha registrou 54.548 vendas de imóveis em setembro, 13,4% a menos que no mesmo mês de 2025 (63.018), segundo o instituto de estatística do país (INE). O preço médio chegou a 2.335 euros por metro quadrado.",
+    "numero": "-13,4%",
+    "detalhe": "No ano, de janeiro a setembro, a queda é de só 3,6%, e o total ainda é um dos melhores desde 2007. O motivo da freada é preço alto puxado pela falta de imóveis, não falta de comprador.",
+    "pra_voce": "Quando falta oferta, o preço sobe até travar as vendas. É um sinal para quem espera o preço cair aqui: em cidade com pouca oferta de imóvel bom, o preço tende a segurar mesmo com juro alto.",
+    "fonte": "INE (via The Olive Press)",
+    "link": "https://www.theolivepress.es/spain-news/2026/11/17/home-sales-in-spain-fell-by-13-4-in-september-due-to-high-prices/",
+    "data_noticia": "2026-11-17",
+    "usada": false
+  },
+  {
+    "id": "20261117-canada-construcao-outubro",
+    "coletada_em": "2026-11-18 04:50",
+    "categoria": "Mundo",
+    "titulo": "Canadá: início de obras cai 2% em outubro",
+    "fato": "O ritmo anualizado de início de obras de moradia no Canadá caiu 2% em outubro, para 244.558 unidades, contra 250.072 em setembro, segundo a agência de habitação do país (CMHC).",
+    "numero": "-2%",
+    "detalhe": "Nas cidades com mais de 10 mil habitantes, as obras iniciadas em outubro subiram 6% sobre outubro de 2025. Mas no acumulado do ano a queda é de 3%, e Toronto recua 10% na tendência de seis meses.",
+    "pra_voce": "Menos obra começando hoje é menos imóvel pronto daqui a dois ou três anos. Quando a oferta encolhe, o preço tende a subir lá na frente, e quem compra antes costuma pagar menos.",
+    "fonte": "CMHC (via Newswire)",
+    "link": "https://www.newswire.ca/news-releases/housing-starts-and-construction-data-for-october-2026-802205209.html",
+    "data_noticia": "2026-11-17",
     "usada": false
   }
 ]
