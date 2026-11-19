@@ -417,7 +417,7 @@
     "fonte": "Raio-X FipeZap (Fipe e Grupo OLX), via Brasil em Folhas",
     "link": "https://brasilemfolhas.com.br/2026/11/compra-de-imoveis-cai-para-niveis-de-crises-anteriores/",
     "data_noticia": "2026-11-13",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-nar-vendas-eua-menor-2010",
@@ -445,7 +445,7 @@
     "fonte": "FIIs.com.br",
     "link": "https://fiis.com.br/noticias/ifix-sobe-136-fecha-semana-vermelho/",
     "data_noticia": "2026-11-13",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261113-caixa-estuda-subir-juros",
@@ -459,7 +459,7 @@
     "fonte": "Exame, via SBT News (dados da Caixa e da Abecip)",
     "link": "https://sbtnews.sbt.com.br/noticia/economia/caixa-estuda-aumentar-juros-da-casa-propria-entenda",
     "data_noticia": "2026-11-13",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-cyrela-lucro-3t26",
@@ -501,7 +501,7 @@
     "fonte": "Money Times (fato relevante do PMLL11)",
     "link": "https://www.moneytimes.com.br/fundo-imobiliario-vende-participacao-em-shopping-por-r-45-milhoes-ifix-recua-igdl/",
     "data_noticia": "2026-11-13",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-rightmove-cai-18",
@@ -752,6 +752,20 @@
     "pra_voce": "Tem muita gente comprando e vendendo FII, e com cotas mais baratas o rendimento proporcional sobe. Para quem quer renda com imóvel sem comprar um, é hora de olhar com calma a qualidade de cada fundo.",
     "fonte": "FIIs.com.br, com dados da B3",
     "link": "https://fiis.com.br/noticias/bom-dia-fiis-181126/",
+    "data_noticia": "2026-11-18",
+    "usada": false
+  },
+  {
+    "id": "20261118-nar-pendentes-recorde-baixa",
+    "coletada_em": "2026-11-19 09:00",
+    "categoria": "Mundo",
+    "titulo": "EUA: contratos de compra de casa caem 16,7% em um ano",
+    "fato": "As vendas pendentes de casas nos EUA (contratos assinados ainda não fechados) caíram 4,7% em outubro ante setembro e 16,7% em um ano, segundo a NAR, o 2º mês seguido em nível recorde de baixa.",
+    "numero": "-16,7%",
+    "detalhe": "O mercado esperava queda de só 1,8% no mês (FactSet). Mas o economista-chefe da NAR, Lawrence Yun, diz que outubro pode ser o fundo do poço do ciclo e que os juros da casa parecem ter parado de subir.",
+    "pra_voce": "Juro alto trava a compra até nos EUA. Aqui a lógica é a mesma: quando o crédito pesa, quem tem entrada e se organiza negocia melhor, porque tem menos gente disputando o mesmo imóvel.",
+    "fonte": "National Association of Realtors (NAR), via GlobeNewswire; confirmado no Diário do Grande ABC",
+    "link": "https://www.globenewswire.com/news-release/2026/11/18/3405853/0/en/pending-home-sales-decreased-4-7-in-october-according-to-nar-report.html",
     "data_noticia": "2026-11-18",
     "usada": false
   }
