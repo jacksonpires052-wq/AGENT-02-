@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Jackson Pires | Corretor de Imóveis em Sorocaba</title>
 <meta name="description" content="Jackson Pires, corretor de imóveis em Sorocaba. Especialista em Minha Casa Minha Vida e apartamentos na planta em Sorocaba e Votorantim. CRECI-SP 323400.">
 <meta property="og:title" content="Jackson Pires | Corretor de Imóveis em Sorocaba">
@@ -57,7 +59,8 @@ section{padding:72px 0}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px}
 .logo{display:flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-weight:800;font-size:15px;flex:none;color:var(--ink)}
-.logo .marca{width:40px;height:40px}
+.logo .marca{width:auto;height:46px;flex:none}
+.rodape .logo .marca{height:40px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 .logo small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.02em}
 .menu{display:flex;gap:20px;font-size:14px;font-weight:500;color:#334}
 .menu a:hover,.menu a.ativo{color:var(--azul2)}
@@ -316,7 +319,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:52px 0 96px;font
 
 <header>
   <div class="wrap nav">
-    <a href="#/" class="logo"><svg class="marca" viewBox="0 0 48 48"><path d="M4 40 24 8l20 32h-9L24 22 13 40z" fill="#0b1f4d"/><path d="M24 22l11 18h9L24 8z" fill="#3b63d9"/></svg><span>JACKSON PIRES<small>Corretor de imóveis</small></span></a>
+    <a href="#/" class="logo"><img class="marca" src="logo.webp" alt="" width="48" height="46"><span>JACKSON PIRES<small>Corretor de imóveis</small></span></a>
     <nav class="menu" id="menu">
       <a href="#/imoveis" data-p="imoveis">Imóveis</a>
       <a href="#/sobre" data-p="sobre">Sobre</a>
@@ -341,7 +344,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:52px 0 96px;font
 <footer>
   <div class="wrap">
     <div class="rodape">
-      <div><a href="#/" class="logo"><svg class="marca" viewBox="0 0 48 48"><path d="M4 40 24 8l20 32h-9L24 22 13 40z" fill="#fff"/><path d="M24 22l11 18h9L24 8z" fill="#7d9bf0"/></svg><span>JACKSON PIRES<small>Corretor de imóveis</small></span></a>
+      <div><a href="#/" class="logo"><img class="marca" src="logo.webp" alt="" width="48" height="46"><span>JACKSON PIRES<small>Corretor de imóveis</small></span></a>
         <p style="margin-top:14px">Atendimento humano e transparente pra você realizar o sonho do primeiro lar ou fazer o melhor investimento.</p></div>
       <div><h3>Navegação</h3><div class="links"><a href="#/imoveis">Imóveis</a><a href="#/sobre">Sobre</a><a href="#/depoimentos">Depoimentos</a><a href="#/relatos">Relatos</a><a href="#/privacidade">Política de Privacidade</a></div></div>
       <div><h3>Mais</h3><div class="links"><a href="#/parceiros">Parceiros</a><a href="#/premiacoes">Premiações</a><a href="#/eventos">Eventos</a><a href="#/contato">Contato</a></div></div>
