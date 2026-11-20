@@ -1,4 +1,4 @@
-"""Versão ANIMADA do story (Boletim ou Leve). Gera story.mp4 (1080x1920, 30 fps, 8 s, com trilha) e story.jpg (quadro final).
+"""Versão ANIMADA do story (Boletim ou Leve). Gera story.mp4 (1080x1920, 30 fps, 8 s, sem música) e story.jpg (quadro final).
 Uso: python3 agente03/story_motion.py noticia.json pasta_saida [leve|boletim]
 O stories.js publica o story.mp4 quando existe e cai para o story.jpg se o vídeo falhar.
 """
@@ -78,11 +78,12 @@ def main():
     if est > 1: print(f"ATENÇÃO: texto não coube ({est}px)"); sys.exit(2)
     os.makedirs(saida, exist_ok=True)
     mp4 = os.path.join(saida, "story.mp4")
+    # Sem música (pedido do Jackson em 20/11). Para voltar a trilha, rode com MUSICA=1.
+    audio = ["-i", TRILHA, "-filter_complex", f"[1:a]afade=t=in:d=0.5,afade=t=out:st={DUR-1}:d=1,volume=0.8[a]",
+             "-map", "0:v", "-map", "[a]", "-c:a", "aac", "-b:a", "128k", "-ar", "44100"] if os.environ.get("MUSICA") == "1" else ["-an"]
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(tmp, "q%04d.jpg"),
-                    "-i", TRILHA, "-filter_complex", f"[1:a]afade=t=in:d=0.5,afade=t=out:st={DUR-1}:d=1,volume=0.8[a]",
-                    "-map", "0:v", "-map", "[a]", "-t", str(DUR), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-                    "-pix_fmt", "yuv420p", "-profile:v", "high", "-r", str(FPS), "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
-                    "-movflags", "+faststart", mp4], check=True)
+                    *audio, "-t", str(DUR), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+                    "-pix_fmt", "yuv420p", "-profile:v", "high", "-r", str(FPS), "-movflags", "+faststart", mp4], check=True)
     ult = sorted(os.listdir(tmp))[-1]
     from PIL import Image
     Image.open(os.path.join(tmp, ult)).convert("RGB").save(os.path.join(saida, "story.jpg"), quality=93)
