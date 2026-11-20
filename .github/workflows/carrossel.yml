@@ -1,0 +1,33 @@
+name: Agente 10 - Carrossel no feed
+
+# Posta 1 carrossel de carrosseis/<pasta>/ (01.jpg.. e legenda.txt). Disparo manual ou agendado.
+on:
+  workflow_dispatch:
+    inputs:
+      pasta:
+        description: "Pasta em carrosseis/ (vazio = o mais antigo ainda não publicado)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: carrossel
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: instagram
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Postar o carrossel
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          PASTA: ${{ inputs.pasta }}
+        run: node agente10/carrossel.js
