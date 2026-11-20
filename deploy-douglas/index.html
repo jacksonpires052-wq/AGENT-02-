@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Douglas Conceição | Corretor de Imóveis em Sorocaba</title>
+<link rel="preconnect" href="https://api.apto.vc" crossorigin>
+<link rel="preconnect" href="https://assets.apto.vc" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Douglas Conceição - Corretor de Imóveis","telephone":"+55 15 99737-1476","areaServed":["Sorocaba","Votorantim"],"address":{"@type":"PostalAddress","addressLocality":"Sorocaba","addressRegion":"SP","addressCountry":"BR"},"image":"https://jackson-copia-2.web.app/og.jpg","url":"https://jackson-copia-2.web.app/","identifier":"CRECI-SP 153553-F"}</script>
+<meta name="description" content="Douglas Conceição, corretor de imóveis em Sorocaba. Especialista em Minha Casa Minha Vida e apartamentos na planta em Sorocaba e Votorantim. CRECI-SP 153553-F.">
+<meta property="og:title" content="Douglas Conceição | Corretor de Imóveis em Sorocaba">
+<meta property="og:description" content="Apartamentos na planta e Minha Casa Minha Vida em Sorocaba e Votorantim. Me chama no WhatsApp.">
+<meta property="og:image" content="https://jackson-copia-2.web.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jackson-copia-2.web.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jackson-copia-2.web.app/og.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1f4d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1430;          /* texto principal */
+  --azul:#0b1f4d;         /* azul escuro da marca */
+  --azul2:#16337a;        /* azul de apoio */
+  --claro:#e7eeff;        /* fundo suave */
+  --claro2:#f3f6ff;
+  --muted:#5a6680; --line:#e3e8f2; --verde:#25d366; --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,.poppins{font-family:Poppins,Arial,sans-serif;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:14px 26px;font-weight:600;font-size:15px;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;font-family:Inter,sans-serif}
+.btn:hover{transform:translateY(-2px)}
+.btn-azul{background:var(--azul);color:#fff;box-shadow:0 10px 24px rgba(11,31,77,.25)}
+.btn-azul:hover{background:var(--azul2)}
+.btn-escuro{background:var(--ink);color:#fff}
+.btn-linha{background:#fff;color:var(--azul);box-shadow:inset 0 0 0 1.5px var(--azul)}
+.btn-branco{background:#fff;color:var(--azul)}
+.ico{width:18px;height:18px;fill:currentColor;flex:none}
+.script{font-family:Caveat,cursive;color:var(--azul2);font-size:30px;line-height:1.1}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azul2)}
+h1.titulo,h2{font-size:clamp(28px,4vw,42px);line-height:1.12;font-weight:800;color:var(--ink);margin:6px 0 10px}
+h2 em,h1 em{font-style:normal;color:var(--azul2)}
+.sub{color:var(--muted);max-width:680px}
+section{padding:72px 0}
+.suave{background:linear-gradient(180deg,#fff 0%,var(--claro2) 100%)}
+.link-mais{display:inline-flex;align-items:center;gap:6px;margin-top:24px}
+
+/* topo */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-weight:800;font-size:15px;flex:none;color:var(--ink)}
+.logo .marca{width:auto;height:46px;flex:none}
+.rodape .logo .marca{height:40px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.logo small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.02em}
+.menu{display:flex;gap:20px;font-size:14px;font-weight:500;color:#334}
+.menu a:hover,.menu a.ativo{color:var(--azul2)}
+.lado{display:flex;align-items:center;gap:10px}
+.sociais{display:flex;gap:6px}
+.sociais a{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--claro);color:var(--azul)}
+.sociais a:hover{background:var(--azul);color:#fff}
+.sociais svg{width:16px;height:16px;fill:currentColor}
+.nav .btn{padding:10px 18px;font-size:14px}
+.hamb{display:none;background:none;border:0;color:var(--ink);cursor:pointer;width:40px;height:40px}
+.hamb svg{width:24px;height:24px}
+@media(max-width:1100px){
+  .menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 20px;gap:16px;box-shadow:0 20px 30px rgba(11,20,48,.12);font-size:16px}
+  .menu.aberto{display:flex}
+  .hamb{display:grid;place-items:center}
+  header .sociais{display:none}
+}
+@media(max-width:560px){.nav .btn-azul span{display:none}.nav .btn{width:42px;height:42px;padding:0}}
+
+/* hero */
+.hero{background:radial-gradient(700px 420px at 75% 30%,var(--claro) 0%,transparent 70%),#fff;padding:56px 0 30px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.04;font-weight:800;margin-bottom:18px}
+.hero h1 em{display:block}
+.hero p.lead{font-size:18px;color:#3c4660;max-width:540px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 20px;margin:22px 0 28px;font-weight:600;font-size:15px}
+.checks span{display:flex;align-items:center;gap:6px}
+.checks svg{width:18px;height:18px;stroke:var(--azul2);fill:none;stroke-width:2.5}
+.hero-foto{position:relative;display:grid;place-items:end center;min-height:380px}
+.hero-foto .circulo{position:absolute;width:64%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,#9db4ff,var(--azul2));right:0;bottom:6%;opacity:.9}
+.hero-foto .circulo.peq{width:30%;left:4%;top:8%;right:auto;bottom:auto;background:var(--claro);opacity:1}
+.hero-foto img{position:relative;width:auto;max-width:72%;max-height:440px;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(11,31,77,.25))}
+.hero-foto .badge{position:absolute;left:0;bottom:60px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 14px 30px rgba(11,20,48,.15);font-size:12px;color:var(--muted)}
+.hero-foto .badge b{display:block;font-family:Poppins,sans-serif;font-size:20px;color:var(--azul)}
+.hero .script{margin-top:34px}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr}.hero-foto{order:-1;min-height:0;max-width:340px;margin:0 auto}.hero-foto img{max-height:360px}.hero-foto .badge{left:-6px;bottom:6px;padding:8px 12px}.hero-foto .badge b{font-size:16px}}
+
+/* busca */
+.painel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:0 20px 50px rgba(11,20,48,.06)}
+.pilulas{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pilulas button{font:inherit;font-size:14px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#334;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pilulas button svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.pilulas button[aria-pressed=true]{background:var(--azul);color:#fff;border-color:var(--azul)}
+#p-zona button[style] svg{stroke:var(--zc)}
+#p-zona button[style][aria-pressed=true]{background:var(--zc);border-color:var(--zc)}
+#p-zona button[style][aria-pressed=true] svg{stroke:#fff}
+.filtros{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.filtros label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.filtros select{font:inherit;font-size:14px;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.filtros .mais{display:none}
+.filtros.aberto .mais{display:flex}
+.botoes-filtro{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px}
+.botoes-filtro button{background:none;border:0;color:var(--azul2);font-weight:600;cursor:pointer;font-size:14px;font-family:inherit}
+@media(max-width:900px){.filtros{grid-template-columns:repeat(2,1fr)}.painel{padding:20px}}
+.contagem{color:var(--muted);font-size:14px;margin:0}
+.ordem{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);margin-left:auto}
+.ordem select{font:inherit;font-weight:600;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff}
+.barra-res{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 16px;flex-wrap:wrap}
+.modos{display:inline-flex;background:var(--claro2);border:1px solid var(--line);border-radius:999px;padding:4px}
+.modos button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:#334;padding:8px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.modos button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.modos button[aria-pressed=true]{background:var(--azul);color:#fff;box-shadow:0 6px 16px rgba(11,31,77,.25)}
+.mapa-box{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(11,20,48,.12);height:min(72vh,640px);min-height:440px;margin-bottom:10px}
+.mapa-box[hidden]{display:none}
+#mapa{width:100%;height:100%;background:#eef2fb;font-family:Inter,sans-serif}
+#mapa .leaflet-top{top:58px}
+.mapa-chip{position:absolute;left:14px;bottom:30px;z-index:500;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--ink);box-shadow:0 8px 20px rgba(11,20,48,.15);pointer-events:none}
+.pin{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 8px))}
+.pin span{display:block;white-space:nowrap;background:var(--azul);color:#fff;font:700 13px Poppins,sans-serif;padding:6px 11px;border-radius:999px;box-shadow:0 6px 14px rgba(11,31,77,.35);border:2px solid #fff;transition:transform .15s,background .15s;position:relative}
+.pin span:after{content:"";position:absolute;left:50%;bottom:-8px;margin-left:-6px;border:6px solid transparent;border-top-color:#fff;border-bottom:0}
+.pin span{background:var(--pc,var(--azul))}
+.leaflet-marker-icon:hover .pin span{transform:scale(1.12);filter:brightness(1.08)}
+.mapa-leg{position:absolute;left:12px;right:12px;top:12px;z-index:500;display:flex;gap:6px;overflow-x:auto;padding:2px 2px 14px;margin-bottom:-12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mapa-leg::-webkit-scrollbar{display:none}
+.mapa-leg button{flex:none;font:600 13px Inter,sans-serif;display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;border:2px solid #fff;background:#fff;color:var(--ink);box-shadow:0 6px 16px rgba(11,20,48,.16);cursor:pointer}
+.mapa-leg button i{width:11px;height:11px;border-radius:50%;background:var(--zc);flex:none}
+.mapa-leg button small{font-weight:700;opacity:.6}
+.mapa-leg button[aria-pressed=true]{background:var(--zc);color:#fff}
+.mapa-leg button[aria-pressed=true] i{background:#fff}
+.mapa-leg button[aria-pressed=true] small{opacity:.85}
+.mapa-leg button[disabled]{opacity:.45;cursor:default}
+.leaflet-marker-icon:hover{z-index:9999!important}
+.leaflet-div-icon{background:none!important;border:0!important}
+.cluster{border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 16px rgba(11,20,48,.25)}
+.cluster b{width:36px;height:36px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font:700 14px Poppins,sans-serif;border:2px solid #fff;box-shadow:0 6px 14px rgba(11,31,77,.35)}
+.leaflet-popup-content-wrapper{border-radius:18px!important;padding:0!important;overflow:hidden;box-shadow:0 20px 40px rgba(11,20,48,.25)!important}
+.leaflet-popup-content{margin:0!important;width:260px!important}
+.pop img{width:100%;height:140px;object-fit:cover;display:block}
+.pop>div{padding:12px 14px 14px}
+.pop h4{font:800 16px Poppins,sans-serif;color:var(--ink);margin:0 0 2px}
+.pop p{margin:0!important;font-size:13px;color:var(--muted)}
+.pop .pp{font:800 17px Poppins,sans-serif;color:var(--azul2);margin:6px 0 10px!important}
+.pop .bts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pop .bts a{font:600 12px Inter,sans-serif;text-align:center;padding:9px 6px;border-radius:999px;text-decoration:none}
+.pop .bts a.l{box-shadow:inset 0 0 0 1.5px var(--azul);color:var(--azul)}
+.pop .bts a.z{background:#25d366;color:#fff}
+.leaflet-container a.leaflet-popup-close-button{color:#fff;background:rgba(11,20,48,.55);border-radius:50%;width:26px;height:26px;top:8px;right:8px;line-height:24px;font-size:18px;text-align:center}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.grade{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grade{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,20,48,.10)}
+.capa{height:190px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85);background-size:cover;background-position:center}
+.capa svg{width:58px;height:58px}
+.capa .tag{position:absolute;top:12px;left:12px;background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.capa .selo{position:absolute;left:12px;bottom:12px;background:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;box-shadow:0 4px 10px rgba(0,0,0,.18);letter-spacing:.02em}
+.capa .selo.dest{background:#f59e0b;color:#1f1300}
+.capa .zona{position:absolute;top:12px;right:12px;background:rgba(11,20,48,.55);color:#fff;font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.card-corpo{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:19px;font-weight:800;color:var(--ink)}
+.bairro{font-size:14px;color:var(--muted)}
+.specs{font-size:14px;color:#3c4660}
+.preco{margin:8px 0 12px;font-size:13px;color:var(--muted)}
+.preco b{font-family:Poppins,sans-serif;font-size:20px;font-weight:800;color:var(--azul2)}
+.card .btn{margin-top:auto;width:100%;padding:12px}
+.vazio{text-align:center;padding:40px;color:var(--muted);grid-column:1/-1;border:1.5px dashed var(--line);border-radius:var(--r)}
+.paginas{display:flex;justify-content:center;gap:6px;margin-top:30px;flex-wrap:wrap}
+.paginas button{font:inherit;font-size:14px;min-width:42px;height:42px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;padding:0 14px}
+.paginas button[aria-current=true]{background:var(--azul);color:#fff;border-color:var(--azul)}
+.paginas button:disabled{opacity:.4;cursor:default}
+
+/* sobre */
+.sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.sobre-foto{position:relative}
+.sobre-foto{display:grid;place-items:end center}
+.sobre-foto img{position:relative;max-height:400px;width:auto;filter:drop-shadow(0 20px 26px rgba(11,20,48,.18))}
+.sobre-foto:before{content:"";position:absolute;width:82%;aspect-ratio:1;bottom:4%;border-radius:50%;background:linear-gradient(135deg,var(--claro),#c9d7ff)}
+.lista-pilula{display:grid;gap:10px;margin:22px 0 26px}
+.lista-pilula span{display:flex;align-items:center;gap:10px;background:var(--claro2);border:1px solid var(--claro);padding:12px 16px;border-radius:14px;font-weight:500}
+.lista-pilula i{width:24px;height:24px;border-radius:50%;background:var(--claro);display:grid;place-items:center;flex:none}
+.lista-pilula i svg{width:13px;height:13px;stroke:var(--azul2);fill:none;stroke-width:3}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr}.sobre-foto{max-width:400px}}
+.texto p{margin-bottom:14px;color:#334}
+.citacao{border-left:4px solid var(--azul2);background:var(--claro2);padding:18px 22px;border-radius:0 16px 16px 0;font-family:Poppins,sans-serif;font-size:19px;font-weight:600;color:var(--azul);margin:22px 0}
+.cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.cartoes div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;font-weight:600}
+.cartoes span{display:block;font-size:26px;margin-bottom:6px}
+.cartoes b{display:block;font-family:Poppins,sans-serif;font-size:22px;color:var(--azul2)}
+@media(max-width:760px){.cartoes{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cartoes{grid-template-columns:1fr}}
+
+/* relatos, galeria, depoimentos */
+.video-destaque{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:var(--azul);margin-top:26px}
+.video-destaque iframe{width:100%;height:100%;border:0}
+.miniaturas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.miniaturas button{border:0;padding:0;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;background:var(--azul2) center/cover;position:relative}
+.miniaturas button:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:22px;background:rgba(0,0,0,.25)}
+.fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.fotos img{aspect-ratio:1;object-fit:cover;border-radius:16px;width:100%}
+@media(max-width:760px){.miniaturas,.fotos{grid-template-columns:repeat(2,1fr)}}
+.espera{border:1.5px dashed #c9d5f2;border-radius:var(--r);padding:40px 24px;text-align:center;color:var(--muted);margin-top:26px;background:var(--claro2)}
+.espera b{display:block;color:var(--ink);font-family:Poppins,sans-serif;font-size:18px;margin-bottom:6px}
+.google{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-top:24px}
+.estrelas{color:#f5b301;font-size:22px;letter-spacing:2px}
+.depos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.depo{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.depo p{font-size:15px;color:#334;margin:8px 0}
+@media(max-width:860px){.depos{grid-template-columns:1fr}}
+.lista-blocos{display:flex;flex-direction:column;gap:28px;margin-top:28px}
+.item-bloco{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:.9fr 1.1fr}
+.item-bloco img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.item-bloco .corpo{padding:24px}
+.item-bloco h2{font-size:24px}
+.item-bloco .selo{display:inline-block;background:var(--claro);color:var(--azul);font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px}
+.item-bloco .mini-fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.item-bloco .mini-fotos img{min-height:0;aspect-ratio:1;border-radius:10px}
+@media(max-width:760px){.item-bloco{grid-template-columns:1fr}}
+.premios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.premio{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.premio img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.premio div{padding:16px}
+.premio b{display:block}
+.premio span{color:var(--muted);font-size:14px}
+@media(max-width:860px){.premios{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.premios{grid-template-columns:1fr}}
+.cta-final{background:var(--azul);color:#fff;border-radius:28px;padding:44px 28px;text-align:center}
+.cta-final h2{color:#fff}
+.cta-final p{opacity:.8;margin-bottom:22px}
+
+/* página do imóvel */
+.partilha{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.partilha button,.partilha a{font:600 14px Inter,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+.partilha svg{width:17px;height:17px}
+.partilha a{border-color:#25d366;color:#128c4a}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;z-index:3000;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.voltar{display:inline-flex;gap:6px;font-weight:600;color:var(--azul2);margin:24px 0 14px}
+.imovel-hero{border-radius:28px;overflow:hidden;position:relative;min-height:340px;display:flex;align-items:flex-end;color:#fff;background-size:cover;background-position:center}
+.imovel-hero .sombra{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,20,48,.85),rgba(11,20,48,.05))}
+.imovel-hero .conteudo{position:relative;padding:30px}
+.imovel-hero h1{font-size:clamp(34px,5vw,54px);line-height:1.05;font-weight:800}
+.etiquetas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.etiquetas span{background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px}
+.imovel-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:28px;margin-top:28px;align-items:start}
+@media(max-width:920px){.imovel-grid{grid-template-columns:1fr}}
+.caixa{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-bottom:22px}
+.caixa h2{font-size:24px;margin-top:0}
+.ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ficha div{background:var(--claro2);border-radius:14px;padding:12px 14px}
+.ficha small{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ficha b{font-family:Poppins,sans-serif}
+@media(max-width:560px){.ficha{grid-template-columns:1fr 1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--claro);color:var(--azul);font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px}
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.galeria button{border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;background:var(--claro2)}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.galeria button:hover img{transform:scale(1.05)}
+.galeria button:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+@media(max-width:600px){.galeria{grid-template-columns:repeat(2,1fr)}}
+.planta-nav{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.planta-nav button{font:inherit;border:1px solid var(--line);background:#fff;border-radius:999px;width:34px;height:34px;cursor:pointer}
+.planta-img{cursor:zoom-in}
+.zoom{position:fixed;inset:0;z-index:100;background:rgba(7,12,30,.92);display:none;place-items:center;padding:20px}
+.zoom.aberto{display:grid}
+.zoom img{max-width:100%;max-height:88vh;border-radius:12px;background:#fff}
+.zoom button{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:22px;cursor:pointer}
+.credito{font-size:11px;color:var(--muted);margin-top:8px}
+.lista-check{list-style:none;display:grid;gap:8px}
+.lista-check li{display:flex;gap:8px}
+.lista-check li:before{content:"✓";color:var(--azul2);font-weight:800}
+.planta-box{position:sticky;top:92px}
+.metragens{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.metragens button{font:inherit;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.metragens button[aria-pressed=true]{background:var(--azul);color:#fff;border-color:var(--azul)}
+.planta-img{aspect-ratio:4/3;border-radius:16px;background:var(--claro2);display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:10px;border:1px dashed #c9d5f2}
+.planta-img img{width:100%;height:100%;object-fit:contain}
+.preco-grande{font-family:Poppins,sans-serif;font-size:30px;font-weight:800;color:var(--azul2);margin-top:12px}
+.preco-grande small{display:block;font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--muted)}
+.aviso{font-size:12px;color:var(--muted)}
+.consent{display:flex;gap:8px;font-size:13px;color:var(--muted);margin:12px 0;align-items:flex-start}
+.consent input{margin-top:3px;accent-color:var(--azul)}
+.consent a{color:var(--azul2);font-weight:600}
+.mapa{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--claro2);margin:12px 0}
+.mapa iframe{width:100%;height:100%;border:0}
+
+/* contato */
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:880px){.contato-grid{grid-template-columns:1fr}}
+.form{display:grid;gap:12px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 24px 60px rgba(11,20,48,.08)}
+.form input:not([type=checkbox]),.form select{font:inherit;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);width:100%}
+.form input:focus,.form select:focus{outline:2px solid var(--claro);border-color:var(--azul2)}
+.canais{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.canal{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.canal small{display:block;color:var(--azul2);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.canal b{font-family:Poppins,sans-serif;font-size:18px}
+.canal.destaque{background:var(--azul);color:#fff;border-color:var(--azul)}
+.canal.destaque small{color:#9db4ff}
+@media(max-width:760px){.canais{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:52px 0 96px;font-size:14px}
+.rodape{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.rodape h3{color:#fff;font-size:15px;margin-bottom:10px}
+.rodape .logo{color:#fff}.rodape .logo small{color:rgba(255,255,255,.6)}
+.rodape a:hover{color:#fff}
+.rodape .links{display:flex;flex-direction:column;gap:6px}
+.rodape .sociais a{background:rgba(255,255,255,.08);color:#fff}
+.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:860px){.rodape{grid-template-columns:1fr 1fr}}
+
+.zap-flutua{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--verde);display:grid;place-items:center;box-shadow:0 10px 28px rgba(37,211,102,.45)}
+.zap-flutua svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#/" class="logo"><img class="marca" src="logo.webp" alt="" width="48" height="46"><span>DOUGLAS CONCEIÇÃO<small>Corretor de imóveis</small></span></a>
+    <nav class="menu" id="menu">
+      <a href="#/imoveis" data-p="imoveis">Imóveis</a>
+      <a href="#/sobre" data-p="sobre">Sobre</a>
+      <a href="#/depoimentos" data-p="depoimentos">Depoimentos</a>
+      <a href="#/parceiros" data-p="parceiros">Parceiros</a>
+      <a href="#/premiacoes" data-p="premiacoes">Premiações</a>
+      <a href="#/eventos" data-p="eventos">Eventos</a>
+      <a href="#/contato" data-p="contato">Contato</a>
+    </nav>
+    <div class="lado">
+      <div class="sociais" data-sociais></div>
+      <a class="btn btn-azul" data-zap href="#" aria-label="Fale comigo"><svg class="ico" viewBox="0 0 24 24"><use href="#i-zap"/></svg><span>Fale comigo</span></a>
+      <button class="hamb" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('aberto')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="app"></main>
+<div class="zoom" id="zoom" onclick="if(event.target===this||event.target.tagName==='BUTTON')this.classList.remove('aberto')"><button aria-label="Fechar">×</button><img alt=""></div>
+
+<footer>
+  <div class="wrap">
+    <div class="rodape">
+      <div><a href="#/" class="logo"><img class="marca" src="logo.webp" alt="" width="48" height="46"><span>DOUGLAS CONCEIÇÃO<small>Corretor de imóveis</small></span></a>
+        <p style="margin-top:14px">Atendimento humano e transparente pra você realizar o sonho do primeiro lar ou fazer o melhor investimento.</p></div>
+      <div><h3>Navegação</h3><div class="links"><a href="#/imoveis">Imóveis</a><a href="#/sobre">Sobre</a><a href="#/depoimentos">Depoimentos</a><a href="#/privacidade">Política de Privacidade</a></div></div>
+      <div><h3>Mais</h3><div class="links"><a href="#/parceiros">Parceiros</a><a href="#/premiacoes">Premiações</a><a href="#/eventos">Eventos</a><a href="#/contato">Contato</a></div></div>
+      <div><h3>Contato</h3><div class="links"><a data-zap href="#" data-tel></a><span>Sorocaba - SP</span><span>CRECI-SP 153553-F</span><div class="sociais" data-sociais style="margin-top:6px"></div></div></div>
+    </div>
+    <div class="copy"><span>© 2026 Douglas Conceição · Corretor de imóveis</span><span>CRECI-SP 153553-F</span></div>
+  </div>
+</footer>
+
+<a class="zap-flutua" data-zap href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1-1 0-1.8.2-2.4.5-.7.3-1.2.6-1.8 1.2S2.8 5 2.6 5.7c-.3.6-.4 1.4-.5 2.4C2 9 2 9.3 2 12s0 3 .1 4.1c0 1 .2 1.8.5 2.4.3.7.6 1.2 1.2 1.8s1.1.9 1.8 1.2c.6.3 1.4.4 2.4.5 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2s.9-1.1 1.2-1.8c.3-.6.4-1.4.5-2.4.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c0-1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8S19 2.8 18.3 2.6c-.6-.3-1.4-.4-2.4-.5C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1.9 0 1.5.2 1.8.3.5.2.8.4 1.1.7.4.4.6.7.7 1.1.1.3.3.9.3 1.8.1 1 .1 1.4.1 4s0 3-.1 4c0 .9-.2 1.5-.3 1.8-.2.5-.4.8-.7 1.1-.4.4-.7.6-1.1.7-.3.1-.9.3-1.8.3-1 .1-1.4.1-4 .1s-3 0-4-.1c-.9 0-1.5-.2-1.8-.3-.5-.2-.8-.4-1.1-.7-.4-.4-.6-.7-.7-1.1-.1-.3-.3-.9-.3-1.8-.1-1-.1-1.4-.1-4s0-3 .1-4c0-.9.2-1.5.3-1.8.2-.5.4-.8.7-1.1.4-.4.7-.6 1.1-.7.3-.1.9-.3 1.8-.3 1-.1 1.4-.1 4-.1z"/></symbol>
+  <symbol id="i-face" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.6V14h2.8v8h3.1z"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-1.8-2.5V9.7a5.8 5.8 0 1 0 5 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.3-1.6z"/></symbol>
+</svg>
+
+<script>
+/* ====== SEUS DADOS (é só trocar aqui) ====== */
+const WHATS = "5515997371476";
+const TEL_TXT = "(15) 99737-1476";
+const EMAIL = "";          // ex.: "jackson@creci.org.br"
+const ENDERECO = "";       // ex.: "Rua Tal, 100 - Bairro - Sorocaba/SP"
+const REDES = { instagram:"", facebook:"", tiktok:"" };   // links completos
+const GOOGLE_AVALIACOES = "https://www.google.com/search?q=Douglas+Concei%C3%A7%C3%A3o+corretor+de+im%C3%B3veis+Sorocaba";
+const MSG_PADRAO = "Olá, Douglas! Vi o seu site e gostaria de conversar sobre os imóveis.";
+
+const VIDEOS = [];       // códigos de vídeos do YouTube
+const FOTOS = [];        // fotos de entrega de chaves
+const DEPOIMENTOS = [];  // {nome, texto, quando} copiados do seu Google
+const PARCEIROS = [];    // {nome, texto, foto, destaque}
+const PREMIOS = [];      // {titulo, ano, foto}
+const EVENTOS = [];      // {titulo, texto, foto, fotos:[]}
+
+/* Fotos dos imóveis: coloque o arquivo na pasta e ligue aqui pelo nome do imóvel.
+   ex.: FOTOS_IMOVEIS["villa-creta"] = {capa:"imoveis/villa-creta.jpg", plantas:{41:"imoveis/villa-creta-41.jpg"}} */
+const FOTOS_IMOVEIS = {};
+
+/* Textos extras por imóvel */
+const EXTRAS = {
+  "villa-creta": {
+    sobre:["O Villa Creta faz parte do complexo Villas do Mediterrâneo, junto com o Villa Malta e o Villa Capri. São 215 apartamentos de 2 dormitórios, cada um com 1 vaga de garagem.",
+           "Já vem com preparação para ar-condicionado, infraestrutura para gás, iluminação em LED e infraestrutura para câmeras. Dá pra financiar pelo Minha Casa Minha Vida pela Caixa, conforme as regras do programa."],
+    lazer:["Piscina adulto","Piscina infantil","Piscina coberta","Sauna","Academia","Salão de festas com churrasqueira","Espaço coworking","Salão de jogos","Playground","Pet place","Redário","Jardim com bancos","Minimercado","Car wash","Área de delivery"],
+    local:"Fica pertinho das avenidas Armando Pannunzio e Antônio Carlos Comitre e da Raposo Tavares. Perto do Shopping Iguatemi Esplanada, Leroy Merlin, Supermercado Confiança, Parque Campolim, Decathlon e Sam's Club."
+  }
+};
+
+/* Lista de imóveis (nome, tipo, bairro, zona, entrega, preço a partir de, dormitórios, suítes, varanda, quintal, garagem coberta,
+   vaga dupla, pontos de ar, construtora, torres, andares, aptos por andar, elevadores, piso, documentação, endereço, destaque, lat, lng, plantas[[m², preço]]) */
+const RAW = [["Reserva Painá","apartamento","Jardim Brasilândia","norte","2030-03-01",280000,[2],0,1,1,0,0,2,"BRN",4,"T+14",4,1,"","","Rua Galileu Pasquinelli, 775",0,-23.4751755,-47.4596389,[[47,280000],[73,399999]]],["Villa Creta","apartamento","Jardim São Carlos","sul","2030-03-01",266000,[2],1,1,0,0,0,2,"JCR",1,"T+17",12,3,"areas_molhadas","gratis","Rua Affonso Celso Dias, Gleba 05, Área A1",1,-23.5286968,-47.4837797,[[41,266000],[43,280000],[45,293000],[47,309000]]],["Siver Botanique","apartamento","Recreio dos Sorocabanos","norte","2030-01-01",264000,[2],0,1,1,1,0,1,"Sivercon",2,"T+17",8,2,"areas_molhadas","gratis","Av. Cleise Teresinha Rosa Silva, 260",0,-23.4576651,-47.502752,[[43,264000],[43,264000],[45,270000]]],["Garden Houses","casa","Vila Leopoldina","norte","2029-01-01",299000,[1,2],0,0,1,0,0,null,"GTJ Engenharia",50,"",null,null,"completo","","Rua Reinero Corradini, Lote 08 – Vila Leopoldina",0,-23.4787282,-47.4858734,[[31,229000],[58,300700]]],["Vista Horto","casa","Caguaçu","norte","2029-10-01",254000,[2],0,0,1,0,0,null,"Habiter",null,"",null,null,"completo","gratis","Rua Seraphim Banietti, 1585 - Caguassu",0,-23.4472585,-47.5005586,[[45,254000]]],["São Conrado","apartamento","Jardim Zulmira","oeste","2030-01-01",259000,[2],1,1,1,1,0,2,"ADN",3,"T+12",10,2,"areas_molhadas","gratis","Rua Rosa Maria de Oliveira, s/n – Jardim Zulmira",1,-23.500917,-47.4857601,[[43,259000],[47,302999]]],["Mirage Itavuvu","apartamento","Jd. Santa Cecília","norte","2030-01-01",240000,[1,2],0,1,0,1,0,1,"Construlike",2,"T+23",13,5,"areas_molhadas","gratis","Av. Itavuvu, 3049 - Jardim Santa Cecilia",1,-23.4580668,-47.4829891,[[36,240000],[43,283000]]],["Green Park Resort","apartamento","Cagassu","norte","2030-06-01",251000,[2],1,1,1,0,0,1,"Engefor",3,"T+11",8,2,"areas_molhadas","gratis","Alameda do Horto, 714 – Caguaçu, Sorocaba/SP.",0,-23.4460862,-47.5005874,[[42,251000],[46,271000]]],["Seattle","apartamento","Vila Espírito Santo","oeste","2027-07-01",350000,[2],1,1,1,0,0,3,"ESC",1,"T+13",8,2,"areas_molhadas","","Rua Dr. Luiz Mendes de Almeida, 1880",0,-23.526447,-47.5028246,[[72,371000]]],["Villa Vic Pompéia","casa","Vila Cristal","votorantim","2028-10-01",233000,[2],0,1,1,0,0,1,"VIC",null,"",null,null,"completo","gratis","Rua José Escola",0,-23.5809844,-47.4699408,[[43,234500],[51,233000]]],["Gama Harmony","apartamento","Vila Angélica","norte","2029-08-01",320000,[2,3],1,1,0,0,0,3,"Gama",1,"T+14",8,2,"areas_molhadas","","R. Guaianazes, S/N",0,-23.4834235,-47.4797265,[[56,320000],[69,418000]]],["Smart Reale","apartamento","Santa Rosália","leste","2028-07-01",244000,[1,2],0,1,0,1,0,1,"Gama",1,"T+11",13,2,"completo","","R. Dr. Humberto Reale, nº 215",0,-23.4840628,-47.4496276,[[31,244000],[35,290000],[38,296000],[40,316000]]],["Rizz Campolim","apartamento","Campolim","sul","2028-07-01",458000,[2],0,1,1,1,0,2,"Vitta",3,"T+16",6,2,"completo","","Rua Augusto Lippel, 1691",0,-23.5368489,-47.4729347,[[57,458000],[61,528000]]],["Essência Campolim","apartamento","Campolim","sul","2028-10-01",604000,[2,3],1,1,1,1,1,3,"YEES",1,"T+23",6,3,"completo","","R. Elías Rodrigues Claro",0,-23.5273331,-47.4789598,[[66,604000],[71,629000],[73,630000],[79,631000]]],["JJR São Paulo II","apartamento","Jardim das Estrelas","leste","2028-02-01",379000,[2,3],0,1,1,1,1,3,"YEES",3,"T+20",8,2,"completo","","R. João Batista de Morães, 16",0,-23.4954426,-47.4212942,[[52,379000],[53,389000],[60,422000],[66,420000]]],["JJR Ipa Club","apartamento","Centro","central","2028-05-01",370000,[1,2,3],1,1,1,1,1,3,"YEES",2,"T+23",12,4,"completo","","R. Sete de Setembro, 777",0,-23.502091,-47.4688598,[[40,370000],[53,461000],[53,471000],[73,538000]]],["Buena Vista","apartamento","Alto da Boa Vista","leste","2026-12-01",430000,[2,3],1,1,1,1,1,3,"YEES",2,"T+20",8,3,"completo","","Al. Reino Unido",0,-23.4731347,-47.4160678,[[52,430000],[60,469000]]],["Lago de Davos","apartamento","Jardim Santa Bárbara","oeste","2029-08-01",215000,[2],0,1,1,0,0,null,"MRV",27,"T+3",4,null,"areas_molhadas","gratis","Dr. Américo Figueiredo, 4745",0,-23.506068,-47.5252443,[[40,225000],[44,238000],[50,250000]]],["JJR Hortência","apartamento","Vila Hortência","leste",null,371000,[2,3],1,1,0,1,0,3,"YEES",1,"T+23",6,2,"completo","","R. Ataliba Borges, 70 - Vila Hortência",0,-23.5017409,-47.4498008,[[53,371000],[71,473000]]],["Paradiso II","apartamento","Éden","leste","2028-09-01",225000,[2],0,0,1,0,0,1,"Longitude",14,"T+3",8,null,"completo","gratis","R. Heitor Antonio Paladim, 145",0,-23.419946,-47.4362429,[[40,225000],[46,265000]]],["Mirage Clube","apartamento","Além Ponte","leste","2029-12-01",239000,[1,2],1,1,0,1,0,2,"Like",3,"T+23",9,3,"areas_molhadas","gratis","Av. Eng. Carlos Reinaldo Mendes, 1481",0,-23.4855039,-47.4325319,[[37,237000],[38,236999],[46,303000]]],["Mirage São Paulo","apartamento","Além Ponte","leste","2026-12-01",391000,[2,3],1,1,0,1,0,2,"Like",3,"T+21",12,3,"areas_molhadas","gratis","Av. São Paulo, 2200",0,-23.4917018,-47.4353974,[[44,null],[45,null],[60,null]]],["Varandas Jardim Califórnia","apartamento","Jardim Califórnia","norte","2028-04-01",250000,[2],0,1,1,1,0,1,"Golden City",2,"T+8",6,1,"areas_molhadas","gratis","Av. Riusaku Kanizawa, 1.189",0,-23.4644939,-47.5118559,[[50,250000],[51,null]]],["Residencial Santa Mônica","apartamento","Jardim Califórnia","norte","2028-12-01",214000,[2],0,0,1,0,0,1,"Golden City",2,"T+7",4,1,"areas_molhadas","gratis","R. Octavio Christofano, 250",0,-23.4625606,-47.5131302,[[44,214000]]],["Residencial Caribe","apartamento","Jardim Gutierres","leste","2027-08-01",243000,[2],0,1,0,0,0,2,"Golden City",3,"T+7",6,2,"areas_molhadas","gratis","R. Ramon Haro Martini, 1640",0,-23.5065794,-47.4236729,[[45,247000],[47,256000],[52,290000]]],["Villa Imperale","apartamento","Jardim Betânia","norte","2028-01-01",178000,[1],0,0,0,0,0,null,"ESC",1,"T+3",8,null,"areas_molhadas","gratis","Av. Belém, 59",0,-23.4614409,-47.5028673,[[29,178000]]],["Residencial Lyon","apartamento","Vila Helena","norte","2029-10-01",242000,[2],0,1,1,0,0,3,"ESC",1,"T+10",8,2,"areas_molhadas","gratis","R. Manoel Gutierrez, 67",0,-23.4736257,-47.5022844,[[43,242000],[44,null]]],["Jardins Ipanema","apartamento","Caguaçu","norte","2029-04-01",244000,[2],0,0,1,0,0,3,"ESC",1,"T+16",8,2,"areas_molhadas","gratis","R. Nelson De Gennaro, 930",0,-23.4524241,-47.5057738,[[46,244000],[47,250000]]],["Recanto Ipanema","apartamento","Recanto Ipanema","norte","2028-06-01",231000,[2],0,1,0,0,0,3,"ESC",1,"T+17",8,2,"areas_molhadas","gratis","R. Consuelo Pupo Castanho, S/N",0,-23.4526736,-47.5041404,[[40,231000],[40,233000]]],["Rivera","apartamento","Jardim Santa Marta","norte",null,208000,[2],0,0,0,0,0,null,"ESC",1,"T+3",6,null,"completo","gratis","Av. Sucupira, 610",0,-23.4449022,-47.5167326,[[41,208000],[42,212000]]],["Residencial Atlanta","apartamento","Vila Trujillo","central","2028-04-01",370000,[2,3],1,1,0,1,0,3,"ESC",1,"T+6",4,1,"areas_molhadas","","Rua Pombal Ruggeri, 12",0,-23.4950044,-47.4721941,[[60,370000],[68,413000]]],["Vista River","apartamento","Jardim Lopes de Oliveira","norte","2027-08-01",193000,[2],0,0,1,0,0,1,"Habiter",4,"T+3",4,null,"completo","gratis","Rua Henrique Carrara Amaral Rogick, 713",0,-23.4725778,-47.5100326,[[41,193000]]],["Alpha Sevilla Duo","apartamento","Jardim Prestes de Barros","leste","2029-12-01",515000,[2,3],1,1,1,1,1,3,"MLB",2,"T+14",4,2,"completo","","R. Heitor Antonio Paladim, 145",0,-23.4193463,-47.4333046,[[76,515000],[77,527000]]],["Alpha Celeste","apartamento","Bairro dos Morros","votorantim","2029-12-01",237000,[1,2],1,1,1,0,0,2,"MLB",6,"T+10",8,2,"completo","gratis","Est. José Celeste, 1405",0,-23.5265311,-47.4199694,[[40,237000],[51,278000],[54,294000]]],["Flor de Ipê Campolim","apartamento","Jardim São Carlos","sul","2030-04-01",380000,[2,3],1,1,1,1,1,2,"Geratriz",2,"T+19",4,2,"completo","","Rua Professor Daniel Pereira do Nascimento, 190",0,-23.5305591,-47.4848324,[[61,380000],[78,402000]]],["Bosque das Flores","apartamento","Alto da Boa Vista","leste","2029-10-01",389000,[2,3],1,1,1,1,1,2,"Geratriz",3,"T+19",4,2,"completo","","Alameda Reino Unido, 300",0,-23.4722913,-47.4142372,[[61,389000],[78,424000]]],["Parque das Margaridas","apartamento","Jardim Iguatemi","leste","2030-04-01",275000,[2],0,1,1,0,0,2,"Geratriz",1,"T+16",8,2,"completo","gratis","R. Botucatu, 241",0,-23.4676717,-47.4405489,[[46,284000],[47,280000]]],["Oregon","apartamento","Jardim Itanguá","oeste","2028-10-01",299000,[2],0,1,0,0,0,3,"ESC",1,"T+11",8,2,"areas_molhadas","gratis","R. Manoel Navarro Cassa, S/N",0,-23.5099148,-47.5018258,[[47,299000],[49,306000]]],["Zafira","apartamento","Jardim Vergueiro","sul","2029-07-01",255000,[2,3],1,1,1,0,0,2,"JCR",2,"T+14",10,2,"areas_molhadas","desconto","Av. Com. Pereira Inácio, 1720",0,-23.5217929,-47.4563219,[[40,255000],[43,272000],[45,288000],[47,300000],[69,450000]]],["Garden Ville","apartamento","Bairro do Itapeva","votorantim","2029-07-01",255000,[2,3],0,1,0,0,0,2,"JCR",2,"T+15",10,2,"areas_molhadas","gratis","Av. Rogério Cassola, 250",0,-23.5573419,-47.4657731,[[40,255000],[43,272000],[45,288000],[47,300000],[69,null]]],["Mirante Boa Vista","apartamento","Alto da Boa Vista","leste","2029-07-01",466000,[2],1,1,1,1,1,2,"BRN",2,"T+17",8,2,"areas_molhadas","","R. Professor Uilsiton Ambrozini, 282",0,-23.4737733,-47.4217418,[[47,466000],[53,525000],[66,null],[71,null]]],["Solar do Eucaliptos","apartamento","Jardim dos Eucaliptos","norte","2028-11-01",214000,[2],0,0,0,0,0,null,"MRV",11,"T+4",4,null,"areas_molhadas","gratis","R. Amazilia Rodrigues Leal, 290",0,-23.4250574,-47.4802541,[[40,217000],[51,235000]]],["Campos Dourados","apartamento","Vale do Sereno","oeste","2028-08-01",264000,[2],0,1,1,0,0,1,"MRV",21,"T+3",4,null,"areas_molhadas","gratis","R. Manoel Faciabem Gimenes, 445",0,-23.4940848,-47.5027568,[[40,264000],[40,270000]]],["Gran Campolim","apartamento","Campolim","sul","2027-09-01",434000,[2],1,1,1,1,1,2,"MRV",1,"T+14",8,2,"completo","","Rua Augusto Lippel, 1990",0,-23.5370585,-47.4733195,[[59,434000],[62,null],[67,null]]],["Dom Pagliato","apartamento","Jardim Pagliato","sul","2028-03-01",309000,[2],1,1,0,1,0,2,"MRV",2,"T+23",8,2,"completo","","R. Luiza de Carvalho, 95",0,-23.5198489,-47.4811494,[[43,309000],[44,335000]]],["Vila Laredo","apartamento","Vila Lucy","central","2026-09-01",355000,[2],1,1,0,0,0,2,"Vitta",2,"T+16",8,2,"completo","gratis","R. Francisco Silva, 457",0,-23.4998388,-47.4790829,[[49,355000],[54,390000]]],["Central Station","apartamento","Centro","central","2029-12-01",286000,[1,2],1,1,0,1,0,2,"Grupo Plano",1,"T+22",17,4,"completo","desconto","Rua Doutor Álvaro Soares, 542",0,-23.4971821,-47.45704,[[40,286000],[40,305000],[47,360000],[48,363000],[50,380000]]],["Village Las Palmas","apartamento","Cagassu","norte","2027-12-01",214500,[2],0,0,1,0,0,1,"Engefor",7,"T+3",8,null,"completo","gratis","R. Prof. Antônio Firmino Proença, 468",0,-23.4500789,-47.5023623,[[42,214500],[48,230000]]],["Conquista da Mata","apartamento","Parque São Bento","norte","2027-05-01",250000,[2],0,0,1,0,0,1,"Direcional",5,"T+3",8,null,"completo","gratis","Avenida Dr. Gualberto Moreira",0,-23.5116983,-47.4523041,[[41,250000]]],["Itavuvu Prime","apartamento","Altos do Itavuvu","norte","2028-06-01",206000,[2],0,1,0,0,0,3,"Construsilva",2,"T+15",6,2,"areas_molhadas","gratis","R. José Lopes Padilha",0,-23.4171166,-47.4805793,[[42,206000],[47,206000]]],["Angelica Prime - Últimas unidades","apartamento","Vila Angélica","norte","2026-09-01",295000,[2],1,1,0,1,0,3,"Construsilva",1,"T+7",4,2,"","","Avenida Propicio Pereira de Souza, 275",0,-23.4794792,-47.4792197,[[51,295000]]],["Villa Cairu","apartamento","Mangal","sul","2027-12-01",551000,[2,3,4],3,1,1,1,1,3,"Casagrande",1,"T+23",6,3,"completo","","R. Visc. de Cairú, 681",0,-23.509882,-47.4745568,[[80,null],[92,null],[111,null],[160,null],[165,null],[184,null],[223,null]]],["Bella Fiori","apartamento","Vila Fiori","norte",null,300000,[2],0,1,0,0,0,1,"Casagrande",3,"T+8",8,2,"completo","","R. Min. Salgado Filho, 616",0,-23.4761994,-47.4726182,[[47,300000],[49,332000],[50,324000]]],["Lisieux - Últimas unidades","apartamento","Santa Terezinha","sul","2027-04-01",510000,[2],1,1,0,1,0,2,"Bonelli",1,"17",4,2,"completo","","R. Aníbal da Costa Dias, 245",0,-23.5022075,-47.4779136,[[57,510000]]],["Apoena","apartamento","Mangal","sul","2029-05-01",900000,[2,3],2,1,1,1,1,3,"Bonelli",1,"T+22",4,2,"completo","","Rua Barão de Cotegipe,10",0,-23.506122,-47.4705235,[[93,null],[93,null],[97,null],[97,null],[99,null]]],["Concetto - Última unidade","apartamento","Campolim","sul",null,662000,[2],0,1,0,1,0,2,"Bonelli",1,"22",4,2,"completo","","Rua Milton Monzoni Wagner,154",0,-23.5271202,-47.4689248,[[71,662000]]],["Reserva Carvalho","apartamento","Vila Carvalho","central",null,286000,[1,2],1,1,0,1,0,2,"Comatt",1,"T+16",8,2,"completo","","R. Voluntários da Pátria, 779",0,-23.4899864,-47.468619,[[39,286000],[53,390000]]],["Conect Saira","apartamento","Jardim Saira","leste","2026-12-01",290000,[2],0,1,0,1,0,2,"Comatt",1,"T+7",4,2,"completo","","Alameda Santos, 391",0,-23.4804385,-47.4354041,[[42,290000]]],["São Paulo Living","apartamento","Vila Haro","leste","2028-08-01",290000,[2],1,1,0,0,0,2,"Comatt",2,"T+10",4,2,"completo","gratis","R. Rodrigues do Prado S/N",0,-23.4956342,-47.436331,[[51,290000]]],["Morada do Horto","apartamento","Caguaçu","norte","2028-12-01",255000,[2],1,1,1,0,0,2,"Bonelli",2,"T+16",6,2,"areas_molhadas","gratis","Rua Abrahão Pinsky, 121",0,-23.4486619,-47.5003807,[[43,255000],[47,279000]]],["Boulevard Piazza","apartamento","Piazza de Roma","oeste","2027-06-01",254998,[2],0,0,0,0,0,1,"Amorim Coutinho",3,"T+12",4,2,"","gratis","R. Elio Luxardo, 13",0,-23.5107614,-47.5222197,[[44,255000]]],["Boulevard Di Veneto","apartamento","Residencial Giardino Di Veneto","votorantim","2026-12-01",269000,[2],0,0,0,0,0,1,"Amorim Coutinho",3,"T+12",4,2,"areas_molhadas","gratis","R. Francisco Cassola Neto S/N",0,-23.5536923,-47.4513919,[[44,268998]]],["Copacabana Residence","apartamento","Jardim Santa Cecília","norte","2028-10-01",201000,[2],0,1,1,0,0,2,"ADN",39,"T+3",4,null,"areas_molhadas","gratis","R. Paschoal Tigani, 164",0,-23.41271,-47.4792983,[[41,201000],[50,212000]]],["Park Ville","apartamento","Chácaras Reunidas São Jorge","oeste","2026-08-01",280000,[2],1,1,1,0,0,2,"Lidera",3,"T+11",8,2,"areas_molhadas","desconto","R. José Marques de Oliveira, 431",0,-23.5235226,-47.5130435,[[47,null]]],["Scarpone","apartamento","Jardim Iguatemi","leste","2028-01-01",268000,[2],1,1,0,0,0,2,"MRV",1,"T+23",8,2,"completo","","Rua Lins, 41",0,-23.4677743,-47.4425247,[[41,269000],[44,275000]]],["Jaboh","apartamento","Vila Gabriel","leste","2026-12-01",461000,[2],1,1,0,1,0,2,"Bonelli",1,"T+13",6,2,"completo","","R. José Mendes, 250",0,-23.4773041,-47.4548609,[[60,461000],[64,491000]]],["Siver Oásis","apartamento","Vila Angélica","norte",null,280000,[2],0,1,1,1,0,2,"Siver Oásis",2,"T+11",8,2,"areas_molhadas","gratis","R. Ritinha Tavares,140",0,-23.485972,-47.4825152,[[45,280000],[47,381000]]],["Reserva Ville","apartamento","Jardim Marcelo Augusto","norte","2027-09-01",230000,[2],0,1,1,0,0,1,"Lidera",2,"T+16",10,2,"areas_molhadas","desconto","R. Osmando Nascimento Gomes, 50",0,-23.4761552,-47.5047072,[[40,230000],[43,246000],[52,265000],[57,271000]]],["Alta Florada","apartamento","Jardim Cruzeiro do Sul","leste","2028-10-01",363000,[2],1,1,1,1,1,2,"BRN",1,"T+23",8,2,"areas_molhadas","","R. Martins França",0,-23.4935335,-47.4434989,[[48,363000],[53,390000]]],["Reserva Lobato","apartamento","Parque Santa Isabel","oeste","2029-01-01",308000,[2],1,1,1,1,0,2,"ACCESS",3,"T+19",6,2,"completo","gratis","R. Antônio Aparecido Ferraz, 1351",1,-23.538082,-47.5008559,[[48,309000],[55,340000]]],["Parque Lobato","apartamento","Parque Santa Isabel","oeste","2027-03-01",317000,[2],1,1,0,1,0,2,"ACCESS",5,"T+19",4,2,"completo","gratis","R. Antônio Aparecido Ferraz, 1350",0,-23.5376212,-47.5001473,[[48,337000],[54,392000]]],["Vale Verde Arena","apartamento","Chácaras Reunidas São Jorge","oeste","2026-09-01",260000,[2],1,1,0,1,0,2,"Lidera",2,"T+18",8,2,"areas_molhadas","desconto","R. Antonio Lopes Filho, 140",0,-23.5247657,-47.5136754,[[41,261000],[48,268000]]],["Veredas","apartamento","Parque Ouro Fino","oeste","2026-10-01",297000,[2],1,1,0,0,0,null,"MRV",3,"T+15",8,2,"completo","","R. José Rodrigues da Silva, 135",0,-23.4993046,-47.5034002,[[43,297000],[44,362000]]],["Villagio Dumont","apartamento","Jardim Aeroporto","norte","2028-08-01",241000,[2,3],1,1,0,0,0,2,"JCR",1,"T+16",12,3,"areas_molhadas","desconto","Rua Olímpio Mentone, s/nº",0,-23.4860674,-47.4942954,[[40,241000],[43,253000],[45,263000],[69,432000]]],["Greenlife Residence","apartamento","Cagassu","norte","2028-06-01",231000,[2,3],1,1,0,0,0,2,"JCR",1,"T+17",12,3,"areas_molhadas","desconto","Rua Seraphim Banietti, 1471",0,-23.4491667,-47.5001821,[[40,232000],[43,245000],[45,265000],[69,422000]]],["Lar Valência","apartamento","Cagassu","norte","2027-09-01",213000,[2],0,0,1,0,0,1,"Brio",12,"T+3",12,null,"completo","gratis","Estrada do Dinorah, nº 1.765",0,-23.442991,-47.5079739,[[40,213000],[44,232000]]],["Morada dos Eucaliptos","apartamento","Jardim dos Eucaliptos","norte","2027-11-01",210000,[2],0,1,1,0,0,3,"Rio Branco",3,"T+16",8,2,"areas_molhadas","gratis","R. Antonia dos Reis Oliveira, 267",0,-23.4277646,-47.4841174,[[43,208000],[43,214000],[47,238000]]],["Magnific","apartamento","Jardim Califórnia","norte","2028-06-01",218000,[2],0,1,1,0,0,1,"Lidera",3,"T+16",10,2,"areas_molhadas","desconto","Rua Kiyoshi Minami, 176",0,-23.4657589,-47.5119434,[[40,218000],[43,226000],[54,260000],[59,282000]]],["Vitta Granate","apartamento","Jd. Santa Esmeralda","norte","2028-06-01",222700,[2],0,0,1,0,0,2,"Vitta",8,"T+3",12,null,"completo","gratis","Rua Vitor Cioffi de Luca, 920",0,-23.4338627,-47.4888399,[[41.97,222700]]],["Morada Boa Vista","apartamento","Alto da Boa Vista","leste","2029-12-01",290000,[2],1,1,1,0,0,2,"Bonelli",2,"T+20",6,2,"areas_molhadas","gratis","Alameda Reino Unido, 218",1,-23.4722913,-47.4142372,[[46,292000],[50,319000],[55,371000]]],["Parque Verano","apartamento","Jardim Gutierres","leste","2028-04-01",337000,[2],1,1,1,1,0,2,"Access",2,"T+19",8,3,"completo","gratis","R. Ramon Haro Martini, 1174",1,-23.5038991,-47.4273413,[[52,337000],[55,363000]]],["Sou Viver Sorocaba","apartamento","Vila Odin","norte","2029-03-01",250000,[2],0,1,0,1,0,2,"Sousa Araujo",3,"16",12,2,"areas_molhadas","gratis","Rua Luzerne Proença Arruda, 425",1,-23.476809,-47.4606911,[[44,244000],[45,256000]]]];
+/* Fotos e plantas (material de divulgação das construtoras) */
+const FOTOS_APTO = {"Mirage Itavuvu":[["https://api.apto.vc/images/realties/15768/599811/mirage-itavuvu-banner.webp","https://assets.apto.vc/img/2026/10/mirage-itavuvu-st-cortina-sem-logo.jpg"],[]],"Mirage Clube":[["https://api.apto.vc/images/realties/15037/581269/mirage-clube-de-campo-banner.webp","https://assets.apto.vc/img/2026/08/ivi4v3xn-3567140-1-177671007669e671bc0b6a0-1.jpg"],[]],"Villa Vic Pompéia":[["13274/537243/villa-vic-pompeia-condominio-1","13274/537240/villa-vic-pompeia-condominio-2","13274/537249/villa-vic-pompeia-condominio-3","13274/537237/villa-vic-pompeia-condominio-4"],["13274/537244/villa-vic-pompeia-aptovc-planta-1","13274/537242/villa-vic-pompeia-aptovc-planta-2","13274/537241/villa-vic-pompeia-aptovc-planta-3","13274/537239/villa-vic-pompeia-aptovc-planta-4","13274/537238/villa-vic-pompeia-aptovc-planta-5","13274/537235/villa-vic-pompeia-aptovc-planta-6"]],"Rizz Campolim":[["8102/392410/rizz-campolim-apartamento-1","8102/392404/rizz-campolim-apartamento-2","8102/392397/rizz-campolim-apartamento-3","8102/392398/rizz-campolim-apartamento-4"],["8102/392399/rizz-campolim-aptovc-planta-1","8102/392406/rizz-campolim-aptovc-planta-2","8102/392412/rizz-campolim-aptovc-planta-3","8102/392405/rizz-campolim-aptovc-planta-4","8102/392400/rizz-campolim-aptovc-planta-5","8102/392411/rizz-campolim-aptovc-planta-6"]],"Gama Harmony":[["15567/593976/gama-harmony-apartamento-1","15567/593974/gama-harmony-apartamento-2","15567/593982/gama-harmony-apartamento-3","15567/593979/gama-harmony-apartamento-4"],["15567/593972/gama-harmony-aptovc-planta-1","15567/593975/gama-harmony-aptovc-planta-2"]],"Seattle":[["8003/387612/residencial-seattle-condominio-1","8003/387610/residencial-seattle-condominio-2","8003/387614/residencial-seattle-condominio-3","8003/387611/residencial-seattle-condominio-4"],["8003/387603/residencial-seattle-aptovc-planta-1","8003/387604/residencial-seattle-aptovc-planta-2","8003/387607/residencial-seattle-aptovc-planta-3"]],"Villa Creta":[["15938/607199/villa-creta-condominio-1","15938/607196/villa-creta-condominio-2","15938/607201/villa-creta-condominio-3","15938/607203/villa-creta-condominio-4"],["15938/607197/villa-creta-aptovc-planta-1","15938/607198/villa-creta-aptovc-planta-2","15938/607200/villa-creta-aptovc-planta-3","15938/607202/villa-creta-aptovc-planta-4"]],"Vista River":[["11249/481423/residencial-vista-river-apartamento-1","11249/481421/residencial-vista-river-apartamento-2","11249/481422/residencial-vista-river-apartamento-3","11249/481425/residencial-vista-river-apartamento-4"],["11249/481429/residencial-vista-river-aptovc-planta-1","11249/481431/residencial-vista-river-aptovc-planta-2","11249/481432/residencial-vista-river-aptovc-planta-3","11249/481433/residencial-vista-river-aptovc-planta-4","11249/481427/residencial-vista-river-aptovc-planta-5","11249/481428/residencial-vista-river-aptovc-planta-6"]],"Reserva Painá":[["16105/610805/reserva-paina-condominio-1","16105/610809/reserva-paina-condominio-2","16105/610810/reserva-paina-condominio-3","16105/610807/reserva-paina-condominio-4"],["16105/610801/reserva-paina-aptovc-planta-1","16105/610803/reserva-paina-aptovc-planta-2"]],"JJR Ipa Club":[["8183/395179/ipa-club-apartamento-1","8183/395178/ipa-club-apartamento-2","8183/395183/ipa-club-apartamento-3","8183/395182/ipa-club-apartamento-4"],["8183/395181/ipa-club-aptovc-planta-1","8183/395180/ipa-club-aptovc-planta-2","8183/395187/ipa-club-aptovc-planta-3","8183/395222/ipa-club-aptovc-planta-4"]],"Vitta Granate":[["7376/358218/vitta-granate-condominio-1","7376/358214/vitta-granate-condominio-2","7376/358216/vitta-granate-condominio-3","7376/358215/vitta-granate-condominio-4"],["7376/358221/vitta-granate-aptovc-planta-1","7376/358219/vitta-granate-aptovc-planta-2","7376/358220/vitta-granate-aptovc-planta-3"]],"Buena Vista":[["4919/263847/jjr-buena-vista-apartamento-1","4919/263843/jjr-buena-vista-apartamento-2","4919/263845/jjr-buena-vista-apartamento-3","4919/263865/jjr-buena-vista-condominio-1"],["4919/262640/jjr-buena-vista-aptovc-planta-1","4919/262645/jjr-buena-vista-aptovc-planta-2","4919/262641/jjr-buena-vista-aptovc-planta-3","4919/262648/jjr-buena-vista-aptovc-planta-4"]],"Oregon":[["11309/485139/oregon-apartamento-1","11309/485137/oregon-apartamento-2","11309/485145/oregon-apartamento-3","11309/485149/oregon-apartamento-4"],["11309/485141/oregon-aptovc-planta-1","11309/485140/oregon-aptovc-planta-2","11309/485143/oregon-aptovc-planta-3","11309/485142/oregon-aptovc-planta-4","11309/485147/oregon-aptovc-planta-5","11309/485148/oregon-aptovc-planta-6"]],"Residencial Lyon":[["13363/540693/lyon-residencial-apartamento-1","13363/540694/lyon-residencial-apartamento-2","13363/540697/lyon-residencial-apartamento-3","13363/540698/lyon-residencial-apartamento-4"],["13363/540695/lyon-residencial-aptovc-planta-1","13363/540696/lyon-residencial-aptovc-planta-2"]],"Smart Reale":[["14703/574034/smart-reale-apartamento-1","14703/574035/smart-reale-apartamento-2","14703/574042/smart-reale-apartamento-3","14703/574046/smart-reale-apartamento-4"],["14703/574036/smart-reale-aptovc-planta-1","14703/574037/smart-reale-aptovc-planta-2","14703/574040/smart-reale-aptovc-planta-3","14703/574041/smart-reale-aptovc-planta-4"]],"Parque das Margaridas":[["13616/546372/parque-das-margaridas-apartamento-1","13616/546375/parque-das-margaridas-apartamento-2","13616/546373/parque-das-margaridas-apartamento-3","13616/546379/parque-das-margaridas-apartamento-4"],[]],"Dom Pagliato":[["11361/487927/residencial-don-pagliato-apartamento-1","11361/487923/residencial-don-pagliato-apartamento-2","11361/487916/residencial-don-pagliato-apartamento-3","11361/487922/residencial-don-pagliato-apartamento-4"],["11361/487917/residencial-don-pagliato-aptovc-planta-1","11361/487919/residencial-don-pagliato-aptovc-planta-2","11361/487920/residencial-don-pagliato-aptovc-planta-3","11361/487914/residencial-don-pagliato-aptovc-planta-4"]],"Morada do Horto":[["9007/421468/morada-do-horto-apartamento-1","9007/421471/morada-do-horto-apartamento-2","9007/421481/morada-do-horto-apartamento-3","9007/421477/morada-do-horto-apartamento-4"],["9007/421469/morada-do-horto-aptovc-planta-1","9007/421470/morada-do-horto-aptovc-planta-2","9007/421474/morada-do-horto-aptovc-planta-3"]],"Zafira":[["12913/539062/zafira-residencial-condominio-1","12913/539061/zafira-residencial-condominio-2","12913/539063/zafira-residencial-condominio-3","12913/539064/zafira-residencial-condominio-4"],[]],"Boulevard Piazza":[["8892/418258/boulevard-piazza-condominio-1","8892/418261/boulevard-piazza-condominio-2","8892/418259/boulevard-piazza-condominio-3","8892/418262/boulevard-piazza-condominio-4"],["8892/418260/boulevard-piazza-aptovc-planta-1","8892/418257/boulevard-piazza-aptovc-planta-2"]],"Reserva Lobato":[["13943/556046/reserva-lobato-apartamento-1","13943/556057/reserva-lobato-apartamento-2","13943/556053/reserva-lobato-apartamento-3","13943/556047/reserva-lobato-apartamento-4"],["13943/556050/reserva-lobato-aptovc-planta-1","13943/556051/reserva-lobato-aptovc-planta-2"]],"Villa Cairu":[["13615/546354/villa-cairu-apartamento-1","13615/546362/villa-cairu-condominio-1","13615/546364/villa-cairu-condominio-2","13615/546369/villa-cairu-condominio-3"],["13615/546360/villa-cairu-aptovc-planta-1","13615/546356/villa-cairu-aptovc-planta-2","13615/546355/villa-cairu-aptovc-planta-3"]],"Morada Boa Vista":[["12914/528462/morada-boa-vista-apartamento-1","12914/528455/morada-boa-vista-apartamento-2","12914/528452/morada-boa-vista-apartamento-3","12914/528458/morada-boa-vista-apartamento-4"],[]],"Residencial Caribe":[["15407/591154/residencial-caribe-apartamento-1","15407/591159/residencial-caribe-apartamento-2","15407/591162/residencial-caribe-apartamento-3","15407/591161/residencial-caribe-condominio-1"],["15407/591151/residencial-caribe-aptovc-planta-1","15407/591150/residencial-caribe-aptovc-planta-2","15407/591152/residencial-caribe-aptovc-planta-3","15407/591156/residencial-caribe-aptovc-planta-4","15407/591153/residencial-caribe-aptovc-planta-5"]],"Lisieux - Últimas unidades":[["5551/387196/lisieux-apartamento-1","5551/387197/lisieux-apartamento-2","5551/387199/lisieux-apartamento-3","5551/387198/lisieux-apartamento-4"],["5551/387204/lisieux-aptovc-planta-1","5551/387203/lisieux-aptovc-planta-2","5551/387205/lisieux-aptovc-planta-3"]],"São Conrado":[["15924/605365/residencial-sao-conrado-apartamento-1","15924/605361/residencial-sao-conrado-apartamento-2","15924/605359/residencial-sao-conrado-apartamento-3","15924/605366/residencial-sao-conrado-apartamento-4"],["15924/605362/residencial-sao-conrado-aptovc-planta-1","15924/605369/residencial-sao-conrado-aptovc-planta-2","15924/605375/residencial-sao-conrado-aptovc-planta-3","15924/605370/residencial-sao-conrado-aptovc-planta-4","15924/605360/residencial-sao-conrado-aptovc-planta-5"]],"Central Station":[["12121/507476/central-station-apartamento-1","12121/507469/central-station-apartamento-2","12121/507474/central-station-apartamento-3","12121/507488/central-station-condominio-1"],["12121/507466/central-station-aptovc-planta-1","12121/507467/central-station-aptovc-planta-2","12121/507472/central-station-aptovc-planta-3","12121/507473/central-station-aptovc-planta-4","12121/507477/central-station-aptovc-planta-5"]],"Lago de Davos":[["14690/606773/residencial-lago-de-davos-apartamento-1","14690/606772/residencial-lago-de-davos-apartamento-2","14690/606774/residencial-lago-de-davos-apartamento-3","14690/606769/residencial-lago-de-davos-condominio-1"],["14690/606763/residencial-lago-de-davos-aptovc-planta-1","14690/606762/residencial-lago-de-davos-aptovc-planta-2","14690/606765/residencial-lago-de-davos-aptovc-planta-3","14690/606764/residencial-lago-de-davos-aptovc-planta-4"]],"Boulevard Di Veneto":[["14825/574070/condominio-boulevard-di-veneto-condominio-1","14825/574071/condominio-boulevard-di-veneto-condominio-2","14825/574073/condominio-boulevard-di-veneto-condominio-3","14825/574072/condominio-boulevard-di-veneto-condominio-4"],[]],"Conect Saira":[["7607/368257/connect-saira-apartamento-1","7607/368258/connect-saira-apartamento-2","7607/368260/connect-saira-apartamento-3","7607/368259/connect-saira-apartamento-4"],["7607/370759/connect-saira-aptovc-planta-1","7607/370760/connect-saira-aptovc-planta-2","7607/370755/connect-saira-aptovc-planta-3","7607/370756/connect-saira-aptovc-planta-4","7607/370757/connect-saira-aptovc-planta-5","7607/370758/connect-saira-aptovc-planta-6"]],"Vista Horto":[["15929/605425/vista-horto-apartamento-1","15929/605417/vista-horto-apartamento-2","15929/605421/vista-horto-apartamento-3","15929/605420/vista-horto-apartamento-4"],["15929/605427/vista-horto-aptovc-planta-1","15929/605428/vista-horto-aptovc-planta-2"]],"Angelica Prime - Últimas unidades":[["14704/574057/residencial-angelica-prime-apartamento-1","14704/574056/residencial-angelica-prime-apartamento-2","14704/574059/residencial-angelica-prime-apartamento-3","14704/594021/residencial-angelica-prime-condominio-1"],[]],"Lar Valência":[["11202/486175/lar-valencia-apartamento-1","11202/486174/lar-valencia-apartamento-2","11202/486183/lar-valencia-condominio-1","11202/486172/lar-valencia-condominio-2"],[]],"Vila Laredo":[["6133/297998/vila-laredo-apartamento-1","6133/297996/vila-laredo-apartamento-2","6133/297999/vila-laredo-apartamento-3","6133/297997/vila-laredo-apartamento-4"],["6133/298001/vila-laredo-aptovc-planta-1","6133/298005/vila-laredo-aptovc-planta-2","6133/298006/vila-laredo-aptovc-planta-3","6133/298004/vila-laredo-aptovc-planta-4","6133/298008/vila-laredo-aptovc-planta-5","6133/298003/vila-laredo-aptovc-planta-6"]],"Essência Campolim":[["8318/399729/essencia-campolim-condominio-1","8318/399728/essencia-campolim-condominio-2","8318/399726/essencia-campolim-condominio-3","8318/399727/essencia-campolim-condominio-4"],["8318/399723/essencia-campolim-aptovc-planta-1","8318/399730/essencia-campolim-aptovc-planta-2","8318/399720/essencia-campolim-aptovc-planta-3","8318/399731/essencia-campolim-aptovc-planta-4"]],"Recanto Ipanema":[["11383/489185/recanto-ipanema-residencial-apartamento-1","11383/489183/recanto-ipanema-residencial-apartamento-2","11383/489189/recanto-ipanema-residencial-condominio-1","11383/489182/recanto-ipanema-residencial-condominio-2"],["11383/489186/recanto-ipanema-residencial-aptovc-planta-1","11383/489184/recanto-ipanema-residencial-aptovc-planta-2","11383/489187/recanto-ipanema-residencial-aptovc-planta-3","11383/489188/recanto-ipanema-residencial-aptovc-planta-4"]],"Flor de Ipê Campolim":[["14313/563381/flor-de-ipe-apartamento-1","14313/563380/flor-de-ipe-apartamento-2","14313/563371/flor-de-ipe-apartamento-3","14313/563376/flor-de-ipe-apartamento-4"],["14313/563373/flor-de-ipe-aptovc-planta-1","14313/563372/flor-de-ipe-aptovc-planta-2"]],"Reserva Ville":[["13620/546419/reserva-ville-apartamento-1","13620/546418/reserva-ville-apartamento-2","13620/546423/reserva-ville-apartamento-3","13620/546428/reserva-ville-apartamento-4"],["13620/546420/reserva-ville-aptovc-planta-1","13620/546421/reserva-ville-aptovc-planta-2","13620/546426/reserva-ville-aptovc-planta-3","13620/546427/reserva-ville-aptovc-planta-4"]],"Park Ville":[["7392/358696/park-ville-residencial-apartamento-1","7392/358697/park-ville-residencial-apartamento-2","7392/358699/park-ville-residencial-apartamento-3","7392/358705/park-ville-residencial-apartamento-4"],["7392/358724/park-ville-residencial-aptovc-planta-1","7392/358725/park-ville-residencial-aptovc-planta-2","7392/358726/park-ville-residencial-aptovc-planta-3","7392/358727/park-ville-residencial-aptovc-planta-4","7392/358728/park-ville-residencial-aptovc-planta-5","7392/358729/park-ville-residencial-aptovc-planta-6"]],"Garden Houses":[["13541/545346/garden-houses-apartamento-1","13541/545349/garden-houses-apartamento-2","13541/545345/garden-houses-apartamento-3","13541/545331/garden-houses-apartamento-4"],["13541/545327/garden-houses-aptovc-planta-1","13541/545334/garden-houses-aptovc-planta-2","13541/545333/garden-houses-aptovc-planta-3","13541/545328/garden-houses-aptovc-planta-4"]],"Campos Dourados":[["11203/486199/vale-do-sereno-residencial-campos-dourados-apartamento-1","11203/486194/vale-do-sereno-residencial-campos-dourados-apartamento-2","11203/486200/vale-do-sereno-residencial-campos-dourados-apartamento-3","11203/486196/vale-do-sereno-residencial-campos-dourados-apartamento-4"],["11203/486198/vale-do-sereno-residencial-campos-dourados-aptovc-planta-1","11203/486202/vale-do-sereno-residencial-campos-dourados-aptovc-planta-2","11203/486201/vale-do-sereno-residencial-campos-dourados-aptovc-planta-3","11203/486197/vale-do-sereno-residencial-campos-dourados-aptovc-planta-4"]],"Bosque das Flores":[["11319/485417/bosque-das-flores-apartamento-1","11319/485416/bosque-das-flores-apartamento-2","11319/485422/bosque-das-flores-apartamento-3","11319/485427/bosque-das-flores-apartamento-4"],["11319/485424/bosque-das-flores-aptovc-planta-1","11319/485423/bosque-das-flores-aptovc-planta-2","11319/485421/bosque-das-flores-aptovc-planta-3"]],"Sou Viver Sorocaba":[["12120/507448/sou-viver-sorocaba-apartamento-1","12120/507461/sou-viver-sorocaba-condominio-1","12120/507453/sou-viver-sorocaba-condominio-2","12120/507449/sou-viver-sorocaba-condominio-3"],["12120/507451/sou-viver-sorocaba-aptovc-planta-1","12120/507457/sou-viver-sorocaba-aptovc-planta-2","12120/507459/sou-viver-sorocaba-aptovc-planta-3","12120/507452/sou-viver-sorocaba-aptovc-planta-4"]],"Residencial Atlanta":[["11005/476527/atlanta-residencial-apartamento-1","11005/476524/atlanta-residencial-apartamento-2","11005/476528/atlanta-residencial-apartamento-3","11005/476535/atlanta-residencial-apartamento-4"],["11005/476526/atlanta-residencial-aptovc-planta-1","11005/476525/atlanta-residencial-aptovc-planta-2","11005/476529/atlanta-residencial-aptovc-planta-3","11005/476530/atlanta-residencial-aptovc-planta-4"]],"JJR Hortência":[["4921/262427/jjr-hortencia-condominio-1","4921/262420/jjr-hortencia-condominio-2","4921/262428/jjr-hortencia-condominio-3","4921/262429/jjr-hortencia-condominio-4"],["4921/262433/jjr-hortencia-aptovc-planta-1","4921/262435/jjr-hortencia-aptovc-planta-2","4921/262431/jjr-hortencia-aptovc-planta-3","4921/262432/jjr-hortencia-aptovc-planta-4","4921/262430/jjr-hortencia-aptovc-planta-5"]],"Reserva Carvalho":[["7606/368267/reserva-carvalho-apartamento-1","7606/368268/reserva-carvalho-apartamento-2","7606/368271/reserva-carvalho-apartamento-3","7606/368272/reserva-carvalho-apartamento-4"],["7606/367764/reserva-carvalho-aptovc-planta-1","7606/367765/reserva-carvalho-aptovc-planta-2","7606/367769/reserva-carvalho-aptovc-planta-3","7606/367770/reserva-carvalho-aptovc-planta-4"]],"Mirante Boa Vista":[["12351/523207/mirante-boa-vista-condominio-1","12351/523208/mirante-boa-vista-condominio-2","12351/523209/mirante-boa-vista-condominio-3"],[]],"Itavuvu Prime":[["11135/481101/itavuvu-prime-residencial-apartamento-1","11135/481102/itavuvu-prime-residencial-apartamento-2","11135/481100/itavuvu-prime-residencial-condominio-1","11135/481104/itavuvu-prime-residencial-condominio-2"],["11135/481103/itavuvu-prime-residencial-aptovc-planta-1"]],"JJR São Paulo II":[["11621/493531/jr-sao-paulo-ii-apartamento-1","11621/493530/jr-sao-paulo-ii-apartamento-2","11621/493535/jr-sao-paulo-ii-apartamento-3","11621/493537/jr-sao-paulo-ii-apartamento-4"],["11621/493534/jr-sao-paulo-ii-aptovc-planta-1","11621/493536/jr-sao-paulo-ii-aptovc-planta-2","11621/493540/jr-sao-paulo-ii-aptovc-planta-3","11621/493544/jr-sao-paulo-ii-aptovc-planta-4"]],"Alpha Celeste":[["14605/569730/alpha-celeste-apartamento-1","14605/569729/alpha-celeste-apartamento-2","14605/569726/alpha-celeste-apartamento-3","14605/569727/alpha-celeste-apartamento-4"],["14605/569731/alpha-celeste-aptovc-planta-1"]],"Alta Florada":[["10045/450954/alta-florada-residencial-apartamento-1","10045/450953/alta-florada-residencial-apartamento-2","10045/450959/alta-florada-residencial-apartamento-3","10045/450968/alta-florada-residencial-apartamento-4"],["10045/450957/alta-florada-residencial-aptovc-planta-1","10045/450963/alta-florada-residencial-aptovc-planta-2","10045/450967/alta-florada-residencial-aptovc-planta-3","10045/450972/alta-florada-residencial-aptovc-planta-4","10045/450950/alta-florada-residencial-aptovc-planta-5","10045/450958/alta-florada-residencial-aptovc-planta-6"]],"Alpha Sevilla Duo":[["14604/569707/alpha-sevilla-duo-apartamento-1","14604/569705/alpha-sevilla-duo-apartamento-2","14604/569704/alpha-sevilla-duo-apartamento-3","14604/569706/alpha-sevilla-duo-apartamento-4"],["14604/569709/alpha-sevilla-duo-aptovc-planta-1","14604/569708/alpha-sevilla-duo-aptovc-planta-2","14604/569710/alpha-sevilla-duo-aptovc-planta-3","14604/569712/alpha-sevilla-duo-aptovc-planta-4","14604/569711/alpha-sevilla-duo-aptovc-planta-5"]],"Village Las Palmas":[["12498/517654/village-las-palmas-apartamento-1","12498/517653/village-las-palmas-apartamento-2","12498/517655/village-las-palmas-apartamento-3","12498/517648/village-las-palmas-condominio-1"],["12498/517639/village-las-palmas-aptovc-planta-1","12498/517635/village-las-palmas-aptovc-planta-2","12498/517640/village-las-palmas-aptovc-planta-3","12498/517636/village-las-palmas-aptovc-planta-4"]],"Gran Campolim":[["11204/486227/gran-campolim-apartamento-1","11204/486221/gran-campolim-apartamento-2","11204/486234/gran-campolim-apartamento-3","11204/486229/gran-campolim-apartamento-4"],["11204/486222/gran-campolim-aptovc-planta-1","11204/486223/gran-campolim-aptovc-planta-2","11204/486226/gran-campolim-aptovc-planta-3","11204/486228/gran-campolim-aptovc-planta-4","11204/486235/gran-campolim-aptovc-planta-5","11204/486233/gran-campolim-aptovc-planta-6"]],"Apoena":[["11302/484916/apoena-mangal-apartamento-1","11302/484917/apoena-mangal-apartamento-2","11302/484918/apoena-mangal-apartamento-3","11302/484919/apoena-mangal-apartamento-4"],["11302/484927/apoena-mangal-aptovc-planta-1","11302/484928/apoena-mangal-aptovc-planta-2","11302/484926/apoena-mangal-aptovc-planta-3","11302/484931/apoena-mangal-aptovc-planta-4","11302/484930/apoena-mangal-aptovc-planta-5","11302/484932/apoena-mangal-aptovc-planta-6"]],"Jaboh":[["5531/317705/jaboh-apartamento-1","5531/317706/jaboh-apartamento-2","5531/317707/jaboh-apartamento-3","5531/317708/jaboh-apartamento-4"],["5531/283245/jaboh-aptovc-planta-1","5531/283246/jaboh-aptovc-planta-2"]],"Vale Verde Arena":[["7393/358737/vale-verde-arena-apartamento-1","7393/358738/vale-verde-arena-apartamento-2","7393/358739/vale-verde-arena-apartamento-3","7393/358740/vale-verde-arena-apartamento-4"],["7393/358766/vale-verde-arena-aptovc-planta-1","7393/358767/vale-verde-arena-aptovc-planta-2","7393/358769/vale-verde-arena-aptovc-planta-3","7393/359795/vale-verde-arena-aptovc-planta-4"]],"Concetto - Última unidade":[["5517/317716/concetto-parque-campolim-apartamento-1","5517/317715/concetto-parque-campolim-apartamento-2","5517/317717/concetto-parque-campolim-apartamento-3","5517/317714/concetto-parque-campolim-condominio-1"],["5517/317719/concetto-parque-campolim-aptovc-planta-1","5517/317720/concetto-parque-campolim-aptovc-planta-2","5517/317718/concetto-parque-campolim-aptovc-planta-3"]],"Paradiso II":[["11085/479744/residencial-paradiso-ii-condominio-1","11085/479749/residencial-paradiso-ii-condominio-2","11085/479743/residencial-paradiso-ii-condominio-3","11085/479750/residencial-paradiso-ii-condominio-4"],["11085/479742/residencial-paradiso-ii-aptovc-planta-1","11085/479741/residencial-paradiso-ii-aptovc-planta-2"]],"Jardins Ipanema":[["11384/489205/jardins-ipanema-residencial-apartamento-1","11384/489194/jardins-ipanema-residencial-apartamento-2","11384/489200/jardins-ipanema-residencial-apartamento-3","11384/489195/jardins-ipanema-residencial-apartamento-4"],["11384/489198/jardins-ipanema-residencial-aptovc-planta-1","11384/489197/jardins-ipanema-residencial-aptovc-planta-2","11384/489204/jardins-ipanema-residencial-aptovc-planta-3","11384/489203/jardins-ipanema-residencial-aptovc-planta-4","11384/489206/jardins-ipanema-residencial-aptovc-planta-5"]],"Greenlife Residence":[["10543/464481/green-life-residence-condominio-1","10543/464482/green-life-residence-condominio-2","10543/464495/green-life-residence-condominio-3","10543/464496/green-life-residence-condominio-4"],["10543/464479/green-life-residence-aptovc-planta-1","10543/464480/green-life-residence-aptovc-planta-2","10543/464490/green-life-residence-aptovc-planta-3","10543/464486/green-life-residence-aptovc-planta-4","10543/464483/green-life-residence-aptovc-planta-5","10543/464488/green-life-residence-aptovc-planta-6"]],"Villagio Dumont":[["10541/464506/villagio-dumont-condominio-1","10541/464508/villagio-dumont-condominio-2","10541/464516/villagio-dumont-condominio-3","10541/464521/villagio-dumont-condominio-4"],["10541/464501/villagio-dumont-aptovc-planta-1","10541/464504/villagio-dumont-aptovc-planta-2","10541/464500/villagio-dumont-aptovc-planta-3","10541/464505/villagio-dumont-aptovc-planta-4","10541/464507/villagio-dumont-aptovc-planta-5"]],"Mirage São Paulo":[["11367/488863/mirage-sao-paulo-apartamento-1","11367/488864/mirage-sao-paulo-apartamento-2","11367/488851/mirage-sao-paulo-condominio-1","11367/488852/mirage-sao-paulo-condominio-2"],["11367/488817/mirage-sao-paulo-aptovc-planta-1","11367/488818/mirage-sao-paulo-aptovc-planta-2","11367/488821/mirage-sao-paulo-aptovc-planta-3","11367/488820/mirage-sao-paulo-aptovc-planta-4","11367/488825/mirage-sao-paulo-aptovc-planta-5","11367/488824/mirage-sao-paulo-aptovc-planta-6"]],"São Paulo Living":[["11767/497246/sao-paulo-living-apartamento-1","11767/497247/sao-paulo-living-apartamento-2","11767/497244/sao-paulo-living-apartamento-3","11767/497243/sao-paulo-living-apartamento-4"],["11767/497240/sao-paulo-living-aptovc-planta-1"]],"Scarpone":[["11360/487904/residencial-scarpone-apartamento-1","11360/487903/residencial-scarpone-apartamento-2","11360/487898/residencial-scarpone-apartamento-3","11360/487900/residencial-scarpone-apartamento-4"],["11360/487901/residencial-scarpone-aptovc-planta-1","11360/487902/residencial-scarpone-aptovc-planta-2","11360/487908/residencial-scarpone-aptovc-planta-3","11360/487907/residencial-scarpone-aptovc-planta-4","11360/487911/residencial-scarpone-aptovc-planta-5"]],"Magnific":[["9008/421498/magnific-apartamento-1","9008/421499/magnific-apartamento-2","9008/421493/magnific-apartamento-3","9008/421504/magnific-apartamento-4"],["9008/421501/magnific-aptovc-planta-1","9008/421495/magnific-aptovc-planta-2","9008/421500/magnific-aptovc-planta-3","9008/421506/magnific-aptovc-planta-4","9008/421494/magnific-aptovc-planta-5"]],"Parque Verano":[["10838/473303/parque-verano-apartamento-1","10838/473308/parque-verano-apartamento-2","10838/473302/parque-verano-apartamento-3","10838/473304/parque-verano-condominio-1"],["10838/473306/parque-verano-aptovc-planta-1","10838/473305/parque-verano-aptovc-planta-2"]],"Veredas":[["6715/324977/residencial-veredas-apartamento-1","6715/324975/residencial-veredas-condominio-1","6715/324973/residencial-veredas-condominio-2","6715/324971/residencial-veredas-condominio-3"],["6715/324982/residencial-veredas-aptovc-planta-1","6715/324979/residencial-veredas-aptovc-planta-2","6715/324980/residencial-veredas-aptovc-planta-3","6715/324986/residencial-veredas-aptovc-planta-4","6715/324984/residencial-veredas-aptovc-planta-5","6715/324985/residencial-veredas-aptovc-planta-6"]],"Copacabana Residence":[["11296/484719/copacabana-residence-apartamento-1","11296/484718/copacabana-residence-apartamento-2","11296/484711/copacabana-residence-apartamento-3","11296/484713/copacabana-residence-apartamento-4"],["11296/484714/copacabana-residence-aptovc-planta-1","11296/484715/copacabana-residence-aptovc-planta-2"]],"Morada dos Eucaliptos":[["12499/517668/morada-dos-eucaliptos-condominio-1","12499/517662/morada-dos-eucaliptos-condominio-2","12499/517663/morada-dos-eucaliptos-condominio-3","12499/517667/morada-dos-eucaliptos-condominio-4"],["12499/517658/morada-dos-eucaliptos-aptovc-planta-1","12499/517660/morada-dos-eucaliptos-aptovc-planta-2","12499/517661/morada-dos-eucaliptos-aptovc-planta-3","12499/517657/morada-dos-eucaliptos-aptovc-planta-4"]],"Parque Lobato":[["8002/387589/parque-lobato-apartamento-1","8002/387579/parque-lobato-apartamento-2","8002/387578/parque-lobato-apartamento-3","8002/387583/parque-lobato-apartamento-4"],["8002/387584/parque-lobato-aptovc-planta-1","8002/387585/parque-lobato-aptovc-planta-2"]],"Solar do Eucaliptos":[["https://api.apto.vc/images/realties/11359/residencial-solar-dos-eucaliptos-condominio-1.jpg","https://api.apto.vc/images/realties/11359/residencial-solar-dos-eucaliptos-condominio-2.jpg","https://api.apto.vc/images/realties/11359/residencial-solar-dos-eucaliptos-condominio-3.jpg","https://api.apto.vc/images/realties/11359/residencial-solar-dos-eucaliptos-condominio-4.jpg"],[]],"Siver Botanique":[["img/siver-botanique/2.webp","img/siver-botanique/1.webp","img/siver-botanique/3.webp","img/siver-botanique/4.webp","img/siver-botanique/5.webp","img/siver-botanique/6.webp","img/siver-botanique/7.webp","img/siver-botanique/8.webp","img/siver-botanique/9.webp"],["img/siver-botanique/planta-1.webp","img/siver-botanique/planta-2.webp","img/siver-botanique/planta-3.webp","img/siver-botanique/planta-4.webp","img/siver-botanique/planta-5.webp"]],"Varandas Jardim Califórnia":[["img/varandas/1.webp","img/varandas/2.webp","img/varandas/3.webp","img/varandas/4.webp","img/varandas/5.webp","img/varandas/6.webp"],["img/varandas/planta-1.webp","img/varandas/planta-2.webp","img/varandas/planta-3.webp","img/varandas/planta-4.webp"]],"Green Park Resort":[["img/green-park/1.webp","img/green-park/2.webp","img/green-park/3.webp","img/green-park/4.webp","img/green-park/5.webp","img/green-park/6.webp","img/green-park/7.webp","img/green-park/8.webp"],["img/green-park/planta-1.webp","img/green-park/planta-2.webp","img/green-park/planta-3.webp","img/green-park/planta-4.webp"]],"Bella Fiori":[["img/bella-fiori/1.webp","img/bella-fiori/2.webp","img/bella-fiori/3.webp","img/bella-fiori/4.webp","img/bella-fiori/5.webp","img/bella-fiori/6.webp","img/bella-fiori/7.webp"],["img/bella-fiori/planta-1.webp","img/bella-fiori/planta-2.webp","img/bella-fiori/planta-3.webp","img/bella-fiori/planta-4.webp"]],"Residencial Santa Mônica":[["img/santa-monica/1.webp","img/santa-monica/2.webp","img/santa-monica/3.webp","img/santa-monica/4.webp","img/santa-monica/5.webp","img/santa-monica/6.webp","img/santa-monica/7.webp"],["img/santa-monica/planta-1.webp","img/santa-monica/planta-2.webp","img/santa-monica/planta-3.webp","img/santa-monica/planta-4.webp","img/santa-monica/planta-5.webp"]]};
+/* ========================================== */
+
+const img = (p,w=900) => /^(https?:|img\/)/.test(p) ? p : "https://api.apto.vc/images/realties/"+p+".webp?w="+w;
+const slug = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+const ZONAS = {norte:"Norte",sul:"Sul",leste:"Leste",oeste:"Oeste",central:"Central",votorantim:"Votorantim"};
+const IMOVEIS_TODOS = RAW.map(r => {
+  const [nome,tipo,bairro,zona,entrega,preco,dorm,suite,varanda,quintal,garagem,vagaDupla,ar,construtora,torres,andares,porAndar,elevadores,piso,doc,endereco,destaque,lat,lng,plantas] = r;
+  const ms = plantas.map(p=>Math.round(p[0]));
+  const id = slug(nome);
+  return Object.assign({
+    id, nome, tipo: tipo==="casa"?"Casa":tipo==="apartamento"?"Apartamento":tipo, bairro,
+    cidade: zona==="votorantim"?"Votorantim":"Sorocaba", regiao: ZONAS[zona]||"",
+    entrega: entrega ? entrega.slice(0,7) : null, preco, dorm, suite, varanda, quintal, garagem, vagaDupla, ar,
+    construtora, torres, andares, porAndar, elevadores, piso, doc, endereco, destaque: !!destaque, lat, lng,
+    plantas: plantas.map(p=>({m:p[0], preco:p[1]})),
+    area: ms.length ? [Math.min(...ms), Math.max(...ms)] : [0,0]
+  }, EXTRAS[id]||{}, (()=>{ const a=FOTOS_APTO[nome]; if(!a) return {}; return {galeria:a[0], plantasImg:a[1], foto:a[0][0]?img(a[0][0],700):null}; })(),
+     FOTOS_IMOVEIS[id] ? {foto:FOTOS_IMOVEIS[id].capa, fotosPlantas:FOTOS_IMOVEIS[id].plantas||{}} : {});
+});
+/* Por enquanto só aparecem os imóveis que têm foto */
+const IMOVEIS = IMOVEIS_TODOS.filter(i => i.foto);
+
+const zap = (t=MSG_PADRAO) => "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(t);
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const MESES = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+const entregaTxt = e => !e ? "A confirmar" : e==="pronto" ? "Pronto pra morar" : MESES[+e.slice(5)-1] + "/" + e.slice(0,4);
+const faixa = ([a,b],suf) => a===b ? a+suf : a+"–"+b+suf;
+const dormTxt = d => (d.length>1 ? d.slice(0,-1).join(", ")+" e "+d[d.length-1] : d[0]) + (d[d.length-1]>1?" dorms":" dorm");
+const mil = v => "R$ " + Math.round(v/1000).toLocaleString("pt-BR") + " mil";
+const reais = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const CORES = [["#3b63d9","#0b1f4d"],["#16337a","#0b1430"],["#5277e6","#16337a"],["#24459e","#0b1f4d"]];
+const PREDIO = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="12" y="10" width="26" height="44" rx="2"/><rect x="38" y="24" width="16" height="30" rx="2"/><path d="M18 18h4M28 18h4M18 26h4M28 26h4M18 34h4M28 34h4M43 32h6M43 40h6M22 54v-8h6v8"/></svg>';
+const ZAPICO = '<svg class="ico" viewBox="0 0 24 24"><use href="#i-zap"/></svg>';
+const CHECK = '<svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg>';
+const COR_ZONA = {Norte:"#2563eb", Sul:"#16a34a", Leste:"#ea580c", Oeste:"#9333ea", Central:"#0891b2", Votorantim:"#db2777"};
+const corZona = z => COR_ZONA[z] || "#0b1f4d";
+const PIN = '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+const fundo = (i,n) => i.foto ? `background-image:url('${esc(i.foto)}')` : `background:linear-gradient(135deg,${CORES[n%4][0]},${CORES[n%4][1]})`;
+
+/* ---------- pedaços reutilizáveis ---------- */
+function cardImovel(i, n){
+  const msg = `Olá, Douglas! Vi o ${i.nome} (${i.bairro}) no seu site e quero saber mais.`;
+  return `<article class="card">
+    <a class="capa" href="#/imovel/${i.id}" style="${fundo(i,n)}" aria-label="${esc(i.nome)}">${i.foto?"":PREDIO}<span class="tag">${esc(i.tipo)}</span>${i.regiao?`<span class="zona">${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}${i.entrega==="pronto"?`<span class="selo">Pronto pra morar</span>`:i.destaque?`<span class="selo dest">Destaque</span>`:""}</a>
+    <div class="card-corpo">
+      <h3><a href="#/imovel/${i.id}">${esc(i.nome)}</a></h3>
+      <p class="bairro">${esc(i.bairro)}</p>
+      <p class="specs">${dormTxt(i.dorm)} · ${faixa(i.area," m²")} · Entrega: ${entregaTxt(i.entrega)}</p>
+      <p class="preco">${i.preco ? `A partir de <b>${mil(i.preco)}</b>` : `<b>Consulte</b>`}</p>
+      <a class="btn btn-azul" target="_blank" rel="noopener" href="${zap(msg)}">Falar no WhatsApp</a>
+    </div></article>`;
+}
+const espera = (t,s) => `<div class="espera"><b>${t}</b>${s}</div>`;
+const listaPilula = itens => `<div class="lista-pilula">${itens.map(t=>`<span><i>${CHECK}</i>${t}</span>`).join("")}</div>`;
+
+function blocoDepoimentos(){
+  const lista = DEPOIMENTOS.length
+    ? `<div class="depos">${DEPOIMENTOS.map(d=>`<div class="depo"><span class="estrelas">★★★★★</span><p>${esc(d.texto)}</p><b>${esc(d.nome)}</b> <small class="aviso">${esc(d.quando||"")}</small></div>`).join("")}</div>` : "";
+  return `<div class="google"><span class="estrelas">★★★★★</span>
+      <div style="flex:1;min-width:220px"><b class="poppins">Avaliações publicadas no Google</b><p class="sub" style="font-size:14px">Leia o que meus clientes escreveram e deixe a sua também.</p></div>
+      <a class="btn btn-linha" href="${GOOGLE_AVALIACOES}" target="_blank" rel="noopener">Ver no Google</a></div>${lista}`;
+}
+function blocoGaleria(qtd){
+  if(!FOTOS.length) return espera("Fotos das entregas de chaves","Aqui vão aparecer as fotos dos meus clientes recebendo as chaves.");
+  return `<div class="fotos">${FOTOS.slice(0,qtd||FOTOS.length).map((f,k)=>`<img loading="lazy" src="${esc(f)}" alt="Entrega de chaves ${k+1}">`).join("")}</div>`;
+}
+function blocoVideos(){
+  if(!VIDEOS.length) return espera("Relatos em vídeo","Os vídeos dos clientes contando como foi vão aparecer aqui.");
+  return `<div class="video-destaque"><iframe id="player" src="https://www.youtube-nocookie.com/embed/${esc(VIDEOS[0])}?vq=hd1080" allowfullscreen title="Relato em vídeo"></iframe></div>
+    <div class="miniaturas">${VIDEOS.map(v=>`<button aria-label="Relato em vídeo" style="background-image:url('https://i.ytimg.com/vi/${esc(v)}/hqdefault.jpg')" onclick="document.getElementById('player').src='https://www.youtube-nocookie.com/embed/${esc(v)}?autoplay=1&vq=hd1080';scrollTo({top:document.getElementById('player').offsetTop-90,behavior:'smooth'})"></button>`).join("")}</div>`;
+}
+const cta = (t,s,b) => `<div class="cta-final"><h2>${t}</h2><p>${s}</p><a class="btn btn-branco" target="_blank" rel="noopener" href="${zap()}">${ZAPICO}${b}</a></div>`;
+
+function formContato(){
+  return `<form class="form" id="form">
+    <input id="c-nome" required placeholder="Seu nome" autocomplete="name">
+    <input id="c-tel" required inputmode="tel" placeholder="Seu WhatsApp com DDD" autocomplete="tel">
+    <select id="c-busca"><option>Apartamento na planta</option><option>Pronto para morar</option><option>Investimento</option><option>Ainda não sei</option></select>
+    <label class="consent"><input type="checkbox" id="c-ok" required> Autorizo o Douglas a guardar meu contato e falar comigo sobre imóveis, conforme a <a href="#/privacidade">Política de Privacidade</a>.</label>
+    <button class="btn btn-azul" type="submit">${ZAPICO}Falar no WhatsApp</button>
+  </form>`;
+}
+function ligarForm(){
+  const f = $("#form"); if(!f) return;
+  f.onsubmit = ev => {
+    ev.preventDefault();
+    const l = ["Olá, Douglas! Vim pelo seu site.","Nome: "+$("#c-nome").value,"WhatsApp: "+$("#c-tel").value,"Procuro: "+$("#c-busca").value];
+    window.open(zap(l.join("\n")),"_blank");
+  };
+}
+
+/* ---------- busca ---------- */
+let pagina = 1; const POR_PAGINA = 9; let filtroZona = "", filtroTipo = "";
+function secaoBusca(){
+  const opt = arr => arr.map(([v,t])=>`<option value="${v}">${t}</option>`).join("");
+  const anos = [...new Set(IMOVEIS.filter(i=>i.entrega).map(i=>i.entrega.slice(0,4)))].sort();
+  const vmin = [[0,"Qualquer"],[170000,"R$ 170 mil"],[200000,"R$ 200 mil"],[250000,"R$ 250 mil"],[300000,"R$ 300 mil"],[400000,"R$ 400 mil"],[600000,"R$ 600 mil"]];
+  const vmax = [[0,"Qualquer"],[220000,"R$ 220 mil"],[260000,"R$ 260 mil"],[300000,"R$ 300 mil"],[400000,"R$ 400 mil"],[600000,"R$ 600 mil"],[900000,"R$ 900 mil"]];
+  const amin = [[0,"Qualquer"],[25,"25 m²"],[40,"40 m²"],[50,"50 m²"],[70,"70 m²"],[100,"100 m²"]];
+  const amax = [[0,"Qualquer"],[40,"40 m²"],[50,"50 m²"],[70,"70 m²"],[100,"100 m²"],[225,"225 m²"]];
+  const zonas = [["","Todas"],["Norte","Norte"],["Sul","Sul"],["Leste","Leste"],["Oeste","Oeste"],["Central","Central"],["Votorantim","Votorantim"]];
+  const tipos = [["","Todos"],["Apartamento","Apartamento"],["Casa","Casa"],["Salão Comercial","Salão Comercial"],["Terreno","Terreno"]];
+  return `<section id="imoveis" style="padding-top:20px"><div class="wrap"><div class="painel">
+    <h2 style="font-size:clamp(24px,3vw,32px)">Encontre o imóvel ideal para você</h2>
+    <p class="sub">Escolha a região e refine pelos filtros abaixo.</p>
+    <div class="pilulas" id="p-zona">${zonas.map(([v,t],k)=>`<button type="button" data-v="${v}" aria-pressed="${k===0}"${v?` style="--zc:${corZona(v)}"`:""}>${PIN}${t}</button>`).join("")}</div>
+    <div class="pilulas" id="p-tipo">${tipos.map(([v,t],k)=>`<button type="button" data-v="${v}" aria-pressed="${k===0}">${t}</button>`).join("")}</div>
+    <div class="filtros" id="filtros">
+      <label>Entrega<select id="f-entrega">${opt([["","Qualquer"],["pronto","Pronto para morar"],...anos.map(a=>[a,"Até "+a])])}</select></label>
+      <label>Dormitórios<select id="f-dorm">${opt([[0,"Qualquer"],[1,"1+"],[2,"2+"],[3,"3+"],[4,"4+"]])}</select></label>
+      <label>Valor mín.<select id="f-vmin">${opt(vmin)}</select></label>
+      <label>Valor máx.<select id="f-vmax">${opt(vmax)}</select></label>
+      <label class="mais">Área mín.<select id="f-amin">${opt(amin)}</select></label>
+      <label class="mais">Área máx.<select id="f-amax">${opt(amax)}</select></label>
+    </div>
+    <div class="botoes-filtro"><button type="button" id="b-mais">+ Mais filtros</button><button type="button" id="b-limpar">Limpar filtros</button></div>
+    </div>
+    <div class="barra-res"><p class="contagem" id="contagem"></p>
+      <label class="ordem">Ordenar<select id="f-ordem"><option value="">Mais relevantes</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="entrega">Entrega mais próxima</option></select></label>
+      <div class="modos"><button type="button" id="m-lista" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Lista</button><button type="button" id="m-mapa" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Ver no mapa</button></div></div>
+    <div class="mapa-box" id="mapa-box" hidden><div id="mapa"></div><div class="mapa-chip" id="mapa-chip">Carregando o mapa...</div><div class="mapa-leg" id="mapa-leg"></div></div>
+    <div class="grade" id="grade"></div>
+    <div class="paginas" id="paginas"></div>
+  </div></section>`;
+}
+function ligarBusca(){
+  const v = id => $("#"+id).value;
+  const pronto = e => e==="pronto";
+  const filtrar = () => {
+    const e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
+    const base = IMOVEIS.filter(i =>
+      (!filtroTipo || i.tipo===filtroTipo) &&
+      (!e || (e==="pronto" ? pronto(i.entrega) : (i.entrega && i.entrega.slice(0,4)<=e))) &&
+      Math.max(...i.dorm)>=d && (!vmin || (i.preco && i.preco>=vmin)) && (!vmax || (i.preco && i.preco<=vmax)) &&
+      i.area[1]>=amin && (!amax || i.area[0]<=amax));
+    const lista = base.filter(i => !filtroZona || i.regiao===filtroZona);
+    const ord = $("#f-ordem") ? $("#f-ordem").value : "", semP = 1e12;
+    const quando = i => i.entrega==="pronto" ? "0" : (i.entrega || "9999");
+    if(ord==="menor") lista.sort((a,b)=>(a.preco||semP)-(b.preco||semP));
+    if(ord==="maior") lista.sort((a,b)=>(b.preco||0)-(a.preco||0));
+    if(ord==="entrega") lista.sort((a,b)=>quando(a)<quando(b)?-1:quando(a)>quando(b)?1:0);
+    BASE_ATUAL = base; ZONA_ATUAL = filtroZona;
+    LISTA_ATUAL = lista; if(MODO==="mapa") desenharMapa();
+    const total = Math.max(1, Math.ceil(lista.length/POR_PAGINA)); pagina = Math.min(pagina,total);
+    const parte = lista.slice((pagina-1)*POR_PAGINA, pagina*POR_PAGINA);
+    $("#grade").innerHTML = parte.length ? parte.map((i,k)=>cardImovel(i,k+pagina)).join("") : `<p class="vazio">Nenhum imóvel com esses filtros. <a style="color:var(--azul2);font-weight:600" target="_blank" rel="noopener" href="${zap("Olá, Douglas! Não achei no site o imóvel que procuro. Pode me ajudar?")}">Me chama que eu procuro pra você.</a></p>`;
+    $("#contagem").textContent = lista.length + (lista.length===1?" imóvel encontrado":" imóveis encontrados");
+    const p = $("#paginas"); p.innerHTML="";
+    if(total>1){
+      const b=(txt,n,dis,cur)=>{const x=document.createElement("button");x.textContent=txt;x.disabled=dis;if(cur)x.setAttribute("aria-current","true");x.onclick=()=>{pagina=n;filtrar();$("#imoveis").scrollIntoView({behavior:"smooth"});};p.append(x);};
+      b("Anterior",pagina-1,pagina===1); for(let k=1;k<=total;k++) b(k,k,false,k===pagina); b("Próxima",pagina+1,pagina===total);
+    }
+  };
+  const pil = (id, set) => document.querySelectorAll(`#${id} button`).forEach(bt=>bt.onclick=()=>{
+    document.querySelectorAll(`#${id} button`).forEach(x=>x.setAttribute("aria-pressed","false"));
+    bt.setAttribute("aria-pressed","true"); set(bt.dataset.v); pagina=1; filtrar();
+  });
+  pil("p-zona", x=>filtroZona=x); pil("p-tipo", x=>filtroTipo=x);
+  const modo = m => { MODO=m; $("#m-lista").setAttribute("aria-pressed",m==="lista"); $("#m-mapa").setAttribute("aria-pressed",m==="mapa");
+    $("#mapa-box").hidden = m!=="mapa"; $("#grade").style.display = m==="mapa"?"none":""; $("#paginas").style.display = m==="mapa"?"none":"";
+    if(m==="mapa") desenharMapa(); };
+  $("#m-lista").onclick=()=>modo("lista"); $("#m-mapa").onclick=()=>modo("mapa");
+  if(MODO==="mapa") setTimeout(()=>modo("mapa"),0);
+  document.querySelectorAll("#filtros select").forEach(s=>s.onchange=()=>{pagina=1;filtrar();});
+  $("#f-ordem").onchange=()=>{pagina=1;filtrar();};
+  $("#b-mais").onclick=()=>{const f=$("#filtros");f.classList.toggle("aberto");$("#b-mais").textContent=f.classList.contains("aberto")?"− Menos filtros":"+ Mais filtros";};
+  $("#b-limpar").onclick=()=>{document.querySelectorAll("#filtros select").forEach(s=>s.selectedIndex=0);filtroZona="";filtroTipo="";
+    ["p-zona","p-tipo"].forEach(id=>document.querySelectorAll(`#${id} button`).forEach((x,k)=>x.setAttribute("aria-pressed",k===0)));pagina=1;filtrar();};
+  filtrar();
+}
+
+/* ---------- mapa ---------- */
+let BASE_ATUAL = [], ZONA_ATUAL = "";
+let MODO = "lista", LISTA_ATUAL = [], MAPA = null, CAMADA = null, LEAFLET = null;
+function carregarLeaflet(){
+  if(LEAFLET) return LEAFLET;
+  const css = h => { const l=document.createElement("link"); l.rel="stylesheet"; l.href=h; document.head.append(l); };
+  const js = h => new Promise((ok,erro)=>{ const s=document.createElement("script"); s.src=h; s.onload=ok; s.onerror=erro; document.head.append(s); });
+  css("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+  css("https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css");
+  LEAFLET = js("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js").then(()=>js("https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"));
+  LEAFLET.catch(()=>{ LEAFLET=null; });
+  return LEAFLET;
+}
+async function desenharMapa(){
+  const box = $("#mapa"); if(!box) return;
+  try{ await carregarLeaflet(); }catch(e){ $("#mapa-chip").textContent="Não deu para carregar o mapa agora. Tente de novo."; return; }
+  if(!MAPA || MAPA.getContainer()!==box){
+    if(MAPA){ try{MAPA.remove();}catch(e){} }
+    MAPA = L.map(box,{zoomControl:false,scrollWheelZoom:false}).setView([-23.5,-47.46],12);
+    L.control.zoom({position:"topright"}).addTo(MAPA);
+    const ESRI="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
+    L.tileLayer(ESRI+"World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,maxNativeZoom:16,attribution:'Mapa &copy; <a href="https://www.esri.com/">Esri</a>, HERE, Garmin, &copy; OpenStreetMap'}).addTo(MAPA);
+    L.tileLayer(ESRI+"World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,maxNativeZoom:16}).addTo(MAPA);
+    MAPA.on("click",()=>MAPA.scrollWheelZoom.enable());
+    CAMADA = null;
+  }
+  if(CAMADA) MAPA.removeLayer(CAMADA);
+  CAMADA = L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:50,spiderfyOnMaxZoom:true,
+    iconCreateFunction:c=>{
+      const ms=c.getAllChildMarkers(), n=ms.length, t=n<10?48:n<30?56:64, cont={};
+      ms.forEach(m=>{ cont[m.options.zona]=(cont[m.options.zona]||0)+1; });
+      let a=0; const fatias=Object.keys(COR_ZONA).filter(z=>cont[z]).map(z=>{ const b=a+cont[z]/n*360, f=`${COR_ZONA[z]} ${a}deg ${b}deg`; a=b; return f; });
+      return L.divIcon({className:"cluster",iconSize:[t,t],html:`<div style="width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:conic-gradient(${fatias.join(",")||"#0b1f4d 0deg 360deg"})"><b>${n}</b></div>`}); }});
+  const pts = LISTA_ATUAL.filter(i=>i.lat && i.lng);
+  pts.forEach(i=>{
+    const rot = i.preco ? mil(i.preco) : "Consulte";
+    const mk = L.marker([i.lat,i.lng],{icon:L.divIcon({className:"",html:`<div class="pin" style="--pc:${corZona(i.regiao)}"><span>${rot}</span></div>`,iconSize:[0,0]}),title:i.nome+" · "+(i.regiao||""),riseOnHover:true,zona:i.regiao});
+    const msg = `Olá, Douglas! Vi o ${i.nome} (${i.bairro}) no mapa do seu site e quero saber mais.`;
+    mk.bindPopup(`<div class="pop">${i.foto?`<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">`:""}<div><h4>${esc(i.nome)}</h4><p>${esc(i.bairro)} · ${dormTxt(i.dorm)}${i.area[0]?" · "+faixa(i.area," m²"):""}</p><p class="pp">${i.preco?"A partir de "+mil(i.preco):"Consulte o valor"}</p><div class="bts"><a class="l" href="#/imovel/${i.id}">Ver detalhes</a><a class="z" target="_blank" rel="noopener" href="${zap(msg)}">WhatsApp</a></div></div></div>`,{maxWidth:260,minWidth:260,offset:[0,-36],autoPanPadding:[30,30]});
+    CAMADA.addLayer(mk);
+  });
+  MAPA.addLayer(CAMADA);
+  const conta = {}; BASE_ATUAL.filter(i=>i.lat&&i.lng).forEach(i=>{ conta[i.regiao]=(conta[i.regiao]||0)+1; });
+  const totalBase = Object.values(conta).reduce((a,b)=>a+b,0);
+  $("#mapa-leg").innerHTML = [["","Todas","#0b1f4d",totalBase], ...Object.keys(COR_ZONA).map(z=>[z,z,COR_ZONA[z],conta[z]||0])]
+    .map(([v,t,c,n])=>`<button type="button" data-v="${v}" style="--zc:${c}" aria-pressed="${ZONA_ATUAL===v}"${n||v===ZONA_ATUAL?"":" disabled"}><i></i>${t} <small>${n}</small></button>`).join("");
+  $("#mapa-leg").querySelectorAll("button").forEach(b=>b.onclick=()=>{ const alvo=[...document.querySelectorAll("#p-zona button")].find(x=>x.dataset.v===b.dataset.v); if(alvo) alvo.click(); });
+  const leg = $("#mapa-leg"), ativo = leg.querySelector("button[aria-pressed=true]"); if(ativo) leg.scrollLeft = ativo.offsetLeft - leg.clientWidth/2 + ativo.offsetWidth/2;
+  $("#mapa-chip").textContent = pts.length ? pts.length + (pts.length===1?" imóvel no mapa":" imóveis no mapa") : "Nenhum imóvel com esses filtros";
+  setTimeout(()=>{ MAPA.invalidateSize(); if(pts.length) MAPA.fitBounds(L.latLngBounds(pts.map(i=>[i.lat,i.lng])),{padding:[60,60],maxZoom:15}); },60);
+}
+
+/* ---------- páginas ---------- */
+const PAGINAS = {
+  inicio(){
+    return `
+    <section class="hero" id="topo"><div class="wrap hero-grid">
+      <div>
+        <h1>Mais que imóveis, <em>realizo sonhos.</em></h1>
+        <p class="lead">Especialista em imóveis do Minha Casa Minha Vida em Sorocaba e Votorantim. Atendimento humano, transparente e focado em você.</p>
+        <div class="checks"><span>${CHECK}Empatia</span><span>${CHECK}Transparência</span><span>${CHECK}Honestidade</span></div>
+        <a class="btn btn-azul" target="_blank" rel="noopener" href="${zap()}">${ZAPICO}Fale comigo</a>
+        <p class="script">Clientes que se tornam amigos.</p>
+      </div>
+      <div class="hero-foto"><span class="circulo"></span><span class="circulo peq"></span><img src="douglas.avif" alt="Douglas Conceição, corretor de imóveis"><div class="badge">CRECI-SP<b>153553-F</b></div></div>
+    </div></section>
+    ${secaoBusca()}
+    <section class="suave"><div class="wrap sobre-grid">
+      <div class="sobre-foto"><img src="douglas.avif" alt="Douglas Conceição sorrindo"></div>
+      <div><p class="eyebrow">Sobre mim</p><h2>Prazer, eu sou <em>Douglas Conceição</em></h2>
+        <p class="sub">Acredito que comprar o primeiro imóvel vai muito além de escolher um apartamento. É sonho, expectativa e muita responsabilidade. Por isso eu oriento cada cliente do jeito que gostaria que a minha família fosse orientada.</p>
+        ${listaPilula(["Atendimento humanizado","Foco no seu objetivo","Acompanhamento completo","Especialista em MCMV"])}
+        <a class="btn btn-escuro" href="#/sobre">Me conhecer melhor →</a>
+      </div></div></section>
+    <section id="depoimentos"><div class="wrap">
+      <p class="eyebrow">Depoimentos</p><h2>O que dizem os clientes</h2>
+      ${blocoDepoimentos()}
+    </div></section>
+    <section class="suave"><div class="wrap">
+      <p class="eyebrow">Lançamentos</p><h2>Apartamentos na planta para o seu futuro</h2>
+      <p class="sub">Quem compra na planta paga menos e tem mais tempo pra organizar a entrada.</p>
+      <div class="grade" style="margin-top:26px">${IMOVEIS.filter(i=>i.destaque).slice(0,6).map(cardImovel).join("")}</div>
+    </div></section>
+    <section id="contato-home"><div class="wrap contato-grid">
+      <div><p class="eyebrow">Contato</p><h2>Vamos achar o seu imóvel?</h2>
+        <p class="sub">Conte o que você procura e em que momento está. O atendimento é pessoal: eu explico as condições de financiamento e conduzo cada etapa no seu tempo, sem pressa e sem compromisso.</p>
+        <p class="script" style="margin-top:18px">Clientes que se tornam amigos.</p></div>
+      ${formContato()}
+    </div></section>`;
+  },
+  imovel(id){
+    const i = IMOVEIS.find(x=>x.id===id);
+    if(!i) return `<section><div class="wrap">${espera("Imóvel não encontrado",'<a class="btn btn-linha link-mais" href="#/imoveis">Voltar aos imóveis</a>')}</div></section>`;
+    document.title = i.nome + " | Douglas Conceição";
+    const n = IMOVEIS.indexOf(i);
+    const PISO = {areas_molhadas:"Só áreas molhadas", completo:"Completo"}, DOC = {gratis:"Grátis", desconto:"Com desconto"};
+    const ficha = [["Dormitórios",i.dorm.join(" e ")],["Metragem",faixa(i.area," m²")],["Plantas",i.plantas.length],["Construtora",i.construtora],["Torres",i.torres],["Andares",i.andares],["Aptos por andar",i.porAndar],["Elevadores",i.elevadores],["Ar-condicionado",i.ar?i.ar+(i.ar>1?" pontos":" ponto"):""],["Piso",PISO[i.piso]],["Documentação",DOC[i.doc]],["Entrega",entregaTxt(i.entrega)]].filter(([,v])=>v);
+    const tem = [i.suite?(i.suite>1?i.suite+" suítes":"1 suíte"):"", i.varanda?"Varanda":"", i.quintal?"Quintal":"", i.garagem?"Garagem coberta":"", i.vagaDupla?"Vaga dupla":""].filter(Boolean);
+    const mapa = i.lat ? `https://maps.google.com/maps?q=${i.lat},${i.lng}&t=k&z=16&output=embed` : "";
+    const abrirMapa = i.lat ? `https://www.google.com/maps/search/?api=1&query=${i.lat},${i.lng}` : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((i.endereco||i.nome)+" "+i.bairro+" "+i.cidade)}`;
+    return `<div class="wrap">
+      <a class="voltar" href="#/imoveis">← Voltar aos imóveis</a>
+      <div class="imovel-hero" style="${fundo(i,n)}"><div class="sombra"></div><div class="conteudo">
+        <div class="etiquetas">${i.regiao?`<span>${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}<span>Entrega: ${entregaTxt(i.entrega)}</span><span>${esc(i.tipo)}</span></div>
+        <h1>${esc(i.nome)}</h1><p>${esc(i.bairro)} · ${esc(i.cidade)} - SP</p></div></div>
+      <div class="partilha"><button type="button" id="b-partilhar">${ICO_PARTILHA}Compartilhar</button><a target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent("Olha esse imóvel: "+i.nome+" ("+i.bairro+") "+location.origin+"/#/imovel/"+i.id)}">${ZAPICO}Mandar para alguém</a></div>
+      <div class="imovel-grid">
+        <div>
+          <div class="caixa"><p class="eyebrow">Detalhes do imóvel</p><h2>Ficha técnica</h2><div class="ficha">${ficha.map(([k,v])=>`<div><small>${k}</small><b>${esc(v)}</b></div>`).join("")}</div></div>
+          ${i.galeria&&i.galeria.length?`<div class="caixa"><h2>Fotos</h2><div class="galeria">${i.galeria.map((g,k)=>`<button type="button" data-zoom="${esc(img(g,1600))}" aria-label="Ampliar foto ${k+1}"><img loading="lazy" src="${esc(img(g,k?500:1000))}" alt="${esc(i.nome)} foto ${k+1}"></button>`).join("")}</div><p class="credito">Imagens ilustrativas, material de divulgação da construtora.</p></div>`:""}
+          ${tem.length?`<div class="caixa"><h2>O que este empreendimento tem</h2><div class="chips">${tem.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div>`:""}
+          ${i.sobre?`<div class="caixa texto"><h2>Sobre o empreendimento</h2>${i.sobre.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:""}
+          ${i.lazer?`<div class="caixa"><h2>Lazer e conveniência</h2><ul class="lista-check" style="grid-template-columns:1fr 1fr">${i.lazer.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+          <div class="caixa"><h2>Localização</h2>
+            ${mapa?`<div class="mapa"><iframe loading="lazy" src="${mapa}" title="Mapa"></iframe></div>`:""}
+            <p><b>${esc(i.endereco||i.bairro)}</b><br>${esc(i.bairro)}, ${esc(i.cidade)} - SP</p>
+            ${i.local?`<p class="sub" style="margin-top:8px">${esc(i.local)}</p>`:""}
+            <a class="btn btn-linha" style="margin-top:14px" target="_blank" rel="noopener" href="${abrirMapa}">Abrir no Google Maps</a>
+          </div>
+          <p class="aviso">Preços e condições são informativos e podem mudar sem aviso. Confirme os valores atualizados comigo antes de fechar.</p>
+        </div>
+        <div><div class="caixa planta-box">
+          <p class="eyebrow">Plantas disponíveis</p>
+          <div class="metragens" id="metragens">${i.plantas.map((p,k)=>`<button type="button" data-k="${k}" aria-pressed="${k===0}">${String(p.m).replace(".",",")} m²</button>`).join("")}</div>
+          <div class="planta-img" id="planta-img"></div>
+          <div class="planta-nav" id="planta-nav"></div>
+          <div class="preco-grande" id="planta-preco"></div>
+          <p class="aviso">Valores e condições sujeitos a confirmação.</p>
+          <label class="consent"><input type="checkbox" id="p-ok" checked> Autorizo o Douglas a guardar meu contato e falar comigo sobre imóveis, conforme a <a href="#/privacidade">Política de Privacidade</a>.</label>
+          <a class="btn btn-azul" style="width:100%" id="p-zap" target="_blank" rel="noopener" href="#">${ZAPICO}Falar sobre esta planta</a>
+          <p class="aviso" style="margin-top:10px;text-align:center">Atendimento direto com Douglas Conceição · CRECI-SP 153553-F</p>
+        </div></div>
+      </div></div>`;
+  },
+  sobre(){
+    return `<section class="hero"><div class="wrap sobre-grid">
+      <div class="sobre-foto"><img src="douglas.avif" alt="Douglas Conceição"></div>
+      <div><p class="eyebrow">Sobre mim</p><h1 class="titulo">Muito prazer, eu sou <em>Douglas Conceição</em></h1>
+        <p class="sub">Corretor de imóveis em Sorocaba, especialista em Minha Casa Minha Vida e apartamentos na planta.</p>
+        <p class="script" style="margin:16px 0 22px">Clientes que se tornam amigos.</p>
+        <a class="btn btn-azul" target="_blank" rel="noopener" href="${zap()}">${ZAPICO}Falar com o Douglas</a>
+        <div class="sociais" data-sociais style="margin-top:14px"></div>
+      </div></div></section>
+    <section><div class="wrap texto" style="max-width:820px">
+      <p class="eyebrow">Minha história</p><h2>Por que eu faço isso</h2>
+      <p>Sou Douglas Conceição, corretor de imóveis registrado no CRECI-SP sob o número 153553-F. Trabalho em Sorocaba e região ajudando famílias a sair do aluguel e a comprar o primeiro imóvel.</p>
+      <p>Meu jeito de trabalhar é simples: entender a sua realidade, mostrar só o que faz sentido pra você e explicar cada passo sem enrolação, da simulação até a assinatura no banco.</p>
+      <p>O que mais me motiva:</p>
+      ${listaPilula(["Receber a mensagem de uma família feliz com a casa nova","Estar junto no dia da entrega das chaves","Ver cliente virar amigo","Fazer parte da história de alguém"])}
+      <div class="citacao">Imóvel é tijolo. O que importa de verdade são as pessoas que vão morar nele.</div>
+    </div></section>
+    <section class="suave"><div class="wrap">
+      <h2>Meus valores</h2>
+      <div class="cartoes">
+        <div><span>💙</span>Empatia</div><div><span>🔍</span>Transparência</div><div><span>🤝</span>Honestidade</div>
+        <div><span>🎯</span>Comprometimento</div><div><span>📚</span>Atualização constante</div><div><span>🏗️</span>Especialista em apartamentos na planta</div>
+      </div>
+      <h2 style="margin-top:48px">Alguns números</h2>
+      <div class="cartoes">
+        <div><b>${IMOVEIS.length}</b>imóveis na minha carteira</div>
+        <div><b>MCMV</b>Especialista em Minha Casa Minha Vida</div>
+        <div><b>Sorocaba</b>Atendimento em Sorocaba e região</div>
+      </div>
+    </div></section>
+    <section class="suave"><div class="wrap"><h2>O que dizem os clientes</h2>${blocoDepoimentos()}</div></section>
+    <section><div class="wrap">${cta("Vamos encontrar o seu?","Me conta o que você precisa que eu te ajudo a achar.","Falar no WhatsApp")}</div></section>`;
+  },
+  depoimentos(){
+    return `<section><div class="wrap"><p class="eyebrow">Depoimentos</p><h1 class="titulo">O que dizem os clientes</h1>${blocoDepoimentos()}</div></section>
+    <section><div class="wrap">${cta("Quer ser o próximo?","Me chama e vamos achar o seu imóvel.","Falar com o Douglas")}</div></section>`;
+  },
+  relatos(){
+    return `<section><div class="wrap"><p class="eyebrow">Relatos</p><h1 class="titulo">Histórias de quem realizou o sonho</h1>
+      <p class="sub">Cada vídeo é um cliente que virou amigo. Dá o play e conheça algumas dessas histórias.</p>${blocoVideos()}</div></section>`;
+  },
+  galeria(){
+    return `<section><div class="wrap"><p class="eyebrow">Histórias que inspiram</p><h1 class="titulo">Clientes que se tornam amigos</h1>
+      <p class="sub">${FOTOS.length?FOTOS.length+" momentos de entrega de chave.":"Cada foto é um momento de entrega de chave."}</p>${blocoGaleria()}</div></section>
+    <section class="suave"><div class="wrap"><h2>O que dizem os clientes</h2>${blocoDepoimentos()}</div></section>
+    <section><div class="wrap">${cta("Quer ser o próximo?","Me chama e vamos achar o seu imóvel.","Falar com o Douglas")}</div></section>`;
+  },
+  parceiros(){
+    const l = PARCEIROS.length ? `<div class="lista-blocos">${PARCEIROS.map(p=>`<div class="item-bloco">${p.foto?`<img src="${esc(p.foto)}" alt="${esc(p.nome)}">`:`<div style="background:linear-gradient(135deg,var(--azul2),var(--azul));min-height:220px"></div>`}<div class="corpo">${p.destaque?`<span class="selo">★ Parceiro em destaque</span>`:""}<h2>${esc(p.nome)}</h2><p class="sub">${esc(p.texto)}</p></div></div>`).join("")}</div>`
+      : espera("Parceiros em breve","Aqui vão aparecer os comércios parceiros e os presentes pra quem compra comigo.");
+    return `<section><div class="wrap"><p class="eyebrow">Parcerias</p><h1 class="titulo">Parcerias de sucesso</h1>
+      <p class="sub">Comprar o seu imóvel comigo rende mais do que as chaves.</p>${l}</div></section>`;
+  },
+  premiacoes(){
+    const l = PREMIOS.length ? `<div class="premios">${PREMIOS.map(p=>`<div class="premio">${p.foto?`<img src="${esc(p.foto)}" alt="${esc(p.titulo)}">`:""}<div><b>${esc(p.titulo)}</b><span>${esc(p.ano)}</span></div></div>`).join("")}</div>`
+      : espera("Premiações em breve","Os prêmios e reconhecimentos vão aparecer aqui.");
+    return `<section><div class="wrap"><p class="eyebrow">Reconhecimento</p><h1 class="titulo">Minhas premiações</h1>
+      <p class="sub">Prêmios e reconhecimentos que vêm do trabalho de cada dia e da confiança de cada cliente.</p>${l}</div></section>`;
+  },
+  eventos(){
+    const l = EVENTOS.length ? `<div class="lista-blocos">${EVENTOS.map(e=>`<div class="item-bloco">${e.foto?`<img src="${esc(e.foto)}" alt="${esc(e.titulo)}">`:`<div style="background:linear-gradient(135deg,var(--azul2),var(--azul));min-height:220px"></div>`}<div class="corpo"><h2>${esc(e.titulo)}</h2><p class="sub">${esc(e.texto)}</p>${e.fotos&&e.fotos.length?`<div class="mini-fotos">${e.fotos.map(f=>`<img loading="lazy" src="${esc(f)}" alt="">`).join("")}</div>`:""}</div></div>`).join("")}</div>`
+      : espera("Eventos em breve","Lançamentos, treinamentos e workshops que eu participo vão aparecer aqui.");
+    return `<section><div class="wrap"><p class="eyebrow">Eventos</p><h1 class="titulo">Eventos e lançamentos</h1>
+      <p class="sub">Estou sempre nos lançamentos e treinamentos pra te trazer as melhores condições primeiro.</p>${l}</div></section>`;
+  },
+  contato(){
+    return `<section class="hero"><div class="wrap">
+      <p class="eyebrow">Contato</p><h1 class="titulo">Vamos conversar?</h1>
+      <p class="sub">Tira suas dúvidas comigo pelo canal que for melhor pra você.</p>
+      <div class="canais">
+        <a class="canal destaque" target="_blank" rel="noopener" href="${zap()}"><small>Resposta mais rápida</small><b>Chamar no WhatsApp</b><br>${TEL_TXT}</a>
+        <a class="canal" href="tel:+${WHATS}"><small>Telefone</small><b>${TEL_TXT}</b></a>
+        ${EMAIL?`<a class="canal" href="mailto:${esc(EMAIL)}"><small>E-mail</small><b>${esc(EMAIL)}</b></a>`:`<div class="canal"><small>Registro</small><b>CRECI-SP 153553-F</b></div>`}
+      </div>
+      <div class="sociais" data-sociais style="margin-top:20px"></div>
+      ${ENDERECO?`<h2 style="margin-top:36px">Endereço</h2><div class="mapa"><iframe loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(ENDERECO)}&z=15&output=embed" title="Mapa"></iframe></div><p>${esc(ENDERECO)}</p><a class="btn btn-linha" style="margin-top:12px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ENDERECO)}">Abrir no Google Maps</a>`:""}
+      <div class="contato-grid" style="margin-top:44px"><div><h2>Prefere deixar seus dados pra eu te chamar?</h2><p class="sub">Eu te respondo no WhatsApp o quanto antes.</p></div>${formContato()}</div>
+    </div></section>`;
+  },
+  privacidade(){
+    return `<section><div class="wrap texto" style="max-width:820px">
+      <p class="eyebrow">Privacidade</p><h1 class="titulo">Política de Privacidade</h1>
+      <p>Este site é de Douglas Conceição, corretor de imóveis, CRECI-SP 153553-F, em Sorocaba - SP.</p>
+      <p><b>Quais dados eu uso.</b> Só os que você mesmo me manda: nome, WhatsApp e o que você procura, quando preenche o formulário ou me chama no WhatsApp.</p>
+      <p><b>Pra que eu uso.</b> Pra te responder, te mandar opções de imóveis e fazer simulações que você pedir. Não vendo nem passo seus dados pra ninguém fora do processo de compra (como construtora e banco, quando você decidir seguir com um imóvel).</p>
+      <p><b>Quanto tempo guardo.</b> Enquanto fizer sentido pro atendimento. Você pode pedir pra eu apagar seus dados quando quiser.</p>
+      <p><b>Seus direitos.</b> Pela LGPD (Lei 13.709/2018), você pode pedir acesso, correção ou exclusão dos seus dados. É só me chamar no WhatsApp ${TEL_TXT}.</p>
+      <p><b>Links de fora.</b> Botões de WhatsApp, YouTube e Google Maps abrem serviços de outras empresas, que têm as próprias regras de privacidade.</p>
+    </div></section>`;
+  }
+};
+
+/* ---------- roteador ---------- */
+const ICO_PARTILHA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
+function aviso(t){ const d=document.createElement("div"); d.className="toast"; d.textContent=t; document.body.append(d); setTimeout(()=>d.remove(),2200); }
+document.addEventListener("click", async e => {
+  if(!e.target.closest("#b-partilhar")) return;
+  const url = location.href, title = document.title;
+  try{ if(navigator.share){ await navigator.share({title, url}); return; } }catch(err){ return; }
+  try{ await navigator.clipboard.writeText(url); aviso("Link copiado!"); }catch(err){ prompt("Copie o link:", url); }
+});
+function preencherGlobais(){
+  const vazio = {parceiros:!PARCEIROS.length, premiacoes:!PREMIOS.length, eventos:!EVENTOS.length, relatos:!VIDEOS.length, galeria:!FOTOS.length};
+  Object.entries(vazio).forEach(([pg,v])=>{ if(v) document.querySelectorAll(`header a[href="#/${pg}"], footer a[href="#/${pg}"], .rodape a[href="#/${pg}"]`).forEach(a=>a.style.display="none"); });
+  document.querySelectorAll("[data-zap]").forEach(a=>{a.href=zap();a.target="_blank";a.rel="noopener";});
+  document.querySelectorAll("[data-tel]").forEach(a=>a.textContent="WhatsApp "+TEL_TXT);
+  const ic = {instagram:"i-insta",facebook:"i-face",tiktok:"i-tiktok"};
+  const html = Object.entries(REDES).filter(([,u])=>u).map(([k,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${k}"><svg viewBox="0 0 24 24"><use href="#${ic[k]}"/></svg></a>`).join("");
+  document.querySelectorAll("[data-sociais]").forEach(d=>d.innerHTML=html);
+}
+function rota(){
+  const h = location.hash.replace(/^#\/?/,"");
+  const [p, arg] = h.split("/");
+  const app = $("#app");
+  document.title = "Douglas Conceição | Corretor de Imóveis em Sorocaba";
+  let alvo = null;
+  if(!p || p==="imoveis"){ app.innerHTML = PAGINAS.inicio(); ligarBusca(); if(p==="imoveis") alvo="#imoveis"; }
+  else if(p==="imovel"){ app.innerHTML = PAGINAS.imovel(arg); ligarPlanta(arg); }
+  else if(PAGINAS[p] && p!=="inicio" && p!=="imovel"){ app.innerHTML = PAGINAS[p](); }
+  else { app.innerHTML = PAGINAS.inicio(); ligarBusca(); }
+  ligarForm(); preencherGlobais();
+  document.querySelectorAll(".menu a").forEach(a=>a.classList.toggle("ativo", a.dataset.p===p));
+  $("#menu").classList.remove("aberto");
+  if(alvo) setTimeout(()=>$(alvo).scrollIntoView(),0); else scrollTo(0,0);
+}
+function ligarPlanta(id){
+  const i = IMOVEIS.find(x=>x.id===id); if(!i) return;
+  const mostrar = k => {
+    const p = i.plantas[k], m = String(p.m).replace(".",",");
+    document.querySelectorAll("#metragens button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.k==k));
+    const fp = i.fotosPlantas && i.fotosPlantas[p.m];
+    if(fp) $("#planta-img").innerHTML = `<img src="${esc(fp)}" alt="Planta de ${m} m²">`;
+    else if(!(i.plantasImg&&i.plantasImg.length)) $("#planta-img").innerHTML = `Planta de ${m} m²<br>Me chama que eu te mando a planta.`;
+    $("#planta-preco").innerHTML = (p.preco||i.preco) ? `<small>${p.preco?"A partir de":"Empreendimento a partir de"}</small>${mil(p.preco||i.preco)}` : `<small>Valores</small>Consulte`;
+    $("#p-zap").href = zap(`Olá, Douglas! Vi o ${i.nome} no seu site e quero saber sobre a planta de ${m} m².`);
+  };
+  document.querySelectorAll("#metragens button").forEach(b=>b.onclick=()=>mostrar(+b.dataset.k));
+  $("#p-ok").onchange = e => $("#p-zap").style.opacity = e.target.checked ? 1 : .5;
+  $("#p-zap").addEventListener("click", e => { if(!$("#p-ok").checked){ e.preventDefault(); $("#p-ok").focus(); } });
+  if(i.plantasImg && i.plantasImg.length){
+    let k=0; const n=i.plantasImg.length;
+    const ver = () => { $("#planta-img").innerHTML = `<img src="${esc(img(i.plantasImg[k],800))}" alt="Planta ${k+1} do ${esc(i.nome)}">`; $("#planta-img").dataset.zoom = img(i.plantasImg[k],1600);
+      $("#planta-nav").innerHTML = n>1 ? `<button type="button" id="pl-ant" aria-label="Planta anterior">‹</button><span>Planta ${k+1} de ${n}</span><button type="button" id="pl-prox" aria-label="Próxima planta">›</button>` : `<span>Planta ilustrativa</span>`;
+      if(n>1){ $("#pl-ant").onclick=()=>{k=(k-1+n)%n;ver();}; $("#pl-prox").onclick=()=>{k=(k+1)%n;ver();}; } };
+    ver();
+  }
+  if(i.plantas.length) mostrar(0);
+}
+document.addEventListener("click", e => { const z = e.target.closest("[data-zoom]"); if(!z) return; const o=$("#zoom"); o.querySelector("img").src=z.dataset.zoom; o.classList.add("aberto"); });
+window.addEventListener("hashchange", rota);
+rota();
+</script>
+</body>
+</html>
