@@ -6,6 +6,9 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Jackson Pires | Corretor de Imóveis em Sorocaba</title>
+<link rel="preconnect" href="https://api.apto.vc" crossorigin>
+<link rel="preconnect" href="https://assets.apto.vc" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Jackson Pires - Corretor de Imóveis","telephone":"+55 15 98843-2387","areaServed":["Sorocaba","Votorantim"],"address":{"@type":"PostalAddress","addressLocality":"Sorocaba","addressRegion":"SP","addressCountry":"BR"},"image":"https://jacksonpires.web.app/og.jpg","url":"https://jacksonpires.web.app/","identifier":"CRECI-SP 323400"}</script>
 <meta name="description" content="Jackson Pires, corretor de imóveis em Sorocaba. Especialista em Minha Casa Minha Vida e apartamentos na planta em Sorocaba e Votorantim. CRECI-SP 323400.">
 <meta property="og:title" content="Jackson Pires | Corretor de Imóveis em Sorocaba">
 <meta property="og:description" content="Apartamentos na planta e Minha Casa Minha Vida em Sorocaba e Votorantim. Me chama no WhatsApp.">
@@ -116,6 +119,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .botoes-filtro button{background:none;border:0;color:var(--azul2);font-weight:600;cursor:pointer;font-size:14px;font-family:inherit}
 @media(max-width:900px){.filtros{grid-template-columns:repeat(2,1fr)}.painel{padding:20px}}
 .contagem{color:var(--muted);font-size:14px;margin:0}
+.ordem{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);margin-left:auto}
+.ordem select{font:inherit;font-weight:600;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff}
 .barra-res{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 16px;flex-wrap:wrap}
 .modos{display:inline-flex;background:var(--claro2);border:1px solid var(--line);border-radius:999px;padding:4px}
 .modos button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:#334;padding:8px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
@@ -164,6 +169,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .capa{height:190px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85);background-size:cover;background-position:center}
 .capa svg{width:58px;height:58px}
 .capa .tag{position:absolute;top:12px;left:12px;background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.capa .selo{position:absolute;left:12px;bottom:12px;background:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;box-shadow:0 4px 10px rgba(0,0,0,.18);letter-spacing:.02em}
+.capa .selo.dest{background:#f59e0b;color:#1f1300}
 .capa .zona{position:absolute;top:12px;right:12px;background:rgba(11,20,48,.55);color:#fff;font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
 .card-corpo{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
 .card h3{font-size:19px;font-weight:800;color:var(--ink)}
@@ -237,6 +244,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .cta-final p{opacity:.8;margin-bottom:22px}
 
 /* página do imóvel */
+.partilha{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.partilha button,.partilha a{font:600 14px Inter,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+.partilha svg{width:17px;height:17px}
+.partilha a{border-color:#25d366;color:#128c4a}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;z-index:3000;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .voltar{display:inline-flex;gap:6px;font-weight:600;color:var(--azul2);margin:24px 0 14px}
 .imovel-hero{border-radius:28px;overflow:hidden;position:relative;min-height:340px;display:flex;align-items:flex-end;color:#fff;background-size:cover;background-position:center}
 .imovel-hero .sombra{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,20,48,.85),rgba(11,20,48,.05))}
@@ -442,7 +454,7 @@ const fundo = (i,n) => i.foto ? `background-image:url('${esc(i.foto)}')` : `back
 function cardImovel(i, n){
   const msg = `Olá, Jackson! Vi o ${i.nome} (${i.bairro}) no seu site e quero saber mais.`;
   return `<article class="card">
-    <a class="capa" href="#/imovel/${i.id}" style="${fundo(i,n)}" aria-label="${esc(i.nome)}">${i.foto?"":PREDIO}<span class="tag">${esc(i.tipo)}</span>${i.regiao?`<span class="zona">${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}</a>
+    <a class="capa" href="#/imovel/${i.id}" style="${fundo(i,n)}" aria-label="${esc(i.nome)}">${i.foto?"":PREDIO}<span class="tag">${esc(i.tipo)}</span>${i.regiao?`<span class="zona">${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}${i.entrega==="pronto"?`<span class="selo">Pronto pra morar</span>`:i.destaque?`<span class="selo dest">Destaque</span>`:""}</a>
     <div class="card-corpo">
       <h3><a href="#/imovel/${i.id}">${esc(i.nome)}</a></h3>
       <p class="bairro">${esc(i.bairro)}</p>
@@ -517,6 +529,7 @@ function secaoBusca(){
     <div class="botoes-filtro"><button type="button" id="b-mais">+ Mais filtros</button><button type="button" id="b-limpar">Limpar filtros</button></div>
     </div>
     <div class="barra-res"><p class="contagem" id="contagem"></p>
+      <label class="ordem">Ordenar<select id="f-ordem"><option value="">Mais relevantes</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="entrega">Entrega mais próxima</option></select></label>
       <div class="modos"><button type="button" id="m-lista" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Lista</button><button type="button" id="m-mapa" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Ver no mapa</button></div></div>
     <div class="mapa-box" id="mapa-box" hidden><div id="mapa"></div><div class="mapa-chip" id="mapa-chip">Carregando o mapa...</div><div class="mapa-leg" id="mapa-leg"></div></div>
     <div class="grade" id="grade"></div>
@@ -534,6 +547,11 @@ function ligarBusca(){
       Math.max(...i.dorm)>=d && (!vmin || (i.preco && i.preco>=vmin)) && (!vmax || (i.preco && i.preco<=vmax)) &&
       i.area[1]>=amin && (!amax || i.area[0]<=amax));
     const lista = base.filter(i => !filtroZona || i.regiao===filtroZona);
+    const ord = $("#f-ordem") ? $("#f-ordem").value : "", semP = 1e12;
+    const quando = i => i.entrega==="pronto" ? "0" : (i.entrega || "9999");
+    if(ord==="menor") lista.sort((a,b)=>(a.preco||semP)-(b.preco||semP));
+    if(ord==="maior") lista.sort((a,b)=>(b.preco||0)-(a.preco||0));
+    if(ord==="entrega") lista.sort((a,b)=>quando(a)<quando(b)?-1:quando(a)>quando(b)?1:0);
     BASE_ATUAL = base; ZONA_ATUAL = filtroZona;
     LISTA_ATUAL = lista; if(MODO==="mapa") desenharMapa();
     const total = Math.max(1, Math.ceil(lista.length/POR_PAGINA)); pagina = Math.min(pagina,total);
@@ -557,6 +575,7 @@ function ligarBusca(){
   $("#m-lista").onclick=()=>modo("lista"); $("#m-mapa").onclick=()=>modo("mapa");
   if(MODO==="mapa") setTimeout(()=>modo("mapa"),0);
   document.querySelectorAll("#filtros select").forEach(s=>s.onchange=()=>{pagina=1;filtrar();});
+  $("#f-ordem").onchange=()=>{pagina=1;filtrar();};
   $("#b-mais").onclick=()=>{const f=$("#filtros");f.classList.toggle("aberto");$("#b-mais").textContent=f.classList.contains("aberto")?"− Menos filtros":"+ Mais filtros";};
   $("#b-limpar").onclick=()=>{document.querySelectorAll("#filtros select").forEach(s=>s.selectedIndex=0);filtroZona="";filtroTipo="";
     ["p-zona","p-tipo"].forEach(id=>document.querySelectorAll(`#${id} button`).forEach((x,k)=>x.setAttribute("aria-pressed",k===0)));pagina=1;filtrar();};
@@ -668,6 +687,7 @@ const PAGINAS = {
       <div class="imovel-hero" style="${fundo(i,n)}"><div class="sombra"></div><div class="conteudo">
         <div class="etiquetas">${i.regiao?`<span>${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}<span>Entrega: ${entregaTxt(i.entrega)}</span><span>${esc(i.tipo)}</span></div>
         <h1>${esc(i.nome)}</h1><p>${esc(i.bairro)} · ${esc(i.cidade)} - SP</p></div></div>
+      <div class="partilha"><button type="button" id="b-partilhar">${ICO_PARTILHA}Compartilhar</button><a target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent("Olha esse imóvel: "+i.nome+" ("+i.bairro+") "+location.origin+"/#/imovel/"+i.id)}">${ZAPICO}Mandar para alguém</a></div>
       <div class="imovel-grid">
         <div>
           <div class="caixa"><p class="eyebrow">Detalhes do imóvel</p><h2>Ficha técnica</h2><div class="ficha">${ficha.map(([k,v])=>`<div><small>${k}</small><b>${esc(v)}</b></div>`).join("")}</div></div>
@@ -789,7 +809,17 @@ const PAGINAS = {
 };
 
 /* ---------- roteador ---------- */
+const ICO_PARTILHA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
+function aviso(t){ const d=document.createElement("div"); d.className="toast"; d.textContent=t; document.body.append(d); setTimeout(()=>d.remove(),2200); }
+document.addEventListener("click", async e => {
+  if(!e.target.closest("#b-partilhar")) return;
+  const url = location.href, title = document.title;
+  try{ if(navigator.share){ await navigator.share({title, url}); return; } }catch(err){ return; }
+  try{ await navigator.clipboard.writeText(url); aviso("Link copiado!"); }catch(err){ prompt("Copie o link:", url); }
+});
 function preencherGlobais(){
+  const vazio = {parceiros:!PARCEIROS.length, premiacoes:!PREMIOS.length, eventos:!EVENTOS.length, relatos:!VIDEOS.length, galeria:!FOTOS.length};
+  Object.entries(vazio).forEach(([pg,v])=>{ if(v) document.querySelectorAll(`header a[href="#/${pg}"], footer a[href="#/${pg}"], .rodape a[href="#/${pg}"]`).forEach(a=>a.style.display="none"); });
   document.querySelectorAll("[data-zap]").forEach(a=>{a.href=zap();a.target="_blank";a.rel="noopener";});
   document.querySelectorAll("[data-tel]").forEach(a=>a.textContent="WhatsApp "+TEL_TXT);
   const ic = {instagram:"i-insta",facebook:"i-face",tiktok:"i-tiktok"};
