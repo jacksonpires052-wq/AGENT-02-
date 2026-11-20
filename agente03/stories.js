@@ -33,20 +33,30 @@ async function main() {
   const d = fila[0];
   resumo(`Fila: ${fila.length} story(s). Publicando agora: ${d}`);
 
-  const url = `https://raw.githubusercontent.com/${REPO}/main/stories/${encodeURIComponent(d)}/story.jpg`;
-  const c = await ig('POST', `/${CONTA}/media`, { media_type: 'STORIES', image_url: url });
-  for (let t = 0; t < 60; t++) {
-    const s = await ig('GET', `/${c.id}`, { fields: 'status_code,status' });
-    if (s.status_code === 'FINISHED') break;
-    if (s.status_code === 'ERROR' || s.status_code === 'EXPIRED') throw new Error(`Instagram recusou: ${s.status || s.status_code}`);
-    await esperar(3000);
+  const raw = f => `https://raw.githubusercontent.com/${REPO}/main/stories/${encodeURIComponent(d)}/${f}`;
+  // Desde 20/11: se houver story.mp4 (versão animada), tenta o vídeo; se o Instagram recusar, cai para o story.jpg.
+  async function container(params, tentativas) {
+    const c = await ig('POST', `/${CONTA}/media`, { media_type: 'STORIES', ...params });
+    for (let t = 0; t < tentativas; t++) {
+      const s = await ig('GET', `/${c.id}`, { fields: 'status_code,status' });
+      if (s.status_code === 'FINISHED') return c;
+      if (s.status_code === 'ERROR' || s.status_code === 'EXPIRED') throw new Error(`Instagram recusou: ${s.status || s.status_code}`);
+      await esperar(3000);
+    }
+    throw new Error('Instagram demorou demais para processar');
   }
+  let c, tipo = 'imagem';
+  if (fs.existsSync(path.join(PASTA, d, 'story.mp4'))) {
+    try { c = await container({ video_url: raw('story.mp4') }, 60); tipo = 'vídeo'; }
+    catch (e) { resumo(`Vídeo não passou (${e.message}). Publicando a imagem.`); }
+  }
+  if (!c) c = await container({ image_url: raw('story.jpg') }, 60);
   const pub = await ig('POST', `/${CONTA}/media_publish`, { creation_id: c.id });
   let link = '';
   try { link = (await ig('GET', `/${pub.id}`, { fields: 'permalink' })).permalink; } catch {}
-  const reg = { story: { id: pub.id, link, data: new Date().toISOString() } };
+  const reg = { story: { id: pub.id, link, tipo, data: new Date().toISOString() } };
   fs.writeFileSync(path.join(PASTA, d, 'publicado.json'), JSON.stringify(reg, null, 2));
-  resumo(`STORY POSTADO: ${d} | ${link || pub.id}`);
+  resumo(`STORY POSTADO: ${d} | ${link || pub.id} | ${tipo}`);
 
   if (process.env.GITHUB_ACTIONS) {
     const sh = cmd => execSync(cmd, { stdio: 'inherit' });
