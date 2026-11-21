@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Painel · Kaléu Leandro</title>
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--c1:#14532d;--c2:#c0262d;--ink:#14171f;--muted:#5d6472;--line:#e4e7ee;--bg:#f5f6f9;--ok:#16a34a;--erro:#c0262d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Poppins,Arial,sans-serif;letter-spacing:-.02em}
+button,input,select,textarea{font:inherit}
+.topo{background:var(--c1);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:50}
+.topo img{height:38px}
+.topo b{font-family:Poppins;font-size:17px;display:block;line-height:1.1}
+.topo small{opacity:.75;font-size:12px}
+.topo .sair{margin-left:auto;background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 10px 30px rgba(20,23,31,.05)}
+.login{max-width:400px;margin:8vh auto 0}
+.login h1{font-size:26px;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;color:var(--ink);font-size:16px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--c1)}
+textarea{min-height:100px;resize:vertical}
+.linha{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:14px 22px;font-weight:700;font-size:15px;cursor:pointer;background:var(--c1);color:#fff;width:100%;margin-top:18px}
+.btn.sec{background:#fff;color:var(--c1);box-shadow:inset 0 0 0 1.5px var(--c1)}
+.btn:disabled{opacity:.55;cursor:wait}
+.link{background:none;border:0;color:var(--c2);font-weight:600;cursor:pointer;margin-top:14px;font-size:14px}
+.abas{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:16px;overflow-x:auto}
+.abas button{flex:1;white-space:nowrap;border:0;background:none;border-radius:999px;padding:10px 12px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer}
+.abas button[aria-selected=true]{background:var(--c1);color:#fff}
+.pilulas{display:flex;flex-wrap:wrap;gap:8px}
+.pilulas label{margin:0;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+.pilulas input{width:auto}
+.pilulas label:has(input:checked){border-color:var(--c1);background:var(--c1);color:#fff}
+#mapa{height:260px;border-radius:14px;margin-top:8px;border:1px solid var(--line)}
+.busca-mapa{display:flex;gap:8px}
+.busca-mapa button{border:0;border-radius:12px;background:var(--c1);color:#fff;font-weight:700;padding:0 16px;cursor:pointer}
+.dica{font-size:12px;color:var(--muted);margin-top:6px}
+.fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.fotos div{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--bg)}
+.fotos img{width:100%;height:100%;object-fit:cover}
+.fotos button{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:16px;cursor:pointer}
+.fotos .capa:after{content:"Capa";position:absolute;left:6px;bottom:6px;background:var(--c1);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px}
+.envio{display:flex;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);font-weight:600;cursor:pointer;margin-top:8px}
+.item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border:0}
+.item img,.item .sem{width:64px;height:48px;border-radius:10px;object-fit:cover;background:var(--bg);flex:none}
+.item div{flex:1;min-width:0}
+.item b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item small{color:var(--muted);font-size:13px}
+.item button{border:0;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer;flex:none}
+.del{background:#fde8e8;color:var(--erro)}
+.vol{background:#e6f6ec;color:var(--ok)}
+.item.oculto{opacity:.55}
+.vazio{text-align:center;color:var(--muted);padding:24px 0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;z-index:999;max-width:90vw;text-align:center}
+.toast.erro{background:var(--erro)}
+.aviso{background:#fff8e6;border:1px solid #f3dc9b;border-radius:14px;padding:12px 14px;font-size:14px;margin-top:12px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="topo"><img src="/logo.webp" alt=""><div><b>Painel do site</b><small>Kaléu Leandro</small></div><button class="sair" id="sair" hidden>Sair</button></div>
+
+<!-- LOGIN -->
+<div class="wrap" id="tela-login" hidden>
+  <div class="card login">
+    <h1>Entrar</h1>
+    <p class="sub">Acesse para adicionar ou tirar imóveis do seu site.</p>
+    <form id="f-login">
+      <label for="l-email">E-mail</label><input id="l-email" type="email" autocomplete="username" required>
+      <label for="l-senha">Senha</label><input id="l-senha" type="password" autocomplete="current-password" required>
+      <button class="btn" id="b-entrar">Entrar</button>
+    </form>
+    <button class="link" id="b-esqueci">Primeiro acesso ou esqueci a senha</button>
+  </div>
+</div>
+
+<!-- SEM ACESSO -->
+<div class="wrap" id="tela-negado" hidden><div class="card login"><h1>Sem acesso</h1><p class="sub">Este login não tem permissão para mexer neste site.</p></div></div>
+
+<!-- PAINEL -->
+<div class="wrap" id="tela-painel" hidden>
+  <div class="abas" role="tablist">
+    <button role="tab" data-aba="novo" aria-selected="true">+ Adicionar</button>
+    <button role="tab" data-aba="meus" aria-selected="false">Meus imóveis</button>
+    <button role="tab" data-aba="site" aria-selected="false">Imóveis do site</button>
+  </div>
+
+  <section id="aba-novo">
+    <form class="card" id="f-novo">
+      <h2>Novo imóvel</h2>
+      <p class="sub">Preencha e toque em Publicar. Ele aparece no site na hora.</p>
+      <label for="n-nome">Nome do empreendimento *</label><input id="n-nome" required maxlength="80" placeholder="Ex.: Residencial Flores">
+      <div class="linha">
+        <div><label for="n-tipo">Tipo *</label><select id="n-tipo"><option>Apartamento</option><option>Casa</option><option>Terreno</option><option>Salão Comercial</option></select></div>
+        <div><label for="n-zona">Região *</label><select id="n-zona" required><option value="">Escolha</option><option value="norte">Zona Norte</option><option value="sul">Zona Sul</option><option value="leste">Zona Leste</option><option value="oeste">Zona Oeste</option><option value="central">Central</option><option value="votorantim">Votorantim</option></select></div>
+      </div>
+      <label for="n-bairro">Bairro *</label><input id="n-bairro" required maxlength="60" placeholder="Ex.: Jardim Brasilândia">
+      <div class="linha">
+        <div><label for="n-preco">A partir de (R$)</label><input id="n-preco" inputmode="numeric" placeholder="Ex.: 250000"></div>
+        <div><label for="n-entrega">Entrega</label><input id="n-entrega" type="month"></div>
+      </div>
+      <div class="pilulas" style="margin-top:10px"><label><input type="checkbox" id="n-pronto"> Pronto pra morar</label><label><input type="checkbox" id="n-dest"> Destaque</label></div>
+      <label>Dormitórios</label>
+      <div class="pilulas" id="n-dorm"><label><input type="checkbox" value="1">1</label><label><input type="checkbox" value="2" checked>2</label><label><input type="checkbox" value="3">3</label><label><input type="checkbox" value="4">4+</label></div>
+      <div class="linha">
+        <div><label for="n-amin">Metragem de (m²)</label><input id="n-amin" inputmode="decimal" placeholder="Ex.: 42"></div>
+        <div><label for="n-amax">até (m²)</label><input id="n-amax" inputmode="decimal" placeholder="Ex.: 55"></div>
+      </div>
+      <label for="n-constr">Construtora</label><input id="n-constr" maxlength="60" placeholder="Ex.: MRV">
+      <label for="n-end">Endereço</label>
+      <div class="busca-mapa"><input id="n-end" maxlength="120" placeholder="Rua e número, se tiver"><button type="button" id="b-achar">Achar</button></div>
+      <div id="mapa"></div>
+      <p class="dica">Toque no mapa para marcar o lugar certo do imóvel.</p>
+      <label for="n-desc">Descrição</label><textarea id="n-desc" maxlength="1500" placeholder="Conte o que o imóvel tem de bom: lazer, localização, condições..."></textarea>
+      <label>Fotos (até 8) *</label>
+      <label class="envio" for="n-fotos">📷 Escolher fotos</label>
+      <input id="n-fotos" type="file" accept="image/*" multiple hidden>
+      <div class="fotos" id="prev"></div>
+      <p class="dica">A primeira foto vira a capa. As fotos são reduzidas automaticamente.</p>
+      <button class="btn" id="b-publicar">Publicar no site</button>
+    </form>
+  </section>
+
+  <section id="aba-meus" hidden><div class="card"><h2>Imóveis que você adicionou</h2><div id="lista-meus"></div></div></section>
+
+  <section id="aba-site" hidden><div class="card">
+    <h2>Imóveis do site</h2>
+    <p class="sub">Toque em Tirar para esconder um imóvel do site. Você pode trazer de volta quando quiser.</p>
+    <input id="busca" placeholder="Buscar pelo nome ou bairro">
+    <div id="lista-site" style="margin-top:8px"></div>
+  </div></section>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, deleteDoc, collection, getDocs, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const SITE = "kaleuleandro";
+const app = initializeApp({ apiKey:"__FBKEY__", authDomain:"fernandabrandao-ab276.firebaseapp.com", projectId:"fernandabrandao-ab276", appId:"__APPID__" });
+const auth = getAuth(app), db = getFirestore(app);
+auth.languageCode = "pt";
+const $ = s => document.querySelector(s);
+const tela = t => ["login","negado","painel"].forEach(x => $("#tela-"+x).hidden = x!==t);
+const aviso = (t, erro) => { const d=document.createElement("div"); d.className="toast"+(erro?" erro":""); d.textContent=t; document.body.append(d); setTimeout(()=>d.remove(), 3200); };
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const slug = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+const ERROS = {"auth/invalid-credential":"E-mail ou senha incorretos.","auth/too-many-requests":"Muitas tentativas. Espere um pouco e tente de novo.","auth/user-not-found":"E-mail não cadastrado.","auth/invalid-email":"E-mail inválido."};
+
+/* ---------- login ---------- */
+$("#f-login").onsubmit = async e => {
+  e.preventDefault(); $("#b-entrar").disabled = true;
+  try{ await signInWithEmailAndPassword(auth, $("#l-email").value.trim(), $("#l-senha").value); }
+  catch(err){ aviso(ERROS[err.code] || "Não deu para entrar. Tente de novo.", true); }
+  $("#b-entrar").disabled = false;
+};
+$("#b-esqueci").onclick = async () => {
+  const em = $("#l-email").value.trim();
+  if(!em){ aviso("Digite o seu e-mail primeiro.", true); $("#l-email").focus(); return; }
+  try{ await sendPasswordResetEmail(auth, em); aviso("Enviamos um link para o seu e-mail para criar a senha."); }
+  catch(err){ aviso(ERROS[err.code] || "Não deu para enviar. Confira o e-mail.", true); }
+};
+$("#sair").onclick = () => signOut(auth);
+
+onAuthStateChanged(auth, async u => {
+  $("#sair").hidden = !u;
+  if(!u){ tela("login"); return; }
+  try{
+    const a = await getDoc(doc(db, "admins", u.uid));
+    if(!a.exists() || a.data().site !== SITE){ tela("negado"); return; }
+  }catch(err){ tela("negado"); return; }
+  tela("painel"); iniciarMapa(); carregarListas();
+});
+
+/* ---------- abas ---------- */
+document.querySelectorAll("[data-aba]").forEach(b => b.onclick = () => {
+  document.querySelectorAll("[data-aba]").forEach(x => x.setAttribute("aria-selected", x===b));
+  ["novo","meus","site"].forEach(x => $("#aba-"+x).hidden = x!==b.dataset.aba);
+  if(b.dataset.aba==="novo" && mapa) setTimeout(()=>mapa.invalidateSize(), 50);
+});
+
+/* ---------- mapa ---------- */
+let mapa = null, pino = null, ponto = null;
+function iniciarMapa(){
+  if(mapa) return;
+  mapa = L.map("mapa").setView([-23.5, -47.46], 12);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {maxZoom:19, attribution:"Esri"}).addTo(mapa);
+  mapa.on("click", e => marcar(e.latlng.lat, e.latlng.lng));
+}
+function marcar(lat, lng, zoom){
+  ponto = [+lat.toFixed(6), +lng.toFixed(6)];
+  if(pino) pino.setLatLng(ponto); else pino = L.marker(ponto).addTo(mapa);
+  if(zoom) mapa.setView(ponto, zoom);
+}
+$("#b-achar").onclick = async () => {
+  const q = [$("#n-end").value, $("#n-bairro").value, $("#n-zona").value==="votorantim"?"Votorantim":"Sorocaba", "SP"].filter(Boolean).join(", ");
+  try{
+    const r = await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=br&q="+encodeURIComponent(q)).then(r=>r.json());
+    if(r[0]){ marcar(+r[0].lat, +r[0].lon, 16); aviso("Achei! Se não for o lugar exato, toque no mapa."); }
+    else aviso("Não achei esse endereço. Toque no mapa para marcar.", true);
+  }catch(err){ aviso("Não deu para buscar agora. Toque no mapa para marcar.", true); }
+};
+
+/* ---------- fotos ---------- */
+let fotos = [];
+const LIMITE = 900000;
+function reduzir(arq, lado, q){
+  return new Promise((ok, erro) => {
+    const im = new Image(), url = URL.createObjectURL(arq);
+    im.onload = () => {
+      const k = Math.min(1, lado / Math.max(im.width, im.height));
+      const c = document.createElement("canvas"); c.width = Math.round(im.width*k); c.height = Math.round(im.height*k);
+      c.getContext("2d").drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      let d = c.toDataURL("image/webp", q); if(!d.startsWith("data:image/webp")) d = c.toDataURL("image/jpeg", q);
+      ok(d);
+    };
+    im.onerror = erro; im.src = url;
+  });
+}
+async function prepararFotos(arqs){
+  let lado = 1100, q = .72, out = [];
+  for(let tent=0; tent<5; tent++){
+    out = [];
+    for(const a of arqs) out.push(await reduzir(a, lado, q));
+    if(out.reduce((s,d)=>s+d.length,0) <= LIMITE) return out;
+    lado = Math.round(lado*.82); q = Math.max(.5, q-.06);
+  }
+  return out;
+}
+let arquivos = [];
+$("#n-fotos").onchange = async e => {
+  arquivos = arquivos.concat([...e.target.files]).slice(0, 8); e.target.value = "";
+  $("#prev").innerHTML = '<p class="dica">Preparando as fotos...</p>';
+  fotos = await prepararFotos(arquivos); mostrarFotos();
+};
+function mostrarFotos(){
+  $("#prev").innerHTML = fotos.map((f,k)=>`<div class="${k?"":"capa"}"><img src="${f}" alt=""><button type="button" data-tira="${k}" aria-label="Tirar foto">×</button></div>`).join("");
+  $("#prev").querySelectorAll("[data-tira]").forEach(b => b.onclick = async () => {
+    arquivos.splice(+b.dataset.tira, 1); fotos = arquivos.length ? await prepararFotos(arquivos) : []; mostrarFotos();
+  });
+}
+
+/* ---------- publicar ---------- */
+$("#n-pronto").onchange = e => { $("#n-entrega").disabled = e.target.checked; };
+$("#f-novo").onsubmit = async e => {
+  e.preventDefault();
+  const nome = $("#n-nome").value.trim();
+  if(!fotos.length){ aviso("Coloque pelo menos 1 foto.", true); return; }
+  const num = s => +String(s).replace(/[^\d,\.]/g,"").replace(/\.(?=\d{3})/g,"").replace(",",".") || 0;
+  const dorm = [...document.querySelectorAll("#n-dorm input:checked")].map(x=>+x.value);
+  let amin = num($("#n-amin").value), amax = num($("#n-amax").value) || amin; if(amax && !amin) amin = amax; if(amin>amax) [amin,amax]=[amax,amin];
+  const id = slug(nome).slice(0,50) + "-" + Date.now().toString(36);
+  const dados = { nome, tipo:$("#n-tipo").value, zona:$("#n-zona").value, bairro:$("#n-bairro").value.trim(),
+    preco: Math.round(num($("#n-preco").value)), entrega: $("#n-pronto").checked ? "pronto" : ($("#n-entrega").value || null),
+    destaque: $("#n-dest").checked, dorm, areaMin: amin, areaMax: amax, construtora:$("#n-constr").value.trim(),
+    endereco:$("#n-end").value.trim(), descricao:$("#n-desc").value.trim(), lat: ponto?ponto[0]:null, lng: ponto?ponto[1]:null, criado: Date.now() };
+  $("#b-publicar").disabled = true; $("#b-publicar").textContent = "Publicando...";
+  try{
+    await setDoc(doc(db, "sites", SITE, "fotos", id), { lista: fotos });
+    await setDoc(doc(db, "sites", SITE, "imoveis", id), dados);
+    aviso("Publicado! Já está no site. 🎉");
+    e.target.reset(); fotos = []; arquivos = []; mostrarFotos(); ponto = null; if(pino){ pino.remove(); pino = null; }
+    carregarListas();
+  }catch(err){ aviso("Não deu para publicar. Confira a internet e tente de novo.", true); console.error(err); }
+  $("#b-publicar").disabled = false; $("#b-publicar").textContent = "Publicar no site";
+};
+
+/* ---------- listas ---------- */
+let BASE = [], OCULTOS = [];
+async function carregarListas(){
+  try{
+    const [snap, oc] = await Promise.all([getDocs(collection(db, "sites", SITE, "imoveis")), getDoc(doc(db, "sites", SITE, "config", "ocultos"))]);
+    OCULTOS = oc.exists() ? (oc.data().ids || []) : [];
+    const meus = snap.docs.map(d => ({id:d.id, ...d.data()})).sort((a,b)=>(b.criado||0)-(a.criado||0));
+    $("#lista-meus").innerHTML = meus.length ? meus.map(m => `<div class="item"><span class="sem"></span><div><b>${esc(m.nome)}</b><small>${esc(m.bairro)}${m.preco?" · R$ "+Math.round(m.preco/1000)+" mil":""}</small></div><button class="del" data-exc="${esc(m.id)}">Excluir</button></div>`).join("")
+      : '<p class="vazio">Você ainda não adicionou nenhum imóvel.</p>';
+    $("#lista-meus").querySelectorAll("[data-exc]").forEach(b => b.onclick = async () => {
+      if(!confirm("Excluir este imóvel do site? Isso não dá para desfazer.")) return;
+      b.disabled = true;
+      try{ await deleteDoc(doc(db, "sites", SITE, "imoveis", b.dataset.exc)); await deleteDoc(doc(db, "sites", SITE, "fotos", b.dataset.exc)); aviso("Imóvel excluído."); carregarListas(); }
+      catch(err){ aviso("Não deu para excluir agora.", true); b.disabled = false; }
+    });
+    if(!BASE.length) BASE = await fetch("/imoveis.json").then(r=>r.json()).catch(()=>[]);
+    listarSite();
+  }catch(err){ aviso("Não deu para carregar a lista.", true); console.error(err); }
+}
+function listarSite(){
+  const q = slug($("#busca").value || "");
+  const l = BASE.filter(i => !q || slug(i.nome+" "+i.bairro).includes(q));
+  $("#lista-site").innerHTML = l.map(i => { const oc = OCULTOS.includes(i.id);
+    return `<div class="item${oc?" oculto":""}">${i.foto?`<img loading="lazy" src="${esc(i.foto)}" alt="">`:'<span class="sem"></span>'}<div><b>${esc(i.nome)}</b><small>${esc(i.bairro)}${oc?" · fora do site":""}</small></div>
+      <button class="${oc?"vol":"del"}" data-oc="${esc(i.id)}" data-v="${oc?1:0}">${oc?"Voltar":"Tirar"}</button></div>`; }).join("") || '<p class="vazio">Nada encontrado.</p>';
+  $("#lista-site").querySelectorAll("[data-oc]").forEach(b => b.onclick = async () => {
+    b.disabled = true; const volta = b.dataset.v==="1";
+    try{
+      await setDoc(doc(db, "sites", SITE, "config", "ocultos"), { ids: volta ? arrayRemove(b.dataset.oc) : arrayUnion(b.dataset.oc) }, { merge:true });
+      OCULTOS = volta ? OCULTOS.filter(x=>x!==b.dataset.oc) : OCULTOS.concat(b.dataset.oc);
+      aviso(volta ? "Voltou para o site." : "Tirado do site."); listarSite();
+    }catch(err){ aviso("Não deu para salvar agora.", true); b.disabled = false; }
+  });
+}
+$("#busca").oninput = listarSite;
+</script>
+</body>
+</html>
