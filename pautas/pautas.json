@@ -543,7 +543,7 @@
     "fonte": "Conjur (TRF-2, Apelação Cível 5059186-54.2024.4.02.5101)",
     "link": "https://conjur.com.br/2026-nov-15/uniao-rio-e-bb-devem-garantir-moradia-apos-invasoes-no-minha-casa-minha-vida/",
     "data_noticia": "2026-11-15",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-focus-selic-2027-1275",
@@ -766,6 +766,48 @@
     "pra_voce": "Juro alto trava a compra até nos EUA. Aqui a lógica é a mesma: quando o crédito pesa, quem tem entrada e se organiza negocia melhor, porque tem menos gente disputando o mesmo imóvel.",
     "fonte": "National Association of Realtors (NAR), via GlobeNewswire; confirmado no Diário do Grande ABC",
     "link": "https://www.globenewswire.com/news-release/2026/11/18/3405853/0/en/pending-home-sales-decreased-4-7-in-october-according-to-nar-report.html",
+    "data_noticia": "2026-11-18",
+    "usada": false
+  },
+  {
+    "id": "20261121-eua-hipoteca-728",
+    "coletada_em": "2026-11-21 04:55",
+    "categoria": "Crédito e juros",
+    "titulo": "EUA: juros da casa voltam a subir e vão a 7,28%",
+    "fato": "A taxa média do financiamento de 30 anos nos EUA subiu de 7,11% para 7,28% na semana até 19 de novembro, interrompendo quatro semanas de queda.",
+    "numero": "7,28%",
+    "detalhe": "Um ano atrás a taxa estava em 6,26%, ou seja, financiar uma casa nos EUA está bem mais caro do que em 2025. O financiamento de 15 anos também subiu, de 6,45% para 6,66%.",
+    "pra_voce": "Juros altos lá fora pressionam os juros no mundo todo. Aqui, com a Selic em 13,75%, quem espera juros baixos para comprar pode esperar bastante: vale fazer a conta com a taxa de hoje.",
+    "fonte": "Freddie Mac (PMMS)",
+    "link": "https://www.freddiemac.com/pmms",
+    "data_noticia": "2026-11-19",
+    "usada": false
+  },
+  {
+    "id": "20261121-mcmv-2024-obras",
+    "coletada_em": "2026-11-21 04:55",
+    "categoria": "Brasil",
+    "titulo": "MCMV começa obras de 2.024 casas em só 16 dias",
+    "fato": "Entre 1 e 16 de novembro, o Minha Casa, Minha Vida iniciou as obras de 2.024 moradias da faixa subsidiada em 12 cidades. Trindade (GO), com 384, e Campo Grande (MS), com 352, lideram.",
+    "numero": "2.024 moradias",
+    "detalhe": "São moradias da modalidade com subsídio (faixa mais baixa), para famílias selecionadas pelas prefeituras, e não imóveis à venda no mercado. Nenhuma das 12 cidades é de São Paulo.",
+    "pra_voce": "O programa segue ativo e com dinheiro. Quem tem renda para as faixas de financiamento do MCMV pode usar o subsídio e os juros menores para comprar o primeiro imóvel.",
+    "fonte": "Ministério das Cidades (Agência Gov)",
+    "link": "https://agenciagov.ebc.com.br/noticias/202611/minha-casa-minha-vida-inicia-a-construcao-de-mais-2-mil-moradias",
+    "data_noticia": "2026-11-19",
+    "usada": false
+  },
+  {
+    "id": "20261121-fii-pessoa-fisica-145",
+    "coletada_em": "2026-11-21 04:55",
+    "categoria": "Investimento/FII",
+    "titulo": "Pessoa física compra R$ 145 mi em FIIs; gringo vende",
+    "fato": "Na semana de 9 a 13 de novembro, os investidores pessoa física compraram R$ 145,1 milhões a mais do que venderam em fundos imobiliários. Os estrangeiros venderam R$ 98,9 milhões e os institucionais, R$ 46,2 milhões.",
+    "numero": "R$ 145,1 milhões",
+    "detalhe": "Enquanto o pequeno investidor compra, o dinheiro grande (estrangeiro e institucional) está saindo. Na mesma época o IFIX vinha em queda.",
+    "pra_voce": "Com cotas mais baratas, tem gente aproveitando para ganhar renda de aluguel pela Bolsa. Mas FII oscila todo dia; quem quer patrimônio sólido e sem sobe e desce de tela olha também o imóvel físico.",
+    "fonte": "Lareal (via Suno Notícias)",
+    "link": "https://www.suno.com.br/noticias/fiis-pessoa-fisica-compras-lareal-semana/",
     "data_noticia": "2026-11-18",
     "usada": false
   }
