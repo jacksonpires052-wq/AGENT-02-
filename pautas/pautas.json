@@ -515,7 +515,7 @@
     "fonte": "Rightmove, via Reuters e Property Industry Eye",
     "link": "https://propertyindustryeye.com/property-industry-responds-as-sellers-slash-asking-prices/",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-china-imovel-24",
@@ -529,7 +529,7 @@
     "fonte": "Reuters (dados do NBS da China)",
     "link": "https://1027wbow.com/2026/11/15/drop-in-chinas-new-home-prices-narrows-to-11-month-low/",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261115-trf2-mcmv-invasao-rio",
@@ -557,7 +557,7 @@
     "fonte": "Banco Central (Boletim Focus), via Reuters/CNN Brasil e Exame/SBT News",
     "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/focus-analistas-elevam-expectativas-para-ipca-e-selic-em-2027/",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261112-redfin-pendentes-recorde",
@@ -585,7 +585,7 @@
     "fonte": "Creci-SP, via Diário do Grande ABC",
     "link": "https://www.dgabc.com.br/Noticia/4369090/locacoes-de-imoveis-disparam-no-grande-abc-apos-dois-meses-de-queda",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-ifix-despenca-185",
@@ -599,7 +599,7 @@
     "fonte": "FIIs.com.br (cotações B3)",
     "link": "https://fiis.com.br/noticias/ifix-hoje-fechamento-queda-fundos-imobiliarios/",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-fipezap-aluguel-9",
@@ -627,7 +627,7 @@
     "fonte": "FGV Ibre (via IstoÉ Dinheiro e Times Brasil)",
     "link": "https://timesbrasil.com.br/brasil/gp-10-novembro-2026-petroleo-soja/",
     "data_noticia": "2026-11-16",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-fgts-outubro-124-bi",
@@ -809,6 +809,62 @@
     "fonte": "Lareal (via Suno Notícias)",
     "link": "https://www.suno.com.br/noticias/fiis-pessoa-fisica-compras-lareal-semana/",
     "data_noticia": "2026-11-18",
+    "usada": false
+  },
+  {
+    "id": "20261120-plano-distrato-25",
+    "coletada_em": "2026-11-22 04:45",
+    "categoria": "Crédito e juros",
+    "titulo": "Construtora vê 25% das vendas canceladas no trimestre",
+    "fato": "A Plano&Plano teve distratos de 25,1% das vendas brutas no 3º trimestre de 2026, R$ 260,4 milhões e 1.012 imóveis. No mesmo período de 2025 eram 8,2%. Na Tenda, os cancelamentos foram 19,5% do valor vendido.",
+    "numero": "25,1%",
+    "detalhe": "Os números são de cada empresa, não uma média do país. E o imóvel cancelado pode ser revendido, então não é prejuízo automático. O motivo apontado é o crédito: os compradores com renda informal passaram de 8,1% para 21,5% das vendas, e só cerca de 70% deles conseguem o financiamento.",
+    "pra_voce": "Antes de assinar na planta, faça a simulação de crédito no banco. Quem tem renda informal precisa juntar comprovação (extratos, declaração de IR) pra não perder o imóvel na hora do repasse.",
+    "fonte": "Plano&Plano (divulgação de resultados), via Economic News Brasil",
+    "link": "https://economicnewsbrasil.com.br/2026/11/20/cancelamento-de-imoveis-financiamento-2026/",
+    "data_noticia": "2026-11-20",
+    "usada": false
+  },
+  {
+    "id": "20261120-curitiba-9-bi",
+    "coletada_em": "2026-11-22 04:45",
+    "categoria": "Brasil",
+    "titulo": "Curitiba vende 12 mil imóveis e movimenta R$ 9 bi",
+    "fato": "O mercado de imóveis novos de Curitiba vendeu cerca de 12 mil unidades em 12 meses e movimentou R$ 9 bilhões até setembro de 2026, segundo o balanço da Ademi-PR. Foram 3 mil vendas só no último trimestre.",
+    "numero": "R$ 9 bi",
+    "detalhe": "A própria Ademi-PR aponta queda no número de lançamentos em 2026, que chama de normalização depois do pico. E cita a incerteza política depois das eleições de outubro.",
+    "pra_voce": "Mesmo com juros altos, as capitais seguem vendendo bem. Os compactos foram 55,4% dos lançamentos no 2º trimestre, sinal de que o mercado está fazendo imóvel menor pra caber no bolso.",
+    "fonte": "Ademi-PR, via Agora Litoral",
+    "link": "https://agoralitoral.com.br/2026/11/20/mercado-imobiliario-de-curitiba-movimenta-r-9-bilhoes-em-2026-com-12-mil-vendas/",
+    "data_noticia": "2026-11-20",
+    "usada": false
+  },
+  {
+    "id": "20261120-hglg11-itupeva",
+    "coletada_em": "2026-11-22 04:45",
+    "categoria": "Investimento/FII",
+    "titulo": "HGLG11 paga R$ 31,3 mi em galpão em Itupeva (SP)",
+    "fato": "O fundo Pátria Log (HGLG11) desembolsou R$ 31,28 milhões por 5,33% de um galpão logístico em Itupeva, no interior de SP, com potencial de aluguel de R$ 35,46 por m² ao mês.",
+    "numero": "R$ 31,28 mi",
+    "detalhe": "O aluguel só começa a entrar em janeiro de 2027, por carência dada ao inquilino. E a compra ainda não está formalmente concluída: falta reorganizar a empresa dona do imóvel e lavrar a escritura. No mesmo dia o IFIX caiu 0,80%.",
+    "pra_voce": "Os grandes fundos seguem apostando em galpões no interior paulista, perto de rodovias como as que cortam a região de Sorocaba. Logística forte puxa emprego e procura por moradia nessas cidades.",
+    "fonte": "Seu Dinheiro",
+    "link": "https://www.seudinheiro.com/2026/bolsa-dolar/patria-log-hglg11-abre-a-carteira-e-desembolsa-r-3128-milhoes-em-imovel-logistico-cbcb/",
+    "data_noticia": "2026-11-20",
+    "usada": false
+  },
+  {
+    "id": "20261120-hgbs11-shopping-216",
+    "coletada_em": "2026-11-22 04:45",
+    "categoria": "Investimento/FII",
+    "titulo": "Fundo compra 75% de shopping por R$ 216 milhões",
+    "fato": "O HGBS11 comprou 75% do Shopping Jaraguá Araraquara por R$ 216,3 milhões e lucrou R$ 17,94 milhões em outubro de 2026. Pagou R$ 0,17 por cota, cerca de 0,94% no mês.",
+    "numero": "R$ 216,3 mi",
+    "detalhe": "O lucro do mês (R$ 0,116 por cota) ficou abaixo do que foi distribuído (R$ 0,17). A gestão diz manter R$ 0,17 em 2026, mas avisa que isso não é garantia. A vacância subiu de 4,7% para 5,2% em setembro.",
+    "pra_voce": "Quem investe em fundo imobiliário precisa olhar se o rendimento pago cabe no lucro do mês. Pagar mais do que lucra pode não se sustentar.",
+    "fonte": "FIIs.com.br (relatório gerencial do HGBS11)",
+    "link": "https://fiis.com.br/noticias/fundo-imobiliario-hgbs11-resultado-outubro",
+    "data_noticia": "2026-11-20",
     "usada": false
   }
 ]
