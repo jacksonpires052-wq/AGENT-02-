@@ -1,7 +1,7 @@
-# Relatório do Agente 06 · 20/11/2026
+# Relatório do Agente 06 · 21/11/2026
 
 ## Conta
-- Seguidores agora: 278 (+3 no dia)
+- Seguidores agora: 282 (+4 no dia)
 - Alcance do perfil: 0 · views: 0 · contas que interagiram: 0
 - Cliques no link da bio: 0
 
@@ -11,16 +11,16 @@
 - Envios a cada mil alcançados: 0.0 · salvos a cada mil: 0.0
 
 **Os 3 melhores**
-- 21h · Se um vento arrancar o seu telhado, quem paga o conserto? 🏠🌪️ · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/Df-7AtlKov0/
-- 16h · Você paga aluguel ou paga a sua casa? 🏠 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/Df-dk3fqeht/
-- 13h · Não se mude pra Sorocaba sem ver esses 7 motivos. Dois clientes me fizeram a mes · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/Df-H1-1Kv54/
+- 20h · Nome negativado e acha que nunca vai ter seu terreno? 👀 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgBYOEnq1Dt/
+- 12h · O tornado arrancou o seu telhado em Santa Catarina? Quem paga o conserto pode nã · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgAkzM-K6b8/
+- 10h · Sobrado na Zona Norte, pertinho do Shopping Cidade 🏡 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgAXVCPq3uG/
 
 ## Melhores horários (7 dias)
-- 7h: alcance médio 0 (4 Reels)
+- 7h: alcance médio 0 (2 Reels)
 - 8h: alcance médio 0 (2 Reels)
 - 9h: alcance médio 0 (1 Reels)
+- 10h: alcance médio 0 (1 Reels)
 - 11h: alcance médio 0 (2 Reels)
-- 13h: alcance médio 0 (2 Reels)
 
 ## Sugestões de ajuste
 - SEM DADOS: a API não liberou os números ((#10) Application does not have permission for this action). Falta a permissão de insights (instagram_manage_insights) no token. Nenhuma sugestão até isso ser resolvido.
