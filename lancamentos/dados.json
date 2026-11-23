@@ -10,7 +10,8 @@
   "foto_url": "https://api.apto.vc/images/realties/15483/592646/residencial-imperatriz-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "lyon-residencial",
@@ -23,7 +24,8 @@
   "foto_url": "https://api.apto.vc/images/realties/13363/540687/lyon-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "moove-residence",
@@ -36,7 +38,8 @@
   "foto_url": "https://api.apto.vc/images/realties/14663/572989/moove-residence-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "vista-horto",
@@ -49,7 +52,8 @@
   "foto_url": "https://api.apto.vc/images/realties/15929/605416/vista-horto-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "residencial-caribe",
@@ -62,7 +66,8 @@
   "foto_url": "https://api.apto.vc/images/realties/15407/591161/residencial-caribe-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "zafira-residencial",
@@ -75,7 +80,8 @@
   "foto_url": "https://api.apto.vc/images/realties/12913/539062/zafira-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "parque-das-margaridas",
@@ -88,7 +94,8 @@
   "foto_url": "https://api.apto.vc/images/realties/13616/546371/parque-das-margaridas-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "jardins-ipanema",
@@ -101,7 +108,8 @@
   "foto_url": "https://api.apto.vc/images/realties/11384/489196/jardins-ipanema-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "morada-boa-vista",
@@ -114,7 +122,8 @@
   "foto_url": "https://api.apto.vc/images/realties/12914/528466/morada-boa-vista-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "villa-creta",
@@ -127,7 +136,8 @@
   "foto_url": "https://api.apto.vc/images/realties/15938/607199/villa-creta-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "reserva-lobato",
@@ -140,7 +150,8 @@
   "foto_url": "https://api.apto.vc/images/realties/13943/556044/reserva-lobato-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "gama-harmony",
@@ -153,7 +164,8 @@
   "foto_url": "https://api.apto.vc/images/realties/15567/593977/gama-harmony-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "reserva-paina",
@@ -166,7 +178,8 @@
   "foto_url": "https://api.apto.vc/images/realties/16105/610805/reserva-paina-condominio-1.jpg",
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  },
  {
   "slug": "residencial-sao-conrado",
@@ -179,6 +192,7 @@
   "foto_url": "https://api.apto.vc/images/realties/15924/605377/residencial-sao-conrado-condominio-1.jpg",
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
-  "usado": ""
+  "usado": "",
+  "parcela": ""
  }
 ]

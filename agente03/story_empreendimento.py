@@ -26,8 +26,10 @@ def html(d, foto=None):
     nome = d["nome"]
     tam = 104 if len(nome) <= 16 else (88 if len(nome) <= 22 else 76)
     renda = ""
+    if d.get("parcela"):
+        renda += f'<div class="renda"><span>PARCELAS A PARTIR DE</span><b>{d["parcela"]}</b></div>'
     if d.get("renda"):
-        renda = f'<div class="renda"><span>RENDA COMPATÍVEL A PARTIR DE</span><b>{d["renda"]}</b></div>'
+        renda += f'<div class="renda"><span>RENDA COMPATÍVEL A PARTIR DE</span><b>{d["renda"]}</b></div>'
     num = f'<div class="num">{d["numero"]:02d}/{d["total"]}</div>' if d.get("numero") else ""
     return f"""<html><head><style>{FONTS}
 *{{margin:0;box-sizing:border-box}}
