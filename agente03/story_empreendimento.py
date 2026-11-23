@@ -30,6 +30,9 @@ def html(d, foto=None):
         renda += f'<div class="renda"><span>PARCELAS A PARTIR DE</span><b>{d["parcela"]}</b></div>'
     if d.get("renda"):
         renda += f'<div class="renda"><span>RENDA COMPATÍVEL A PARTIR DE</span><b>{d["renda"]}</b></div>'
+    nota = f'Valores de referência de {d.get("data_ref","23/11/2026")}, sujeitos a alteração pela construtora.'
+    if d.get("renda"):
+        nota = f'Preço de {d.get("data_ref","23/11/2026")}. Renda estimada com 80% financiado em 35 anos, juros de 7% ao ano e parcela de até 30% da renda. Sujeito a análise de crédito.'
     num = f'<div class="num">{d["numero"]:02d}/{d["total"]}</div>' if d.get("numero") else ""
     return f"""<html><head><style>{FONTS}
 *{{margin:0;box-sizing:border-box}}
@@ -53,7 +56,7 @@ h1{{font-family:Bri;font-weight:800;font-size:{tam}px;line-height:.98;letter-spa
 .renda b{{font-family:Bri;font-weight:800;font-size:52px}}
 .cta{{position:absolute;top:1500px;left:72px;right:72px;background:{NEON};color:#06121A;border-radius:34px;padding:26px;font-size:36px;font-weight:700;text-align:center}}
 .nota{{position:absolute;top:1612px;left:72px;right:72px;font-size:21px;opacity:.6;text-align:center}}
-.foot{{position:absolute;top:1660px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.2);padding-top:22px}}
+.foot{{position:absolute;top:1684px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.2);padding-top:22px}}
 .foot b{{font-family:Bri;font-weight:800;font-size:32px;display:block}} .foot span{{font-size:22px;opacity:.8}}
 .sel{{border:2px solid {NEON};color:{NEON};border-radius:30px;padding:10px 20px;font-weight:700;font-size:20px;letter-spacing:2px}}
 </style></head><body><div class="sh"></div>
@@ -62,7 +65,7 @@ h1{{font-family:Bri;font-weight:800;font-size:{tam}px;line-height:.98;letter-spa
 <div class="chips"><div class="chip">{d.get("dorms","2 dormitórios")}</div><div class="chip">{d["m2"]}</div></div>
 <div class="neon"></div><div class="preco"><span>A PARTIR DE</span><b>{d["preco"]}</b></div>{renda}</div>
 <div class="cta">Simule comigo: me chama no direct</div>
-<div class="nota">Valores de referência de {d.get("data_ref","23/11/2026")}, sujeitos a alteração pela construtora.</div>
+<div class="nota">{nota}</div>
 <div class="foot"><div><b>Jackson Pires</b><span>Corretor de imóveis | CRECI 323400</span></div><div class="sel">SOROCABA E REGIÃO</div></div>
 </body></html>"""
 

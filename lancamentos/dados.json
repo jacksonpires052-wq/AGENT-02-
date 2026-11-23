@@ -6,12 +6,13 @@
   "m2": "42 e 43 m²",
   "preco": "R$ 195 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 3.300",
   "foto_url": "https://api.apto.vc/images/realties/15483/592646/residencial-imperatriz-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "lyon-residencial",
@@ -20,12 +21,13 @@
   "m2": "44 m²",
   "preco": "R$ 226 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 3.800",
   "foto_url": "https://api.apto.vc/images/realties/13363/540687/lyon-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "moove-residence",
@@ -34,12 +36,13 @@
   "m2": "41 m²",
   "preco": "R$ 232 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 3.900",
   "foto_url": "https://api.apto.vc/images/realties/14663/572989/moove-residence-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "vista-horto",
@@ -48,12 +51,13 @@
   "m2": "47 m²",
   "preco": "R$ 248 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.200",
   "foto_url": "https://api.apto.vc/images/realties/15929/605416/vista-horto-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "residencial-caribe",
@@ -62,12 +66,13 @@
   "m2": "45 a 70 m²",
   "preco": "R$ 295 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 5.000",
   "foto_url": "https://api.apto.vc/images/realties/15407/591161/residencial-caribe-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "zafira-residencial",
@@ -76,12 +81,13 @@
   "m2": "41 e 69 m²",
   "preco": "R$ 264 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.400",
   "foto_url": "https://api.apto.vc/images/realties/12913/539062/zafira-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "parque-das-margaridas",
@@ -90,12 +96,13 @@
   "m2": "47 m²",
   "preco": "R$ 280 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.700",
   "foto_url": "https://api.apto.vc/images/realties/13616/546371/parque-das-margaridas-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "jardins-ipanema",
@@ -104,12 +111,13 @@
   "m2": "47 m²",
   "preco": "R$ 290 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.900",
   "foto_url": "https://api.apto.vc/images/realties/11384/489196/jardins-ipanema-residencial-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "morada-boa-vista",
@@ -118,12 +126,13 @@
   "m2": "46 e 50 m²",
   "preco": "R$ 302 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 5.100",
   "foto_url": "https://api.apto.vc/images/realties/12914/528466/morada-boa-vista-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "villa-creta",
@@ -132,12 +141,13 @@
   "m2": "41 e 47 m²",
   "preco": "R$ 311 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 5.200",
   "foto_url": "https://api.apto.vc/images/realties/15938/607199/villa-creta-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "reserva-lobato",
@@ -146,12 +156,13 @@
   "m2": "48 m²",
   "preco": "R$ 316 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 5.300",
   "foto_url": "https://api.apto.vc/images/realties/13943/556044/reserva-lobato-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "gama-harmony",
@@ -160,12 +171,13 @@
   "m2": "56 e 69 m²",
   "preco": "R$ 321 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 5.400",
   "foto_url": "https://api.apto.vc/images/realties/15567/593977/gama-harmony-condominio-1.jpg",
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "reserva-paina",
@@ -174,12 +186,13 @@
   "m2": "46 m²",
   "preco": "R$ 280 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.700",
   "foto_url": "https://api.apto.vc/images/realties/16105/610805/reserva-paina-condominio-1.jpg",
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  },
  {
   "slug": "residencial-sao-conrado",
@@ -188,11 +201,12 @@
   "m2": "43 e 47 m²",
   "preco": "R$ 259 mil",
   "dorms": "2 dormitórios",
-  "renda": "",
+  "renda": "R$ 4.400",
   "foto_url": "https://api.apto.vc/images/realties/15924/605377/residencial-sao-conrado-condominio-1.jpg",
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "renda_metodo": "estimativa: 80% financiado, 420 meses, 7% a.a., parcela até 30% da renda"
  }
 ]
