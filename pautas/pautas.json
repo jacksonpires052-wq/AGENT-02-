@@ -613,7 +613,7 @@
     "fonte": "FipeZAP (via TV Sim Brasil e Condomínio Interativo)",
     "link": "https://tvsimbrasil.com.br/brasil/economia/noticia/2026/11/17/por-que-aluguel-sobe-quase-dobro-inflacao-desacelerando",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261116-incc-10-acelera",
@@ -641,7 +641,7 @@
     "fonte": "Safra (O Especialista)",
     "link": "https://oespecialista.safra.com.br/credito-imobiliario-fgts-juros-construcao/",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-nahb-confianca-25",
@@ -655,7 +655,7 @@
     "fonte": "NAHB (confirmado em HousingWire)",
     "link": "https://www.nahb.org/news-and-economics/press-releases/2026/11/builder-sentiment-continues-to-fall-on-affordability-concerns",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-eua-cancelamentos-lgi",
@@ -669,7 +669,7 @@
     "fonte": "HousingWire",
     "link": "https://www.housingwire.com/articles/homebuilder-confidence-november-2026/",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-espanha-vendas-134",
@@ -683,7 +683,7 @@
     "fonte": "INE (via The Olive Press)",
     "link": "https://www.theolivepress.es/spain-news/2026/11/17/home-sales-in-spain-fell-by-13-4-in-september-due-to-high-prices/",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-canada-construcao-outubro",
@@ -697,7 +697,7 @@
     "fonte": "CMHC (via Newswire)",
     "link": "https://www.newswire.ca/news-releases/housing-starts-and-construction-data-for-october-2026-802205209.html",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261118-tvri11-renova-bb",
@@ -739,7 +739,7 @@
     "fonte": "Homes.com (CoStar) e ResiClub/Zillow",
     "link": "https://www.homes.com/news/exclusive-us-home-prices-ease-slightly-as-housing-market-remains-in-a-stalemate/307421984/",
     "data_noticia": "2026-11-17",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261118-fiis-volume-outubro-122",
@@ -767,7 +767,7 @@
     "fonte": "National Association of Realtors (NAR), via GlobeNewswire; confirmado no Diário do Grande ABC",
     "link": "https://www.globenewswire.com/news-release/2026/11/18/3405853/0/en/pending-home-sales-decreased-4-7-in-october-according-to-nar-report.html",
     "data_noticia": "2026-11-18",
-    "usada": false
+    "usada": "repetida em story"
   },
   {
     "id": "20261121-eua-hipoteca-728",
@@ -837,7 +837,7 @@
     "fonte": "Ademi-PR, via Agora Litoral",
     "link": "https://agoralitoral.com.br/2026/11/20/mercado-imobiliario-de-curitiba-movimenta-r-9-bilhoes-em-2026-com-12-mil-vendas/",
     "data_noticia": "2026-11-20",
-    "usada": false
+    "usada": "repetida em story"
   },
   {
     "id": "20261120-hglg11-itupeva",
@@ -865,6 +865,62 @@
     "fonte": "FIIs.com.br (relatório gerencial do HGBS11)",
     "link": "https://fiis.com.br/noticias/fundo-imobiliario-hgbs11-resultado-outubro",
     "data_noticia": "2026-11-20",
+    "usada": false
+  },
+  {
+    "id": "20261119-ifix-minima-52-semanas",
+    "coletada_em": "2026-11-23 04:50",
+    "categoria": "Investimento/FII",
+    "titulo": "IFIX cai ao menor nível em 52 semanas",
+    "fato": "O IFIX, índice dos fundos imobiliários, recuou 0,8% na quinta (19/11) e fechou em 3.485 pontos, o menor patamar em 52 semanas. Na semana encurtada pelo feriado, a queda foi de 3,6%.",
+    "numero": "3.485 pontos",
+    "detalhe": "Nem todo fundo caiu: o VGIR11 subiu 3,96% no mesmo dia, enquanto o XPML11 caiu 4,44%. A queda reflete os juros altos, não um problema de um fundo só.",
+    "pra_voce": "Cota mais barata significa mais renda por real investido para quem compra agora, mas com juro alto a renda fixa segue concorrendo forte com os fundos.",
+    "fonte": "Suno Notícias",
+    "link": "https://www.suno.com.br/noticias/ifix-minima-52-semanas-quinta/",
+    "data_noticia": "2026-11-19",
+    "usada": false
+  },
+  {
+    "id": "20261119-bofa-corta-lancamentos",
+    "coletada_em": "2026-11-23 04:50",
+    "categoria": "Crédito e juros",
+    "titulo": "Crédito caro faz BofA cortar previsão de lançamentos",
+    "fato": "O Bank of America cortou em cerca de 13% para 2027 e 19% para 2028 a previsão de lançamentos das incorporadoras de média e alta renda, por causa do crédito imobiliário mais caro. O Bradesco já cobra juro mínimo de 15% ao ano mais TR.",
+    "numero": "-19%",
+    "detalhe": "São projeções de banco, não dados já registrados. E o BofA segue preferindo as construtoras do Minha Casa, Minha Vida, que têm juro subsidiado.",
+    "pra_voce": "Menos lançamentos de médio e alto padrão nos próximos anos tende a deixar a oferta mais curta. Quem pode comprar agora costuma achar mais opção e mais negociação.",
+    "fonte": "Portas, com informações da Exame (análise do BofA)",
+    "link": "https://portas.com.br/noticias/bofa-corta-projecao-de-lancamentos-diante-de-credito-imobiliario-mais-caro/",
+    "data_noticia": "2026-11-19",
+    "usada": false
+  },
+  {
+    "id": "20261119-litoral-temporada-cai-80",
+    "coletada_em": "2026-11-23 04:50",
+    "categoria": "Brasil",
+    "titulo": "Aluguel de temporada no litoral de SP cai até 80%",
+    "fato": "Pesquisa do Creci-SP mostra que a diária de uma casa de 1 dormitório no litoral sul para o Natal e o Ano-Novo caiu de R$ 885 para R$ 180, queda de 79,66%. No litoral central e no sul, todas as categorias ficaram mais baratas.",
+    "numero": "-80%",
+    "detalhe": "No litoral norte foi o contrário: o apartamento de 4 dormitórios subiu 64%, de R$ 2.980 para R$ 4.890 a diária. E o Creci alerta que preço muito abaixo do mercado pode ser golpe.",
+    "pra_voce": "Para quem tem imóvel na praia para alugar, a renda de temporada varia muito de um ano para o outro. Na hora de investir, a localização pesa mais que a média.",
+    "fonte": "Creci-SP (via Portas)",
+    "link": "https://portas.com.br/noticias/preco-do-aluguel-de-temporada-no-litoral-de-sp-cai-ate-80-para-natal-e-ano-novo-diz-creci-sp/",
+    "data_noticia": "2026-11-19",
+    "usada": false
+  },
+  {
+    "id": "20261119-dubai-casas-prontas-34",
+    "coletada_em": "2026-11-23 04:50",
+    "categoria": "Mundo",
+    "titulo": "Dubai: venda de casa pronta salta 34% em outubro",
+    "fato": "As vendas de casas (vilas) prontas em Dubai subiram 34,1% de setembro para outubro, de 211 para 283 unidades. Os imóveis de segunda mão chegaram a 37,9% de todas as vendas, a maior fatia desde junho de 2025.",
+    "numero": "+34%",
+    "detalhe": "A base é pequena (72 casas a mais) e o próprio estudo diz que mais vendas não significa preço maior. Pelo índice ValuStrat, os valores ainda estão 5,7% abaixo de um ano atrás.",
+    "pra_voce": "Lá fora, o comprador está trocando a planta pelo imóvel pronto para fugir do risco de obra. É a mesma lógica de quem aqui prefere usado ou pronto para morar.",
+    "fonte": "Engel & Völkers Middle East (via Khaleej Times)",
+    "link": "https://www.khaleejtimes.com/property/dubai-ready-villa-sales-jump-october",
+    "data_noticia": "2026-11-19",
     "usada": false
   }
 ]
