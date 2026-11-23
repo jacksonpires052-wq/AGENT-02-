@@ -19,7 +19,8 @@ ANIM = f"""
 .top{{animation:desce .6s .1s cubic-bezier(.2,.8,.2,1) both}}
 h1{{animation:sobe .8s .3s cubic-bezier(.2,.8,.2,1) both}}
 .bairro{{animation:sobe .7s .6s cubic-bezier(.2,.8,.2,1) both}}
-.chips .chip:nth-child(1){{animation:pop .5s .85s both}} .chips .chip:nth-child(2){{animation:pop .5s 1.0s both}}
+.local{{animation:sobe .7s .75s cubic-bezier(.2,.8,.2,1) both}}
+.chips .chip:nth-child(1){{animation:pop .5s 1.0s both}} .chips .chip:nth-child(2){{animation:pop .5s 1.1s both}}
 .neon{{transform-origin:left;animation:risca .7s 1.2s cubic-bezier(.6,0,.2,1) both,brilho 1.6s 1.9s ease-in-out infinite}}
 .preco{{animation:sobe .7s 1.6s cubic-bezier(.2,.8,.2,1) both}}
 .renda{{animation:sobe .7s 2.0s cubic-bezier(.2,.8,.2,1) both}}

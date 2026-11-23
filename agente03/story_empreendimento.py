@@ -33,11 +33,15 @@ def html(d, foto=None):
     nota = f'Valores de referência de {d.get("data_ref","23/11/2026")}, sujeitos a alteração pela construtora.'
     if d.get("renda"):
         nota = f'Preço de {d.get("data_ref","23/11/2026")}. Renda estimada com 80% financiado em 35 anos, juros de 7% ao ano e parcela de até 30% da renda. Sujeito a análise de crédito.'
+    local = ""
+    if d.get("rua"):
+        perto = "".join(f'<span class="pt">Perto de {p}</span>' for p in d.get("perto", [])[:3])
+        local = f'<div class="local"><div class="lt">LOCALIZAÇÃO</div><div class="rua">{d["rua"]}, {d["bairro"]}, Sorocaba</div>' + (f'<div class="pts">{perto}</div>' if perto else "") + '</div>'
     num = f'<div class="num">{d["numero"]:02d}/{d["total"]}</div>' if d.get("numero") else ""
     return f"""<html><head><style>{FONTS}
 *{{margin:0;box-sizing:border-box}}
 body{{width:1080px;height:1920px;{fundo}font-family:DM;color:#fff;position:relative;overflow:hidden}}
-.sh{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,22,.55) 0%,rgba(6,10,22,0) 22%,rgba(6,10,22,0) 34%,rgba(6,10,22,.82) 52%,rgba(6,10,22,.97) 72%,#060A16 100%)}}
+.sh{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,22,.55) 0%,rgba(6,10,22,0) 22%,rgba(6,10,22,0) 38%,rgba(6,10,22,.78) 55%,rgba(6,10,22,.96) 70%,#060A16 100%)}}
 .top{{position:absolute;top:230px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}}
 .pill{{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.35);font-weight:700;font-size:28px;letter-spacing:3px;padding:14px 28px;border-radius:40px}}
 .num{{font-family:Bri;font-weight:800;font-size:30px;opacity:.85}}
@@ -45,7 +49,12 @@ body{{width:1080px;height:1920px;{fundo}font-family:DM;color:#fff;position:relat
 h1{{font-family:Bri;font-weight:800;font-size:{tam}px;line-height:.98;letter-spacing:-2px}}
 .bairro{{margin-top:22px;font-size:38px;font-weight:500;opacity:.9}}
 .bairro i{{display:inline-block;width:16px;height:16px;border-radius:50%;background:{NEON};box-shadow:0 0 14px {NEON};margin-right:14px;vertical-align:middle}}
-.chips{{display:flex;gap:16px;margin-top:34px}}
+.chips{{display:flex;gap:16px;margin-top:26px}}
+.local{{margin-top:28px;border-left:5px solid {NEON};padding:6px 0 6px 24px}}
+.lt{{font-size:22px;font-weight:700;letter-spacing:3px;color:{NEON}}}
+.rua{{font-size:32px;font-weight:500;margin-top:6px;line-height:1.25}}
+.pts{{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}}
+.pt{{background:rgba(255,255,255,.14);border-radius:20px;padding:8px 18px;font-size:24px;font-weight:700}}
 .chip{{border:2px solid rgba(255,255,255,.45);border-radius:30px;padding:12px 26px;font-weight:700;font-size:30px}}
 .neon{{margin-top:44px;height:8px;border-radius:8px;background:{NEON};box-shadow:0 0 12px {NEON},0 0 34px {NEON},0 0 70px rgba(57,255,176,.6)}}
 .preco{{margin-top:26px}}
@@ -61,8 +70,8 @@ h1{{font-family:Bri;font-weight:800;font-size:{tam}px;line-height:.98;letter-spa
 .sel{{border:2px solid {NEON};color:{NEON};border-radius:30px;padding:10px 20px;font-weight:700;font-size:20px;letter-spacing:2px}}
 </style></head><body><div class="sh"></div>
 <div class="top"><div class="pill">LANÇAMENTO EM SOROCABA</div>{num}</div>
-<div class="box"><h1>{nome}</h1><div class="bairro"><i></i>{d["bairro"]}</div>
-<div class="chips"><div class="chip">{d.get("dorms","2 dormitórios")}</div><div class="chip">{d["m2"]}</div></div>
+<div class="box"><h1>{nome}</h1><div class="bairro"><i></i>{d["bairro"]}{(" · " + d["zona"]) if d.get("zona") else ""}</div>
+{local}<div class="chips"><div class="chip">{d.get("dorms","2 dormitórios")}</div><div class="chip">{d["m2"]}</div></div>
 <div class="neon"></div><div class="preco"><span>A PARTIR DE</span><b>{d["preco"]}</b></div>{renda}</div>
 <div class="cta">Simule comigo: me chama no direct</div>
 <div class="nota">{nota}</div>

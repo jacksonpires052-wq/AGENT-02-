@@ -11,7 +11,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "23/11/2026",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Diniz Góes da Silva",
+  "zona": "",
+  "perto": []
  },
  {
   "slug": "lyon-residencial",
@@ -25,7 +28,12 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "23/11/2026",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Manoel Gutierrez",
+  "zona": "",
+  "perto": [
+   "mercado"
+  ]
  },
  {
   "slug": "moove-residence",
@@ -39,7 +47,13 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua João Salvestro",
+  "zona": "",
+  "perto": [
+   "mercado",
+   "restaurantes"
+  ]
  },
  {
   "slug": "vista-horto",
@@ -53,7 +67,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Seraphim Banietti",
+  "zona": "Zona Norte",
+  "perto": []
  },
  {
   "slug": "residencial-caribe",
@@ -67,7 +84,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Ramon Haro Martini",
+  "zona": "",
+  "perto": []
  },
  {
   "slug": "zafira-residencial",
@@ -81,7 +101,14 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Av. Comendador Pereira Inácio",
+  "zona": "",
+  "perto": [
+   "shopping",
+   "hospital",
+   "faculdade"
+  ]
  },
  {
   "slug": "parque-das-margaridas",
@@ -95,7 +122,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Botucatu",
+  "zona": "",
+  "perto": []
  },
  {
   "slug": "jardins-ipanema",
@@ -109,7 +139,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Nelson De Gennaro",
+  "zona": "",
+  "perto": []
  },
  {
   "slug": "morada-boa-vista",
@@ -123,7 +156,14 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Alameda Reino Unido",
+  "zona": "Zona Leste",
+  "perto": [
+   "parque",
+   "hospital",
+   "faculdade"
+  ]
  },
  {
   "slug": "villa-creta",
@@ -137,7 +177,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Affonso Celso Dias",
+  "zona": "Zona Sul",
+  "perto": []
  },
  {
   "slug": "reserva-lobato",
@@ -151,7 +194,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Antônio Aparecido Ferraz",
+  "zona": "Zona Oeste",
+  "perto": []
  },
  {
   "slug": "gama-harmony",
@@ -165,7 +211,10 @@
   "fonte": "apto.vc",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Guaianazes",
+  "zona": "",
+  "perto": []
  },
  {
   "slug": "reserva-paina",
@@ -179,7 +228,10 @@
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Galileu Pasquinelli",
+  "zona": "Zona Norte",
+  "perto": []
  },
  {
   "slug": "residencial-sao-conrado",
@@ -193,6 +245,13 @@
   "fonte": "site jacksonpires.web.app",
   "data_ref": "23/11/2026",
   "usado": "",
-  "parcela": ""
+  "parcela": "",
+  "rua": "Rua Rosa Maria de Oliveira",
+  "zona": "Zona Oeste",
+  "perto": [
+   "parque",
+   "shopping",
+   "hospital"
+  ]
  }
 ]
