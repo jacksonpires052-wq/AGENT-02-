@@ -1,7 +1,7 @@
-# Relatório do Agente 06 · 21/11/2026
+# Relatório do Agente 06 · 22/11/2026
 
 ## Conta
-- Seguidores agora: 282 (+4 no dia)
+- Seguidores agora: 295 (+13 no dia)
 - Alcance do perfil: 0 · views: 0 · contas que interagiram: 0
 - Cliques no link da bio: 0
 
@@ -11,12 +11,12 @@
 - Envios a cada mil alcançados: 0.0 · salvos a cada mil: 0.0
 
 **Os 3 melhores**
-- 20h · Nome negativado e acha que nunca vai ter seu terreno? 👀 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgBYOEnq1Dt/
-- 12h · O tornado arrancou o seu telhado em Santa Catarina? Quem paga o conserto pode nã · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgAkzM-K6b8/
-- 10h · Sobrado na Zona Norte, pertinho do Shopping Cidade 🏡 · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgAXVCPq3uG/
+- 18h · Saindo do Mirage Clube de Campo, em Sorocaba, de carro: · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgDzPx1KWUo/
+- 17h · A capa da The Economist pra 2027 tem um padrão escondido. E ele aponta pra Soroc · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgDtwAAqCup/
+- 13h · De Sorocaba a São Paulo de trem em mais ou menos 1 hora? 🚆 Olha a rota e os 5 l · alcance 0 · views 0 · envios 0 · salvos 0 · https://www.instagram.com/reel/DgDQaW7qtJT/
 
 ## Melhores horários (7 dias)
-- 7h: alcance médio 0 (2 Reels)
+- 7h: alcance médio 0 (1 Reels)
 - 8h: alcance médio 0 (2 Reels)
 - 9h: alcance médio 0 (1 Reels)
 - 10h: alcance médio 0 (1 Reels)
