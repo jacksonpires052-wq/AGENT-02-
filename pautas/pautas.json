@@ -922,5 +922,33 @@
     "link": "https://www.khaleejtimes.com/property/dubai-ready-villa-sales-jump-october",
     "data_noticia": "2026-11-19",
     "usada": false
+  },
+  {
+    "id": "20261124-focus-selic-2027-13",
+    "coletada_em": "2026-11-24 04:58",
+    "categoria": "Crédito e juros",
+    "titulo": "Mercado já vê Selic a 13% no fim de 2027",
+    "fato": "O Boletim Focus do Banco Central subiu a previsão da Selic no fim de 2027 de 12,75% para 13% ao ano, a segunda alta seguida. Para o fim de 2026, a previsão segue em 13,75%.",
+    "numero": "13%",
+    "detalhe": "A inflação esperada também subiu: o IPCA de 2026 foi de 5,11% para 5,15% e o de 2027 de 5,00% para 5,12%. A próxima reunião do Copom é em 8 e 9 de dezembro.",
+    "pra_voce": "Juros altos por mais tempo deixam o financiamento caro também em 2027. Esperar a taxa cair pode custar mais do que travar a compra agora, com simulação feita nos dois cenários.",
+    "fonte": "Banco Central (Boletim Focus), via IstoÉ Dinheiro e Canal Rural/Estadão Conteúdo",
+    "link": "https://istoedinheiro.com.br/boletim-focus-hoje-23-11-2026-inflacao-dolar-selic",
+    "data_noticia": "2026-11-23",
+    "usada": false
+  },
+  {
+    "id": "20261124-aluguel-comercial-1076",
+    "coletada_em": "2026-11-24 04:58",
+    "categoria": "Investimento/FII",
+    "titulo": "Aluguel de sala comercial sobe 10,76% no ano",
+    "fato": "O aluguel comercial subiu 1,32% em outubro e acumula 10,76% de janeiro a outubro de 2026, bem acima do IPCA (4,10%) e do IGP-M (4,97%) no período, segundo o índice FipeZap.",
+    "numero": "10,76%",
+    "detalhe": "O preço de venda das salas quase não andou: só 2,16% no ano. E os valores são de anúncios de novos aluguéis, não dos contratos em vigor. Em São Paulo a alta foi menor, de 7,42%.",
+    "pra_voce": "A sala comercial rende em média 7,76% ao ano de aluguel, contra 6,13% do imóvel residencial. Pra quem investe pra viver de renda, vale comparar os dois antes de comprar.",
+    "fonte": "FipeZap, via Portas",
+    "link": "https://portas.com.br/noticias/aluguel-comercial-acelera-alta-para-132-em-outubro-e-valorizacao-em-2026-passa-de-10-diz-fipezap/",
+    "data_noticia": "2026-11-24",
+    "usada": false
   }
 ]
