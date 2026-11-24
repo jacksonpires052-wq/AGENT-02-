@@ -42,13 +42,31 @@ async function main() {
   const legenda = fs.readFileSync(path.join(dir, 'legenda.txt'), 'utf8').trim();
   const raw = f => `https://raw.githubusercontent.com/${REPO}/main/carrosseis/${encodeURIComponent(d)}/${f}`;
 
+  // Melhoria contínua 23/11/2026: em 23/11 o carrossel 4 caiu com "O download da mídia demora muito"
+  // (o Instagram demorou pra baixar uma imagem do GitHub). Agora cada passo ANTES de publicar tenta até 3 vezes,
+  // com espera de 20 s e 40 s. Repetir aqui é seguro: contêiner não publicado não aparece no feed.
+  // O media_publish NÃO é repetido (isso sim poderia postar duas vezes).
+  async function comRetry(nome, fn) {
+    for (let t = 1; ; t++) {
+      try { return await fn(); } catch (e) {
+        if (t >= 3) throw e;
+        resumo(`Tentativa ${t} de ${nome} falhou (${e.message}). Tentando de novo em ${20 * t} s.`);
+        await esperar(20000 * t);
+      }
+    }
+  }
   const filhos = [];
   for (const f of imgs) {
-    const c = await ig('POST', `/${CONTA}/media`, { image_url: raw(f), is_carousel_item: 'true' });
-    await pronto(c.id); filhos.push(c.id);
+    const id = await comRetry(f, async () => {
+      const c = await ig('POST', `/${CONTA}/media`, { image_url: raw(f), is_carousel_item: 'true' });
+      await pronto(c.id); return c.id;
+    });
+    filhos.push(id);
   }
-  const car = await ig('POST', `/${CONTA}/media`, { media_type: 'CAROUSEL', children: filhos.join(','), caption: legenda });
-  await pronto(car.id);
+  const car = await comRetry('o carrossel', async () => {
+    const c = await ig('POST', `/${CONTA}/media`, { media_type: 'CAROUSEL', children: filhos.join(','), caption: legenda });
+    await pronto(c.id); return c;
+  });
   const p = await ig('POST', `/${CONTA}/media_publish`, { creation_id: car.id });
   let link = '';
   try { link = (await ig('GET', `/${p.id}`, { fields: 'permalink' })).permalink; } catch {}
