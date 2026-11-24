@@ -711,7 +711,7 @@
     "fonte": "Seu Dinheiro, com fato relevante do TVRI11",
     "link": "https://www.seudinheiro.com/2026/bolsa-dolar/crise-banco-do-brasil-bbas3-renova-contratos-fundo-imobiliario-por-mais-10-anos-mas-com-desconto-igdl/",
     "data_noticia": "2026-11-18",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261118-ia-busca-imovel-40",
@@ -725,7 +725,7 @@
     "fonte": "Estado de Minas, com dados do DataZAP e Google/Ipsos",
     "link": "https://www.em.com.br/mundo-corporativo/2026/11/7540411-40-dos-brasileiros-ja-usam-ia-para-buscar-imovel.html",
     "data_noticia": "2026-11-18",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261117-eua-preco-cai-04",
@@ -753,7 +753,7 @@
     "fonte": "FIIs.com.br, com dados da B3",
     "link": "https://fiis.com.br/noticias/bom-dia-fiis-181126/",
     "data_noticia": "2026-11-18",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261118-nar-pendentes-recorde-baixa",
@@ -809,7 +809,7 @@
     "fonte": "Lareal (via Suno Notícias)",
     "link": "https://www.suno.com.br/noticias/fiis-pessoa-fisica-compras-lareal-semana/",
     "data_noticia": "2026-11-18",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261120-plano-distrato-25",
