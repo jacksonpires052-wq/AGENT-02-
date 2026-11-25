@@ -37,8 +37,18 @@ async function main() {
   // Desde 20/11: se houver story.mp4 (versão animada), tenta o vídeo; se o Instagram recusar, cai para o story.jpg.
   async function container(params, tentativas) {
     const c = await ig('POST', `/${CONTA}/media`, { media_type: 'STORIES', ...params });
+    // Melhoria contínua 24/11: logo depois de criar, o Instagram às vezes responde "Object ... does not exist"
+    // na consulta de status (aconteceu no story 02 de 24/11 e o vídeo caiu pra imagem). Agora essa consulta
+    // tenta de novo até 5 vezes antes de desistir. Só a CONSULTA é repetida; nada é publicado duas vezes.
+    let errosConsulta = 0;
     for (let t = 0; t < tentativas; t++) {
-      const s = await ig('GET', `/${c.id}`, { fields: 'status_code,status' });
+      let s;
+      try { s = await ig('GET', `/${c.id}`, { fields: 'status_code,status' }); }
+      catch (e) {
+        if (++errosConsulta > 5) throw e;
+        resumo(`Consulta de status falhou (${errosConsulta}/5): ${e.message}. Tentando de novo.`);
+        await esperar(4000); continue;
+      }
       if (s.status_code === 'FINISHED') return c;
       if (s.status_code === 'ERROR' || s.status_code === 'EXPIRED') throw new Error(`Instagram recusou: ${s.status || s.status_code}`);
       await esperar(3000);
