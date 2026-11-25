@@ -183,3 +183,10 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - estoque recorde de 382,3 mil imóveis novos, cerca de 10,2 meses de vendas (CBIC e Brain, via Revista Construa)
   - 67% das compras até setembro tiveram desconto, contra 65% um ano antes (Raio-X FipeZap, via Revista Oeste)
   Lançamentos: Moove Residence (R$ 232 mil), Vista Horto (R$ 248 mil), Residencial Caribe (R$ 295 mil), Zafira Residencial (R$ 264 mil) e Parque das Margaridas (R$ 280 mil). Sem pesquisa nova de Sorocaba. Carrossel das 7h: "Subsídio" (https://www.instagram.com/p/DgHsWqej4bk/). Placar: 10 de 10, todos no horário; 9 em vídeo e 1 em imagem (o Moove Residence das 08h37: o Instagram deu erro passageiro no vídeo e o sistema publicou o story.jpg). Último: Parque das Margaridas, https://www.instagram.com/stories/corretor.jacksonpires/4037816353624290363
+- 25/11/2026, 5h44: 5 notícias e 5 lançamentos intercalados, todos animados. Notícias:
+  - 31% já desistiram de comprar imóvel; 24% citam dívidas (Loft, Índice de Confiança, via Portas)
+  - 78% das regiões metropolitanas dos EUA com alta de preço no 3º tri; 21% caíram (NAR, via ConsumerAffairs)
+  - IFIX caiu 1,29% na segunda (23), 44,98 pontos (Mercado Hoje)
+  - 70% de quem quer comprar é para morar; 54% primeiro imóvel (Loft, via Portas)
+  - m² em Portugal a € 3.249; Vila Real, Guarda e Beja com as maiores altas (idealista)
+  Lançamentos: Jardins Ipanema (R$ 290 mil), Morada Boa Vista (R$ 302 mil), Villa Creta (R$ 311 mil), Reserva Lobato (R$ 316 mil) e Gama Harmony (R$ 321 mil). Carrossel das 7h: "Perguntas na planta". Perguntado ao Jackson se a lista recomeça ou se busco lançamentos novos depois de 26/11. Placar: a conferir às 21h11.
