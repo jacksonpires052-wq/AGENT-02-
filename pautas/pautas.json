@@ -781,7 +781,7 @@
     "fonte": "Freddie Mac (PMMS)",
     "link": "https://www.freddiemac.com/pmms",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261121-mcmv-2024-obras",
@@ -795,7 +795,7 @@
     "fonte": "Ministério das Cidades (Agência Gov)",
     "link": "https://agenciagov.ebc.com.br/noticias/202611/minha-casa-minha-vida-inicia-a-construcao-de-mais-2-mil-moradias",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261121-fii-pessoa-fisica-145",
@@ -879,7 +879,7 @@
     "fonte": "Suno Notícias",
     "link": "https://www.suno.com.br/noticias/ifix-minima-52-semanas-quinta/",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261119-bofa-corta-lancamentos",
@@ -893,7 +893,7 @@
     "fonte": "Portas, com informações da Exame (análise do BofA)",
     "link": "https://portas.com.br/noticias/bofa-corta-projecao-de-lancamentos-diante-de-credito-imobiliario-mais-caro/",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261119-litoral-temporada-cai-80",
@@ -907,7 +907,7 @@
     "fonte": "Creci-SP (via Portas)",
     "link": "https://portas.com.br/noticias/preco-do-aluguel-de-temporada-no-litoral-de-sp-cai-ate-80-para-natal-e-ano-novo-diz-creci-sp/",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261119-dubai-casas-prontas-34",
@@ -921,7 +921,7 @@
     "fonte": "Engel & Völkers Middle East (via Khaleej Times)",
     "link": "https://www.khaleejtimes.com/property/dubai-ready-villa-sales-jump-october",
     "data_noticia": "2026-11-19",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261124-focus-selic-2027-13",
@@ -948,6 +948,76 @@
     "pra_voce": "A sala comercial rende em média 7,76% ao ano de aluguel, contra 6,13% do imóvel residencial. Pra quem investe pra viver de renda, vale comparar os dois antes de comprar.",
     "fonte": "FipeZap, via Portas",
     "link": "https://portas.com.br/noticias/aluguel-comercial-acelera-alta-para-132-em-outubro-e-valorizacao-em-2026-passa-de-10-diz-fipezap/",
+    "data_noticia": "2026-11-24",
+    "usada": false
+  },
+  {
+    "id": "20261124-eua-casa-shiller-21",
+    "coletada_em": "2026-11-25 04:55",
+    "categoria": "Mundo",
+    "titulo": "EUA: preço da casa cai em 17 de 20 cidades",
+    "fato": "O índice Case-Shiller mostrou que o preço das casas nos EUA caiu 0,3% de agosto para setembro, quando o normal para o mês seria subir 0,1%. Dezessete das 20 grandes cidades tiveram queda no mês.",
+    "numero": "17 de 20",
+    "detalhe": "No acumulado de 12 meses o preço ainda sobe 2,1%, mas fica abaixo da inflação americana, então na prática a casa está perdendo valor real.",
+    "pra_voce": "Com juros de financiamento acima de 7% ao ano, o comprador americano perdeu fôlego e o preço parou de subir. Juro alto esfria preço em qualquer país, inclusive aqui.",
+    "fonte": "S&P Cotality Case-Shiller (Cotality e Yahoo Finance)",
+    "link": "https://www.cotality.com/press-releases/us-home-price-growth-down-november-2026",
+    "data_noticia": "2026-11-24",
+    "usada": false
+  },
+  {
+    "id": "20261124-eua-fhfa-48-estados",
+    "coletada_em": "2026-11-25 04:55",
+    "categoria": "Mundo",
+    "titulo": "EUA: casa fica mais cara em 48 dos 50 estados",
+    "fato": "O índice da FHFA, agência que regula o crédito imobiliário nos EUA, mostrou alta de 2,5% no preço das casas entre o 3º trimestre de 2025 e o de 2026. O preço subiu em 48 estados e em 82 das 100 maiores cidades.",
+    "numero": "2,5%",
+    "detalhe": "Em setembro o índice ficou parado em relação a agosto, e a capital Washington caiu 4,9% no ano. Os juros de 7,28% ao ano já esfriam a procura.",
+    "pra_voce": "Mesmo com juros altos, quase todo o país ainda viu o imóvel valorizar no ano, porque falta casa à venda. Pouca oferta segura o preço, e isso também vale para bairros com poucos lançamentos.",
+    "fonte": "FHFA (The MortgagePoint e Mortgage Professional America)",
+    "link": "https://themortgagepoint.com/2026/11/24/house-prices-rise-year-over-year-fhfa-index-shows/",
+    "data_noticia": "2026-11-24",
+    "usada": false
+  },
+  {
+    "id": "20261122-cbic-jornada-30mil-casas",
+    "coletada_em": "2026-11-25 04:55",
+    "categoria": "Brasil",
+    "titulo": "Jornada menor pode tirar 30 mil casas populares por ano",
+    "fato": "A CBIC, câmara da indústria da construção, estima que a redução da jornada de trabalho de 44 para 40 horas pode deixar de construir cerca de 30 mil moradias populares por ano. O decreto que regulamenta a mudança foi assinado em 19 de novembro, e a jornada cai para 42 horas em 16 de dezembro.",
+    "numero": "30 mil casas/ano",
+    "detalhe": "É uma projeção do próprio setor, não uma queda já medida. A CBIC admite que os efeitos não são inevitáveis e dependem de como a regra for aplicada; o custo da mão de obra pode subir cerca de 10%.",
+    "pra_voce": "Se a obra fica mais cara, o preço do imóvel novo tende a subir, principalmente no Minha Casa, Minha Vida, que responde por 58% dos lançamentos. Quem está de olho num imóvel na planta pode ganhar travando o preço antes.",
+    "fonte": "CBIC (estudo e entrevista à CNN Brasil, via CPG Click Petróleo e Gás)",
+    "link": "https://cbic.org.br/reducao-da-jornada-de-trabalho-pode-impactar-construcao-de-30-mil-habitacoes-populares-por-ano-estima-cbic/",
+    "data_noticia": "2026-11-22",
+    "usada": false
+  },
+  {
+    "id": "20261123-ajuste-fiscal-dolar-6",
+    "coletada_em": "2026-11-25 04:55",
+    "categoria": "Crédito e juros",
+    "titulo": "Câmara aprova ajuste fiscal e dólar toca R$ 6",
+    "fato": "A Câmara aprovou em 23 de novembro, por 353 votos a 128, o projeto de ajuste fiscal que limita o aumento dos gastos e corta benefícios fiscais. A economia prevista para 2027 fica entre R$ 45 bilhões e R$ 56 bilhões. No mesmo dia o dólar passou de R$ 6 pela primeira vez desde abril de 2025 e fechou perto de R$ 5,93.",
+    "numero": "353 votos",
+    "detalhe": "O texto ainda depende da sanção do presidente, e o mercado segue desconfiado: o dólar subiu mais de 6% só em novembro. A Selic está em 13,75% e o Copom decide de novo em 9 de dezembro.",
+    "pra_voce": "Conta pública em ordem é o que abre espaço para a Selic cair e o financiamento ficar mais barato. Enquanto o mercado duvidar, os bancos mantêm o juro da casa própria alto.",
+    "fonte": "The Rio Times (com dados do Congresso e do Banco Central) e Estadão Conteúdo via Folha PE",
+    "link": "https://www.riotimesonline.com/the-big-read-brazil-24-november-2026/",
+    "data_noticia": "2026-11-23",
+    "usada": false
+  },
+  {
+    "id": "20261124-ifix-sobe-08",
+    "coletada_em": "2026-11-25 04:55",
+    "categoria": "Investimento/FII",
+    "titulo": "IFIX sobe 0,8% e fundo de recebíveis salta 12%",
+    "fato": "O IFIX, índice dos fundos imobiliários, subiu 0,8% na terça-feira (24) e fechou em 3.467,64 pontos. O destaque foi o CACR11, que disparou 12%.",
+    "numero": "0,8%",
+    "detalhe": "Mesmo com a alta, o índice segue cerca de 13% abaixo dos 3.990 pontos de 23 de outubro, antes da forte queda que veio depois da eleição.",
+    "pra_voce": "Com os fundos imobiliários ainda bem abaixo do topo, quem investe em imóvel pela Bolsa encontra cotas mais baratas. Para quem prefere imóvel físico, é sinal de que o investidor segue cauteloso com juros altos.",
+    "fonte": "FIIs.com.br e Suno Notícias",
+    "link": "https://fiis.com.br/noticias/ifix-fechamento-cacr11-alta-241126/",
     "data_noticia": "2026-11-24",
     "usada": false
   }
