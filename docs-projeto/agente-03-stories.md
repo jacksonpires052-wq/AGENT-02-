@@ -190,3 +190,13 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - 70% de quem quer comprar é para morar; 54% primeiro imóvel (Loft, via Portas)
   - m² em Portugal a € 3.249; Vila Real, Guarda e Beja com as maiores altas (idealista)
   Lançamentos: Jardins Ipanema (R$ 290 mil), Morada Boa Vista (R$ 302 mil), Villa Creta (R$ 311 mil), Reserva Lobato (R$ 316 mil) e Gama Harmony (R$ 321 mil). Carrossel das 7h: "Perguntas na planta". Perguntado ao Jackson se a lista recomeça ou se busco lançamentos novos depois de 26/11. Placar: 10 de 10, todos no horário e todos em vídeo. Carrossel: https://www.instagram.com/p/DgKRMu9Dnf2/. Último: Gama Harmony, https://www.instagram.com/stories/corretor.jacksonpires/4038541628930515377
+- 26/11/2026, 5h46: 8 notícias e os 2 últimos lançamentos da lista (o Jackson não respondeu se recomeça ou busca novos, então 06, 08 e 10 viraram notícia). Notícias:
+  - Recife lidera a valorização: +20,69% em 12 meses até setembro (Abecip e FGV Ibre, IGMI-R, via Movimento Econômico)
+  - EUA: casas +2,1% em 12 meses até agosto, inflação 3,4%; 15º mês de queda real (S&P Cotality Case-Shiller)
+  - inadimplência do crédito imobiliário em torno de 1% (Abecip, via CBIC)
+  - EUA: casas novas vendidas a 676 mil/ano em setembro (Census, via HousingWire)
+  - imóveis +6,94% de janeiro a setembro; 12,58% em 12 meses, IPCA 4,58% (IGMI-R, via Movimento Econômico)
+  - crédito imobiliário de R$ 180,9 bi no 1º semestre, +23% (Abecip, via O Povo)
+  - Rio: aluguel de 1 quarto +18,40% em 12 meses até julho, m² R$ 67,89 (Índice QuintoAndar Imovelweb)
+  - 21% pretendem comprar ou alugar; 22% são proprietários (Loft, via Portas)
+  Poucas notícias novas nas últimas 72 h: 4 são de julho a setembro. Título do 05 trocado antes de subir ("Quem financia paga em dia" afirmava mais que a fonte). Lançamentos: Reserva Painá (R$ 280 mil) e Residencial São Conrado (R$ 259 mil). Lista de lançamentos acabou. Carrossel das 7h: "Quanto ganhar". Placar: a conferir às 21h11.
