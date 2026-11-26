@@ -189,4 +189,4 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - IFIX caiu 1,29% na segunda (23), 44,98 pontos (Mercado Hoje)
   - 70% de quem quer comprar é para morar; 54% primeiro imóvel (Loft, via Portas)
   - m² em Portugal a € 3.249; Vila Real, Guarda e Beja com as maiores altas (idealista)
-  Lançamentos: Jardins Ipanema (R$ 290 mil), Morada Boa Vista (R$ 302 mil), Villa Creta (R$ 311 mil), Reserva Lobato (R$ 316 mil) e Gama Harmony (R$ 321 mil). Carrossel das 7h: "Perguntas na planta". Perguntado ao Jackson se a lista recomeça ou se busco lançamentos novos depois de 26/11. Placar: a conferir às 21h11.
+  Lançamentos: Jardins Ipanema (R$ 290 mil), Morada Boa Vista (R$ 302 mil), Villa Creta (R$ 311 mil), Reserva Lobato (R$ 316 mil) e Gama Harmony (R$ 321 mil). Carrossel das 7h: "Perguntas na planta". Perguntado ao Jackson se a lista recomeça ou se busco lançamentos novos depois de 26/11. Placar: 10 de 10, todos no horário e todos em vídeo. Carrossel: https://www.instagram.com/p/DgKRMu9Dnf2/. Último: Gama Harmony, https://www.instagram.com/stories/corretor.jacksonpires/4038541628930515377
