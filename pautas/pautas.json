@@ -823,7 +823,7 @@
     "fonte": "Plano&Plano (divulgação de resultados), via Economic News Brasil",
     "link": "https://economicnewsbrasil.com.br/2026/11/20/cancelamento-de-imoveis-financiamento-2026/",
     "data_noticia": "2026-11-20",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261120-curitiba-9-bi",
@@ -851,7 +851,7 @@
     "fonte": "Seu Dinheiro",
     "link": "https://www.seudinheiro.com/2026/bolsa-dolar/patria-log-hglg11-abre-a-carteira-e-desembolsa-r-3128-milhoes-em-imovel-logistico-cbcb/",
     "data_noticia": "2026-11-20",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261120-hgbs11-shopping-216",
@@ -865,7 +865,7 @@
     "fonte": "FIIs.com.br (relatório gerencial do HGBS11)",
     "link": "https://fiis.com.br/noticias/fundo-imobiliario-hgbs11-resultado-outubro",
     "data_noticia": "2026-11-20",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261119-ifix-minima-52-semanas",
@@ -1018,6 +1018,48 @@
     "pra_voce": "Com os fundos imobiliários ainda bem abaixo do topo, quem investe em imóvel pela Bolsa encontra cotas mais baratas. Para quem prefere imóvel físico, é sinal de que o investidor segue cauteloso com juros altos.",
     "fonte": "FIIs.com.br e Suno Notícias",
     "link": "https://fiis.com.br/noticias/ifix-fechamento-cacr11-alta-241126/",
+    "data_noticia": "2026-11-24",
+    "usada": false
+  },
+  {
+    "id": "20261125-eua-casa-nova-142",
+    "coletada_em": "2026-11-26 04:55",
+    "categoria": "Mundo",
+    "titulo": "EUA: venda de casa nova salta 14,2% em outubro",
+    "fato": "Os Estados Unidos venderam casas novas num ritmo de 701 mil por ano em outubro, alta de 14,2% sobre setembro e de 7,5% em um ano. O preço mediano caiu 3,2% em um ano, para US$ 391 mil.",
+    "numero": "14,2%",
+    "detalhe": "Parte do salto vem de setembro ter sido revisado para baixo, e o dado de outubro ainda pode ser revisado. A confiança das construtoras está perto do menor nível em 15 anos.",
+    "pra_voce": "Lá fora, a construtora baixa preço para vender com juro alto. Aqui o movimento é parecido: com Selic alta, vale negociar desconto e condição na planta.",
+    "fonte": "Census Bureau (via HousingWire)",
+    "link": "https://www.housingwire.com/articles/new-home-sales-october-2026/",
+    "data_noticia": "2026-11-25",
+    "usada": false
+  },
+  {
+    "id": "20261125-fortaleza-outubro-155bi",
+    "coletada_em": "2026-11-26 04:55",
+    "categoria": "Brasil",
+    "titulo": "Fortaleza vende R$ 1,55 bi em imóveis em outubro",
+    "fato": "Fortaleza e região metropolitana venderam R$ 1,55 bilhão em imóveis novos em outubro, alta de 184,5% sobre outubro de 2025. Foram 2.188 unidades, 129,6% a mais.",
+    "numero": "R$ 1,55 bi",
+    "detalhe": "Fortaleza sozinha respondeu por R$ 1,27 bilhão. No ano, a capital cresce 32,4%, mas os outros municípios da região só 6,1%.",
+    "pra_voce": "Mostra que tem procura forte mesmo com juro alto. Onde a venda acelera, o desconto some rápido: quem espera demais paga mais.",
+    "fonte": "Sinduscon Ceará (via Jornal do Comércio do Ceará)",
+    "link": "https://jcce.com.br/mercado-imobiliario-de-fortaleza-e-regiao-metropolitana-movimenta-r-155-bilhao-em-outubro/",
+    "data_noticia": "2026-11-25",
+    "usada": false
+  },
+  {
+    "id": "20261124-credito-habitacional-1443tri",
+    "coletada_em": "2026-11-26 04:55",
+    "categoria": "Crédito e juros",
+    "titulo": "Crédito para casa própria chega a R$ 1,44 trilhão",
+    "fato": "O saldo do crédito habitacional para pessoas físicas chegou a R$ 1,443 trilhão em setembro, alta de 13,7% em 12 meses, segundo o Banco Central.",
+    "numero": "R$ 1,44 tri",
+    "detalhe": "A Selic está parada em 13,75% desde 4 de novembro, e o mercado não espera corte na reunião de 8 e 9 de dezembro. Corte futuro nem sempre chega logo à taxa do financiamento.",
+    "pra_voce": "O crédito continua saindo, mesmo com juro alto. Quem tem renda comprovada e entrada consegue financiar; o segredo é simular em mais de um banco.",
+    "fonte": "Banco Central (via Paraíba Business)",
+    "link": "https://paraibabusiness.com.br/selic-a-1375-nao-define-sozinha-o-financiamento-do-imovel-diz-werton-oliveira/",
     "data_noticia": "2026-11-24",
     "usada": false
   }
