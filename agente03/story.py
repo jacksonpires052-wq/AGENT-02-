@@ -86,7 +86,7 @@ async def render(n, saida, edicao):
     async with async_playwright() as p:
         b = await p.chromium.launch(channel="chrome")
         pg = await b.new_page(viewport={"width": 1080, "height": 1920})
-        await pg.set_content(pagina(n, edicao))
+        await pg.set_content(pagina(n, edicao, int(n.get("total", 10))))
         await pg.wait_for_timeout(400)
         est = int(await pg.evaluate("document.body.dataset.estouro"))
         tmp = saida + ".png"

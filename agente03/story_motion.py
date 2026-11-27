@@ -48,7 +48,7 @@ ANIM_BOLETIM = """
 def html_e_css(n, ed, modelo):
     if modelo == "leve":
         return story_leve.pagina(n, ed), ANIM_LEVE
-    return story.pagina(n, ed), ANIM_BOLETIM
+    return story.pagina(n, ed, int(n.get("total", 10))), ANIM_BOLETIM
 
 async def quadros(n, ed, modelo, pasta):
     from playwright.async_api import async_playwright
