@@ -124,6 +124,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .barra-res{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 16px;flex-wrap:wrap}
 .modos{display:inline-flex;background:var(--claro2);border:1px solid var(--line);border-radius:999px;padding:4px}
 .modos button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:#334;padding:8px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+#p-cond button{padding:8px 13px}
+.barra-res{flex-wrap:wrap}
 .modos button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
 .modos button[aria-pressed=true]{background:var(--azul);color:#fff;box-shadow:0 6px 16px rgba(11,31,77,.25)}
 .mapa-box{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(11,20,48,.12);height:min(72vh,640px);min-height:440px;margin-bottom:10px}
@@ -521,7 +523,7 @@ function ligarForm(){
 }
 
 /* ---------- busca ---------- */
-let pagina = 1; const POR_PAGINA = 9; let filtroZona = "", filtroTipo = "";
+let pagina = 1; const POR_PAGINA = 9; let filtroZona = "", filtroTipo = "", filtroCond = "";
 function secaoBusca(){
   const opt = arr => arr.map(([v,t])=>`<option value="${v}">${t}</option>`).join("");
   const anos = [...new Set(IMOVEIS.filter(i=>i.entrega).map(i=>i.entrega.slice(0,4)))].sort();
@@ -538,7 +540,6 @@ function secaoBusca(){
     <div class="pilulas" id="p-tipo">${tipos.map(([v,t],k)=>`<button type="button" data-v="${v}" aria-pressed="${k===0}">${t}</button>`).join("")}</div>
     <div class="filtros" id="filtros">
       <label>Entrega<select id="f-entrega">${opt([["","Qualquer"],["pronto","Pronto para morar"],...anos.map(a=>[a,"Até "+a])])}</select></label>
-      <label>Condomínio<select id="f-cond">${opt([["","Qualquer"],["sim","Em condomínio"],["nao","Sem condomínio"]])}</select></label>
       <label>Dormitórios<select id="f-dorm">${opt([[0,"Qualquer"],[1,"1+"],[2,"2+"],[3,"3+"],[4,"4+"]])}</select></label>
       <label>Valor mín.<select id="f-vmin">${opt(vmin)}</select></label>
       <label>Valor máx.<select id="f-vmax">${opt(vmax)}</select></label>
@@ -549,7 +550,8 @@ function secaoBusca(){
     </div>
     <div class="barra-res"><p class="contagem" id="contagem"></p>
       <label class="ordem">Ordenar<select id="f-ordem"><option value="">Mais relevantes</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="entrega">Entrega mais próxima</option></select></label>
-      <div class="modos"><button type="button" id="m-lista" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Lista</button><button type="button" id="m-mapa" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Ver no mapa</button></div></div>
+      <div class="modos"><button type="button" id="m-lista" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Lista</button><button type="button" id="m-mapa" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Ver no mapa</button></div>
+      <div class="modos" id="p-cond"><button type="button" data-v="" aria-pressed="true">Todos</button><button type="button" data-v="sim" aria-pressed="false">Condomínio</button><button type="button" data-v="nao" aria-pressed="false">Sem condomínio</button></div></div>
     <div class="mapa-box" id="mapa-box" hidden><div id="mapa"></div><div class="mapa-chip" id="mapa-chip">Carregando o mapa...</div><div class="mapa-leg" id="mapa-leg"></div></div>
     <div class="grade" id="grade"></div>
     <div class="paginas" id="paginas"></div>
@@ -561,7 +563,7 @@ function ligarBusca(){
   const v = id => $("#"+id).value;
   const pronto = e => e==="pronto";
   const filtrar = window.__refiltrar = () => {
-    const cd=v("f-cond"), e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
+    const cd=filtroCond, e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
     const base = IMOVEIS.filter(i =>
       (!filtroTipo || i.tipo===filtroTipo) && (!cd || (cd==="sim")===emCond(i)) &&
       (!e || (e==="pronto" ? pronto(i.entrega) : (i.entrega && i.entrega.slice(0,4)<=e))) &&
@@ -594,7 +596,7 @@ function ligarBusca(){
     document.querySelectorAll(`#${id} button`).forEach(x=>x.setAttribute("aria-pressed","false"));
     bt.setAttribute("aria-pressed","true"); set(bt.dataset.v); pagina=1; filtrar();
   });
-  pil("p-zona", x=>filtroZona=x); pil("p-tipo", x=>filtroTipo=x);
+  pil("p-zona", x=>filtroZona=x); pil("p-tipo", x=>filtroTipo=x); pil("p-cond", x=>filtroCond=x);
   const modo = m => { MODO=m; $("#m-lista").setAttribute("aria-pressed",m==="lista"); $("#m-mapa").setAttribute("aria-pressed",m==="mapa");
     $("#mapa-box").hidden = m!=="mapa"; $("#grade").style.display = m==="mapa"?"none":""; $("#paginas").style.display = m==="mapa"?"none":"";
     if(m==="mapa") desenharMapa(); };
@@ -603,8 +605,8 @@ function ligarBusca(){
   document.querySelectorAll("#filtros select").forEach(s=>s.onchange=()=>{pagina=1;filtrar();});
   $("#f-ordem").onchange=()=>{pagina=1;filtrar();};
   $("#b-mais").onclick=()=>{const f=$("#filtros");f.classList.toggle("aberto");$("#b-mais").textContent=f.classList.contains("aberto")?"− Menos filtros":"+ Mais filtros";};
-  $("#b-limpar").onclick=()=>{document.querySelectorAll("#filtros select").forEach(s=>s.selectedIndex=0);filtroZona="";filtroTipo="";
-    ["p-zona","p-tipo"].forEach(id=>document.querySelectorAll(`#${id} button`).forEach((x,k)=>x.setAttribute("aria-pressed",k===0)));pagina=1;filtrar();};
+  $("#b-limpar").onclick=()=>{document.querySelectorAll("#filtros select").forEach(s=>s.selectedIndex=0);filtroZona="";filtroTipo="";filtroCond="";
+    ["p-zona","p-tipo","p-cond"].forEach(id=>document.querySelectorAll(`#${id} button`).forEach((x,k)=>x.setAttribute("aria-pressed",k===0)));pagina=1;filtrar();};
   filtrar();
 }
 
@@ -1001,7 +1003,7 @@ async function integrarProntos(){
     bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
     dorm:i.d?[i.d]:[], area:[i.a||0, i.a||0], suites:i.s||0, vagas:i.g||0, plantas:[], lat:null, lng:null, foto:pfoto(i.f&&i.f[0],1) }));
   IMOVEIS.forEach(i=>{ if(!i.mh) return;
-    const perto = q => q && Math.abs(q[0]+23.5)<0.6 && Math.abs(q[1]+47.46)<0.7;
+    const perto = q => q && Math.abs(q[0]+23.5)<0.4 && Math.abs(q[1]+47.46)<0.5;
     let p = geo[gk(i.bairro)+"|"+gk(i.cidade)], raio = 0.0032, achou = true;
     if(!perto(p)){ p = geo["|"+gk(i.cidade)]; raio = 0.012; achou = false; }
     if(!perto(p)) return; const [dy,dx] = espalha(i.c, raio); i.lat = p[0]+dy; i.lng = p[1]+dx;
