@@ -464,6 +464,13 @@ const fundo = (i,n) => i.foto ? `background-image:url('${esc(i.foto)}')` : `back
 
 /* ---------- pedaços reutilizáveis ---------- */
 function cardImovel(i, n){
+  if(i.mh){
+    const msg = `Olá, Jackson! Vi no seu site o imóvel cód. ${i.c} (${i.tipoOrig} em ${i.bairro}) e quero saber mais.`;
+    return `<article class="card pr"><a class="capa" href="#/pronto/${i.c}" style="background-image:url('${esc(i.foto)}')" aria-label="${esc(i.nome)}"><span class="tag">${esc(i.tipoOrig)}</span><span class="selo">Pronto pra morar</span><span class="cod">Cód. ${esc(i.c)}</span></a>
+      <div class="card-corpo"><h3><a href="#/pronto/${i.c}">${esc(i.nome)}</a></h3><p class="bairro">${esc(i.bairro)} · ${esc(i.cidade)}</p>
+      <p class="specs">${[i.area[0]?String(i.area[0]).replace(".",",")+" m²":"", i.suites?i.suites+(i.suites>1?" suítes":" suíte"):"", i.vagas?i.vagas+(i.vagas>1?" vagas":" vaga"):""].filter(Boolean).join(" · ")||"&nbsp;"}</p>
+      <p class="preco"><b>${reaisP(i.preco)}</b></p><a class="btn btn-azul" target="_blank" rel="noopener" href="${zap(msg)}">Falar no WhatsApp</a></div></article>`;
+  }
   const msg = `Olá, Jackson! Vi o ${i.nome} (${i.bairro}) no seu site e quero saber mais.`;
   return `<article class="card">
     <a class="capa" href="#/imovel/${i.id}" style="${fundo(i,n)}" aria-label="${esc(i.nome)}">${i.foto?"":PREDIO}<span class="tag">${esc(i.tipo)}</span>${i.regiao?`<span class="zona">${i.regiao==="Votorantim"?"Votorantim":"Zona "+i.regiao}</span>`:""}${i.entrega==="pronto"?`<span class="selo">Pronto pra morar</span>`:i.destaque?`<span class="selo dest">Destaque</span>`:""}</a>
@@ -551,12 +558,12 @@ function secaoBusca(){
 function ligarBusca(){
   const v = id => $("#"+id).value;
   const pronto = e => e==="pronto";
-  const filtrar = () => {
+  const filtrar = window.__refiltrar = () => {
     const e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
     const base = IMOVEIS.filter(i =>
       (!filtroTipo || i.tipo===filtroTipo) &&
       (!e || (e==="pronto" ? pronto(i.entrega) : (i.entrega && i.entrega.slice(0,4)<=e))) &&
-      Math.max(...i.dorm)>=d && (!vmin || (i.preco && i.preco>=vmin)) && (!vmax || (i.preco && i.preco<=vmax)) &&
+      (i.dorm.length?Math.max(...i.dorm):0)>=d && (!vmin || (i.preco && i.preco>=vmin)) && (!vmax || (i.preco && i.preco<=vmax)) &&
       i.area[1]>=amin && (!amax || i.area[0]<=amax));
     const lista = base.filter(i => !filtroZona || i.regiao===filtroZona);
     const ord = $("#f-ordem") ? $("#f-ordem").value : "", semP = 1e12;
@@ -573,7 +580,12 @@ function ligarBusca(){
     const p = $("#paginas"); p.innerHTML="";
     if(total>1){
       const b=(txt,n,dis,cur)=>{const x=document.createElement("button");x.textContent=txt;x.disabled=dis;if(cur)x.setAttribute("aria-current","true");x.onclick=()=>{pagina=n;filtrar();$("#imoveis").scrollIntoView({behavior:"smooth"});};p.append(x);};
-      b("Anterior",pagina-1,pagina===1); for(let k=1;k<=total;k++) b(k,k,false,k===pagina); b("Próxima",pagina+1,pagina===total);
+      b("Anterior",pagina-1,pagina===1);
+      const ini=Math.max(1,Math.min(pagina-2,total-4)), fim=Math.min(total,ini+4);
+      if(ini>1){ b(1,1,false,false); if(ini>2){const r=document.createElement("span");r.textContent="…";p.append(r);} }
+      for(let k=ini;k<=fim;k++) b(k,k,false,k===pagina);
+      if(fim<total){ if(fim<total-1){const r=document.createElement("span");r.textContent="…";p.append(r);} b(total,total,false,false); }
+      b("Próxima",pagina+1,pagina===total);
     }
   };
   const pil = (id, set) => document.querySelectorAll(`#${id} button`).forEach(bt=>bt.onclick=()=>{
@@ -966,6 +978,22 @@ async function mostrarPronto(cod){
     </div></aside></div>`;
 }
 
+/* prontos também na busca principal (só os à venda) */
+const tipoBusca = t => { const x = slug(t||"");
+  if(/sala|salao|loja|ponto|predio|galpao|comercial|barracao/.test(x)) return "Salão Comercial";
+  if(/terreno|lote|area/.test(x)) return "Terreno";
+  if(/apartamento|cobertura|kitnet|flat|studio|loft|duplex/.test(x)) return "Apartamento";
+  if(/casa|sobrado|edicula/.test(x)) return "Casa";
+  return t; };
+let PRONTOS_NA_BUSCA = false;
+async function integrarProntos(){
+  const dados = await carregarProntos(); if(PRONTOS_NA_BUSCA || !dados.length) return; PRONTOS_NA_BUSCA = true;
+  dados.filter(i=>i.v>0).forEach(i => IMOVEIS.push({ mh:true, c:i.c, id:"mh-"+i.c, nome:prTitulo(i), tipo:tipoBusca(i.t), tipoOrig:i.t,
+    bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
+    dorm:i.d?[i.d]:[], area:[i.a||0, i.a||0], suites:i.s||0, vagas:i.g||0, plantas:[], lat:null, lng:null, foto:pfoto(i.f&&i.f[0],1) }));
+  if($("#grade") && window.__refiltrar) window.__refiltrar();
+}
+
 /* ---------- imóveis adicionados pelo painel ---------- */
 const FB = {projeto:"fernandabrandao-ab276", site:"__FBSITE__", chave:"__FBKEY__"};
 function fsVal(v){ if(!v) return null; if("stringValue" in v) return v.stringValue; if("integerValue" in v) return +v.integerValue; if("doubleValue" in v) return v.doubleValue;
@@ -994,6 +1022,7 @@ async function carregarPainel(){
 window.addEventListener("hashchange", rota);
 rota();
 carregarPainel();
+integrarProntos();
 </script>
 </body>
 </html>
