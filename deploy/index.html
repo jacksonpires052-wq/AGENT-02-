@@ -642,8 +642,8 @@ async function desenharMapa(){
   pts.forEach(i=>{
     const rot = i.preco ? mil(i.preco) : "Consulte";
     const mk = L.marker([i.lat,i.lng],{icon:L.divIcon({className:"",html:`<div class="pin" style="--pc:${corZona(i.regiao)}"><span>${rot}</span></div>`,iconSize:[0,0]}),title:i.nome+" · "+(i.regiao||""),riseOnHover:true,zona:i.regiao});
-    const msg = `Olá, Jackson! Vi o ${i.nome} (${i.bairro}) no mapa do seu site e quero saber mais.`;
-    mk.bindPopup(`<div class="pop">${i.foto?`<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">`:""}<div><h4>${esc(i.nome)}</h4><p>${esc(i.bairro)} · ${dormTxt(i.dorm)}${i.area[0]?" · "+faixa(i.area," m²"):""}</p><p class="pp">${i.preco?"A partir de "+mil(i.preco):"Consulte o valor"}</p><div class="bts"><a class="l" href="#/imovel/${i.id}">Ver detalhes</a><a class="z" target="_blank" rel="noopener" href="${zap(msg)}">WhatsApp</a></div></div></div>`,{maxWidth:260,minWidth:260,offset:[0,-36],autoPanPadding:[30,30]});
+    const msg = i.mh ? `Olá, Jackson! Vi no mapa do seu site o imóvel cód. ${i.c} (${i.nome}, ${i.bairro}) e quero saber mais.` : `Olá, Jackson! Vi o ${i.nome} (${i.bairro}) no mapa do seu site e quero saber mais.`;
+    mk.bindPopup(`<div class="pop">${i.foto?`<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">`:""}<div><h4>${esc(i.nome)}</h4><p>${esc(i.bairro)}${i.dorm.length?" · "+dormTxt(i.dorm):""}${i.area[0]?" · "+(i.mh?i.area[0]+" m²":faixa(i.area," m²")):""}</p><p class="pp">${i.mh?(i.preco?reaisP(i.preco):"Consulte"):i.preco?"A partir de "+mil(i.preco):"Consulte o valor"}</p>${i.mh?'<p style="font-size:12px;color:#777">Localização aproximada do bairro</p>':""}<div class="bts"><a class="l" href="${i.mh?"#/pronto/"+i.c:"#/imovel/"+i.id}">Ver detalhes</a><a class="z" target="_blank" rel="noopener" href="${zap(msg)}">WhatsApp</a></div></div></div>`,{maxWidth:260,minWidth:260,offset:[0,-36],autoPanPadding:[30,30]});
     CAMADA.addLayer(mk);
   });
   MAPA.addLayer(CAMADA);
@@ -985,11 +985,23 @@ const tipoBusca = t => { const x = slug(t||"");
   if(/casa|sobrado|edicula/.test(x)) return "Casa";
   return t; };
 let PRONTOS_NA_BUSCA = false;
+const gk = t => (t||"").normalize("NFD").replace(/[^\x00-\x7f]/g,"").toLowerCase().trim();
+function espalha(c, raio){ let h=0; for(const ch of String(c)) h=(h*31+ch.charCodeAt(0))>>>0;
+  const ang=(h%3600)/3600*2*Math.PI, r=raio*Math.sqrt(((h>>>12)%1000)/1000); return [r*Math.cos(ang), r*Math.sin(ang)/0.92]; }
+function zonaPerto(lat,lng){ let m=null, dm=1e9;
+  IMOVEIS.forEach(o=>{ if(o.mh||!o.lat||!o.regiao||o.regiao==="Votorantim") return; const d=(o.lat-lat)**2+(o.lng-lng)**2; if(d<dm){dm=d;m=o;} });
+  return m && Math.sqrt(dm)<0.045 ? m.regiao : ""; }
 async function integrarProntos(){
-  const dados = await carregarProntos(); if(PRONTOS_NA_BUSCA || !dados.length) return; PRONTOS_NA_BUSCA = true;
+  const [dados, geo] = await Promise.all([carregarProntos(), fetch("/geo.json").then(r=>r.ok?r.json():{}).catch(()=>({}))]);
+  if(PRONTOS_NA_BUSCA || !dados.length) return; PRONTOS_NA_BUSCA = true;
   dados.filter(i=>i.v>0).forEach(i => IMOVEIS.push({ mh:true, c:i.c, id:"mh-"+i.c, nome:prTitulo(i), tipo:tipoBusca(i.t), tipoOrig:i.t,
     bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
     dorm:i.d?[i.d]:[], area:[i.a||0, i.a||0], suites:i.s||0, vagas:i.g||0, plantas:[], lat:null, lng:null, foto:pfoto(i.f&&i.f[0],1) }));
+  IMOVEIS.forEach(i=>{ if(!i.mh) return;
+    let p = geo[gk(i.bairro)+"|"+gk(i.cidade)], raio = 0.0032;
+    if(!p){ p = geo["|"+gk(i.cidade)]; raio = 0.012; }
+    if(!p) return; const [dy,dx] = espalha(i.c, raio); i.lat = p[0]+dy; i.lng = p[1]+dx;
+    if(!i.regiao && slug(i.cidade)==="sorocaba") i.regiao = zonaPerto(p[0],p[1]); });
   if($("#grade") && window.__refiltrar) window.__refiltrar();
 }
 
