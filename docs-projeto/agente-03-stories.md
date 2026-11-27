@@ -201,3 +201,15 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - Rio: aluguel de 1 quarto +18,40% em 12 meses até julho, m² R$ 67,89 (Índice QuintoAndar Imovelweb)
   - 21% pretendem comprar ou alugar; 22% são proprietários (Loft, via Portas)
   Poucas notícias novas nas últimas 72 h: 4 são de julho a setembro. Título do 05 trocado antes de subir ("Quem financia paga em dia" afirmava mais que a fonte). Lançamentos: Reserva Painá (R$ 280 mil) e Residencial São Conrado (R$ 259 mil). Lista de lançamentos acabou. Carrossel das 7h: "Quanto ganhar" (https://www.instagram.com/p/DgM2ALAF0j8/). Placar: 10 de 10, todos no horário e todos em vídeo. Último: https://www.instagram.com/stories/corretor.jacksonpires/4039265922488651794
+- 27/11/2026, 5h47: 10 notícias (sem resposta do Jackson sobre os lançamentos). Temas:
+  - Natal: lançamentos +256% no 3º tri; 486 compactos contra nenhum em 2025 (Brain e Sinduscon-RN, via Natal em Foco)
+  - Sorocaba e região: seguro-fiança em 40% dos aluguéis, caução 29,1%, fiador 14,5% (CRECISP, maio de 2026)
+  - pela 1ª vez, 52% compraram para investir e 48% para morar (Raio-X FipeZap, via Brasil em Folhas)
+  - EUA: financiamento de 30 anos a 7,35% na semana até 18/11, era 6,34% um ano antes (MBA, via Mortgage News Daily)
+  - infraestrutura cria 79.065 vagas de janeiro a agosto, melhor da série do Novo Caged (CBIC)
+  - Boa Vista (RR): vendas de imóveis +162% (13º Censo do Sinduscon-RR, via CBIC)
+  - Sorocaba e região: 43,2% das vendas de usados de R$ 201 a 300 mil (CRECISP, março de 2026)
+  - desconto médio em todas as compras sobe de 7% para 9% (Raio-X FipeZap, via Brasil em Folhas)
+  - Natal: Ponta Negra com 47,5% dos apartamentos vendidos no 3º tri (Brain e Sinduscon-RN)
+  - construção: salário médio de admissão R$ 2.642,46, 9,61% acima da média (CBIC, agosto)
+  Os dados de Sorocaba são de março e maio (a pesquisa CRECISP mais nova achada segue sendo a de junho, já usada). As pautas do Agente 07 (pautas/pautas.json) não foram usadas; a partir de 28/11 a rodada usa elas primeiro. Carrossel das 7h: "Erros que fazem o crédito ser negado" (gatilho próprio). Placar: a conferir às 21h11.
