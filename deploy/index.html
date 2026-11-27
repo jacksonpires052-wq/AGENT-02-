@@ -998,10 +998,11 @@ async function integrarProntos(){
     bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
     dorm:i.d?[i.d]:[], area:[i.a||0, i.a||0], suites:i.s||0, vagas:i.g||0, plantas:[], lat:null, lng:null, foto:pfoto(i.f&&i.f[0],1) }));
   IMOVEIS.forEach(i=>{ if(!i.mh) return;
-    let p = geo[gk(i.bairro)+"|"+gk(i.cidade)], raio = 0.0032;
-    if(!p){ p = geo["|"+gk(i.cidade)]; raio = 0.012; }
-    if(!p) return; const [dy,dx] = espalha(i.c, raio); i.lat = p[0]+dy; i.lng = p[1]+dx;
-    if(!i.regiao && slug(i.cidade)==="sorocaba") i.regiao = zonaPerto(p[0],p[1]); });
+    const perto = q => q && Math.abs(q[0]+23.5)<0.6 && Math.abs(q[1]+47.46)<0.7;
+    let p = geo[gk(i.bairro)+"|"+gk(i.cidade)], raio = 0.0032, achou = true;
+    if(!perto(p)){ p = geo["|"+gk(i.cidade)]; raio = 0.012; achou = false; }
+    if(!perto(p)) return; const [dy,dx] = espalha(i.c, raio); i.lat = p[0]+dy; i.lng = p[1]+dx;
+    if(achou && !i.regiao && slug(i.cidade)==="sorocaba") i.regiao = zonaPerto(p[0],p[1]); });
   if($("#grade") && window.__refiltrar) window.__refiltrar();
 }
 
