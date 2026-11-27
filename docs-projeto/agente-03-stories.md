@@ -199,4 +199,4 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - crédito imobiliário de R$ 180,9 bi no 1º semestre, +23% (Abecip, via O Povo)
   - Rio: aluguel de 1 quarto +18,40% em 12 meses até julho, m² R$ 67,89 (Índice QuintoAndar Imovelweb)
   - 21% pretendem comprar ou alugar; 22% são proprietários (Loft, via Portas)
-  Poucas notícias novas nas últimas 72 h: 4 são de julho a setembro. Título do 05 trocado antes de subir ("Quem financia paga em dia" afirmava mais que a fonte). Lançamentos: Reserva Painá (R$ 280 mil) e Residencial São Conrado (R$ 259 mil). Lista de lançamentos acabou. Carrossel das 7h: "Quanto ganhar". Placar: a conferir às 21h11.
+  Poucas notícias novas nas últimas 72 h: 4 são de julho a setembro. Título do 05 trocado antes de subir ("Quem financia paga em dia" afirmava mais que a fonte). Lançamentos: Reserva Painá (R$ 280 mil) e Residencial São Conrado (R$ 259 mil). Lista de lançamentos acabou. Carrossel das 7h: "Quanto ganhar" (https://www.instagram.com/p/DgM2ALAF0j8/). Placar: 10 de 10, todos no horário e todos em vídeo. Último: https://www.instagram.com/stories/corretor.jacksonpires/4039265922488651794
