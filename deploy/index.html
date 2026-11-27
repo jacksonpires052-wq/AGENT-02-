@@ -184,6 +184,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .pr-fin button{font:inherit;font-weight:700;font-size:14px;border:0;background:none;border-radius:999px;padding:10px 20px;cursor:pointer;color:var(--muted)}
 .pr-fin button[aria-pressed=true]{background:var(--azul);color:#fff}
 .filtros input{font:inherit;font-size:14px;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.card.pr{border:0;box-shadow:0 14px 34px rgba(0,0,0,.10),inset 0 0 0 1px #e4e4e4;border-left:7px solid #1e1e1e;background:#fff}
+.card.pr .capa{border-radius:0 18px 0 0}
 .capa .cod{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px}
 .pr-precos{display:grid;gap:10px;margin-top:6px}
 .pr-precos div{background:var(--claro2);border-radius:14px;padding:14px 16px}
@@ -926,7 +928,7 @@ async function ligarProntos(){
     $("#pr-cont").textContent = l.length ? `${l.length.toLocaleString("pt-BR")} ${l.length>1?"imóveis":"imóvel"} ${PR.fin==="aluguel"?"para alugar":"à venda"}` : "Nenhum imóvel com esses filtros. Tente tirar algum.";
     $("#pr-grade").innerHTML = l.slice((PR.pag-1)*POR, PR.pag*POR).map(i => {
       const msg = `Olá, Jackson! Vi no seu site o imóvel cód. ${i.c} (${i.t} em ${i.br}) e quero saber mais.`;
-      return `<article class="card"><a class="capa" href="#/pronto/${i.c}" style="background-image:url('${esc(pfoto(i.f&&i.f[0],1))}')" aria-label="${esc(prTitulo(i))}"><span class="tag">${esc(i.t)}</span><span class="cod">Cód. ${esc(i.c)}</span></a>
+      return `<article class="card pr"><a class="capa" href="#/pronto/${i.c}" style="background-image:url('${esc(pfoto(i.f&&i.f[0],1))}')" aria-label="${esc(prTitulo(i))}"><span class="tag">${esc(i.t)}</span><span class="cod">Cód. ${esc(i.c)}</span></a>
         <div class="card-corpo"><h3><a href="#/pronto/${i.c}">${esc(prTitulo(i))}</a></h3><p class="bairro">${esc(i.br)}${i.ci?" · "+esc(i.ci):""}</p>
         <p class="specs">${[i.a?String(i.a).replace(".",",")+" m²":"", i.s?i.s+(i.s>1?" suítes":" suíte"):"", i.g?i.g+(i.g>1?" vagas":" vaga"):""].filter(Boolean).join(" · ")||"&nbsp;"}</p>
         <p class="preco">${prPreco(i)}</p><a class="btn btn-azul" target="_blank" rel="noopener" href="${zap(msg)}">Falar no WhatsApp</a></div></article>`; }).join("");
