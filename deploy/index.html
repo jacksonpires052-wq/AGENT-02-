@@ -538,6 +538,7 @@ function secaoBusca(){
     <div class="pilulas" id="p-tipo">${tipos.map(([v,t],k)=>`<button type="button" data-v="${v}" aria-pressed="${k===0}">${t}</button>`).join("")}</div>
     <div class="filtros" id="filtros">
       <label>Entrega<select id="f-entrega">${opt([["","Qualquer"],["pronto","Pronto para morar"],...anos.map(a=>[a,"Até "+a])])}</select></label>
+      <label>Condomínio<select id="f-cond">${opt([["","Qualquer"],["sim","Em condomínio"],["nao","Sem condomínio"]])}</select></label>
       <label>Dormitórios<select id="f-dorm">${opt([[0,"Qualquer"],[1,"1+"],[2,"2+"],[3,"3+"],[4,"4+"]])}</select></label>
       <label>Valor mín.<select id="f-vmin">${opt(vmin)}</select></label>
       <label>Valor máx.<select id="f-vmax">${opt(vmax)}</select></label>
@@ -554,13 +555,15 @@ function secaoBusca(){
     <div class="paginas" id="paginas"></div>
   </div></section>`;
 }
+const emCond = i => i.mh ? (/condom|apartamento|duplex|studio|kitnet|loft|flat|cobertura/i.test(i.tipoOrig||"") || !!i.emp)
+  : (i.tipo==="Apartamento" || /condom/i.test(i.nome||""));
 function ligarBusca(){
   const v = id => $("#"+id).value;
   const pronto = e => e==="pronto";
   const filtrar = window.__refiltrar = () => {
-    const e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
+    const cd=v("f-cond"), e=v("f-entrega"), d=+v("f-dorm"), vmin=+v("f-vmin"), vmax=+v("f-vmax"), amin=+v("f-amin"), amax=+v("f-amax");
     const base = IMOVEIS.filter(i =>
-      (!filtroTipo || i.tipo===filtroTipo) &&
+      (!filtroTipo || i.tipo===filtroTipo) && (!cd || (cd==="sim")===emCond(i)) &&
       (!e || (e==="pronto" ? pronto(i.entrega) : (i.entrega && i.entrega.slice(0,4)<=e))) &&
       (i.dorm.length?Math.max(...i.dorm):0)>=d && (!vmin || (i.preco && i.preco>=vmin)) && (!vmax || (i.preco && i.preco<=vmax)) &&
       i.area[1]>=amin && (!amax || i.area[0]<=amax));
@@ -994,7 +997,7 @@ function zonaPerto(lat,lng){ let m=null, dm=1e9;
 async function integrarProntos(){
   const [dados, geo] = await Promise.all([carregarProntos(), fetch("/geo.json").then(r=>r.ok?r.json():{}).catch(()=>({}))]);
   if(PRONTOS_NA_BUSCA || !dados.length) return; PRONTOS_NA_BUSCA = true;
-  dados.filter(i=>i.v>0).forEach(i => IMOVEIS.push({ mh:true, c:i.c, id:"mh-"+i.c, nome:prTitulo(i), tipo:tipoBusca(i.t), tipoOrig:i.t,
+  dados.filter(i=>i.v>0).forEach(i => IMOVEIS.push({ mh:true, c:i.c, id:"mh-"+i.c, nome:prTitulo(i), tipo:tipoBusca(i.t), tipoOrig:i.t, emp:i.e||"",
     bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
     dorm:i.d?[i.d]:[], area:[i.a||0, i.a||0], suites:i.s||0, vagas:i.g||0, plantas:[], lat:null, lng:null, foto:pfoto(i.f&&i.f[0],1) }));
   IMOVEIS.forEach(i=>{ if(!i.mh) return;
