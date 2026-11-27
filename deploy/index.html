@@ -902,7 +902,7 @@ const FOTO_BASE = "https://cdn.vistahost.com.br/mundohou/vista.imobi/fotos/";
 const pfoto = (f, peq) => !f ? "" : /^https?:/.test(f) ? f : FOTO_BASE + (peq ? f.replace(/(\.\w+)$/,"_p$1") : f);
 const reaisP = v => "R$ " + Math.round(v).toLocaleString("pt-BR");
 let PRONTOS = null, PR = {fin:"venda", tipo:"", cidade:"", bairro:"", dorm:0, vmax:0, ordem:"", pag:1};
-const carregarProntos = () => PRONTOS ? Promise.resolve(PRONTOS) : fetch("/mundo.json").then(r=>r.ok?r.json():[]).catch(()=>[]).then(d=>(PRONTOS=d));
+const carregarProntos = () => PRONTOS ? Promise.resolve(PRONTOS) : fetch("/mundo.json",{cache:"no-cache"}).then(r=>r.ok?r.json():[]).catch(()=>[]).then(d=>(PRONTOS=d));
 const prTitulo = i => `${i.t}${i.d?` com ${i.d} ${i.d>1?"dormitórios":"dormitório"}`:""}`;
 const prPreco = i => PR.fin==="aluguel" ? (i.l ? `<b>${reaisP(i.l)}</b>/mês` : "<b>Consulte</b>") : (i.v ? `<b>${reaisP(i.v)}</b>` : i.l ? `<b>${reaisP(i.l)}</b>/mês` : "<b>Consulte</b>");
 function paginaProntos(){
@@ -999,7 +999,7 @@ function zonaPerto(lat,lng){ let m=null, dm=1e9;
   IMOVEIS.forEach(o=>{ if(o.mh||!o.lat||!o.regiao||o.regiao==="Votorantim") return; const d=(o.lat-lat)**2+(o.lng-lng)**2; if(d<dm){dm=d;m=o;} });
   return m && Math.sqrt(dm)<0.045 ? m.regiao : ""; }
 async function integrarProntos(){
-  const [dados, geo] = await Promise.all([carregarProntos(), fetch("/geo.json").then(r=>r.ok?r.json():{}).catch(()=>({}))]);
+  const [dados, geo] = await Promise.all([carregarProntos(), fetch("/geo.json",{cache:"no-cache"}).then(r=>r.ok?r.json():{}).catch(()=>({}))]);
   if(PRONTOS_NA_BUSCA || !dados.length) return; PRONTOS_NA_BUSCA = true;
   dados.filter(i=>i.v>0).forEach(i => IMOVEIS.push({ mh:true, c:i.c, id:"mh-"+i.c, nome:prTitulo(i), tipo:tipoBusca(i.t), tipoOrig:i.t, emp:i.e||"",
     bairro:i.br||"", cidade:i.ci||"", regiao: slug(i.ci||"")==="votorantim" ? "Votorantim" : "", entrega:"pronto", preco:i.v,
