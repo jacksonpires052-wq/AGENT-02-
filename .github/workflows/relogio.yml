@@ -58,10 +58,32 @@ jobs:
               with urllib.request.urlopen(req, timeout=30) as r:
                   t = r.read(); return json.loads(t) if t else {}
 
+          def ja_saiu(wf, desde):
+              # o GitHub as vezes responde 500 mas cria o run: confere antes de tentar de novo (evita post duplicado)
+              try:
+                  runs = api("GET", f"/actions/workflows/{wf}/runs?event=workflow_dispatch&per_page=5").get("workflow_runs", [])
+                  return any(dt.datetime.fromisoformat(r["created_at"].replace("Z", "+00:00")) >= desde for r in runs)
+              except Exception:
+                  return False
+
           def disparar(wf, entradas=None):
+              # Melhoria continua 27/11: em 27/11 00:20 o disparo das metricas levou HTTP 500 e o Agente 06 nao rodou.
+              # Agora tenta ate 4 vezes (espera 15 s, 45 s e 90 s), so em erro do GitHub (5xx) ou de rede.
               corpo = {"ref": "main"}
               if entradas: corpo["inputs"] = entradas
-              api("POST", f"/actions/workflows/{wf}/dispatches", corpo); log("Disparado:", wf, entradas or "")
+              desde = dt.datetime.now(dt.timezone.utc) - dt.timedelta(seconds=5)
+              for n, espera in enumerate([15, 45, 90, None], 1):
+                  try:
+                      api("POST", f"/actions/workflows/{wf}/dispatches", corpo); log("Disparado:", wf, entradas or "", f"(tentativa {n})" if n > 1 else ""); return
+                  except urllib.error.HTTPError as e:
+                      if e.code < 500 or espera is None: raise
+                      log(f"Disparo de {wf} deu HTTP {e.code}, tentativa {n}")
+                  except (urllib.error.URLError, TimeoutError, OSError) as e:
+                      if espera is None: raise
+                      log(f"Disparo de {wf} deu erro de rede ({e}), tentativa {n}")
+                  time.sleep(espera)
+                  if ja_saiu(wf, desde):
+                      log("Disparado:", wf, entradas or "", "(o GitHub criou o run apesar do erro)"); return
 
           def alerta(titulo, texto):
               log("ALERTA:", titulo, "|", texto)
@@ -162,6 +184,7 @@ jobs:
                       else: checar(*arg)
                   except Exception as e:
                       log("ERRO em", acao, arg, e)
+                      if acao == "disparo": alerta(f"disparo de {arg[0]} falhou as {hora}", f"O GitHub recusou o disparo 4 vezes ({e}). Precisa disparar na mao.")
                   time.sleep(3)
               falta = (proximo(agora()) - agora()).total_seconds()
               if falta > JUNTO * 60 or (agora() - inicio).total_seconds() + falta > 300 * 60: break
