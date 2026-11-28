@@ -39,7 +39,7 @@ jobs:
           REPO = os.environ["REPO"]; TOKEN = os.environ["GH_TOKEN"]
           HORARIOS = []  # imoveis da AE SUSPENSOS em 11/11/2026 a pedido do Jackson (antes: 06:07 07:07 08:07 11:07 12:07 13:07 18:27 19:27 20:27 21:07)
           NOTICIAS = []  # Reels de noticia DESLIGADOS em 13/11/2026: as noticias agora saem so como story (STORIES)
-          STORIES = "07:07 08:37 11:37 12:37 16:07 18:07 19:37 21:07".split()  # 8 stories por dia desde 27/11/2026: 4 noticias (07:07 11:37 16:07 19:37) e 4 imoveis (08:37 12:37 18:07 21:07). Antes: 10 por dia
+          STORIES = "07:07 19:37".split()  # 2 stories por dia desde 28/11/2026 (pedido do Jackson): 1 boletim (07:07) e 1 imovel (19:37). Antes: 8 (27/11) e 10 por dia
           FISCAL_STORY = 10  # 10 min antes de cada story o fiscal confere se tem story pronto na fila
           EXTRAS = {"00:20": "metricas.yml"}  # Agente 06 fecha os numeros do dia
           ANTES = 20   # imoveis: dispara 20 min antes; o Agente 02 monta e espera a hora pra publicar

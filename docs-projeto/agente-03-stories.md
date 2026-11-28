@@ -1,10 +1,12 @@
-# Agente 03: stories diários (desde 27/11/2026: 4 notícias + 4 imóveis, intercalados)
+# Agente 03: stories diários (desde 28/11/2026: 1 boletim + 1 imóvel por dia)
 
 Pedido do Jackson em 13/11: as notícias do mercado imobiliário saem **apenas como story**, **sem a foto dele**, com nome e CRECI 323400. Os Reels de notícia foram desligados. Este doc vale no lugar das regras antigas de agente-03.md, que ficam como histórico.
 
 Pedido de 23/11: metade dos stories passa a ser lançamento de Sorocaba, intercalado com as notícias.
 
 ## Horários (Brasília)
+- DESDE 28/11/2026, 9h37 (pedido do Jackson: "vamos reduzir o envio de story", escolheu 2 por dia, 1 + 1): boletim às 07h07 (pasta AAAA-MM-DD-01-<slug>, "edicao": 1, "total": 1) e imóvel às 19h37 (pasta AAAA-MM-DD-01b-emp-<slug>). O relogio.yml já está assim. Conferências: 07h11 e 19h41 (com placar).
+- Guardados para os próximos dias (sem o arquivo fila): notícias 2026-11-28-02-igpm-626, 03-fipezap-abatimento-9, 04-infra-79mil e as sobras de 27/11; imóveis seguem a lista a partir de Zafira (posição 6).
 - DESDE 27/11/2026 (pedido do Jackson: "reduzir o envio de boletim deixando 4 por dia e 4 de imóveis"): 8 por dia. Notícias 07h07, 11h37, 16h07, 19h37. Imóveis 08h37, 12h37, 18h07, 21h07. O relogio.yml já está assim. No boletim, usar "edicao" 1 a 4 e "total": 4 no noticia.json (aparece NOTÍCIA X DE 04). Pastas: notícias NN = 01 a 04 e imóveis com sufixo b (ex.: 01-noticia, 01b-emp-..., 02-noticia, 02b-emp-...) para a ordem bater com os horários.
 - Imóveis: a lista de 14 lançamentos (lancamentos/dados.json) recomeçou do início em 27/11 (Imperatriz, Lyon, Moove, Vista Horto). Seguir a ordem; vídeos prontos em /tmp/lm/outNN (se sumirem, renderizar com agente03/story_empreendimento_motion.py). O Jackson não respondeu se quer lançamentos novos; recomeçar foi a decisão tomada.
 - Antes de 27/11 (histórico):
@@ -221,4 +223,4 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - IGP-M sobe 1,24% em novembro e vai a 6,26% em 12 meses (FGV IBRE, 27/11)
   - desconto médio de 9% em todas as compras, contra 7% (Raio-X FipeZap; sobra de 27/11)
   - infraestrutura cria 79.065 vagas de janeiro a agosto (CBIC; sobra de 27/11)
-  Imóveis: Residencial Caribe (R$ 295 mil), Zafira (R$ 264 mil), Parque das Margaridas (R$ 280 mil) e Jardins Ipanema (R$ 290 mil). Pautas do Agente 07 usadas pela primeira vez (as duas confirmadas por busca; WebFetch direto foi bloqueado). Carrossel das 7h: FGTS (versão antiga; a versão com as fotos novas do Jackson está em /tmp/car/fgts esperando o ok). Placar: a conferir às 21h11.
+  Imóveis: Residencial Caribe (R$ 295 mil), Zafira (R$ 264 mil), Parque das Margaridas (R$ 280 mil) e Jardins Ipanema (R$ 290 mil). Pautas do Agente 07 usadas pela primeira vez (as duas confirmadas por busca; WebFetch direto foi bloqueado). Carrossel das 7h: FGTS (versão antiga; a versão com as fotos novas do Jackson está em /tmp/car/fgts esperando o ok). Às 9h37 o Jackson reduziu para 2 stories por dia (1 boletim às 07h07 e 1 imóvel às 19h37); os 6 que faltavam saíram da fila (Zafira, Margaridas e Jardins Ipanema voltam para a lista). Placar: 2 de 2 (07h07 Itaú, 08h37 Residencial Caribe), em vídeo.
