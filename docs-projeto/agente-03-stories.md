@@ -216,3 +216,9 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - Natal: Ponta Negra com 47,5% dos apartamentos vendidos no 3º tri (Brain e Sinduscon-RN)
   - construção: salário médio de admissão R$ 2.642,46, 9,61% acima da média (CBIC, agosto)
   Os dados de Sorocaba são de março e maio (a pesquisa CRECISP mais nova achada segue sendo a de junho, já usada). As pautas do Agente 07 (pautas/pautas.json) não foram usadas; a partir de 28/11 a rodada usa elas primeiro. Carrossel das 7h: "Erros que fazem o crédito ser negado" (https://www.instagram.com/p/DgPawWADnhU/). Às 7h58 o Jackson pediu 4 notícias e 4 imóveis por dia: das notícias, ficaram só a de Natal (já postada), seguro-fiança, FipeZap 52% e Sorocaba 43,2% (renumeradas NOTÍCIA X DE 04); as outras 6 saíram da fila e ficaram guardadas. Entraram Imperatriz, Lyon, Moove e Vista Horto. Placar: 8 de 8, todos no horário e em vídeo. Último: https://www.instagram.com/stories/corretor.jacksonpires/4039990649620321778
+- 28/11/2026, 5h44: primeiro dia completo no formato 4 + 4. Notícias:
+  - Itaú entra no Minha Casa Minha Vida, começando pela Faixa 3 (renda de R$ 5 mil a R$ 9,6 mil) e Pró-Cotista (Itaú, 24/11, via Portas e SpaceMoney)
+  - IGP-M sobe 1,24% em novembro e vai a 6,26% em 12 meses (FGV IBRE, 27/11)
+  - desconto médio de 9% em todas as compras, contra 7% (Raio-X FipeZap; sobra de 27/11)
+  - infraestrutura cria 79.065 vagas de janeiro a agosto (CBIC; sobra de 27/11)
+  Imóveis: Residencial Caribe (R$ 295 mil), Zafira (R$ 264 mil), Parque das Margaridas (R$ 280 mil) e Jardins Ipanema (R$ 290 mil). Pautas do Agente 07 usadas pela primeira vez (as duas confirmadas por busca; WebFetch direto foi bloqueado). Carrossel das 7h: FGTS (versão antiga; a versão com as fotos novas do Jackson está em /tmp/car/fgts esperando o ok). Placar: a conferir às 21h11.
