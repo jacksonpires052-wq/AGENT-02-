@@ -935,7 +935,7 @@
     "fonte": "Banco Central (Boletim Focus), via IstoÉ Dinheiro e Canal Rural/Estadão Conteúdo",
     "link": "https://istoedinheiro.com.br/boletim-focus-hoje-23-11-2026-inflacao-dolar-selic",
     "data_noticia": "2026-11-23",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261124-aluguel-comercial-1076",
@@ -949,7 +949,7 @@
     "fonte": "FipeZap, via Portas",
     "link": "https://portas.com.br/noticias/aluguel-comercial-acelera-alta-para-132-em-outubro-e-valorizacao-em-2026-passa-de-10-diz-fipezap/",
     "data_noticia": "2026-11-24",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261124-eua-casa-shiller-21",
@@ -963,7 +963,7 @@
     "fonte": "S&P Cotality Case-Shiller (Cotality e Yahoo Finance)",
     "link": "https://www.cotality.com/press-releases/us-home-price-growth-down-november-2026",
     "data_noticia": "2026-11-24",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261124-eua-fhfa-48-estados",
@@ -977,7 +977,7 @@
     "fonte": "FHFA (The MortgagePoint e Mortgage Professional America)",
     "link": "https://themortgagepoint.com/2026/11/24/house-prices-rise-year-over-year-fhfa-index-shows/",
     "data_noticia": "2026-11-24",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261122-cbic-jornada-30mil-casas",
@@ -991,7 +991,7 @@
     "fonte": "CBIC (estudo e entrevista à CNN Brasil, via CPG Click Petróleo e Gás)",
     "link": "https://cbic.org.br/reducao-da-jornada-de-trabalho-pode-impactar-construcao-de-30-mil-habitacoes-populares-por-ano-estima-cbic/",
     "data_noticia": "2026-11-22",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261123-ajuste-fiscal-dolar-6",
@@ -1005,7 +1005,7 @@
     "fonte": "The Rio Times (com dados do Congresso e do Banco Central) e Estadão Conteúdo via Folha PE",
     "link": "https://www.riotimesonline.com/the-big-read-brazil-24-november-2026/",
     "data_noticia": "2026-11-23",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261124-ifix-sobe-08",
@@ -1019,7 +1019,7 @@
     "fonte": "FIIs.com.br e Suno Notícias",
     "link": "https://fiis.com.br/noticias/ifix-fechamento-cacr11-alta-241126/",
     "data_noticia": "2026-11-24",
-    "usada": false
+    "usada": "vencida"
   },
   {
     "id": "20261125-eua-casa-nova-142",
@@ -1061,6 +1061,6 @@
     "fonte": "Banco Central (via Paraíba Business)",
     "link": "https://paraibabusiness.com.br/selic-a-1375-nao-define-sozinha-o-financiamento-do-imovel-diz-werton-oliveira/",
     "data_noticia": "2026-11-24",
-    "usada": false
+    "usada": "vencida"
   }
 ]
