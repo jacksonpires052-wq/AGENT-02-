@@ -1,10 +1,13 @@
-# Agente 03: stories diários (desde 24/11/2026: 5 notícias + 5 lançamentos, intercalados)
+# Agente 03: stories diários (desde 27/11/2026: 4 notícias + 4 imóveis, intercalados)
 
 Pedido do Jackson em 13/11: as notícias do mercado imobiliário saem **apenas como story**, **sem a foto dele**, com nome e CRECI 323400. Os Reels de notícia foram desligados. Este doc vale no lugar das regras antigas de agente-03.md, que ficam como histórico.
 
 Pedido de 23/11: metade dos stories passa a ser lançamento de Sorocaba, intercalado com as notícias.
 
 ## Horários (Brasília)
+- DESDE 27/11/2026 (pedido do Jackson: "reduzir o envio de boletim deixando 4 por dia e 4 de imóveis"): 8 por dia. Notícias 07h07, 11h37, 16h07, 19h37. Imóveis 08h37, 12h37, 18h07, 21h07. O relogio.yml já está assim. No boletim, usar "edicao" 1 a 4 e "total": 4 no noticia.json (aparece NOTÍCIA X DE 04). Pastas: notícias NN = 01 a 04 e imóveis com sufixo b (ex.: 01-noticia, 01b-emp-..., 02-noticia, 02b-emp-...) para a ordem bater com os horários.
+- Imóveis: a lista de 14 lançamentos (lancamentos/dados.json) recomeçou do início em 27/11 (Imperatriz, Lyon, Moove, Vista Horto). Seguir a ordem; vídeos prontos em /tmp/lm/outNN (se sumirem, renderizar com agente03/story_empreendimento_motion.py). O Jackson não respondeu se quer lançamentos novos; recomeçar foi a decisão tomada.
+- Antes de 27/11 (histórico):
 - Notícias (números ímpares 01, 03, 05, 07, 09): 07h07, 10h07, 12h37, 16h07, 19h37.
 - Lançamentos (números pares 02, 04, 06, 08, 10, pastas `stories/AAAA-MM-DD-NN-emp-<slug>`): 08h37, 11h37, 14h07, 18h07, 21h07.
 
@@ -212,4 +215,4 @@ Aprovado pelo Jackson em 14/11 ("Ficou melhor. Manda nesse formato a partir de a
   - desconto médio em todas as compras sobe de 7% para 9% (Raio-X FipeZap, via Brasil em Folhas)
   - Natal: Ponta Negra com 47,5% dos apartamentos vendidos no 3º tri (Brain e Sinduscon-RN)
   - construção: salário médio de admissão R$ 2.642,46, 9,61% acima da média (CBIC, agosto)
-  Os dados de Sorocaba são de março e maio (a pesquisa CRECISP mais nova achada segue sendo a de junho, já usada). As pautas do Agente 07 (pautas/pautas.json) não foram usadas; a partir de 28/11 a rodada usa elas primeiro. Carrossel das 7h: "Erros que fazem o crédito ser negado" (gatilho próprio). Placar: a conferir às 21h11.
+  Os dados de Sorocaba são de março e maio (a pesquisa CRECISP mais nova achada segue sendo a de junho, já usada). As pautas do Agente 07 (pautas/pautas.json) não foram usadas; a partir de 28/11 a rodada usa elas primeiro. Carrossel das 7h: "Erros que fazem o crédito ser negado" (https://www.instagram.com/p/DgPawWADnhU/). Às 7h58 o Jackson pediu 4 notícias e 4 imóveis por dia: das notícias, ficaram só a de Natal (já postada), seguro-fiança, FipeZap 52% e Sorocaba 43,2% (renumeradas NOTÍCIA X DE 04); as outras 6 saíram da fila e ficaram guardadas. Entraram Imperatriz, Lyon, Moove e Vista Horto. Placar: 8 de 8, todos no horário e em vídeo. Último: https://www.instagram.com/stories/corretor.jacksonpires/4039990649620321778
